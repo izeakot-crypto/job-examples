@@ -1,16 +1,18 @@
-# Приклади проектів (Portfolio)
+# Portfolio
 
-У цьому репозиторії зібрані проекти та мікросервіси, розроблені для вирішення реальних бізнес-завдань. Тут представлені приклади архітектурних рішень, автоматизації процесів та інтеграції з різними API.
+This repository contains selected examples of production-oriented work: automation, scraping, AI-assisted workflows, and voice/text processing services.
 
-## Основні проекти:
+## Included Projects
 
-*   **articles-stati** — Система автоматизації контенту. Повний цикл: генерація статей через Anthropic API, перевірка унікальності, створення зображення та публікація в WordPress.
-*   **parser-indeed** — Професійний скрапер для збору та обробки вакансій з Indeed (робота з проксі, обхід блокувань).
-*   **monitoring-of-competitors** — Автоматизований моніторинг сайтів конкурентів для відстеження змін та цін.
-*   **python-transcription-service** — Сервіс для транскрибації аудіо в текст за допомогою сучасних AI моделей.
-*   **voice-assistants** — Розробка логіки для голосових асистентів та IVR-систем на базі телефонії Оки-Токи.
-*   **tts-service** — Реалізація та оптимізація систем синтезу мовлення (Text-to-Speech).
-*   **gemini-translate** — Інструмент для автоматизованого перекладу контенту за допомогою Google Gemini API.
+- `articles-stati` - Content automation pipeline: article generation, verification, image generation, and WordPress publishing.
+- `parser-indeed` - Indeed vacancy scraping pipeline with proxy handling, browser automation, and structured extraction.
+- `monitoring-of-competitors` - Competitor monitoring system for tracking content and pricing changes across SaaS websites.
+- `python-transcription-service` - Audio transcription service with multiple ASR backends and operational tooling.
+- `voice-assistants` - Gateway for LIRA voice assistants with provider abstraction for OpenAI, Claude, and n8n.
+- `tts-service` - Text-to-Speech experimentation and service code for voice synthesis workflows.
+- `gemini-translate` - JSON translation automation with resume/sync support for large localization batches.
 
-## Проєкти з AI-сервісами:
-Значна частина проектів базується на використанні LLM (Anthropic, OpenAI, Gemini) для автоматизації інтелектуальних завдань: генерації текстів, аналізу даних, перекладу та голосових інтерфейсів.
+## Notes
+
+- The repository is curated to show implementation quality rather than raw experiment output.
+- Generated logs, caches, and media artifacts are intentionally excluded from version control.

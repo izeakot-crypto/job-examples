@@ -1,0 +1,26 @@
+# Logs and temporary outputs
+*.log
+*.tmp
+*.cache
+
+# Binary artifacts and generated media
+*.b64
+*.tar.gz
+*.mp3
+*.wav
+*.opus
+
+# Local environment and tooling
+.DS_Store
+Thumbs.db
+
+# Project-specific generated folders
+parser-indeed/*test*
+parser-indeed/*run.log
+gemini-translate/translation.log
+articles-stati/services/image_gen/*.b64
+tts-service/tts_cache/
+tts-service/snippets/
+tts-service/SMML/
+tts-service/Lira TTS/*output/
+tts-service/Lira TTS/tts_server.log
