@@ -1,1 +1,0 @@
-# Translation Checker service
