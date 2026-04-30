@@ -1,0 +1,10 @@
+/vendor
+/.idea
+.env
+bootstrap/cache/
+/public/.htaccess
+/_ide_helper.php
+/.phpstorm.meta.php
+/composer.phar
+.docker
+docker-compose.yaml

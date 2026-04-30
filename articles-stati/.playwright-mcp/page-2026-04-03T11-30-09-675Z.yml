@@ -1,0 +1,28 @@
+- generic [ref=e2]:
+  - navigation [ref=e3]:
+    - button "📊 Dashboard" [ref=e4] [cursor=pointer]:
+      - generic [ref=e5]: 📊
+      - text: Dashboard
+    - button "💡 Идеи Статей" [ref=e6] [cursor=pointer]:
+      - generic [ref=e7]: 💡
+      - text: Идеи Статей
+    - button "📝 Проверка Статей" [ref=e8] [cursor=pointer]:
+      - generic [ref=e9]: 📝
+      - text: Проверка Статей
+    - button "🚀 Опубликованные" [active] [ref=e10] [cursor=pointer]:
+      - generic [ref=e11]: 🚀
+      - text: Опубликованные
+  - main [ref=e12]:
+    - generic [ref=e663]:
+      - generic [ref=e664]:
+        - heading "Опубликованные Статьи" [level=2] [ref=e665]
+        - generic [ref=e667]:
+          - text: "Опубликовано:"
+          - strong [ref=e668]: "1"
+      - generic [ref=e670] [cursor=pointer]:
+        - generic [ref=e671]: 📄
+        - generic [ref=e672]:
+          - 'heading "Холодні дзвінки у телефонних продажах: поради, скрипти та приклади розмов з клієнтами" [level=3] [ref=e673]'
+          - text: "Создано: 10.03.2026, 21:11:12"
+        - generic [ref=e674]: Опубликовано
+        - generic [ref=e677]: 🚀 Опубликовано

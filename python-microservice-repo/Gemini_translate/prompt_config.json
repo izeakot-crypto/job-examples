@@ -1,0 +1,22 @@
+{
+  "prompt_template": "Translate to {target_lang}. CRITICAL: If text has ANY quotes or special characters around words - keep EXACT SAME characters, do NOT replace them! Example: \"Widgets\" -> \"Vidzhety\" (same \" quotes), NOT «Vidzhety». DANGEROUS characters: U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D. RULES: 1) Original has quotes/symbols = translation must have IDENTICAL quotes/symbols in same positions. 2) For NEW apostrophes in words (l'homme, im'ya, l'ora) use U+2019. 3) For NEW quotes use: U+00AB U+00BB or U+201E U+201D. 4) Preserve: %s %d {{var}} {var} \\n spaces. Return: [{\"id\": N, \"translation\": \"...\"}]. Input: {json_input}",
+  "language_codes": {
+    "en": "English",
+    "uk": "Ukrainian",
+    "ru": "Russian",
+    "de": "German",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "pl": "Polish",
+    "pt": "Portuguese",
+    "tr": "Turkish",
+    "ar": "Arabic",
+    "zh": "Chinese",
+    "ja": "Japanese",
+    "ko": "Korean",
+    "ka": "Georgian",
+    "kk": "Kazakh",
+    "ro": "Romanian"
+  }
+}

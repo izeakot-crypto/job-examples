@@ -1,0 +1,26 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+[*.php]
+ij_php_align_key_value_pairs = true
+ij_php_align_class_constants = true
+ij_php_else_on_new_line = true
+ij_php_catch_on_new_line = true
+ij_php_finally_on_new_line = true
+ij_php_align_multiline_array_initializer_expression = true
+ij_php_align_group_field_declarations = true
+ij_php_align_match_arm_bodies = true
+ij_php_align_enum_cases = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[Makefile]
+indent_style = tab

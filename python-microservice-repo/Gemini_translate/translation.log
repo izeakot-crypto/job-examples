@@ -1,0 +1,1418 @@
+nohup: ignoring input
+🌐 Target language: украинский (uk)
+🤖 Model: gemini-2.5-pro
+🔄 Max retries: 8
+💾 Output file: uk_1769596361_done.json
+🔒 Lock acquired
+📦 Total: 8770 strings, 44 batches (size=200)
+
+📤 Processing batch 1/44...
+
+📝 Prompt for batch (attempt 1):
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 0, "text": "Нет данных для отображения"}, {"id": 1, "text": "Оки-Токи"}, {"id": 2, "text": "Ваше внешнее хранилище для записей разговоров не работает правильно, заполнено или отключено."}, {"id": 3, "text": "здесь"}, {"id": 4, "text": "сегодня"}, {"id": 5, "text": "через"}, {"id": 6, "text": "день"}, {"id": 7, "text": "дня"}, {"id": 8, "text": "дней"}, {"id": 9, "text": "Ваш Баланс пуст более 3х недель, поэтому %s ваш аккаунт будет отправлен в архив. Вы можете пополнить или отложить архивацию"}, {"id": 10, "text": "Ой, на вашем счету нет средств. Пожалуйста пополните счет или воспользуйтесь кредитованием"}, {"id": 11, "text": "Закрыть"}, {"id": 12, "text": "Вы используете домен"}, {"id": 13, "text": "Авторизация"}, {"id": 14, "text": "не активна."}, {"id": 15, "text": "Восстановите авторизацию."}, {"id": 16, "text": "Перейти"}, {"id": 17, "text": "Профиль"}, {"id": 18, "text": "Выход"}, {"id": 19, "text": "Компании"}, {"id": 20, "text": "Страница сгенерирована за"}, {"id": 21, "text": "сек"}, {"id": 22, "text": "Подтверждение регистрации"}, {"id": 23, "text": "был отправлен код подтверждения регистрации."}, {"id": 24, "text": "Для завершения процесса создания аккаунта введите его в поле ниже."}, {"id": 25, "text": "Код подтверждения"}, {"id": 26, "text": "Подтвердить регистрацию"}, {"id": 27, "text": "Перейдите по ссылке для сброса пароля"}, {"id": 28, "text": "Вход"}, {"id": 29, "text": "Введите e-mail и пароль"}, {"id": 30, "text": "Пароль"}, {"id": 31, "text": "Войти"}, {"id": 32, "text": "Забыли пароль?"}, {"id": 33, "text": "Зарегистрировать новый аккаунт"}, {"id": 34, "text": "Если вы приглашены на работу в колл-центр, то вам не нужно регистрироваться здесь. Ожидайте письма-приглашения от вашего работодателя. Скорее всего оно еще в пути и вот-вот будет у вас."}, {"id": 35, "text": "Введите ваш e-mail и мы отправим ссылку для сброса пароля"}, {"id": 36, "text": "Назад"}, {"id": 37, "text": "Отправить"}, {"id": 38, "text": "Проверьте вашу почту"}, {"id": 39, "text": "Проверить"}, {"id": 40, "text": "Сброс пароля"}, {"id": 41, "text": "Еще раз"}, {"id": 42, "text": "Отмена"}, {"id": 43, "text": "Регистрация"}, {"id": 44, "text": "Имя"}, {"id": 45, "text": "Еще раз пароль"}, {"id": 46, "text": "Зарегистрироваться"}, {"id": 47, "text": "Или зарегистрируйтесь используя"}, {"id": 48, "text": "Здравствуйте!"}, {"id": 49, "text": "До блокировки осталось"}, {"id": 50, "text": "дня."}, {"id": 51, "text": "До блокировки остался 1 день."}, {"id": 52, "text": "Напомнить позже"}, {"id": 53, "text": "Пополнить сейчас"}, {"id": 54, "text": "Ой, кредит, который вы взяли закончится через"}, {"id": 55, "text": "1 день."}, {"id": 56, "text": "Необходимо пополнить счет."}, {"id": 57, "text": "Срок пробного периода заканчивается через"}, {"id": 58, "text": "Чтобы избежать остановки сервиса сделайте первый платеж заранее."}, {"id": 59, "text": "Ой, средства на вашем счете заканчиваются. По нашим оценкам их хватит на"}, {"id": 60, "text": "Отложить"}, {"id": 61, "text": "Оки-Токи: колл-центр в облаках"}, {"id": 62, "text": "Оплата"}, {"id": 63, "text": "Способ оплаты"}, {"id": 64, "text": "Продолжить"}, {"id": 65, "text": "Пользователи"}, {"id": 66, "text": "Группы"}, {"id": 67, "text": "Назначены"}, {"id": 68, "text": "Убрать"}, {"id": 69, "text": "Минимальный приоритет"}, {"id": 70, "text": "Максимальный приоритет"}, {"id": 71, "text": "Показать"}, {"id": 72, "text": "пользователей не назначено на очередь"}, {"id": 73, "text": "Добавить"}, {"id": 74, "text": "Название"}, {"id": 75, "text": "Сценарий"}, {"id": 76, "text": "Статистика за сутки"}, {"id": 77, "text": "Неактивен из-за расписания работы"}, {"id": 78, "text": "Отключен"}, {"id": 79, "text": "Переменная"}, {"id": 80, "text": "Значение"}, {"id": 81, "text": "Обязательно"}, {"id": 82, "text": "Да"}, {"id": 83, "text": "Нет"}, {"id": 84, "text": "Удалить"}, {"id": 85, "text": "Не указан"}, {"id": 86, "text": "Не прерывать проигрывание аудио при выборе ответа (DTMF) клиентом"}, {"id": 87, "text": "По умолчанию"}, {"id": 88, "text": "Согласно настройкам очереди"}, {"id": 89, "text": "изменить"}, {"id": 90, "text": "Нет назначенных пользователей"}, {"id": 91, "text": "Нажатие * или # прерывает ожидание ввода и \"забывает\" значения, полученные до их нажатия."}, {"id": 92, "text": "Сообщение, которое будет проиграно на выходе из функции"}, {"id": 93, "text": "Параметры"}, {"id": 94, "text": "Операторы"}, {"id": 95, "text": "Переменные"}, {"id": 96, "text": "Успех"}, {"id": 97, "text": "Отмечает эту функцию \"Успех\" в отчетах Звонки и Сводный."}, {"id": 98, "text": "Сохранить"}, {"id": 99, "text": "Настройки"}, {"id": 100, "text": "Элементы"}, {"id": 101, "text": "История"}, {"id": 102, "text": "Назначенные операторы"}, {"id": 103, "text": "Кнопка ответа"}, {"id": 104, "text": "Словарь"}, {"id": 105, "text": "Слова через запятую"}, {"id": 106, "text": "Добавить ответ"}, {"id": 107, "text": "Загрузить"}, {"id": 108, "text": "Записать"}, {"id": 109, "text": "Скачать"}, {"id": 110, "text": "В вашем сценарии пока нет звуковых файлов"}, {"id": 111, "text": "Кликните сюда или перетащите файлы"}, {"id": 112, "text": "Микрофон"}, {"id": 113, "text": "Язык"}, {"id": 114, "text": "Русский"}, {"id": 115, "text": "Украинский"}, {"id": 116, "text": "Голос"}, {"id": 117, "text": "Тон"}, {"id": 118, "text": "Создать"}, {"id": 119, "text": "Вы сделали"}, {"id": 120, "text": "Опубликовать"}, {"id": 121, "text": "Сценарий звонка"}, {"id": 122, "text": "Тестовый звонок"}, {"id": 123, "text": "Элементы сценария"}, {"id": 124, "text": "Переменная результата"}, {"id": 125, "text": "Восстановить"}, {"id": 126, "text": "В архив"}, {"id": 127, "text": "Без имени"}, {"id": 128, "text": "Перевести"}, {"id": 129, "text": "Доступная сумма"}, {"id": 130, "text": "Последние действия"}, {"id": 131, "text": "Правила"}, {"id": 132, "text": "А номер"}, {"id": 133, "text": "Б номер"}, {"id": 134, "text": "Пользователь"}, {"id": 135, "text": "Очередь"}, {"id": 136, "text": "Дата с"}, {"id": 137, "text": "Дата по"}, {"id": 138, "text": "Время с"}, {"id": 139, "text": "Время по"}, {"id": 140, "text": "Сейчас нет правил."}, {"id": 141, "text": "чтобы добавить первое правило."}, {"id": 142, "text": "Звонки"}, {"id": 143, "text": "Добавить правило"}, {"id": 144, "text": "Период от"}, {"id": 145, "text": "Период до"}, {"id": 146, "text": "Добавить звонок"}, {"id": 147, "text": "Номер звонка"}, {"id": 148, "text": "Ваше хранилище записей заполнено"}, {"id": 149, "text": "На вашем хранилище не осталось места для новых файлов."}, {"id": 150, "text": "Текущий размер хранилища"}, {"id": 151, "text": "ГБ"}, {"id": 152, "text": "Пожалуйста, примите решение для продолжения работы."}, {"id": 153, "text": "Выбор решения"}, {"id": 154, "text": "Решение проблемы"}, {"id": 155, "text": "Дополнительные опции"}, {"id": 156, "text": "Дополнительные настройки"}, {"id": 157, "text": "Ошибка. Выберите один из авриантов."}, {"id": 158, "text": "Выбор решения проблемы"}, {"id": 159, "text": "Разрешить удаление"}, {"id": 160, "text": "Текущий объем хранилища для записей разговора останется без изменений. Самые старые записи заменятся новыми."}, {"id": 161, "text": "Расширить хранилище"}, {"id": 162, "text": "Не задавать вопрос повторно"}, {"id": 163, "text": "3 дня"}, {"id": 164, "text": "7 дней"}, {"id": 165, "text": "30 дней"}, {"id": 166, "text": "Никогда"}, {"id": 167, "text": "Авторасширение хранилища"}, {"id": 168, "text": "Ручные настройки"}, {"id": 169, "text": "Размер хранилища"}, {"id": 170, "text": "Занято"}, {"id": 171, "text": "Рекомендуется расширить на"}, {"id": 172, "text": "Далее"}, {"id": 173, "text": "Подтвердить"}, {"id": 174, "text": "Выйти"}, {"id": 175, "text": "Управление услугами"}, {"id": 176, "text": "Баланс"}, {"id": 177, "text": "Статус компании"}, {"id": 178, "text": "Активна"}, {"id": 179, "text": "Ваше недельное потребление составляет"}, {"id": 180, "text": "Приостановлено"}, {"id": 181, "text": "Пополнение не требуется"}, {"id": 182, "text": "Текущий баланс"}, {"id": 183, "text": "Счет лояльности"}, {"id": 184, "text": "Инструменты"}, {"id": 185, "text": "Документы и платежи"}, {"id": 186, "text": "Взять кредит"}, {"id": 187, "text": "Вам открыт кредит на сумму"}, {"id": 188, "text": "до"}, {"id": 189, "text": "Использовать бонус"}, {"id": 190, "text": "Средств на вашем счете хватит менее чем на неделю работы. Воспользуйтесь кредитованием, если недели будет не достаточно."}, {"id": 191, "text": "Ваш счет пуст, услуги отключены. Данные будут храниться еще некоторое время. Пополните ваш счет или возьмите бесплатный кредит на 7 дней работы."}, {"id": 192, "text": "Важно:"}, {"id": 193, "text": "Незавершенные транзакции"}, {"id": 194, "text": "Время"}, {"id": 195, "text": "Сумма"}, {"id": 196, "text": "Операции за сутки"}, {"id": 197, "text": "Дата"}, {"id": 198, "text": "Услуга"}, {"id": 199, "text": "Цена"}]
+
+⚠️  Validation failed (ID 91):
+  Original: Нажатие * или # прерывает ожидание ввода и "забывает" значения, полученные до их нажатия.
+  Translation: Натискання * або # перериває очікування введення і «забуває» значення, отримані до їх натискання.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ": Original=2, Translation=none, «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 97):
+  Original: Отмечает эту функцию "Успех" в отчетах Звонки и Сводный.
+  Translation: Позначає цю функцію «Успіх» у звітах Дзвінки та Зведений.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ": Original=2, Translation=none, «: Original=none, Translation=1, »: Original=none, Translation=1
+❌ Validation failed for 2 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 2 translations)
+🎯 Retrying only 2 failed items (IDs: [91, 97])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 91: Quotes mismatch try another Quote, do not add new "" or '' - ": Original=2, Translation=none, «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Нажатие * или # прерывает ожидание ввода и "забывает" значения, полученные до их нажатия.
+  Wrong translation: Натискання * або # перериває очікування введення і «забуває» значення, отримані до їх натискання.
+- ID 97: Quotes mismatch try another Quote, do not add new "" or '' - ": Original=2, Translation=none, «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Отмечает эту функцию "Успех" в отчетах Звонки и Сводный.
+  Wrong translation: Позначає цю функцію «Успіх» у звітах Дзвінки та Зведений.
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 91, "text": "Нажатие * или # прерывает ожидание ввода и \"забывает\" значения, полученные до их нажатия."}, {"id": 97, "text": "Отмечает эту функцию \"Успех\" в отчетах Звонки и Сводный."}]
+
+⚠️  Missing translations for IDs: [0, 1]
+✅ Retry successful on attempt 2
+✅ Batch 1/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 2/44...
+✅ Batch 2/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 3/44...
+✅ Batch 3/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 4/44...
+✅ Batch 4/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 5/44...
+✅ Batch 5/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 6/44...
+✅ Batch 6/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 7/44...
+✅ Batch 7/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 8/44...
+⚠️  Validation failed (ID 85):
+  Original: Вы собираетесь передать все объекты, которыми владеет этот пользователь
+  Translation: Ви збираєтеся передати всі об'єкти, якими володіє цей користувач
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 166):
+  Original: это свяжет вашего пользователя в Оки-Токи с пользователем в Telegram, после чего вам начнут приходить оповещения.
+  Translation: це зв'яже вашого користувача в Окі-Токі з користувачем у Telegram, після чого вам почнуть надходити сповіщення.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 180):
+  Original: Обязательное поле
+  Translation: Обов'язкове поле
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+❌ Validation failed for 3 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 3 translations)
+🎯 Retrying only 3 failed items (IDs: [85, 166, 180])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 85: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Вы собираетесь передать все объекты, которыми владеет этот пользователь
+  Wrong translation: Ви збираєтеся передати всі об'єкти, якими володіє цей користувач
+- ID 166: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: это свяжет вашего пользователя в Оки-Токи с пользователем в Telegram, после чего вам начнут приходить оповещения.
+  Wrong translation: це зв'яже вашого користувача в Окі-Токі з користувачем у Telegram, після чого вам почнуть надходити сповіщення.
+- ID 180: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Обязательное поле
+  Wrong translation: Обов'язкове поле
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 85, "text": "Вы собираетесь передать все объекты, которыми владеет этот пользователь"}, {"id": 166, "text": "это свяжет вашего пользователя в Оки-Токи с пользователем в Telegram, после чего вам начнут приходить оповещения."}, {"id": 180, "text": "Обязательное поле"}]
+
+⚠️  Missing translations for IDs: [0, 1, 2]
+✅ Retry successful on attempt 2
+✅ Batch 8/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 9/44...
+✅ Batch 9/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 10/44...
+✅ Batch 10/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 11/44...
+⚠️  Validation failed (ID 98):
+  Original: Расчет времени производиться с момента открытия анкеты до момента смены её в статус завершен. Если статус анкеты не был завершен, время будет продолжать считаться.
+  Translation: Розрахунок часу проводиться з моменту відкриття анкети до моменту зміни її статусу на «завершено». Якщо статус анкети не було змінено на «завершено», час продовжуватиме рахуватися.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=2, »: Original=none, Translation=2
+⚠️  Validation failed (ID 118):
+  Original: Среднее время в статусе “готов”
+  Translation: Середній час у статусі «готовий»
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 120):
+  Original: Время работы в статусе “готов”
+  Translation: Час роботи в статусі «готовий»
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 122):
+  Original: Подробная информация о статусах операторов, топ операторов в статусе “Занят”, в статусе “Отсутствую” и “Готов” с указанием пика во временном промежутке.
+  Translation: Детальна інформація про статуси операторів, топ операторів у статусі «Зайнятий», у статусі «Відсутній» та «Готовий» із зазначенням піку в часовому проміжку.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=3, »: Original=none, Translation=3
+⚠️  Validation failed (ID 126):
+  Original: Топ операторов в статусе занят
+  Translation: Топ операторів у статусі «зайнятий»
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 127):
+  Original: В статусе отсутствую
+  Translation: У статусі «відсутній»
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 128):
+  Original: Топ операторов в статусе отсутствую
+  Translation: Топ операторів у статусі «відсутній»
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+❌ Validation failed for 7 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 7 translations)
+🎯 Retrying only 7 failed items (IDs: [98, 118, 120, 122, 126, 127, 128])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 98: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=2, »: Original=none, Translation=2
+  Original: Расчет времени производиться с момента открытия анкеты до момента смены её в статус завершен. Если статус анкеты не был завершен, время будет продолжать считаться.
+  Wrong translation: Розрахунок часу проводиться з моменту відкриття анкети до моменту зміни її статусу на «завершено». Якщо статус анкети не було змінено на «завершено», час продовжуватиме рахуватися.
+- ID 118: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Среднее время в статусе “готов”
+  Wrong translation: Середній час у статусі «готовий»
+- ID 120: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Время работы в статусе “готов”
+  Wrong translation: Час роботи в статусі «готовий»
+- ID 122: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=3, »: Original=none, Translation=3
+  Original: Подробная информация о статусах операторов, топ операторов в статусе “Занят”, в статусе “Отсутствую” и “Готов” с указанием пика во временном промежутке.
+  Wrong translation: Детальна інформація про статуси операторів, топ операторів у статусі «Зайнятий», у статусі «Відсутній» та «Готовий» із зазначенням піку в часовому проміжку.
+- ID 126: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Топ операторов в статусе занят
+  Wrong translation: Топ операторів у статусі «зайнятий»
+- ID 127: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: В статусе отсутствую
+  Wrong translation: У статусі «відсутній»
+- ID 128: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Топ операторов в статусе отсутствую
+  Wrong translation: Топ операторів у статусі «відсутній»
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 98, "text": "Расчет времени производиться с момента открытия анкеты до момента смены её в статус завершен. Если статус анкеты не был завершен, время будет продолжать считаться."}, {"id": 118, "text": "Среднее время в статусе “готов”"}, {"id": 120, "text": "Время работы в статусе “готов”"}, {"id": 122, "text": "Подробная информация о статусах операторов, топ операторов в статусе “Занят”, в статусе “Отсутствую” и “Готов” с указанием пика во временном промежутке."}, {"id": 126, "text": "Топ операторов в статусе занят"}, {"id": 127, "text": "В статусе отсутствую"}, {"id": 128, "text": "Топ операторов в статусе отсутствую"}]
+
+⚠️  Missing translations for IDs: [0, 1, 2, 3, 4, 5, 6]
+✅ Retry successful on attempt 2
+✅ Batch 11/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 12/44...
+✅ Batch 12/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 13/44...
+⚠️  Validation failed (ID 13):
+  Original: Статус, который будет устанавливается при соединении с клиентом. Если оператор не установит дополнительного статуса (решения) после разговора с оператором, то будет назначен следующий звонок.
+  Translation: Статус, який буде встановлюватися при з'єднанні з клієнтом. Якщо оператор не встановить додаткового статусу (рішення) після розмови з клієнтом, то буде призначено наступний дзвінок.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 14):
+  Original: Статус, который будет установлен после соединения системы с клиентом, но еще до соединения  оператором. Если клиент завершит звонок, то будет назначен следующий звонок.
+  Translation: Статус, який буде встановлено після з'єднання системи з клієнтом, але ще до з'єднання з оператором. Якщо клієнт завершить дзвінок, то буде призначено наступний дзвінок.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=2
+⚠️  Validation failed (ID 15):
+  Original: Для Автообзвона: Статус, который будет установлен после соединения системы с клиентом, но еще до соединения  оператором. Если клиент завершит звонок, то будет назначен следующий звонок.
+  Translation: Для Автододзвону: Статус, який буде встановлено після з'єднання системи з клієнтом, але ще до з'єднання з оператором. Якщо клієнт завершить дзвінок, то буде призначено наступний дзвінок.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=2
+⚠️  Validation failed (ID 23):
+  Original: Эту ошибку ставит оператор если качество связи не позволяет уверенно провести разговор.
+  Translation: Цю помилку ставить оператор, якщо якість зв'язку не дозволяє впевнено провести розмову.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 24):
+  Original: Этот статус автоматически получают звонки, завершенные с ошибкой 3ХХ-6ХХ (проблема поставщика связи).
+  Translation: Цей статус автоматично отримують дзвінки, завершені з помилкою 3ХХ-6ХХ (проблема постачальника зв'язку).
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 25):
+  Original: Статус Подтвержден устанавливается после соединения с оператором. Он означает, что соединение успешное, с человеком (не факс, автоответчик или IVR) и цель работы дайлера достигнута. Может присваиваться звонку автоматически - сразу после поднятия клиентом трубки или с некоторой задержкой - эти условия подтверждения можно настроить в настройках автообзвона.
+  Translation: Статус Підтверджено встановлюється після з'єднання з оператором. Він означає, що з'єднання успішне, з людиною (не факс, автовідповідач або IVR) і мета роботи дайлера досягнута. Може присвоюватися дзвінку автоматично - відразу після підняття клієнтом слухавки або з деякою затримкою - ці умови підтвердження можна налаштувати в налаштуваннях автододзвону.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=2
+⚠️  Validation failed (ID 106):
+  Original: При переключении на улучшенную безопасность будет создан проект Default и в него добавятся все объекты и пользователи - будет работать так же, как при упрощенной безопасности, но все новые объекты в проект автоматически добавляться не будут
+  Translation: При перемиканні на поліпшену безпеку буде створено проєкт Default і до нього додадуться всі об'єкти та користувачі - працюватиме так само, як при спрощеній безпеці, але всі нові об'єкти до проєкту автоматично не додаватимуться
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=2
+⚠️  Validation failed (ID 107):
+  Original: У вас уже были ранее созданы проекты и при переключении на улучшенную безопасность будут использованы настройки этих проектов - видимость объектов компании может измениться для разных пользователей (кроме администраторов)
+  Translation: У вас вже були раніше створені проєкти і при перемиканні на поліпшену безпеку будуть використані налаштування цих проєктів - видимість об'єктів компанії може змінитися для різних користувачів (крім адміністраторів)
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 108):
+  Original: При переключении на упрощенную безопасность все пользователи будут видеть все объекты компании, проекты использоваться не будут
+  Translation: При перемиканні на спрощену безпеку всі користувачі бачитимуть усі об'єкти компанії, проєкти не використовуватимуться
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 165):
+  Original: Через сколько секунд разговора задача будет удалена из автообзвона как успешная. Значение 0 отмечает задачу успешной в момент соединения
+  Translation: Через скільки секунд розмови завдання буде видалено з автододзвону як успішне. Значення 0 відзначає завдання успішним у момент з'єднання
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 168):
+  Original: Здесь нужно указать ссылку, которая будет открываться при соединении оператора с клиентом. Можно использовать переменные, которые будут подменять фрагменты в ссылке на поля из контакта, например ID заказа.
+  Translation: Тут потрібно вказати посилання, яке буде відкриватися при з'єднанні оператора з клієнтом. Можна використовувати змінні, які будуть підміняти фрагменти в посиланні на поля з контакту, наприклад ID замовлення.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+❌ Validation failed for 11 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 11 translations)
+🎯 Retrying only 11 failed items (IDs: [13, 14, 15, 23, 24, 25, 106, 107, 108, 165, 168])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 13: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Статус, который будет устанавливается при соединении с клиентом. Если оператор не установит дополнительного статуса (решения) после разговора с оператором, то будет назначен следующий звонок.
+  Wrong translation: Статус, який буде встановлюватися при з'єднанні з клієнтом. Якщо оператор не встановить додаткового статусу (рішення) після розмови з клієнтом, то буде призначено наступний дзвінок.
+- ID 14: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=2
+  Original: Статус, который будет установлен после соединения системы с клиентом, но еще до соединения  оператором. Если клиент завершит звонок, то будет назначен следующий звонок.
+  Wrong translation: Статус, який буде встановлено після з'єднання системи з клієнтом, але ще до з'єднання з оператором. Якщо клієнт завершить дзвінок, то буде призначено наступний дзвінок.
+- ID 15: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=2
+  Original: Для Автообзвона: Статус, который будет установлен после соединения системы с клиентом, но еще до соединения  оператором. Если клиент завершит звонок, то будет назначен следующий звонок.
+  Wrong translation: Для Автододзвону: Статус, який буде встановлено після з'єднання системи з клієнтом, але ще до з'єднання з оператором. Якщо клієнт завершить дзвінок, то буде призначено наступний дзвінок.
+- ID 23: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Эту ошибку ставит оператор если качество связи не позволяет уверенно провести разговор.
+  Wrong translation: Цю помилку ставить оператор, якщо якість зв'язку не дозволяє впевнено провести розмову.
+- ID 24: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Этот статус автоматически получают звонки, завершенные с ошибкой 3ХХ-6ХХ (проблема поставщика связи).
+  Wrong translation: Цей статус автоматично отримують дзвінки, завершені з помилкою 3ХХ-6ХХ (проблема постачальника зв'язку).
+- ID 25: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=2
+  Original: Статус Подтвержден устанавливается после соединения с оператором. Он означает, что соединение успешное, с человеком (не факс, автоответчик или IVR) и цель работы дайлера достигнута. Может присваиваться звонку автоматически - сразу после поднятия клиентом трубки или с некоторой задержкой - эти условия подтверждения можно настроить в настройках автообзвона.
+  Wrong translation: Статус Підтверджено встановлюється після з'єднання з оператором. Він означає, що з'єднання успішне, з людиною (не факс, автовідповідач або IVR) і мета роботи дайлера досягнута. Може присвоюватися дзвінку автоматично - відразу після підняття клієнтом слухавки або з деякою затримкою - ці умови підтвердження можна налаштувати в налаштуваннях автододзвону.
+- ID 106: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=2
+  Original: При переключении на улучшенную безопасность будет создан проект Default и в него добавятся все объекты и пользователи - будет работать так же, как при упрощенной безопасности, но все новые объекты в проект автоматически добавляться не будут
+  Wrong translation: При перемиканні на поліпшену безпеку буде створено проєкт Default і до нього додадуться всі об'єкти та користувачі - працюватиме так само, як при спрощеній безпеці, але всі нові об'єкти до проєкту автоматично не додаватимуться
+- ID 107: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: У вас уже были ранее созданы проекты и при переключении на улучшенную безопасность будут использованы настройки этих проектов - видимость объектов компании может измениться для разных пользователей (кроме администраторов)
+  Wrong translation: У вас вже були раніше створені проєкти і при перемиканні на поліпшену безпеку будуть використані налаштування цих проєктів - видимість об'єктів компанії може змінитися для різних користувачів (крім адміністраторів)
+- ID 108: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: При переключении на упрощенную безопасность все пользователи будут видеть все объекты компании, проекты использоваться не будут
+  Wrong translation: При перемиканні на спрощену безпеку всі користувачі бачитимуть усі об'єкти компанії, проєкти не використовуватимуться
+- ID 165: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Через сколько секунд разговора задача будет удалена из автообзвона как успешная. Значение 0 отмечает задачу успешной в момент соединения
+  Wrong translation: Через скільки секунд розмови завдання буде видалено з автододзвону як успішне. Значення 0 відзначає завдання успішним у момент з'єднання
+- ID 168: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Здесь нужно указать ссылку, которая будет открываться при соединении оператора с клиентом. Можно использовать переменные, которые будут подменять фрагменты в ссылке на поля из контакта, например ID заказа.
+  Wrong translation: Тут потрібно вказати посилання, яке буде відкриватися при з'єднанні оператора з клієнтом. Можна використовувати змінні, які будуть підміняти фрагменти в посиланні на поля з контакту, наприклад ID замовлення.
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 13, "text": "Статус, который будет устанавливается при соединении с клиентом. Если оператор не установит дополнительного статуса (решения) после разговора с оператором, то будет назначен следующий звонок."}, {"id": 14, "text": "Статус, который будет установлен после соединения системы с клиентом, но еще до соединения  оператором. Если клиент завершит звонок, то будет назначен следующий звонок."}, {"id": 15, "text": "Для Автообзвона: Статус, который будет установлен после соединения системы с клиентом, но еще до соединения  оператором. Если клиент завершит звонок, то будет назначен следующий звонок."}, {"id": 23, "text": "Эту ошибку ставит оператор если качество связи не позволяет уверенно провести разговор."}, {"id": 24, "text": "Этот статус автоматически получают звонки, завершенные с ошибкой 3ХХ-6ХХ (проблема поставщика связи)."}, {"id": 25, "text": "Статус Подтвержден устанавливается после соединения с оператором. Он означает, что соединение успешное, с человеком (не факс, автоответчик или IVR) и цель работы дайлера достигнута. Может присваиваться звонку автоматически - сразу после поднятия клиентом трубки или с некоторой задержкой - эти условия подтверждения можно настроить в настройках автообзвона."}, {"id": 106, "text": "При переключении на улучшенную безопасность будет создан проект Default и в него добавятся все объекты и пользователи - будет работать так же, как при упрощенной безопасности, но все новые объекты в проект автоматически добавляться не будут"}, {"id": 107, "text": "У вас уже были ранее созданы проекты и при переключении на улучшенную безопасность будут использованы настройки этих проектов - видимость объектов компании может измениться для разных пользователей (кроме администраторов)"}, {"id": 108, "text": "При переключении на упрощенную безопасность все пользователи будут видеть все объекты компании, проекты использоваться не будут"}, {"id": 165, "text": "Через сколько секунд разговора задача будет удалена из автообзвона как успешная. Значение 0 отмечает задачу успешной в момент соединения"}, {"id": 168, "text": "Здесь нужно указать ссылку, которая будет открываться при соединении оператора с клиентом. Можно использовать переменные, которые будут подменять фрагменты в ссылке на поля из контакта, например ID заказа."}]
+
+⚠️  Missing translations for IDs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+✅ Retry successful on attempt 2
+✅ Batch 13/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 14/44...
+⚠️  Validation failed (ID 7):
+  Original: Здесь вы можете просмотреть имена файлов, которые используются в приветствиях и сообщениях. Их можно прослушать, но для управления ими используйте интерфейс работы с объектами.
+  Translation: Тут ви можете переглянути імена файлів, які використовуються у привітаннях та повідомленнях. Їх можна прослухати, але для керування ними використовуйте інтерфейс роботи з об'єктами.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 185):
+  Original: Выбор рингтона. Для загрузки общих файлов необходимо право “Управление общими шаблонами отчетов и рингтонами“
+  Translation: Вибір рингтону. Для завантаження загальних файлів необхідне право «Керування загальними шаблонами звітів та рингтонами»
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+❌ Validation failed for 2 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 2 translations)
+🎯 Retrying only 2 failed items (IDs: [7, 185])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 7: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Здесь вы можете просмотреть имена файлов, которые используются в приветствиях и сообщениях. Их можно прослушать, но для управления ими используйте интерфейс работы с объектами.
+  Wrong translation: Тут ви можете переглянути імена файлів, які використовуються у привітаннях та повідомленнях. Їх можна прослухати, але для керування ними використовуйте інтерфейс роботи з об'єктами.
+- ID 185: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Выбор рингтона. Для загрузки общих файлов необходимо право “Управление общими шаблонами отчетов и рингтонами“
+  Wrong translation: Вибір рингтону. Для завантаження загальних файлів необхідне право «Керування загальними шаблонами звітів та рингтонами»
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 7, "text": "Здесь вы можете просмотреть имена файлов, которые используются в приветствиях и сообщениях. Их можно прослушать, но для управления ими используйте интерфейс работы с объектами."}, {"id": 185, "text": "Выбор рингтона. Для загрузки общих файлов необходимо право “Управление общими шаблонами отчетов и рингтонами“"}]
+
+⚠️  Missing translations for IDs: [0, 1]
+⚠️  Validation failed (ID 7):
+  Original: Здесь вы можете просмотреть имена файлов, которые используются в приветствиях и сообщениях. Их можно прослушать, но для управления ими используйте интерфейс работы с объектами.
+  Translation: Тут ви можете переглянути імена файлів, які використовуються у привітаннях та повідомленнях. Їх можна прослухати, але для керування ними використовуйте інтерфейс роботи з об'єктами.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+❌ Validation failed for 1 items
+🔄 Retry attempt 3/8 after 30s... (Reason: Validation errors in 1 translations)
+🎯 Retrying only 1 failed items (IDs: [7])
+
+📝 Prompt for batch (attempt 3):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 7: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Здесь вы можете просмотреть имена файлов, которые используются в приветствиях и сообщениях. Их можно прослушать, но для управления ими используйте интерфейс работы с объектами.
+  Wrong translation: Тут ви можете переглянути імена файлів, які використовуються у привітаннях та повідомленнях. Їх можна прослухати, але для керування ними використовуйте інтерфейс роботи з об'єктами.
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 7, "text": "Здесь вы можете просмотреть имена файлов, которые используются в приветствиях и сообщениях. Их можно прослушать, но для управления ими используйте интерфейс работы с объектами."}]
+
+⚠️  Missing translations for IDs: [0]
+✅ Retry successful on attempt 3
+✅ Batch 14/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 15/44...
+⚠️  Validation failed (ID 36):
+  Original: Оператора, даже если он занят звонком по другой очереди, переключит на пришедший звонок из той очереди, где включена функция “Приоритетная очередь”. Прежний разговор будет поставлен на удержание после того, как клиенту будет проиграно специальное сообщение. Эта опция платная и она включает использование особой возможности для всех очередей компании.
+  Translation: Оператора, навіть якщо він зайнятий дзвінком по іншій черзі, перемкне на дзвінок, що надійшов з тієї черги, де увімкнена функція «Пріоритетна черга». Попередня розмова буде поставлена на утримання після того, як клієнту буде програно спеціальне повідомлення. Ця опція платна і вона включає використання особливої можливості для всіх черг компанії.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 73):
+  Original: Возможность отфильтровать звонки по одному или более тегов. Условия отбора суммируются по принципу “И”.
+  Translation: Можливість відфільтрувати дзвінки за одним або кількома тегами. Умови відбору підсумовуються за принципом «І».
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 77):
+  Original: Поиск по номерам абонентов, части номера или id звонков, можно указывать несколько через запятую или пробел. Можно использовать “-” для исключения из отчета. Условия отбора работают по принципу “ИЛИ”.
+  Translation: Пошук за номерами абонентів, частиною номера або id дзвінків, можна вказувати декілька через кому або пробіл. Можна використовувати «-» для виключення зі звіту. Умови відбору працюють за принципом «АБО».
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=2, »: Original=none, Translation=2
+⚠️  Validation failed (ID 97):
+  Original: Кто “создает” звонок или переход на следующую функцию.
+  Translation: Хто «створює» дзвінок або перехід на наступну функцію.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+❌ Validation failed for 4 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 4 translations)
+🎯 Retrying only 4 failed items (IDs: [36, 73, 77, 97])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 36: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Оператора, даже если он занят звонком по другой очереди, переключит на пришедший звонок из той очереди, где включена функция “Приоритетная очередь”. Прежний разговор будет поставлен на удержание после того, как клиенту будет проиграно специальное сообщение. Эта опция платная и она включает использование особой возможности для всех очередей компании.
+  Wrong translation: Оператора, навіть якщо він зайнятий дзвінком по іншій черзі, перемкне на дзвінок, що надійшов з тієї черги, де увімкнена функція «Пріоритетна черга». Попередня розмова буде поставлена на утримання після того, як клієнту буде програно спеціальне повідомлення. Ця опція платна і вона включає використання особливої можливості для всіх черг компанії.
+- ID 73: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Возможность отфильтровать звонки по одному или более тегов. Условия отбора суммируются по принципу “И”.
+  Wrong translation: Можливість відфільтрувати дзвінки за одним або кількома тегами. Умови відбору підсумовуються за принципом «І».
+- ID 77: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=2, »: Original=none, Translation=2
+  Original: Поиск по номерам абонентов, части номера или id звонков, можно указывать несколько через запятую или пробел. Можно использовать “-” для исключения из отчета. Условия отбора работают по принципу “ИЛИ”.
+  Wrong translation: Пошук за номерами абонентів, частиною номера або id дзвінків, можна вказувати декілька через кому або пробіл. Можна використовувати «-» для виключення зі звіту. Умови відбору працюють за принципом «АБО».
+- ID 97: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Кто “создает” звонок или переход на следующую функцию.
+  Wrong translation: Хто «створює» дзвінок або перехід на наступну функцію.
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 36, "text": "Оператора, даже если он занят звонком по другой очереди, переключит на пришедший звонок из той очереди, где включена функция “Приоритетная очередь”. Прежний разговор будет поставлен на удержание после того, как клиенту будет проиграно специальное сообщение. Эта опция платная и она включает использование особой возможности для всех очередей компании."}, {"id": 73, "text": "Возможность отфильтровать звонки по одному или более тегов. Условия отбора суммируются по принципу “И”."}, {"id": 77, "text": "Поиск по номерам абонентов, части номера или id звонков, можно указывать несколько через запятую или пробел. Можно использовать “-” для исключения из отчета. Условия отбора работают по принципу “ИЛИ”."}, {"id": 97, "text": "Кто “создает” звонок или переход на следующую функцию."}]
+
+⚠️  Missing translations for IDs: [0, 1, 2, 3]
+✅ Retry successful on attempt 2
+✅ Batch 15/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 16/44...
+⚠️  Validation failed (ID 27):
+  Original: Поиск по id звонков, можно указывать несколько через запятую или пробел. Условия отбора работают по принципу “ИЛИ”.
+  Translation: Пошук за id дзвінків, можна вказувати декілька через кому або пробіл. Умови відбору працюють за принципом «АБО».
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+❌ Validation failed for 1 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 1 translations)
+🎯 Retrying only 1 failed items (IDs: [27])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 27: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Поиск по id звонков, можно указывать несколько через запятую или пробел. Условия отбора работают по принципу “ИЛИ”.
+  Wrong translation: Пошук за id дзвінків, можна вказувати декілька через кому або пробіл. Умови відбору працюють за принципом «АБО».
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 27, "text": "Поиск по id звонков, можно указывать несколько через запятую или пробел. Условия отбора работают по принципу “ИЛИ”."}]
+
+⚠️  Missing translations for IDs: [0]
+✅ Retry successful on attempt 2
+✅ Batch 16/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 17/44...
+❌ Request timeout after 120s
+🔄 Retry attempt 2/8 after 20s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 3/8 after 30s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 4/8 after 40s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 5/8 after 50s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 6/8 after 60s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 7/8 after 70s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 8/8 after 80s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+❌ All 8 attempts failed
+❌ Batch 17/44 failed after 8 attempts
+
+📤 Processing batch 18/44...
+⚠️  Validation failed (ID 32):
+  Original: Один или несколько обязательных параметров пустые
+  Translation: Один або декілька обов'язкових параметрів порожні
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 34):
+  Original: Один или несколько обязательных параметров не переданы
+  Translation: Один або декілька обов'язкових параметрів не передано
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 83):
+  Original: 3DSecure обязателен по картам Maestro
+  Translation: 3DSecure є обов'язковим для карток Maestro
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 86):
+  Original: 3DSecure обязателен
+  Translation: 3DSecure є обов'язковим
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 116):
+  Original: Банк-эмитент требует изъять карту, но требование не связано с мошенничеством
+  Translation: Банк-емітент вимагає вилучити картку, але вимога не пов'язана з шахрайством
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 117):
+  Original: Банк-эмитент требует изъять карту, требование связано с фактом мошенничества или компрометации
+  Translation: Банк-емітент вимагає вилучити картку, вимога пов'язана з фактом шахрайства або компрометації
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 120):
+  Original: Техническая ошибка соединения с банком-эквайером
+  Translation: Технічна помилка з'єднання з банком-еквайром
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 121):
+  Original: Таймаут соединения с банком-эквайером. Выполнен технический реверс операции
+  Translation: Таймаут з'єднання з банком-еквайром. Виконано технічний реверс операції
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+❌ Validation failed for 8 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 8 translations)
+🎯 Retrying only 8 failed items (IDs: [32, 34, 83, 86, 116, 117, 120, 121])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 32: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Один или несколько обязательных параметров пустые
+  Wrong translation: Один або декілька обов'язкових параметрів порожні
+- ID 34: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Один или несколько обязательных параметров не переданы
+  Wrong translation: Один або декілька обов'язкових параметрів не передано
+- ID 83: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: 3DSecure обязателен по картам Maestro
+  Wrong translation: 3DSecure є обов'язковим для карток Maestro
+- ID 86: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: 3DSecure обязателен
+  Wrong translation: 3DSecure є обов'язковим
+- ID 116: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Банк-эмитент требует изъять карту, но требование не связано с мошенничеством
+  Wrong translation: Банк-емітент вимагає вилучити картку, але вимога не пов'язана з шахрайством
+- ID 117: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Банк-эмитент требует изъять карту, требование связано с фактом мошенничества или компрометации
+  Wrong translation: Банк-емітент вимагає вилучити картку, вимога пов'язана з фактом шахрайства або компрометації
+- ID 120: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Техническая ошибка соединения с банком-эквайером
+  Wrong translation: Технічна помилка з'єднання з банком-еквайром
+- ID 121: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Таймаут соединения с банком-эквайером. Выполнен технический реверс операции
+  Wrong translation: Таймаут з'єднання з банком-еквайром. Виконано технічний реверс операції
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 32, "text": "Один или несколько обязательных параметров пустые"}, {"id": 34, "text": "Один или несколько обязательных параметров не переданы"}, {"id": 83, "text": "3DSecure обязателен по картам Maestro"}, {"id": 86, "text": "3DSecure обязателен"}, {"id": 116, "text": "Банк-эмитент требует изъять карту, но требование не связано с мошенничеством"}, {"id": 117, "text": "Банк-эмитент требует изъять карту, требование связано с фактом мошенничества или компрометации"}, {"id": 120, "text": "Техническая ошибка соединения с банком-эквайером"}, {"id": 121, "text": "Таймаут соединения с банком-эквайером. Выполнен технический реверс операции"}]
+
+⚠️  Missing translations for IDs: [0, 1, 2, 3, 4, 5, 6, 7]
+✅ Retry successful on attempt 2
+✅ Batch 18/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 19/44...
+⚠️  Validation failed (ID 140):
+  Original: Длительность разговора для {список очередей} {более|менее} {ХХХ} секунд за период {мгновенно|час|день|месяц}
+  Translation: Тривалість розмови для {список очередей} {більше|менше} {ХХХ} секунд за період {миттєво|година|день|місяць}
+  - Braces content mismatch - Expected: ['список очередей', 'более|менее', 'ХХХ', 'мгновенно|час|день|месяц'], Got: ['список очередей', 'більше|менше', 'ХХХ', 'миттєво|година|день|місяць']
+⚠️  Validation failed (ID 142):
+  Original: Число исходящих звонков Оператора для {список очередей} за период {час|день|месяц}
+  Translation: Кількість вихідних дзвінків Оператора для {список очередей} за період {година|день|місяць}
+  - Braces content mismatch - Expected: ['список очередей', 'час|день|месяц'], Got: ['список очередей', 'година|день|місяць']
+⚠️  Validation failed (ID 144):
+  Original: Оператор первым завершил звонок для {список ID очередей} за период {мгновенно|час|день|месяц}
+  Translation: Оператор першим завершив дзвінок для {список ID очередей} за період {миттєво|година|день|місяць}
+  - Braces content mismatch - Expected: ['список ID очередей', 'мгновенно|час|день|месяц'], Got: ['список ID очередей', 'миттєво|година|день|місяць']
+⚠️  Validation failed (ID 146):
+  Original: Оператор не ответил на звонок для {список ID очередей} за период {мгновенно|час|день|месяц}
+  Translation: Оператор не відповів на дзвінок для {список ID очередей} за період {миттєво|година|день|місяць}
+  - Braces content mismatch - Expected: ['список ID очередей', 'мгновенно|час|день|месяц'], Got: ['список ID очередей', 'миттєво|година|день|місяць']
+⚠️  Validation failed (ID 148):
+  Original: Общий уровень дозвона на входящей линии для {список ID очередей} за период {час|день|месяц}
+  Translation: Загальний рівень додзвону на вхідній лінії для {список ID очередей} за період {година|день|місяць}
+  - Braces content mismatch - Expected: ['список ID очередей', 'час|день|месяц'], Got: ['список ID очередей', 'година|день|місяць']
+⚠️  Validation failed (ID 149):
+  Original: Длительность входящего вызова для {список очередей} более {ХХХХ} секунд за период {мгновенно|час|день|месяц}
+  Translation: Тривалість вхідного виклику для {список очередей} більше {ХХХХ} секунд за період {миттєво|година|день|місяць}
+  - Braces content mismatch - Expected: ['список очередей', 'ХХХХ', 'мгновенно|час|день|месяц'], Got: ['список очередей', 'ХХХХ', 'миттєво|година|день|місяць']
+⚠️  Validation failed (ID 150):
+  Original: Длительность исходящего вызова для {список очередей} короче {ХХХХ} секунд за период {мгновенно|час|день|месяц}
+  Translation: Тривалість вихідного виклику для {список очередей} коротше {ХХХХ} секунд за період {миттєво|година|день|місяць}
+  - Braces content mismatch - Expected: ['список очередей', 'ХХХХ', 'мгновенно|час|день|месяц'], Got: ['список очередей', 'ХХХХ', 'миттєво|година|день|місяць']
+⚠️  Validation failed (ID 152):
+  Original: Звонок забыт на удержании для {список ID очередей} за период {мгновенно|час|день|месяц}
+  Translation: Дзвінок забутий на утриманні для {список ID очередей} за період {миттєво|година|день|місяць}
+  - Braces content mismatch - Expected: ['список ID очередей', 'мгновенно|час|день|месяц'], Got: ['список ID очередей', 'миттєво|година|день|місяць']
+⚠️  Validation failed (ID 154):
+  Original: Оператор отсутствовал при звонке с автоответом для {список ID очередей} за период {мгновенно|час|день|месяц}
+  Translation: Оператор був відсутній під час дзвінка з автовідповіддю для {список ID очередей} за період {миттєво|година|день|місяць}
+  - Braces content mismatch - Expected: ['список ID очередей', 'мгновенно|час|день|месяц'], Got: ['список ID очередей', 'миттєво|година|день|місяць']
+⚠️  Validation failed (ID 156):
+  Original: Время нахождения в статусе для {список операторов} {более|менее} {ХХХ} минут за период смены или календарного дня
+  Translation: Час перебування в статусі для {список операторов} {більше|менше} {ХХХ} хвилин за період зміни або календарного дня
+  - Braces content mismatch - Expected: ['список операторов', 'более|менее', 'ХХХ'], Got: ['список операторов', 'більше|менше', 'ХХХ']
+⚠️  Validation failed (ID 160):
+  Original: {Имя правила} XX раз за период {мгновенно|час|день|месяц}
+  Translation: {Имя правила} XX разів за період {миттєво|година|день|місяць}
+  - Braces content mismatch - Expected: ['Имя правила', 'мгновенно|час|день|месяц'], Got: ['Имя правила', 'миттєво|година|день|місяць']
+⚠️  Validation failed (ID 163):
+  Original: Оператор опоздал на смену ХХ раз за период {мгновенно|день|месяц}
+  Translation: Оператор запізнився на зміну ХХ разів за період {миттєво|день|місяць}
+  - Braces content mismatch - Expected: ['мгновенно|день|месяц'], Got: ['миттєво|день|місяць']
+⚠️  Validation failed (ID 166):
+  Original: Оператор ушел раньше со смены ХХ раз за период {мгновенно|день|месяц}
+  Translation: Оператор пішов раніше зі зміни ХХ разів за період {миттєво|день|місяць}
+  - Braces content mismatch - Expected: ['мгновенно|день|месяц'], Got: ['миттєво|день|місяць']
+⚠️  Validation failed (ID 168):
+  Original: Оператор прогулял смену ХХ раз за период {мгновенно|день|месяц}
+  Translation: Оператор прогуляв зміну ХХ разів за період {миттєво|день|місяць}
+  - Braces content mismatch - Expected: ['мгновенно|день|месяц'], Got: ['миттєво|день|місяць']
+❌ Validation failed for 14 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 14 translations)
+🎯 Retrying only 14 failed items (IDs: [140, 142, 144, 146, 148, 149, 150, 152, 154, 156, 160, 163, 166, 168])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 140: Braces content mismatch - Expected: ['список очередей', 'более|менее', 'ХХХ', 'мгновенно|час|день|месяц'], Got: ['список очередей', 'більше|менше', 'ХХХ', 'миттєво|година|день|місяць']
+  Original: Длительность разговора для {список очередей} {более|менее} {ХХХ} секунд за период {мгновенно|час|день|месяц}
+  Wrong translation: Тривалість розмови для {список очередей} {більше|менше} {ХХХ} секунд за період {миттєво|година|день|місяць}
+- ID 142: Braces content mismatch - Expected: ['список очередей', 'час|день|месяц'], Got: ['список очередей', 'година|день|місяць']
+  Original: Число исходящих звонков Оператора для {список очередей} за период {час|день|месяц}
+  Wrong translation: Кількість вихідних дзвінків Оператора для {список очередей} за період {година|день|місяць}
+- ID 144: Braces content mismatch - Expected: ['список ID очередей', 'мгновенно|час|день|месяц'], Got: ['список ID очередей', 'миттєво|година|день|місяць']
+  Original: Оператор первым завершил звонок для {список ID очередей} за период {мгновенно|час|день|месяц}
+  Wrong translation: Оператор першим завершив дзвінок для {список ID очередей} за період {миттєво|година|день|місяць}
+- ID 146: Braces content mismatch - Expected: ['список ID очередей', 'мгновенно|час|день|месяц'], Got: ['список ID очередей', 'миттєво|година|день|місяць']
+  Original: Оператор не ответил на звонок для {список ID очередей} за период {мгновенно|час|день|месяц}
+  Wrong translation: Оператор не відповів на дзвінок для {список ID очередей} за період {миттєво|година|день|місяць}
+- ID 148: Braces content mismatch - Expected: ['список ID очередей', 'час|день|месяц'], Got: ['список ID очередей', 'година|день|місяць']
+  Original: Общий уровень дозвона на входящей линии для {список ID очередей} за период {час|день|месяц}
+  Wrong translation: Загальний рівень додзвону на вхідній лінії для {список ID очередей} за період {година|день|місяць}
+- ID 149: Braces content mismatch - Expected: ['список очередей', 'ХХХХ', 'мгновенно|час|день|месяц'], Got: ['список очередей', 'ХХХХ', 'миттєво|година|день|місяць']
+  Original: Длительность входящего вызова для {список очередей} более {ХХХХ} секунд за период {мгновенно|час|день|месяц}
+  Wrong translation: Тривалість вхідного виклику для {список очередей} більше {ХХХХ} секунд за період {миттєво|година|день|місяць}
+- ID 150: Braces content mismatch - Expected: ['список очередей', 'ХХХХ', 'мгновенно|час|день|месяц'], Got: ['список очередей', 'ХХХХ', 'миттєво|година|день|місяць']
+  Original: Длительность исходящего вызова для {список очередей} короче {ХХХХ} секунд за период {мгновенно|час|день|месяц}
+  Wrong translation: Тривалість вихідного виклику для {список очередей} коротше {ХХХХ} секунд за період {миттєво|година|день|місяць}
+- ID 152: Braces content mismatch - Expected: ['список ID очередей', 'мгновенно|час|день|месяц'], Got: ['список ID очередей', 'миттєво|година|день|місяць']
+  Original: Звонок забыт на удержании для {список ID очередей} за период {мгновенно|час|день|месяц}
+  Wrong translation: Дзвінок забутий на утриманні для {список ID очередей} за період {миттєво|година|день|місяць}
+- ID 154: Braces content mismatch - Expected: ['список ID очередей', 'мгновенно|час|день|месяц'], Got: ['список ID очередей', 'миттєво|година|день|місяць']
+  Original: Оператор отсутствовал при звонке с автоответом для {список ID очередей} за период {мгновенно|час|день|месяц}
+  Wrong translation: Оператор був відсутній під час дзвінка з автовідповіддю для {список ID очередей} за період {миттєво|година|день|місяць}
+- ID 156: Braces content mismatch - Expected: ['список операторов', 'более|менее', 'ХХХ'], Got: ['список операторов', 'більше|менше', 'ХХХ']
+  Original: Время нахождения в статусе для {список операторов} {более|менее} {ХХХ} минут за период смены или календарного дня
+  Wrong translation: Час перебування в статусі для {список операторов} {більше|менше} {ХХХ} хвилин за період зміни або календарного дня
+- ID 160: Braces content mismatch - Expected: ['Имя правила', 'мгновенно|час|день|месяц'], Got: ['Имя правила', 'миттєво|година|день|місяць']
+  Original: {Имя правила} XX раз за период {мгновенно|час|день|месяц}
+  Wrong translation: {Имя правила} XX разів за період {миттєво|година|день|місяць}
+- ID 163: Braces content mismatch - Expected: ['мгновенно|день|месяц'], Got: ['миттєво|день|місяць']
+  Original: Оператор опоздал на смену ХХ раз за период {мгновенно|день|месяц}
+  Wrong translation: Оператор запізнився на зміну ХХ разів за період {миттєво|день|місяць}
+- ID 166: Braces content mismatch - Expected: ['мгновенно|день|месяц'], Got: ['миттєво|день|місяць']
+  Original: Оператор ушел раньше со смены ХХ раз за период {мгновенно|день|месяц}
+  Wrong translation: Оператор пішов раніше зі зміни ХХ разів за період {миттєво|день|місяць}
+- ID 168: Braces content mismatch - Expected: ['мгновенно|день|месяц'], Got: ['миттєво|день|місяць']
+  Original: Оператор прогулял смену ХХ раз за период {мгновенно|день|месяц}
+  Wrong translation: Оператор прогуляв зміну ХХ разів за період {миттєво|день|місяць}
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 140, "text": "Длительность разговора для {список очередей} {более|менее} {ХХХ} секунд за период {мгновенно|час|день|месяц}"}, {"id": 142, "text": "Число исходящих звонков Оператора для {список очередей} за период {час|день|месяц}"}, {"id": 144, "text": "Оператор первым завершил звонок для {список ID очередей} за период {мгновенно|час|день|месяц}"}, {"id": 146, "text": "Оператор не ответил на звонок для {список ID очередей} за период {мгновенно|час|день|месяц}"}, {"id": 148, "text": "Общий уровень дозвона на входящей линии для {список ID очередей} за период {час|день|месяц}"}, {"id": 149, "text": "Длительность входящего вызова для {список очередей} более {ХХХХ} секунд за период {мгновенно|час|день|месяц}"}, {"id": 150, "text": "Длительность исходящего вызова для {список очередей} короче {ХХХХ} секунд за период {мгновенно|час|день|месяц}"}, {"id": 152, "text": "Звонок забыт на удержании для {список ID очередей} за период {мгновенно|час|день|месяц}"}, {"id": 154, "text": "Оператор отсутствовал при звонке с автоответом для {список ID очередей} за период {мгновенно|час|день|месяц}"}, {"id": 156, "text": "Время нахождения в статусе для {список операторов} {более|менее} {ХХХ} минут за период смены или календарного дня"}, {"id": 160, "text": "{Имя правила} XX раз за период {мгновенно|час|день|месяц}"}, {"id": 163, "text": "Оператор опоздал на смену ХХ раз за период {мгновенно|день|месяц}"}, {"id": 166, "text": "Оператор ушел раньше со смены ХХ раз за период {мгновенно|день|месяц}"}, {"id": 168, "text": "Оператор прогулял смену ХХ раз за период {мгновенно|день|месяц}"}]
+
+⚠️  Missing translations for IDs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+✅ Retry successful on attempt 2
+✅ Batch 19/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 20/44...
+❌ Request timeout after 120s
+🔄 Retry attempt 2/8 after 20s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 3/8 after 30s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 4/8 after 40s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 5/8 after 50s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 6/8 after 60s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 7/8 after 70s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 8/8 after 80s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+✅ Retry successful on attempt 8
+✅ Batch 20/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 21/44...
+⚠️  Validation failed (ID 12):
+  Original: запросил бонус “Дополнительный день” из писем “7 фактов”, день
+  Translation: запросив бонус «Додатковий день» з листів «7 фактів», день
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=2, »: Original=none, Translation=2
+⚠️  Validation failed (ID 13):
+  Original: Запрос бонуса “Дополнительный день”
+  Translation: Запит бонусу «Додатковий день»
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 86):
+  Original: Активация этой функции позволит использовать персональную ссылку для компании, заменить все баннеры Оки-Токи на свои и сводит к минимуму упоминание “Оки-Токи” в интерфейсе. Может быть полезно крупным аутсорсинговым компаниям и не только.
+  Translation: Активація цієї функції дозволить використовувати персональне посилання для компанії, замінити всі банери Окі-Токі на свої та зводить до мінімуму згадку «Окі-Токі» в інтерфейсі. Може бути корисно великим аутсорсинговим компаніям і не тільки.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 87):
+  Original: Услуга позволяет создавать приоритетные очереди. Система автоматически переключает оператора на клиента из этой очереди, предупредив его об этом, а текущий клиент переводится в режим “Удержание” (Hold).
+  Translation: Послуга дозволяє створювати пріоритетні черги. Система автоматично перемикає оператора на клієнта з цієї черги, попередивши його про це, а поточний клієнт переводиться в режим «Утримання» (Hold).
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 105):
+  Original: Запись этого разговора не велась, по одной из причин: отключена опция “запись разговора” в сценарии звонка, была тишина или запись короче 1 секунды.
+  Translation: Запис цієї розмови не вівся, з однієї з причин: відключена опція «запис розмови» в сценарії дзвінка, була тиша або запис коротший за 1 секунду.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+❌ Validation failed for 5 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 5 translations)
+🎯 Retrying only 5 failed items (IDs: [12, 13, 86, 87, 105])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 12: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=2, »: Original=none, Translation=2
+  Original: запросил бонус “Дополнительный день” из писем “7 фактов”, день
+  Wrong translation: запросив бонус «Додатковий день» з листів «7 фактів», день
+- ID 13: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Запрос бонуса “Дополнительный день”
+  Wrong translation: Запит бонусу «Додатковий день»
+- ID 86: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Активация этой функции позволит использовать персональную ссылку для компании, заменить все баннеры Оки-Токи на свои и сводит к минимуму упоминание “Оки-Токи” в интерфейсе. Может быть полезно крупным аутсорсинговым компаниям и не только.
+  Wrong translation: Активація цієї функції дозволить використовувати персональне посилання для компанії, замінити всі банери Окі-Токі на свої та зводить до мінімуму згадку «Окі-Токі» в інтерфейсі. Може бути корисно великим аутсорсинговим компаніям і не тільки.
+- ID 87: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Услуга позволяет создавать приоритетные очереди. Система автоматически переключает оператора на клиента из этой очереди, предупредив его об этом, а текущий клиент переводится в режим “Удержание” (Hold).
+  Wrong translation: Послуга дозволяє створювати пріоритетні черги. Система автоматично перемикає оператора на клієнта з цієї черги, попередивши його про це, а поточний клієнт переводиться в режим «Утримання» (Hold).
+- ID 105: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Запись этого разговора не велась, по одной из причин: отключена опция “запись разговора” в сценарии звонка, была тишина или запись короче 1 секунды.
+  Wrong translation: Запис цієї розмови не вівся, з однієї з причин: відключена опція «запис розмови» в сценарії дзвінка, була тиша або запис коротший за 1 секунду.
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 12, "text": "запросил бонус “Дополнительный день” из писем “7 фактов”, день"}, {"id": 13, "text": "Запрос бонуса “Дополнительный день”"}, {"id": 86, "text": "Активация этой функции позволит использовать персональную ссылку для компании, заменить все баннеры Оки-Токи на свои и сводит к минимуму упоминание “Оки-Токи” в интерфейсе. Может быть полезно крупным аутсорсинговым компаниям и не только."}, {"id": 87, "text": "Услуга позволяет создавать приоритетные очереди. Система автоматически переключает оператора на клиента из этой очереди, предупредив его об этом, а текущий клиент переводится в режим “Удержание” (Hold)."}, {"id": 105, "text": "Запись этого разговора не велась, по одной из причин: отключена опция “запись разговора” в сценарии звонка, была тишина или запись короче 1 секунды."}]
+
+⚠️  Missing translations for IDs: [0, 1, 2, 3, 4]
+✅ Retry successful on attempt 2
+✅ Batch 21/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 22/44...
+✅ Batch 22/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 23/44...
+✅ Batch 23/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 24/44...
+⚠️  Validation failed (ID 121):
+  Original: Обязательно, если значение "$1name" равно "$2"
+  Translation: Обов'язково, якщо значення "$1name" дорівнює "$2"
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 122):
+  Original: Обязательно, если присутствует
+  Translation: Обов'язково, якщо присутній
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 123):
+  Original: Обязательно, если присутствуют
+  Translation: Обов'язково, якщо присутні
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 124):
+  Original: Обязательно, если отсутствует
+  Translation: Обов'язково, якщо відсутній
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 125):
+  Original: Обязательно, если отсутствуют
+  Translation: Обов'язково, якщо відсутні
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 162):
+  Original: Укажите элемент сценария. Обычно используется элемент “Начало“
+  Translation: Вкажіть елемент сценарію. Зазвичай використовується елемент «Початок»
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+❌ Validation failed for 6 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 6 translations)
+🎯 Retrying only 6 failed items (IDs: [121, 122, 123, 124, 125, 162])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 121: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Обязательно, если значение "$1name" равно "$2"
+  Wrong translation: Обов'язково, якщо значення "$1name" дорівнює "$2"
+- ID 122: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Обязательно, если присутствует
+  Wrong translation: Обов'язково, якщо присутній
+- ID 123: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Обязательно, если присутствуют
+  Wrong translation: Обов'язково, якщо присутні
+- ID 124: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Обязательно, если отсутствует
+  Wrong translation: Обов'язково, якщо відсутній
+- ID 125: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Обязательно, если отсутствуют
+  Wrong translation: Обов'язково, якщо відсутні
+- ID 162: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Укажите элемент сценария. Обычно используется элемент “Начало“
+  Wrong translation: Вкажіть елемент сценарію. Зазвичай використовується елемент «Початок»
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 121, "text": "Обязательно, если значение \"$1name\" равно \"$2\""}, {"id": 122, "text": "Обязательно, если присутствует"}, {"id": 123, "text": "Обязательно, если присутствуют"}, {"id": 124, "text": "Обязательно, если отсутствует"}, {"id": 125, "text": "Обязательно, если отсутствуют"}, {"id": 162, "text": "Укажите элемент сценария. Обычно используется элемент “Начало“"}]
+
+⚠️  Missing translations for IDs: [0, 1, 2, 3, 4, 5]
+✅ Retry successful on attempt 2
+✅ Batch 24/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 25/44...
+❌ Request timeout after 120s
+🔄 Retry attempt 2/8 after 20s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+✅ Retry successful on attempt 2
+✅ Batch 25/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 26/44...
+✅ Batch 26/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 27/44...
+✅ Batch 27/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 28/44...
+⚠️  Validation failed (ID 116):
+  Original: Поиск по id звонков, можно указывать несколько через запятую. Условия отбора работают по принципу “ИЛИ”.
+  Translation: Пошук за id дзвінків, можна вказувати кілька через кому. Умови відбору працюють за принципом «АБО».
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 174):
+  Original: Выбор рингтона. Для загрузки общих файлов необходимо право “Управление общими шаблонами отчетов и рингтонами“.
+  Translation: Вибір рингтону. Для завантаження загальних файлів необхідне право «Керування загальними шаблонами звітів та рингтонами».
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 192):
+  Original: Поиск по id звонка, можно указывать несколько через запятую или пробел. Условия отбора работают по принципу “ИЛИ”. Период учитываться не будет.
+  Translation: Пошук за id дзвінка, можна вказувати кілька через кому або пробіл. Умови відбору працюють за принципом «АБО». Період не враховуватиметься.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 193):
+  Original: Поиск по номеру абонента или части номера, можно указывать несколько через запятую или пробел. Условия отбора работают по принципу “ИЛИ”.
+  Translation: Пошук за номером абонента або частиною номера, можна вказувати кілька через кому або пробіл. Умови відбору працюють за принципом «АБО».
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+❌ Validation failed for 4 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 4 translations)
+🎯 Retrying only 4 failed items (IDs: [116, 174, 192, 193])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 116: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Поиск по id звонков, можно указывать несколько через запятую. Условия отбора работают по принципу “ИЛИ”.
+  Wrong translation: Пошук за id дзвінків, можна вказувати кілька через кому. Умови відбору працюють за принципом «АБО».
+- ID 174: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Выбор рингтона. Для загрузки общих файлов необходимо право “Управление общими шаблонами отчетов и рингтонами“.
+  Wrong translation: Вибір рингтону. Для завантаження загальних файлів необхідне право «Керування загальними шаблонами звітів та рингтонами».
+- ID 192: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Поиск по id звонка, можно указывать несколько через запятую или пробел. Условия отбора работают по принципу “ИЛИ”. Период учитываться не будет.
+  Wrong translation: Пошук за id дзвінка, можна вказувати кілька через кому або пробіл. Умови відбору працюють за принципом «АБО». Період не враховуватиметься.
+- ID 193: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Поиск по номеру абонента или части номера, можно указывать несколько через запятую или пробел. Условия отбора работают по принципу “ИЛИ”.
+  Wrong translation: Пошук за номером абонента або частиною номера, можна вказувати кілька через кому або пробіл. Умови відбору працюють за принципом «АБО».
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 116, "text": "Поиск по id звонков, можно указывать несколько через запятую. Условия отбора работают по принципу “ИЛИ”."}, {"id": 174, "text": "Выбор рингтона. Для загрузки общих файлов необходимо право “Управление общими шаблонами отчетов и рингтонами“."}, {"id": 192, "text": "Поиск по id звонка, можно указывать несколько через запятую или пробел. Условия отбора работают по принципу “ИЛИ”. Период учитываться не будет."}, {"id": 193, "text": "Поиск по номеру абонента или части номера, можно указывать несколько через запятую или пробел. Условия отбора работают по принципу “ИЛИ”."}]
+
+⚠️  Missing translations for IDs: [0, 1, 2, 3]
+✅ Retry successful on attempt 2
+✅ Batch 28/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 29/44...
+❌ Request timeout after 120s
+🔄 Retry attempt 2/8 after 20s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+⚠️  Validation failed (ID 32):
+  Original: Это список полей, использующихся в контактах CRM. Создавайте, сортируйте и разграничивайте по проектам существующие. Сортировка влияет на их порядок в анкете клиента, а деление по проектам прячет поля от “чужих глаз”.
+  Translation: Це список полів, що використовуються в контактах CRM. Створюйте, сортуйте та розмежовуйте за проєктами існуючі. Сортування впливає на їх порядок в анкеті клієнта, а поділ за проєктами ховає поля від «чужих очей».
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 85):
+  Original: Для этого типа вопроса, можно выбрать только один обязательный ответ
+  Translation: Для цього типу питання, можна вибрати тільки одну обов'язкову відповідь
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 97):
+  Original: Помечает номер телефона клиента с которым сейчас ведется коммуникация как неактивный. Ставит (минус) к номеру телефона. Обязательное условие для срабатывания, у клиента должен быть внесен дополнительный номер телефона МТ, РТ или ДТ.
+  Translation: Позначає номер телефону клієнта, з яким зараз ведеться комунікація, як неактивний. Ставить (мінус) до номера телефону. Обов'язкова умова для спрацьовування, у клієнта має бути внесений додатковий номер телефону МТ, РТ або ДТ.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 100):
+  Original: Выберите автообзвон для удаления из него задачи или установите “Все”, для проверки и удаления номера из всех дайлеров.
+  Translation: Виберіть автообдзвін для видалення з нього завдання або встановіть «Все», для перевірки та видалення номера з усіх дайлерів.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 103):
+  Original: Работает только с автообзвоном в режиме “Callback mode”. Закрепляет оператора за задачей при добавлении в коллбэк.
+  Translation: Працює тільки з автообдзвоном в режимі «Callback mode». Закріплює оператора за завданням при додаванні в колбек.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 105):
+  Original: Работает только с автообзвоном в режиме “Callback mode”. Закрепляет группу операторов за задачей при добавлении в коллбэк.
+  Translation: Працює тільки з автообдзвоном в режимі «Callback mode». Закріплює групу операторів за завданням при додаванні в колбек.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 160):
+  Original: Эта функция помечает звонки в которых нет диалога с клиентом. Обязательно укажите причину отказа от оценки.
+  Translation: Ця функція позначає дзвінки, в яких немає діалогу з клієнтом. Обов'язково вкажіть причину відмови від оцінки.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+❌ Validation failed for 7 items
+🔄 Retry attempt 3/8 after 30s... (Reason: Validation errors in 7 translations)
+🎯 Retrying only 7 failed items (IDs: [32, 85, 97, 100, 103, 105, 160])
+
+📝 Prompt for batch (attempt 3):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 32: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Это список полей, использующихся в контактах CRM. Создавайте, сортируйте и разграничивайте по проектам существующие. Сортировка влияет на их порядок в анкете клиента, а деление по проектам прячет поля от “чужих глаз”.
+  Wrong translation: Це список полів, що використовуються в контактах CRM. Створюйте, сортуйте та розмежовуйте за проєктами існуючі. Сортування впливає на їх порядок в анкеті клієнта, а поділ за проєктами ховає поля від «чужих очей».
+- ID 85: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Для этого типа вопроса, можно выбрать только один обязательный ответ
+  Wrong translation: Для цього типу питання, можна вибрати тільки одну обов'язкову відповідь
+- ID 97: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Помечает номер телефона клиента с которым сейчас ведется коммуникация как неактивный. Ставит (минус) к номеру телефона. Обязательное условие для срабатывания, у клиента должен быть внесен дополнительный номер телефона МТ, РТ или ДТ.
+  Wrong translation: Позначає номер телефону клієнта, з яким зараз ведеться комунікація, як неактивний. Ставить (мінус) до номера телефону. Обов'язкова умова для спрацьовування, у клієнта має бути внесений додатковий номер телефону МТ, РТ або ДТ.
+- ID 100: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Выберите автообзвон для удаления из него задачи или установите “Все”, для проверки и удаления номера из всех дайлеров.
+  Wrong translation: Виберіть автообдзвін для видалення з нього завдання або встановіть «Все», для перевірки та видалення номера з усіх дайлерів.
+- ID 103: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Работает только с автообзвоном в режиме “Callback mode”. Закрепляет оператора за задачей при добавлении в коллбэк.
+  Wrong translation: Працює тільки з автообдзвоном в режимі «Callback mode». Закріплює оператора за завданням при додаванні в колбек.
+- ID 105: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Работает только с автообзвоном в режиме “Callback mode”. Закрепляет группу операторов за задачей при добавлении в коллбэк.
+  Wrong translation: Працює тільки з автообдзвоном в режимі «Callback mode». Закріплює групу операторів за завданням при додаванні в колбек.
+- ID 160: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Эта функция помечает звонки в которых нет диалога с клиентом. Обязательно укажите причину отказа от оценки.
+  Wrong translation: Ця функція позначає дзвінки, в яких немає діалогу з клієнтом. Обов'язково вкажіть причину відмови від оцінки.
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 32, "text": "Это список полей, использующихся в контактах CRM. Создавайте, сортируйте и разграничивайте по проектам существующие. Сортировка влияет на их порядок в анкете клиента, а деление по проектам прячет поля от “чужих глаз”."}, {"id": 85, "text": "Для этого типа вопроса, можно выбрать только один обязательный ответ"}, {"id": 97, "text": "Помечает номер телефона клиента с которым сейчас ведется коммуникация как неактивный. Ставит (минус) к номеру телефона. Обязательное условие для срабатывания, у клиента должен быть внесен дополнительный номер телефона МТ, РТ или ДТ."}, {"id": 100, "text": "Выберите автообзвон для удаления из него задачи или установите “Все”, для проверки и удаления номера из всех дайлеров."}, {"id": 103, "text": "Работает только с автообзвоном в режиме “Callback mode”. Закрепляет оператора за задачей при добавлении в коллбэк."}, {"id": 105, "text": "Работает только с автообзвоном в режиме “Callback mode”. Закрепляет группу операторов за задачей при добавлении в коллбэк."}, {"id": 160, "text": "Эта функция помечает звонки в которых нет диалога с клиентом. Обязательно укажите причину отказа от оценки."}]
+
+⚠️  Missing translations for IDs: [0, 1, 2, 3, 4, 5, 6]
+✅ Retry successful on attempt 3
+✅ Batch 29/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 30/44...
+✅ Batch 30/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 31/44...
+✅ Batch 31/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 32/44...
+⚠️  Validation failed (ID 22):
+  Original: Пропуск звукового сообщения “Приветствия” и перевод звонка сразу на очередь.
+  Translation: Пропуск звукового повідомлення «Привітання» та переведення дзвінка одразу на чергу.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 23):
+  Original: Вы можете установить расписание исходящих звонков отличное от расписания очереди (Например, ваши операторы “добивают” заказы еще час после закрытия магазина)
+  Translation: Ви можете встановити розклад вихідних дзвінків, відмінний від розкладу черги (наприклад, ваші оператори «добивають» замовлення ще годину після закриття магазину)
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 25):
+  Original: Нарушен норматив длительности работы с сообщениями в очереди за период {мгновенно|час|день|месяц}
+  Translation: Порушено норматив тривалості роботи з повідомленнями в черзі за період {миттєво|година|день|місяць}
+  - Braces content mismatch - Expected: ['мгновенно|час|день|месяц'], Got: ['миттєво|година|день|місяць']
+⚠️  Validation failed (ID 65):
+  Original: Поведение для “Нерабочее время”
+  Translation: Поведінка для «Неробочий час»
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 166):
+  Original: Используйте правила речевой аналитики для автоматического отслеживания “проблемных диалогов” (некомпетентность или негатив сотрудника), а так же ключевых слов, которые обязательны при продаже.
+  Translation: Використовуйте правила мовленнєвої аналітики для автоматичного відстеження «проблемних діалогів» (некомпетентність або негатив співробітника), а також ключових слів, які є обов’язковими при продажу.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 176):
+  Original: Элемент, с которого начнется сценарий звонка. Рекомендуем “Начало”.
+  Translation: Елемент, з якого почнеться сценарій дзвінка. Рекомендуємо «Початок».
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 199):
+  Original: “Приведи друга и получай 10% от его пополнений”.
+  Translation: «Приведи друга та отримуй 10% від його поповнень».
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+❌ Validation failed for 7 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 7 translations)
+🎯 Retrying only 7 failed items (IDs: [22, 23, 25, 65, 166, 176, 199])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 22: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Пропуск звукового сообщения “Приветствия” и перевод звонка сразу на очередь.
+  Wrong translation: Пропуск звукового повідомлення «Привітання» та переведення дзвінка одразу на чергу.
+- ID 23: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Вы можете установить расписание исходящих звонков отличное от расписания очереди (Например, ваши операторы “добивают” заказы еще час после закрытия магазина)
+  Wrong translation: Ви можете встановити розклад вихідних дзвінків, відмінний від розкладу черги (наприклад, ваші оператори «добивають» замовлення ще годину після закриття магазину)
+- ID 25: Braces content mismatch - Expected: ['мгновенно|час|день|месяц'], Got: ['миттєво|година|день|місяць']
+  Original: Нарушен норматив длительности работы с сообщениями в очереди за период {мгновенно|час|день|месяц}
+  Wrong translation: Порушено норматив тривалості роботи з повідомленнями в черзі за період {миттєво|година|день|місяць}
+- ID 65: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Поведение для “Нерабочее время”
+  Wrong translation: Поведінка для «Неробочий час»
+- ID 166: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Используйте правила речевой аналитики для автоматического отслеживания “проблемных диалогов” (некомпетентность или негатив сотрудника), а так же ключевых слов, которые обязательны при продаже.
+  Wrong translation: Використовуйте правила мовленнєвої аналітики для автоматичного відстеження «проблемних діалогів» (некомпетентність або негатив співробітника), а також ключових слів, які є обов’язковими при продажу.
+- ID 176: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Элемент, с которого начнется сценарий звонка. Рекомендуем “Начало”.
+  Wrong translation: Елемент, з якого почнеться сценарій дзвінка. Рекомендуємо «Початок».
+- ID 199: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: “Приведи друга и получай 10% от его пополнений”.
+  Wrong translation: «Приведи друга та отримуй 10% від його поповнень».
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 22, "text": "Пропуск звукового сообщения “Приветствия” и перевод звонка сразу на очередь."}, {"id": 23, "text": "Вы можете установить расписание исходящих звонков отличное от расписания очереди (Например, ваши операторы “добивают” заказы еще час после закрытия магазина)"}, {"id": 25, "text": "Нарушен норматив длительности работы с сообщениями в очереди за период {мгновенно|час|день|месяц}"}, {"id": 65, "text": "Поведение для “Нерабочее время”"}, {"id": 166, "text": "Используйте правила речевой аналитики для автоматического отслеживания “проблемных диалогов” (некомпетентность или негатив сотрудника), а так же ключевых слов, которые обязательны при продаже."}, {"id": 176, "text": "Элемент, с которого начнется сценарий звонка. Рекомендуем “Начало”."}, {"id": 199, "text": "“Приведи друга и получай 10% от его пополнений”."}]
+
+⚠️  Missing translations for IDs: [0, 1, 2, 3, 4, 5, 6]
+⚠️  Validation failed (ID 166):
+  Original: Используйте правила речевой аналитики для автоматического отслеживания “проблемных диалогов” (некомпетентность или негатив сотрудника), а так же ключевых слов, которые обязательны при продаже.
+  Translation: Використовуйте правила мовленнєвої аналітики для автоматичного відстеження “проблемних діалогів” (некомпетентність або негатив співробітника), а так само ключових слів, які обов'язкові при продажу.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+❌ Validation failed for 1 items
+🔄 Retry attempt 3/8 after 30s... (Reason: Validation errors in 1 translations)
+🎯 Retrying only 1 failed items (IDs: [166])
+
+📝 Prompt for batch (attempt 3):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 166: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Используйте правила речевой аналитики для автоматического отслеживания “проблемных диалогов” (некомпетентность или негатив сотрудника), а так же ключевых слов, которые обязательны при продаже.
+  Wrong translation: Використовуйте правила мовленнєвої аналітики для автоматичного відстеження “проблемних діалогів” (некомпетентність або негатив співробітника), а так само ключових слів, які обов'язкові при продажу.
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 166, "text": "Используйте правила речевой аналитики для автоматического отслеживания “проблемных диалогов” (некомпетентность или негатив сотрудника), а так же ключевых слов, которые обязательны при продаже."}]
+
+⚠️  Missing translations for IDs: [0]
+⚠️  Validation failed (ID 166):
+  Original: Используйте правила речевой аналитики для автоматического отслеживания “проблемных диалогов” (некомпетентность или негатив сотрудника), а так же ключевых слов, которые обязательны при продаже.
+  Translation: Використовуйте правила мовленнєвої аналітики для автоматичного відстеження «проблемних діалогів» (некомпетентність або негатив співробітника), а також ключових слів, які обов’язкові при продажу.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+❌ Validation failed for 1 items
+🔄 Retry attempt 4/8 after 40s... (Reason: Validation errors in 1 translations)
+🎯 Retrying only 1 failed items (IDs: [166])
+
+📝 Prompt for batch (attempt 4):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 166: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Используйте правила речевой аналитики для автоматического отслеживания “проблемных диалогов” (некомпетентность или негатив сотрудника), а так же ключевых слов, которые обязательны при продаже.
+  Wrong translation: Використовуйте правила мовленнєвої аналітики для автоматичного відстеження «проблемних діалогів» (некомпетентність або негатив співробітника), а також ключових слів, які обов’язкові при продажу.
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 166, "text": "Используйте правила речевой аналитики для автоматического отслеживания “проблемных диалогов” (некомпетентность или негатив сотрудника), а так же ключевых слов, которые обязательны при продаже."}]
+
+⚠️  Missing translations for IDs: [0]
+✅ Retry successful on attempt 4
+✅ Batch 32/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 33/44...
+❌ Request timeout after 120s
+🔄 Retry attempt 2/8 after 20s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 3/8 after 30s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 4/8 after 40s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 5/8 after 50s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 6/8 after 60s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 7/8 after 70s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 8/8 after 80s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+❌ All 8 attempts failed
+❌ Batch 33/44 failed after 8 attempts
+
+📤 Processing batch 34/44...
+✅ Batch 34/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 35/44...
+❌ Request timeout after 120s
+🔄 Retry attempt 2/8 after 20s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 3/8 after 30s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+⚠️  Validation failed (ID 51):
+  Original: Общий маршрут - синхронизация телефонии со всеми очередями и автообзвонами, у которых включена такая же опция в настройках связи. Это упрощает запуск новых проектов, если компания не отделяет проекты собственными SIP-профилями. Чтобы очередь или автообзвон могли использовать общую телефонию, найдите в их настройках вкладку "Телефония" и активируйте такую же опцию там.
+  Translation: Загальний маршрут - синхронізація телефонії з усіма чергами та автообдзвонами, у яких увімкнена така сама опція в налаштуваннях зв'язку. Це спрощує запуск нових проєктів, якщо компанія не відокремлює проєкти власними SIP-профілями. Щоб черга або автообдзвін могли використовувати загальну телефонію, знайдіть у їхніх налаштуваннях вкладку "Телефонія" та активуйте таку саму опцію там.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+❌ Validation failed for 1 items
+🔄 Retry attempt 4/8 after 40s... (Reason: Validation errors in 1 translations)
+🎯 Retrying only 1 failed items (IDs: [51])
+
+📝 Prompt for batch (attempt 4):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 51: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Общий маршрут - синхронизация телефонии со всеми очередями и автообзвонами, у которых включена такая же опция в настройках связи. Это упрощает запуск новых проектов, если компания не отделяет проекты собственными SIP-профилями. Чтобы очередь или автообзвон могли использовать общую телефонию, найдите в их настройках вкладку "Телефония" и активируйте такую же опцию там.
+  Wrong translation: Загальний маршрут - синхронізація телефонії з усіма чергами та автообдзвонами, у яких увімкнена така сама опція в налаштуваннях зв'язку. Це спрощує запуск нових проєктів, якщо компанія не відокремлює проєкти власними SIP-профілями. Щоб черга або автообдзвін могли використовувати загальну телефонію, знайдіть у їхніх налаштуваннях вкладку "Телефонія" та активуйте таку саму опцію там.
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 51, "text": "Общий маршрут - синхронизация телефонии со всеми очередями и автообзвонами, у которых включена такая же опция в настройках связи. Это упрощает запуск новых проектов, если компания не отделяет проекты собственными SIP-профилями. Чтобы очередь или автообзвон могли использовать общую телефонию, найдите в их настройках вкладку \"Телефония\" и активируйте такую же опцию там."}]
+
+⚠️  Missing translations for IDs: [0]
+✅ Retry successful on attempt 4
+✅ Batch 35/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 36/44...
+❌ Request timeout after 120s
+🔄 Retry attempt 2/8 after 20s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 3/8 after 30s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 4/8 after 40s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+⚠️  Validation failed (ID 119):
+  Original: Для привязки полей контакта с полями импорта используйте фигурные скобки {{}}<br>Для использования константы - постоянного значения в поле контакта, используйте название без фигурных скобок. Системе важен учет регистра букв.<br>Пример:<br>{{Имя}} = Имя указанное в импорте<br>Продажи = Постоянное значение Продажи
+  Translation: Для прив’язки полів контакту з полями імпорту використовуйте фігурні дужки {{}}<br>Для використання константи - постійного значення в полі контакту, використовуйте назву без фігурних дужок. Системі важливий облік регістру літер.<br>Приклад:<br>{{Ім’я}} = Ім’я, вказане в імпорті<br>Продажі = Постійне значення Продажі
+  - Braces content mismatch - Expected: ['Имя'], Got: ['Ім’я']
+❌ Validation failed for 1 items
+🔄 Retry attempt 5/8 after 50s... (Reason: Validation errors in 1 translations)
+🎯 Retrying only 1 failed items (IDs: [119])
+
+📝 Prompt for batch (attempt 5):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 119: Braces content mismatch - Expected: ['Имя'], Got: ['Ім’я']
+  Original: Для привязки полей контакта с полями импорта используйте фигурные скобки {{}}<br>Для использования константы - постоянного значения в поле контакта, используйте название без фигурных скобок. Системе важен учет регистра букв.<br>Пример:<br>{{Имя}} = Имя указанное в импорте<br>Продажи = Постоянное значение Продажи
+  Wrong translation: Для прив’язки полів контакту з полями імпорту використовуйте фігурні дужки {{}}<br>Для використання константи - постійного значення в полі контакту, використовуйте назву без фігурних дужок. Системі важливий облік регістру літер.<br>Приклад:<br>{{Ім’я}} = Ім’я, вказане в імпорті<br>Продажі = Постійне значення Продажі
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 119, "text": "Для привязки полей контакта с полями импорта используйте фигурные скобки {{}}<br>Для использования константы - постоянного значения в поле контакта, используйте название без фигурных скобок. Системе важен учет регистра букв.<br>Пример:<br>{{Имя}} = Имя указанное в импорте<br>Продажи = Постоянное значение Продажи"}]
+
+⚠️  Missing translations for IDs: [0]
+✅ Retry successful on attempt 5
+✅ Batch 36/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 37/44...
+⚠️  Validation failed (ID 39):
+  Original: В эту папку будут сохраняться mp3 файлы при автоматическом экспорте, а также при сохранении записей через отчет “Журнал звонков”.
+  Translation: У цю папку зберігатимуться mp3 файли під час автоматичного експорту, а також під час збереження записів через звіт «Журнал дзвінків».
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 40):
+  Original: Выберите автообзвон в который добавить задачу или установите “По умолчанию” для добавления задачи в тот же автообзвон с которого был совершен звонок. Если задача есть в автообзвоне, она будет переназначена на указанное время.
+  Translation: Виберіть автообдзвін, до якого додати завдання, або встановіть «За замовчуванням» для додавання завдання до того ж автообдзвону, з якого було здійснено дзвінок. Якщо завдання є в автообдзвоні, його буде перепризначено на вказаний час.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 47):
+  Original: На очередь “%s” не назначен ни один пользователь.
+  Translation: На чергу «%s» не призначено жодного користувача.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 51):
+  Original: Для расчета эффективности работы операторов нужно выбрать “Тип расписания” и “Расписание”
+  Translation: Для розрахунку ефективності роботи операторів потрібно вибрати «Тип розкладу» та «Розклад»
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=2, »: Original=none, Translation=2
+⚠️  Validation failed (ID 82):
+  Original: ID дополнительного статуса пользователя “Отошел”
+  Translation: ID додаткового статусу користувача «Відійшов»
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 93):
+  Original: Количество операторов в “Отошел” по группам
+  Translation: Кількість операторів у статусі «Відійшов» по групах
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 94):
+  Original: Лимит операторов по группам, которые могут одновременно уйти в статус “Отошел”.
+  Translation: Ліміт операторів по групах, які можуть одночасно перейти в статус «Відійшов».
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 96):
+  Original: При значении “0” группа не контролируется.
+  Translation: При значенні «0» група не контролюється.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+⚠️  Validation failed (ID 135):
+  Original: Если хотите снять ограничения, используйте интеграцию “Mail SMTP” и подключите свою почту.
+  Translation: Якщо хочете зняти обмеження, використовуйте інтеграцію «Mail SMTP» та підключіть свою пошту.
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+❌ Validation failed for 9 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 9 translations)
+🎯 Retrying only 9 failed items (IDs: [39, 40, 47, 51, 82, 93, 94, 96, 135])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 39: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: В эту папку будут сохраняться mp3 файлы при автоматическом экспорте, а также при сохранении записей через отчет “Журнал звонков”.
+  Wrong translation: У цю папку зберігатимуться mp3 файли під час автоматичного експорту, а також під час збереження записів через звіт «Журнал дзвінків».
+- ID 40: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Выберите автообзвон в который добавить задачу или установите “По умолчанию” для добавления задачи в тот же автообзвон с которого был совершен звонок. Если задача есть в автообзвоне, она будет переназначена на указанное время.
+  Wrong translation: Виберіть автообдзвін, до якого додати завдання, або встановіть «За замовчуванням» для додавання завдання до того ж автообдзвону, з якого було здійснено дзвінок. Якщо завдання є в автообдзвоні, його буде перепризначено на вказаний час.
+- ID 47: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: На очередь “%s” не назначен ни один пользователь.
+  Wrong translation: На чергу «%s» не призначено жодного користувача.
+- ID 51: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=2, »: Original=none, Translation=2
+  Original: Для расчета эффективности работы операторов нужно выбрать “Тип расписания” и “Расписание”
+  Wrong translation: Для розрахунку ефективності роботи операторів потрібно вибрати «Тип розкладу» та «Розклад»
+- ID 82: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: ID дополнительного статуса пользователя “Отошел”
+  Wrong translation: ID додаткового статусу користувача «Відійшов»
+- ID 93: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Количество операторов в “Отошел” по группам
+  Wrong translation: Кількість операторів у статусі «Відійшов» по групах
+- ID 94: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Лимит операторов по группам, которые могут одновременно уйти в статус “Отошел”.
+  Wrong translation: Ліміт операторів по групах, які можуть одночасно перейти в статус «Відійшов».
+- ID 96: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: При значении “0” группа не контролируется.
+  Wrong translation: При значенні «0» група не контролюється.
+- ID 135: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Если хотите снять ограничения, используйте интеграцию “Mail SMTP” и подключите свою почту.
+  Wrong translation: Якщо хочете зняти обмеження, використовуйте інтеграцію «Mail SMTP» та підключіть свою пошту.
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 39, "text": "В эту папку будут сохраняться mp3 файлы при автоматическом экспорте, а также при сохранении записей через отчет “Журнал звонков”."}, {"id": 40, "text": "Выберите автообзвон в который добавить задачу или установите “По умолчанию” для добавления задачи в тот же автообзвон с которого был совершен звонок. Если задача есть в автообзвоне, она будет переназначена на указанное время."}, {"id": 47, "text": "На очередь “%s” не назначен ни один пользователь."}, {"id": 51, "text": "Для расчета эффективности работы операторов нужно выбрать “Тип расписания” и “Расписание”"}, {"id": 82, "text": "ID дополнительного статуса пользователя “Отошел”"}, {"id": 93, "text": "Количество операторов в “Отошел” по группам"}, {"id": 94, "text": "Лимит операторов по группам, которые могут одновременно уйти в статус “Отошел”."}, {"id": 96, "text": "При значении “0” группа не контролируется."}, {"id": 135, "text": "Если хотите снять ограничения, используйте интеграцию “Mail SMTP” и подключите свою почту."}]
+
+⚠️  Missing translations for IDs: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+✅ Retry successful on attempt 2
+✅ Batch 37/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 38/44...
+⚠️  Validation failed (ID 9):
+  Original: Топ операторов, больше всего находившихся в статусе отсутствую
+  Translation: Топ операторів, які найдовше перебували у статусі «відсутній»
+  - Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+❌ Validation failed for 1 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 1 translations)
+🎯 Retrying only 1 failed items (IDs: [9])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 9: Quotes mismatch try another Quote, do not add new "" or '' - «: Original=none, Translation=1, »: Original=none, Translation=1
+  Original: Топ операторов, больше всего находившихся в статусе отсутствую
+  Wrong translation: Топ операторів, які найдовше перебували у статусі «відсутній»
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 9, "text": "Топ операторов, больше всего находившихся в статусе отсутствую"}]
+
+⚠️  Missing translations for IDs: [0]
+✅ Retry successful on attempt 2
+✅ Batch 38/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 39/44...
+❌ Request timeout after 120s
+🔄 Retry attempt 2/8 after 20s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 3/8 after 30s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 4/8 after 40s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 5/8 after 50s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 6/8 after 60s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 7/8 after 70s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 8/8 after 80s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+❌ All 8 attempts failed
+❌ Batch 39/44 failed after 8 attempts
+
+📤 Processing batch 40/44...
+❌ Request timeout after 120s
+🔄 Retry attempt 2/8 after 20s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 3/8 after 30s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+✅ Retry successful on attempt 3
+✅ Batch 40/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 41/44...
+❌ Request timeout after 120s
+🔄 Retry attempt 2/8 after 20s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+⚠️  Validation failed (ID 36):
+  Original: Используйте следующий формат поля: для полей контакта - {{Поле контакта}}, содержимое текстовых полей - {{q1a1,t}}, текста вопроса - {{q1}}, текст вопроса и ответа {{q1a1}}.
+  Translation: Використовуйте наступний формат поля: для полів контакту - {{Поле контакту}}, вміст текстових полів - {{q1a1,t}}, тексту питання - {{q1}}, текст питання та відповіді {{q1a1}}.
+  - Braces content mismatch - Expected: ['Поле контакта', 'q1a1,t', 'q1', 'q1a1'], Got: ['Поле контакту', 'q1a1,t', 'q1', 'q1a1']
+❌ Validation failed for 1 items
+🔄 Retry attempt 3/8 after 30s... (Reason: Validation errors in 1 translations)
+🎯 Retrying only 1 failed items (IDs: [36])
+
+📝 Prompt for batch (attempt 3):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 36: Braces content mismatch - Expected: ['Поле контакта', 'q1a1,t', 'q1', 'q1a1'], Got: ['Поле контакту', 'q1a1,t', 'q1', 'q1a1']
+  Original: Используйте следующий формат поля: для полей контакта - {{Поле контакта}}, содержимое текстовых полей - {{q1a1,t}}, текста вопроса - {{q1}}, текст вопроса и ответа {{q1a1}}.
+  Wrong translation: Використовуйте наступний формат поля: для полів контакту - {{Поле контакту}}, вміст текстових полів - {{q1a1,t}}, тексту питання - {{q1}}, текст питання та відповіді {{q1a1}}.
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 36, "text": "Используйте следующий формат поля: для полей контакта - {{Поле контакта}}, содержимое текстовых полей - {{q1a1,t}}, текста вопроса - {{q1}}, текст вопроса и ответа {{q1a1}}."}]
+
+⚠️  Missing translations for IDs: [0]
+✅ Retry successful on attempt 3
+✅ Batch 41/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 42/44...
+⚠️  Validation failed (ID 43):
+  Original: В поле получатель можно ввести следующие данные: номер телефона, {{поле контакта}}, {{текстовое поле сценария оператора}}.
+  Translation: У поле одержувач можна ввести такі дані: номер телефону, {{поле контакта}}, {{текстове поле сценарію оператора}}.
+  - Braces content mismatch - Expected: ['поле контакта', 'текстовое поле сценария оператора'], Got: ['поле контакта', 'текстове поле сценарію оператора']
+❌ Validation failed for 1 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 1 translations)
+🎯 Retrying only 1 failed items (IDs: [43])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 43: Braces content mismatch - Expected: ['поле контакта', 'текстовое поле сценария оператора'], Got: ['поле контакта', 'текстове поле сценарію оператора']
+  Original: В поле получатель можно ввести следующие данные: номер телефона, {{поле контакта}}, {{текстовое поле сценария оператора}}.
+  Wrong translation: У поле одержувач можна ввести такі дані: номер телефону, {{поле контакта}}, {{текстове поле сценарію оператора}}.
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 43, "text": "В поле получатель можно ввести следующие данные: номер телефона, {{поле контакта}}, {{текстовое поле сценария оператора}}."}]
+
+⚠️  Missing translations for IDs: [0]
+✅ Retry successful on attempt 2
+✅ Batch 42/44: 200 translated, 200 validated
+💤 Sleeping 30s...
+
+📤 Processing batch 43/44...
+❌ Request timeout after 120s
+🔄 Retry attempt 2/8 after 20s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 3/8 after 30s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 4/8 after 40s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 5/8 after 50s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 6/8 after 60s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 7/8 after 70s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+🔄 Retry attempt 8/8 after 80s... (Reason: API request failed (timeout, 503, or error))
+🔄 Retrying full batch after API error
+❌ Request timeout after 120s
+❌ All 8 attempts failed
+❌ Batch 43/44 failed after 8 attempts
+
+📤 Processing batch 44/44...
+⚠️  Validation failed (ID 24):
+  Original: Звонок сбросился, так как в момент соединения с клиентом не осталось свободного оператора.
+  Translation: Дзвінок скинувся, оскільки в момент з'єднання з клієнтом не залишилося вільного оператора.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 49):
+  Original: Отчёт для мониторинга времени и результатов SIP-регистраций шлюзов у SIP-провайдеров. С его помощью можно определить причины сбоев и продолжительность неисправностей. Фильтруется по SIP-провайдеру, статусу регистрации и узлу связи.
+  Translation: Звіт для моніторингу часу та результатів SIP-реєстрацій шлюзів у SIP-провайдерів. З його допомогою можна визначити причини збоїв та тривалість несправностей. Фільтрується за SIP-провайдером, статусом реєстрації та вузлом зв'язку.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 64):
+  Original: Использовать значение параметра “Узел связи”
+  Translation: Використовувати значення параметра “Вузол зв'язку”
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 74):
+  Original: Оператор выбрал конкретный ответ в анкете за период {мгновенно|час|день|месяц}
+  Translation: Оператор вибрав конкретну відповідь в анкеті за період {миттєво|година|день|місяць}
+  - Braces content mismatch - Expected: ['мгновенно|час|день|месяц'], Got: ['миттєво|година|день|місяць']
+⚠️  Validation failed (ID 86):
+  Original: Такое имя уже используется.
+  Translation: Таке ім'я вже використовується.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 101):
+  Original: Внимание! Увеличение объёма внутреннего хранилища - это платная услуга.
+  Translation: Увага! Збільшення об'єму внутрішнього сховища - це платна послуга.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 115):
+  Original: Роль с таким именем уже существует!
+  Translation: Роль із таким ім'ям уже існує!
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 127):
+  Original: Выбор внутренней анкеты или внешней ссылки, которая будет открываться у операторов при соединении с клиентом.
+  Translation: Вибір внутрішньої анкети або зовнішнього посилання, яке відкриватиметься в операторів при з'єднанні з клієнтом.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 131):
+  Original: Интеграция с таким именем уже существует
+  Translation: Інтеграція з таким ім'ям уже існує
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 135):
+  Original: Это контроль за дубликатами для задач, не привязанных к контактам CRM. Они используют придуманные Вами поля при импорте по API или при добавлении задач без импорта в CRM.
+  Translation: Це контроль за дублікатами для завдань, не прив'язаних до контактів CRM. Вони використовують вигадані Вами поля при імпорті по API або при додаванні завдань без імпорту в CRM.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 143):
+  Original: отправятся в архив устаревшие объекты системы.
+  Translation: відправляться до архіву застарілі об'єкти системи.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+⚠️  Validation failed (ID 147):
+  Original: Здесь можно объединить все ваши средства связи в один виджет. Выберите нужные каналы связи из доступных, настройте подходящий дизайн и интегрируйте в свой сайт.
+  Translation: Тут можна об'єднати всі ваші засоби зв'язку в один віджет. Виберіть потрібні канали зв'язку з доступних, налаштуйте відповідний дизайн та інтегруйте у свій сайт.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=3
+⚠️  Validation failed (ID 152):
+  Original: Соединение не установлено, так как предыдущий вызов завершился раньше.
+  Translation: З'єднання не встановлено, оскільки попередній виклик завершився раніше.
+  - Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+❌ Validation failed for 13 items
+🔄 Retry attempt 2/8 after 20s... (Reason: Validation errors in 13 translations)
+🎯 Retrying only 13 failed items (IDs: [24, 49, 64, 74, 86, 101, 115, 127, 131, 135, 143, 147, 152])
+
+📝 Prompt for batch (attempt 2):
+⚠️ PREVIOUS ATTEMPT CONTAINED ERRORS:
+- ID 24: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Звонок сбросился, так как в момент соединения с клиентом не осталось свободного оператора.
+  Wrong translation: Дзвінок скинувся, оскільки в момент з'єднання з клієнтом не залишилося вільного оператора.
+- ID 49: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Отчёт для мониторинга времени и результатов SIP-регистраций шлюзов у SIP-провайдеров. С его помощью можно определить причины сбоев и продолжительность неисправностей. Фильтруется по SIP-провайдеру, статусу регистрации и узлу связи.
+  Wrong translation: Звіт для моніторингу часу та результатів SIP-реєстрацій шлюзів у SIP-провайдерів. З його допомогою можна визначити причини збоїв та тривалість несправностей. Фільтрується за SIP-провайдером, статусом реєстрації та вузлом зв'язку.
+- ID 64: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Использовать значение параметра “Узел связи”
+  Wrong translation: Використовувати значення параметра “Вузол зв'язку”
+- ID 74: Braces content mismatch - Expected: ['мгновенно|час|день|месяц'], Got: ['миттєво|година|день|місяць']
+  Original: Оператор выбрал конкретный ответ в анкете за период {мгновенно|час|день|месяц}
+  Wrong translation: Оператор вибрав конкретну відповідь в анкеті за період {миттєво|година|день|місяць}
+- ID 86: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Такое имя уже используется.
+  Wrong translation: Таке ім'я вже використовується.
+- ID 101: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Внимание! Увеличение объёма внутреннего хранилища - это платная услуга.
+  Wrong translation: Увага! Збільшення об'єму внутрішнього сховища - це платна послуга.
+- ID 115: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Роль с таким именем уже существует!
+  Wrong translation: Роль із таким ім'ям уже існує!
+- ID 127: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Выбор внутренней анкеты или внешней ссылки, которая будет открываться у операторов при соединении с клиентом.
+  Wrong translation: Вибір внутрішньої анкети або зовнішнього посилання, яке відкриватиметься в операторів при з'єднанні з клієнтом.
+- ID 131: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Интеграция с таким именем уже существует
+  Wrong translation: Інтеграція з таким ім'ям уже існує
+- ID 135: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Это контроль за дубликатами для задач, не привязанных к контактам CRM. Они используют придуманные Вами поля при импорте по API или при добавлении задач без импорта в CRM.
+  Wrong translation: Це контроль за дублікатами для завдань, не прив'язаних до контактів CRM. Вони використовують вигадані Вами поля при імпорті по API або при додаванні завдань без імпорту в CRM.
+- ID 143: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: отправятся в архив устаревшие объекты системы.
+  Wrong translation: відправляться до архіву застарілі об'єкти системи.
+- ID 147: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=3
+  Original: Здесь можно объединить все ваши средства связи в один виджет. Выберите нужные каналы связи из доступных, настройте подходящий дизайн и интегрируйте в свой сайт.
+  Wrong translation: Тут можна об'єднати всі ваші засоби зв'язку в один віджет. Виберіть потрібні канали зв'язку з доступних, налаштуйте відповідний дизайн та інтегруйте у свій сайт.
+- ID 152: Quotes mismatch try another Quote, do not add new "" or '' - ': Original=none, Translation=1
+  Original: Соединение не установлено, так как предыдущий вызов завершился раньше.
+  Wrong translation: З'єднання не встановлено, оскільки попередній виклик завершився раніше.
+
+FIX these errors! Remember all the rules:
+
+Translate to украинский. DANGEROUS characters (break code): U+0027 APOSTROPHE, U+0022 QUOTATION MARK, U+201C U+201D Curly quotes. RULES: 1) If original contains U+0027 or U+0022 preserve in EXACT positions. 2) For NEW apostrophes in words (French l’homme, Ukrainian im’ya, Italian l’ora) use SAFE U+2019. 3) For NEW quotes use SAFE: U+00AB U+00BB or U+201E U+201D. 4) ALSO PRESERV ALL THIS SYBMOLS FROM ORIG TEXT IN YOUR TRANSLATION, FOR EXAMPLE: %s %d {{var}} {var} \n “ ” spaces count or another special symbols. Return: [{"id": N, "translation": "..."}]. Input: [{"id": 24, "text": "Звонок сбросился, так как в момент соединения с клиентом не осталось свободного оператора."}, {"id": 49, "text": "Отчёт для мониторинга времени и результатов SIP-регистраций шлюзов у SIP-провайдеров. С его помощью можно определить причины сбоев и продолжительность неисправностей. Фильтруется по SIP-провайдеру, статусу регистрации и узлу связи."}, {"id": 64, "text": "Использовать значение параметра “Узел связи”"}, {"id": 74, "text": "Оператор выбрал конкретный ответ в анкете за период {мгновенно|час|день|месяц}"}, {"id": 86, "text": "Такое имя уже используется."}, {"id": 101, "text": "Внимание! Увеличение объёма внутреннего хранилища - это платная услуга."}, {"id": 115, "text": "Роль с таким именем уже существует!"}, {"id": 127, "text": "Выбор внутренней анкеты или внешней ссылки, которая будет открываться у операторов при соединении с клиентом."}, {"id": 131, "text": "Интеграция с таким именем уже существует"}, {"id": 135, "text": "Это контроль за дубликатами для задач, не привязанных к контактам CRM. Они используют придуманные Вами поля при импорте по API или при добавлении задач без импорта в CRM."}, {"id": 143, "text": "отправятся в архив устаревшие объекты системы."}, {"id": 147, "text": "Здесь можно объединить все ваши средства связи в один виджет. Выберите нужные каналы связи из доступных, настройте подходящий дизайн и интегрируйте в свой сайт."}, {"id": 152, "text": "Соединение не установлено, так как предыдущий вызов завершился раньше."}]
+
+⚠️  Missing translations for IDs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+✅ Retry successful on attempt 2
+✅ Batch 44/44: 170 translated, 170 validated
+
+💾 Saved to uk_1769596361_done.json
+⚠️  Failed batches: [17, 33, 39, 43] (total: 4)
+🔓 Lock released

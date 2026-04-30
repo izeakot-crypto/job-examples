@@ -1,0 +1,8 @@
+[     228ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://bitbucket.org/dintsin010/py-services:0
+[     251ms] [WARNING] {msg: An error has occurred checking the feature gate. Only the first occurrence of this error is logged., gateName: platform_increased-contrast-themes, error: Error: Client must be initialized before using this method
+    at e.value (https://bbc-object-stora…} @ https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/c46b0b9c6fc5/dist/webpack/theme-init.js:1
+[     263ms] Uncaught TypeError: e.Integrations.RewriteFrames is not a constructor
+    at <anonymous> (https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/c46b0b9c6fc5/dist/webpack/sentry.js:1:132571)
+    at <anonymous> (https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/c46b0b9c6fc5/dist/webpack/sentry.js:1:132772)
+    at <anonymous> (https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/c46b0b9c6fc5/dist/webpack/sentry.js:1:132776)
+[     311ms] [LOG] JQMIGRATE: Migrate is installed with logging active, version 3.3.1 @ https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/c46b0b9c6fc5/dist/webpack/aui-8.js:1

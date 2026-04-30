@@ -1,0 +1,412 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - link "Биржа маркетинга" [ref=e3] [cursor=pointer]:
+      - /url: /
+    - link "Каталог услуг" [ref=e4] [cursor=pointer]:
+      - /url: /v2/services/
+    - link "Проверка на антиплагиат" [ref=e5] [cursor=pointer]:
+      - /url: /antiplagiat/
+    - generic [ref=e6]: SEO-анализ текста
+    - link "Адвего Лингвист" [ref=e7] [cursor=pointer]:
+      - /url: /v2/lingvo/
+    - link "Проверка орфографии" [ref=e8] [cursor=pointer]:
+      - /url: /text/
+  - generic [ref=e9]:
+    - generic [ref=e10]:
+      - generic [ref=e12]:
+        - generic [ref=e13]:
+          - list:
+            - listitem [ref=e14]:
+              - link "Вход" [ref=e15] [cursor=pointer]:
+                - /url: /login/
+            - listitem [ref=e16]:
+              - link "Регистрация" [ref=e17] [cursor=pointer]:
+                - /url: /join/
+            - listitem [ref=e18]:
+              - link " A" [ref=e20] [cursor=pointer]:
+                - /url: /antiplagiat/
+                - generic [ref=e21]: 
+                - emphasis [ref=e22]: A
+            - listitem
+        - 'link "Адвего: биржа контента №1"':
+          - /url: /
+        - text: —
+        - link "Биржа контента №1" [ref=e25] [cursor=pointer]:
+          - /url: /
+      - generic [ref=e27]:
+        - link "Работа в интернете" [ref=e28] [cursor=pointer]:
+          - /url: /job/find/
+        - link "Заказчику" [ref=e29] [cursor=pointer]:
+          - /url: /campaigns/
+        - link "Магазин статей" [ref=e30] [cursor=pointer]:
+          - /url: /shop/find/
+        - link "Сервис" [ref=e31] [cursor=pointer]:
+          - /url: /user/
+        - link "Партнёрская программа" [ref=e32] [cursor=pointer]:
+          - /url: /partner/
+        - link "Форум" [ref=e33] [cursor=pointer]:
+          - /url: /blog/
+        - link "Помощь и поддержка" [ref=e34] [cursor=pointer]:
+          - /url: /v2/support/
+        - link "Создать заказ" [ref=e35] [cursor=pointer]:
+          - /url: /order/add/
+      - generic [ref=e37]:
+        - generic:
+          - generic [ref=e38]:
+            - link "Инструменты" [ref=e39] [cursor=pointer]:
+              - /url: /instrumenty-webmastera/
+            - link [ref=e40] [cursor=pointer]:
+              - /url: /instrumenty-webmastera/
+          - generic: 
+      - text:      
+    - generic [ref=e43]:
+      - generic [ref=e45]:
+        - generic [ref=e47]:
+          - link "Тексты на заказ от профессионалов Тысячи копирайтеров онлайн, гарантия качества, поддержка 24х7, работаем более 10 лет Заказать текст" [ref=e48] [cursor=pointer]:
+            - /url: /order/add/?role=100&utm_source=services&utm_medium=cpc&utm_campaign=banner_order_text&utm_content=banner_order_text_services
+            - generic [ref=e50]: Тексты на заказ от профессионалов
+            - generic [ref=e51]: Тысячи копирайтеров онлайн, гарантия качества, поддержка 24х7, работаем более 10 лет
+            - generic [ref=e52]: Заказать текст
+          - link "Я в курсе" [ref=e53] [cursor=pointer]:
+            - /url: "#"
+        - generic [ref=e54]:
+          - link "Адвего" [ref=e56] [cursor=pointer]:
+            - /url: /
+          - link "Сервис" [ref=e59] [cursor=pointer]:
+            - /url: /user/
+          - link "Инструменты" [ref=e62] [cursor=pointer]:
+            - /url: /instrumenty-webmastera/
+          - generic [ref=e65]: Семантический анализ текста
+        - generic [ref=e66]:
+          - link "Проверка на антиплагиат" [ref=e67] [cursor=pointer]:
+            - /url: /antiplagiat/
+          - link "Адвего Лингвист" [ref=e68] [cursor=pointer]:
+            - /url: /text/linguist/
+          - link "Семантический анализ текста" [ref=e69] [cursor=pointer]:
+            - /url: /text/seo/
+          - link "Проверка орфографии" [ref=e70] [cursor=pointer]:
+            - /url: /text/
+        - heading "Семантический анализ текста онлайн, seo-анализ текста" [level=1] [ref=e72]
+      - generic [ref=e74]:
+        - text:     
+        - generic [ref=e76]:
+          - paragraph [ref=e77]:
+            - strong [ref=e78]: Семантический анализ
+            - text: текста Адвего для SEO онлайн — профессиональный инструмент для оценки качества текстов, seo оптимизации статей и поиска ключевых слов в тексте. Проверьте количество символов, тошноту и водность, плотность ключевых слов и фраз онлайн, семантическое ядро текста бесплатно!
+          - generic [ref=e80]:
+            - generic [ref=e81]:
+              - generic [ref=e83]:
+                - generic [ref=e84]: "Язык: по умолчанию — русский"
+                - 'combobox "Язык: по умолчанию — русский" [ref=e85]':
+                  - option "Выберите язык" [selected]
+                  - option "Afrikaans"
+                  - option "Amharic — አማርኛ"
+                  - option "Another language - другой язык"
+                  - option "Arabic - العربية"
+                  - option "Armenian — Հայերեն"
+                  - option "Azerbaijani — Azərbaycanca"
+                  - option "Belarusian — Беларускі"
+                  - option "Bengali — বাংলা"
+                  - option "Brazilian Portuguese — Português do Brasil"
+                  - option "Breton"
+                  - option "Bulgarian — Български"
+                  - option "Catalan — Català"
+                  - option "Chichewa"
+                  - option "Chinese - 中国"
+                  - option "Croatian"
+                  - option "Czech — Čeština"
+                  - option "Danish — Dansk"
+                  - option "Dutch - Hollandsk"
+                  - option "English"
+                  - option "Esperanto"
+                  - option "Estonian"
+                  - option "Faroese — Føroyskt"
+                  - option "Finnish - suomalainen"
+                  - option "French - Français"
+                  - option "Frisian — Frysk"
+                  - option "Galician — Galego (minimos)"
+                  - option "Germany - Deutsch"
+                  - option "Greek"
+                  - option "Gujarati — ગુજરાતી"
+                  - option "Hebrew — עברית"
+                  - option "Hiligaynon"
+                  - option "Hindi - हिन्दी"
+                  - option "Hungarian"
+                  - option "Icelandic"
+                  - option "Indonesian — Bahasa Indonesia"
+                  - option "Interlingua"
+                  - option "Irish — Gaeilge"
+                  - option "Italian - Italiano"
+                  - option "Japanese - 日本の"
+                  - option "Kashubian — Kaszëbsczi"
+                  - option "Kinyarwanda"
+                  - option "Korean - 한국의"
+                  - option "Kurdi — Kurdî"
+                  - option "Latin"
+                  - option "Latvian"
+                  - option "Lithuanian — lietuvių"
+                  - option "Low Saxon — Plattdüütsch"
+                  - option "Macedonian"
+                  - option "Malagasy"
+                  - option "Malay"
+                  - option "Malayalam — മലയാളം"
+                  - option "Maltese"
+                  - option "Manx Gaelic"
+                  - option "Maori"
+                  - option "Marathi — मराठी"
+                  - option "Mongolian — Монгол"
+                  - option "Norwegian Bokmal"
+                  - option "Norwegian Nynorsk"
+                  - option "Oriya — ଓଡ଼ିଆ"
+                  - option "Persian - فارسی"
+                  - option "Polish - Polski"
+                  - option "Portuguese - Português"
+                  - option "Punjabi — ਪੰਜਾਬੀ"
+                  - option "Quechua — Runasimi (qheshwa)"
+                  - option "Romanian — Română"
+                  - option "Russian - Русский"
+                  - option "Sardinian"
+                  - option "Scottish Gaelic — Gàidhlig"
+                  - option "Serbian — Српски"
+                  - option "Setswana"
+                  - option "Slovak — Slovenský"
+                  - option "Slovenian"
+                  - option "Spanish - Español"
+                  - option "Swahili — Kiswahili"
+                  - option "Swedish"
+                  - option "Tagalog — Tagalog"
+                  - option "Tamil — தமிழ்"
+                  - option "Telugu — తెలుగు"
+                  - option "Tetum"
+                  - option "Turkish - Türk"
+                  - option "Turkmen"
+                  - option "Ukrainian - Українська"
+                  - option "Upper Sorbian — hornjoserbsce"
+                  - option "Urdu - اردو"
+                  - option "Uzbek — Ўзбекча"
+                  - option "Vietnamese - tiếng Việt"
+                  - option "Walloon — walon"
+                  - option "Welsh"
+                  - option "Yiddish — ייִדיש"
+                  - option "Zulu"
+              - generic [ref=e86]:
+                - generic [ref=e87]:
+                  - table [ref=e88]:
+                    - rowgroup [ref=e89]:
+                      - 'row "Текст: обязательно длина текста, символов: 0" [ref=e90]':
+                        - 'cell "Текст: обязательно" [ref=e91]'
+                        - 'cell "длина текста, символов: 0" [ref=e92]':
+                          - generic [ref=e93]: "длина текста, символов: 0"
+                  - textbox [active] [ref=e94]
+                - generic [ref=e95]:
+                  - text: Напишите текст для анализа и нажмите кнопку «Проверить»
+                  - text: Максимальная длина текста — 100 000 символов.
+            - generic [ref=e96]:
+              - link "Проверить" [ref=e97] [cursor=pointer]:
+                - /url: /text/seo/
+              - link "Очистить" [ref=e98] [cursor=pointer]:
+                - /url: /text/seo/
+              - link "Заказать текст" [ref=e99] [cursor=pointer]:
+                - /url: /order/add/
+          - generic [ref=e100]:
+            - img "Seo анализ текста онлайн" [ref=e101]
+            - heading "Зачем нужен SEO анализ текста" [level=2] [ref=e102]
+            - paragraph [ref=e103]: Поисковые системы оценивают качество и релевантность статьи по содержащимся в ней словам и словосочетаниям (коллокациям). Чем больше в тексте тематичных ключевых фраз, тем больше шансов, что он получит высокую оценку.
+            - paragraph [ref=e104]: Соответственно, если в тексте будет мало ключевых слов, но много «воды» — стоп-слов, вставных слов, шаблонных фраз, качество статьи будет низким.
+            - paragraph [ref=e105]: Но и слишком большое количество ключевиков — тоже плохо, такой документ получит отметку «переспам» и вряд ли будет показан в поисковой выдаче.
+            - paragraph [ref=e106]: Оценить эти показатели поможет сервис семантического анализа, который покажет процент ключевых слов и количество стоп-слов в тексте.
+            - heading "SEO анализ текста Адвего определяет:" [level=3] [ref=e107]
+            - list [ref=e108]:
+              - listitem [ref=e109]: плотность ключевых слов, процент ключевых фраз;
+              - listitem [ref=e110]: частотность слов;
+              - listitem [ref=e111]: количество стоп-слов;
+              - listitem [ref=e112]: "объем текста: количество символов с пробелами и без пробелов;"
+              - listitem [ref=e113]: "количество слов: уникальных, значимых, всего;"
+              - listitem [ref=e114]: водность, процент воды;
+              - listitem [ref=e115]: тошноту текста, классическую и академическую;
+              - listitem [ref=e116]: количество грамматических ошибок.
+            - paragraph [ref=e117]:
+              - text: Наш онлайн сервис показывает
+              - strong [ref=e118]: семантическое ядро
+              - text: текста страницы — все значимые и ключевые слова, что позволит оценить, по каким запросам она будет показываться выше после того, как проведет поиск ключевых слов в тексте.
+            - paragraph [ref=e119]: Также семантический анализ показывает все стоп-слова и грамматические ошибки.
+            - paragraph [ref=e120]:
+              - emphasis [ref=e121]: Пример отчета проверки семантического SEO анализа текста онлайн
+            - img "Семантический SEO анализ текста онлайн" [ref=e122]
+            - heading "Как рассчитывается тошнота текста" [level=3] [ref=e123]
+            - paragraph [ref=e124]: Классическая тошнота определяется по самому частотному слову — как квадратный корень из количества его вхождений. Например, слово «текст» встречается на этой странице 16 раз, классическая тошнота будет равна 4.
+            - paragraph [ref=e125]:
+              - emphasis [ref=e126]: Важно! Максимально допустимое значение классической тошноты зависит от объема текста — для 20 000 знаков тошнота, равная 5, будет нормальной, а для 1000 знаков — слишком высокой.
+            - paragraph [ref=e127]: Академическая тошнота определяется как отношение самых частотных и значимых слов по специальной формуле. Нормальное значение — в пределах 5-15%.
+            - paragraph [ref=e128]:
+              - text: По тошноте текста можно судить о натуральности текста и его SEO-оптимизации под поисковые запросы. Высокий
+              - strong [ref=e129]: показатель тошноты
+              - text: онлайн для поисковиков является плохим знаком.
+            - heading "Как рассчитывается водность текста" [level=3] [ref=e130]
+            - paragraph [ref=e131]: Процент воды в Адвего определяется как отношение незначимых слов к общему количеству слов. То есть чем больше в статье значимых слов, тем меньше в итоге «воды».
+            - paragraph [ref=e132]: Конечно, невозможно написать сео текст совсем без воды, нормальный показатель — 55%-75%.
+            - paragraph [ref=e133]: "Чтобы уменьшить процент водности, необходимо почистить текст от широко распространенных фраз и терминов, вставных слов: «в современном мире», «так сказать», «всем известно» и т. п. Также повышает качество текста употребление специализированных терминов и профессиональной лексики."
+      - link "↑" [ref=e135] [cursor=pointer]:
+        - /url: "#page_top"
+        - generic [ref=e136]: ↑
+    - generic [ref=e137]:
+      - generic [ref=e139]:
+        - generic [ref=e141] [cursor=pointer]:
+          - link [ref=e142]:
+            - /url: /
+          - text: биржа контента №1
+        - list [ref=e144]:
+          - listitem [ref=e145]:
+            - link "Биржа статей" [ref=e146] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e147]:
+            - link "Магазин статей" [ref=e148] [cursor=pointer]:
+              - /url: /shop/find/
+          - listitem [ref=e149]:
+            - link "Проверить текст на уникальность" [ref=e150] [cursor=pointer]:
+              - /url: /antiplagiat/
+          - listitem [ref=e151]:
+            - link "Проверка орфографии онлайн" [ref=e152] [cursor=pointer]:
+              - /url: /text/
+          - listitem [ref=e153]:
+            - link "SEO анализ онлайн" [ref=e154] [cursor=pointer]:
+              - /url: /text/seo/
+          - listitem [ref=e155]:
+            - link "Проверка качества текста" [ref=e156] [cursor=pointer]:
+              - /url: /v2/lingvo/
+        - list [ref=e158]:
+          - listitem [ref=e159]:
+            - link "МИР / СБП" [ref=e160] [cursor=pointer]:
+              - /url: /money/add/
+              - text: МИР / СБП
+          - listitem [ref=e162]:
+            - link "WebMoney" [ref=e163] [cursor=pointer]:
+              - /url: /money/add/
+              - text: WebMoney
+          - listitem [ref=e165]:
+            - link "Volet" [ref=e166] [cursor=pointer]:
+              - /url: /money/add/
+              - text: Volet
+          - listitem [ref=e168]:
+            - link "Безналичный платеж" [ref=e169] [cursor=pointer]:
+              - /url: /money/add/#tab-wire-transfer
+              - text: Безналичный платеж
+        - list [ref=e172]:
+          - listitem [ref=e173]:
+            - link "Telegram" [ref=e174] [cursor=pointer]:
+              - /url: https://t.me/advego
+              - text: Telegram
+          - listitem [ref=e176]:
+            - link "Вконтакте" [ref=e177] [cursor=pointer]:
+              - /url: https://vk.ru/advego
+              - text: Вконтакте
+          - listitem [ref=e179]:
+            - link "Приложение для Android" [ref=e180] [cursor=pointer]:
+              - /url: https://advego.com/blog/read/news/8579674/
+              - text: Приложение для Android
+      - generic [ref=e183]:
+        - list [ref=e185]:
+          - listitem [ref=e186]: Заказчику
+          - listitem [ref=e187]:
+            - link "Создать заказ" [ref=e188] [cursor=pointer]:
+              - /url: /v2/wizard
+          - listitem [ref=e189]:
+            - link "Мои заказы" [ref=e190] [cursor=pointer]:
+              - /url: /campaigns/orders/all/
+          - listitem [ref=e191]:
+            - link "Извещения" [ref=e192] [cursor=pointer]:
+              - /url: /notices/
+          - listitem [ref=e193]:
+            - link "Пополнить счёт" [ref=e194] [cursor=pointer]:
+              - /url: /money/add/
+          - listitem [ref=e195]:
+            - link "Статистика" [ref=e196] [cursor=pointer]:
+              - /url: /stat/master/
+          - listitem [ref=e197]:
+            - link "API" [ref=e198] [cursor=pointer]:
+              - /url: /v2/support/customer/order-new/1382
+        - list [ref=e200]:
+          - listitem [ref=e201]: Исполнителю
+          - listitem [ref=e202]:
+            - link "Работа онлайн" [ref=e203] [cursor=pointer]:
+              - /url: /job/find/
+          - listitem [ref=e204]:
+            - link "Мои работы" [ref=e205] [cursor=pointer]:
+              - /url: /job/my/
+          - listitem [ref=e206]:
+            - link "Продать статью" [ref=e207] [cursor=pointer]:
+              - /url: /shop/sell/
+          - listitem [ref=e208]:
+            - link "Извещения" [ref=e209] [cursor=pointer]:
+              - /url: /notices/
+          - listitem [ref=e210]:
+            - link "Вывод средств" [ref=e211] [cursor=pointer]:
+              - /url: /money/out/
+          - listitem [ref=e212]:
+            - link "Инструкции для исполнителей" [ref=e213] [cursor=pointer]:
+              - /url: /v2/support/executor
+        - generic [ref=e214]:
+          - list [ref=e215]:
+            - listitem [ref=e216]: Сервисы Адвего
+            - listitem [ref=e217]:
+              - link "Магазин статей" [ref=e218] [cursor=pointer]:
+                - /url: /shop/find/
+            - listitem [ref=e219]:
+              - link "Проверка на антиплагиат" [ref=e220] [cursor=pointer]:
+                - /url: /antiplagiat/
+            - listitem [ref=e221]:
+              - link "SEO-анализ текста" [ref=e222] [cursor=pointer]:
+                - /url: /text/seo/
+            - listitem [ref=e223]:
+              - link "Проверка орфографии" [ref=e224] [cursor=pointer]:
+                - /url: /text/
+            - listitem [ref=e225]:
+              - link "Адвего Лингвист" [ref=e226] [cursor=pointer]:
+                - /url: /v2/lingvo/
+            - listitem [ref=e227]:
+              - link "Заказ контента и услуг" [ref=e228] [cursor=pointer]:
+                - /url: /v2/services/
+            - link:
+              - /url: /v2/services/
+          - link:
+            - /url: /v2/services/
+        - link:
+          - /url: /v2/services/
+        - generic [ref=e229]:
+          - link:
+            - /url: /v2/services/
+          - list [ref=e230]:
+            - link "Информация" [ref=e231] [cursor=pointer]:
+              - /url: /v2/services/
+              - listitem [ref=e232]: Информация
+            - listitem [ref=e233]:
+              - link:
+                - /url: /v2/services/
+              - link "Пользовательское соглашение" [ref=e234] [cursor=pointer]:
+                - /url: /v2/support/rules/
+            - listitem [ref=e235]:
+              - link "Политика конфиденциальности" [ref=e236] [cursor=pointer]:
+                - /url: /info/privacy/
+            - listitem [ref=e237]:
+              - link "Поддержка пользователей" [ref=e238] [cursor=pointer]:
+                - /url: /v2/support/
+            - listitem [ref=e239]:
+              - link "Партнерская программа" [ref=e240] [cursor=pointer]:
+                - /url: /partner/
+            - listitem [ref=e241]:
+              - link "Новости Адвего" [ref=e242] [cursor=pointer]:
+                - /url: /blog/read/news/
+            - listitem [ref=e243]:
+              - link "Сервисы Адвего" [ref=e244] [cursor=pointer]:
+                - /url: /advego-services/
+      - generic [ref=e245]:
+        - generic [ref=e246]:
+          - text: © Адвего — биржа контента №1. Копирайтинг, рерайтинг, переводы,
+          - link "работа на дому" [ref=e247] [cursor=pointer]:
+            - /url: /job/find/
+          - text: ": поставщик уникального контента. 2025"
+        - link:
+          - /url: https://passport.webmoney.ru/asp/certview.asp?wmid=378559979197
+        - link:
+          - /url: //www.liveinternet.ru/click
+  - text:                  

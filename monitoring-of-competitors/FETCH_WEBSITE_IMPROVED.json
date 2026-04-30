@@ -1,0 +1,41 @@
+{
+  "parameters": {
+    "url": "={{ $json.url || $json.company }}",
+    "authentication": "none",
+    "sendHeaders": true,
+    "headerParameters": {
+      "parameters": [
+        {
+          "name": "User-Agent",
+          "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        },
+        {
+          "name": "Accept",
+          "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
+        },
+        {
+          "name": "Accept-Language",
+          "value": "en-US,en;q=0.9"
+        }
+      ]
+    },
+    "options": {
+      "redirect": {
+        "redirect": {
+          "followRedirects": true,
+          "maxRedirects": 5
+        }
+      },
+      "response": {
+        "response": {
+          "neverError": true,
+          "fullResponse": false
+        }
+      },
+      "timeout": 30000
+    }
+  },
+  "name": "Fetch Website1",
+  "type": "n8n-nodes-base.httpRequest",
+  "typeVersion": 4.2
+}

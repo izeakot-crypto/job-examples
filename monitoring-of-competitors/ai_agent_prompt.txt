@@ -1,0 +1,24 @@
+Проаналізуй дані компанії {{ $json.company }} ({{ $json.url }}) та поверни ТІЛЬКИ JSON.
+
+СОЦМЕРЕЖІ:
+- YouTube: {{ $json.youtubeActivity }}
+- LinkedIn: {{ $json.linkedinActivity }}
+- Facebook: {{ $json.facebookActivity }}
+- VK: {{ $json.vkActivity }}
+- Telegram: {{ $json.telegramActivity }}
+- Кількість: {{ $json.socialLinksCount }}
+
+G2: {{ $json.aggregatorMentions }} (рейтинг {{ $json.g2Rating }}, {{ $json.g2ReviewsCount }} відгуків)
+
+БЛОГ ({{ $json.blogSummary }})
+
+НОВИНИ ({{ $json.newsSummary }})
+
+ВІДГУКИ ({{ $json.reviewsSummary }})
+
+ЦІНИ ({{ $json.pricingSummary }})
+
+ФІЧІ ({{ $json.featuresSummary }})
+
+ВІДПОВІДЬ - ТІЛЬКИ JSON, нічого більше:
+{"company":"назва","url":"url","youtubeActivity":"дані","linkedinActivity":"дані","facebookActivity":"дані","aggregatorMentions":"G2 дані","socialMentionsCount":0,"newFeatures":["фіча1"],"problems":["або -"],"reviewInsights":"висновок або -","news":["новина1"],"blogArticles":["стаття1"],"customerPains":["біль або -"],"customerWants":["потреба або -"],"summary":"1-2 речення"}

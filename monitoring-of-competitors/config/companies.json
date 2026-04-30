@@ -1,0 +1,334 @@
+{
+  "companies": [
+    {
+      "name": "Ringover",
+      "url": "https://www.ringover.com/",
+      "region": "Latin America / Spain",
+      "priority": "high",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": true,
+          "facebook": true,
+          "linkedin": true
+        }
+      }
+    },
+    {
+      "name": "Netelip",
+      "url": "https://www.netelip.com/en/",
+      "region": "Latin America",
+      "priority": "high",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": true,
+          "facebook": true,
+          "linkedin": true
+        }
+      }
+    },
+    {
+      "name": "CloudTalk",
+      "url": "https://www.cloudtalk.io/es/",
+      "region": "Spain",
+      "priority": "high",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": true,
+          "facebook": true,
+          "linkedin": true
+        }
+      }
+    },
+    {
+      "name": "Gigas CloudVoice",
+      "url": "https://gigas.com/en/cloudvoice.html",
+      "region": "Latin America",
+      "priority": "high",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": false,
+          "facebook": true,
+          "linkedin": true
+        }
+      }
+    },
+    {
+      "name": "Skorozvon",
+      "url": "https://skorozvon.ru/",
+      "region": "Russia",
+      "priority": "medium",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": true,
+          "facebook": false,
+          "linkedin": false
+        }
+      }
+    },
+    {
+      "name": "Naumen",
+      "url": "https://www.naumen.ru/",
+      "region": "Russia",
+      "priority": "medium",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": true,
+          "facebook": false,
+          "linkedin": true
+        }
+      }
+    },
+    {
+      "name": "Binotel",
+      "url": "https://www.binotel.ua/ua",
+      "region": "Ukraine",
+      "priority": "high",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": true,
+          "facebook": true,
+          "linkedin": true
+        }
+      }
+    },
+    {
+      "name": "Unitalk",
+      "url": "https://unitalk.cloud/uk/",
+      "region": "Ukraine",
+      "priority": "high",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": true,
+          "facebook": true,
+          "linkedin": true
+        }
+      }
+    },
+    {
+      "name": "Webitel",
+      "url": "https://webitel.com/",
+      "region": "International",
+      "priority": "medium",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": true,
+          "facebook": true,
+          "linkedin": true
+        }
+      }
+    },
+    {
+      "name": "Daktela",
+      "url": "https://daktela.com",
+      "region": "International",
+      "priority": "medium",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": true,
+          "facebook": true,
+          "linkedin": true
+        }
+      }
+    },
+    {
+      "name": "Genesys",
+      "url": "https://www.genesys.com/",
+      "region": "International",
+      "priority": "low",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": true,
+          "facebook": true,
+          "linkedin": true
+        }
+      }
+    },
+    {
+      "name": "Voximplant",
+      "url": "https://voximplant.com/",
+      "region": "International",
+      "priority": "medium",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": true,
+          "facebook": true,
+          "linkedin": true
+        }
+      }
+    },
+    {
+      "name": "MightyCall",
+      "url": "https://www.mightycall.com/",
+      "region": "International",
+      "priority": "medium",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": true,
+          "facebook": true,
+          "linkedin": true
+        }
+      }
+    },
+    {
+      "name": "VoipTime",
+      "url": "https://voiptime.net",
+      "region": "International",
+      "priority": "low",
+      "monitoring": {
+        "website": true,
+        "blog": false,
+        "socialMedia": {
+          "youtube": false,
+          "facebook": false,
+          "linkedin": false
+        }
+      }
+    },
+    {
+      "name": "Evecalls",
+      "url": "https://evecalls.com",
+      "region": "International",
+      "priority": "low",
+      "monitoring": {
+        "website": true,
+        "blog": false,
+        "socialMedia": {
+          "youtube": false,
+          "facebook": false,
+          "linkedin": false
+        }
+      }
+    },
+    {
+      "name": "Stringeex",
+      "url": "https://stringeex.com",
+      "region": "International",
+      "priority": "low",
+      "monitoring": {
+        "website": true,
+        "blog": false,
+        "socialMedia": {
+          "youtube": false,
+          "facebook": false,
+          "linkedin": false
+        }
+      }
+    },
+    {
+      "name": "Senbac",
+      "url": "https://senbac.com",
+      "region": "International",
+      "priority": "low",
+      "monitoring": {
+        "website": true,
+        "blog": false,
+        "socialMedia": {
+          "youtube": false,
+          "facebook": false,
+          "linkedin": false
+        }
+      }
+    },
+    {
+      "name": "Callio",
+      "url": "https://callio.vn/",
+      "region": "Vietnam",
+      "priority": "low",
+      "monitoring": {
+        "website": true,
+        "blog": false,
+        "socialMedia": {
+          "youtube": false,
+          "facebook": false,
+          "linkedin": false
+        }
+      }
+    },
+    {
+      "name": "Aimylogic",
+      "url": "https://aimylogic.com",
+      "region": "International",
+      "priority": "medium",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": true,
+          "facebook": false,
+          "linkedin": true
+        }
+      }
+    },
+    {
+      "name": "Mango-office",
+      "url": "https://www.mango-office.ru/",
+      "region": "Russia",
+      "priority": "high",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": true,
+          "facebook": false,
+          "linkedin": false
+        }
+      }
+    },
+    {
+      "name": "Zadarma",
+      "url": "https://zadarma.com/",
+      "region": "International",
+      "priority": "high",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": true,
+          "facebook": true,
+          "linkedin": true
+        }
+      }
+    },
+    {
+      "name": "Webitel",
+      "url": "https://www.webitel.ua/",
+      "region": "Ukraine",
+      "priority": "medium",
+      "monitoring": {
+        "website": true,
+        "blog": true,
+        "socialMedia": {
+          "youtube": true,
+          "facebook": true,
+          "linkedin": true
+        }
+      }
+    }
+  ]
+}

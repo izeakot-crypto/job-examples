@@ -1,0 +1,106 @@
+- generic [active] [ref=e1]:
+  - complementary [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4] [cursor=pointer]:
+        - generic [ref=e5]: dashboard
+        - generic [ref=e6]: Главная
+      - generic [ref=e7] [cursor=pointer]:
+        - generic [ref=e8]: lightbulb
+        - generic [ref=e9]: Идеи
+      - generic [ref=e10] [cursor=pointer]:
+        - generic [ref=e11]: rate_review
+        - generic [ref=e12]: Проверка
+      - generic [ref=e13] [cursor=pointer]:
+        - generic [ref=e14]: task_alt
+        - generic [ref=e15]: Опубликованные
+      - generic [ref=e16] [cursor=pointer]:
+        - generic [ref=e17]: person
+        - generic [ref=e18]: Аккаунт
+      - generic [ref=e19] [cursor=pointer]:
+        - generic [ref=e20]: settings
+        - generic [ref=e21]: Настройки
+      - generic [ref=e23] [cursor=pointer]:
+        - generic [ref=e24]: menu_book
+        - generic [ref=e25]: Документация
+      - generic [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: update
+        - generic [ref=e28]: Обновления
+    - generic [ref=e29]:
+      - generic [ref=e30]: izeakot · Администратор
+      - generic [ref=e31] [cursor=pointer]:
+        - generic [ref=e32]: logout
+        - generic [ref=e33]: Выйти
+  - main [ref=e34]:
+    - generic [ref=e35]:
+      - generic [ref=e37]:
+        - generic [ref=e38]: search
+        - textbox "Поиск статей или тем..." [ref=e39]
+      - generic [ref=e40]:
+        - button "notifications" [ref=e41] [cursor=pointer]:
+          - generic [ref=e42]: notifications
+        - generic [ref=e44] [cursor=pointer]: АС
+    - generic [ref=e45]:
+      - generic [ref=e46]:
+        - heading "Главная" [level=2] [ref=e47]
+        - paragraph [ref=e48]: Статистика за последние 30 дней
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - generic [ref=e53]: pending_actions
+            - generic [ref=e54]: ...
+          - heading "На проверке" [level=3] [ref=e55]
+          - paragraph [ref=e56]: —
+        - generic [ref=e57]:
+          - generic [ref=e58]:
+            - generic [ref=e60]: check_circle
+            - generic [ref=e61]: Опубликовано
+          - heading "Опубликовано" [level=3] [ref=e62]
+          - paragraph [ref=e63]: —
+        - generic [ref=e64]:
+          - generic [ref=e65]:
+            - generic [ref=e67]: lightbulb
+            - generic [ref=e68]: В очереди
+          - heading "Идей в очереди" [level=3] [ref=e69]
+          - paragraph [ref=e70]: —
+        - generic [ref=e71]:
+          - generic [ref=e72]:
+            - generic [ref=e74]: cancel
+            - generic [ref=e75]: Отклонено
+          - heading "Отклонено" [level=3] [ref=e76]
+          - paragraph [ref=e77]: —
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - generic [ref=e80]:
+            - heading "Статьи за последние 30 дней" [level=3] [ref=e81]
+            - generic [ref=e84]: Количество публикаций
+          - generic [ref=e85]:
+            - img [ref=e86]
+            - generic [ref=e89]:
+              - generic [ref=e90]: "01"
+              - generic [ref=e91]: "07"
+              - generic [ref=e92]: "14"
+              - generic [ref=e93]: "21"
+              - generic [ref=e94]: "28"
+              - generic [ref=e95]: "30"
+        - generic [ref=e96]:
+          - heading "Языковая статистика" [level=3] [ref=e97]
+          - paragraph [ref=e99]: Загрузка...
+      - generic [ref=e100]:
+        - generic [ref=e101]:
+          - generic [ref=e102]:
+            - heading "Последние черновики" [level=3] [ref=e103]
+            - paragraph [ref=e104]: Вы работали над ними недавно
+          - button "add Новая статья" [ref=e105] [cursor=pointer]:
+            - generic [ref=e106]: add
+            - text: Новая статья
+        - table [ref=e108]:
+          - rowgroup [ref=e109]:
+            - row "Название статьи Языки Статус Дата изменения Действия" [ref=e110]:
+              - columnheader "Название статьи" [ref=e111]
+              - columnheader "Языки" [ref=e112]
+              - columnheader "Статус" [ref=e113]
+              - columnheader "Дата изменения" [ref=e114]
+              - columnheader "Действия" [ref=e115]
+          - rowgroup [ref=e116]:
+            - row "Загрузка..." [ref=e117]:
+              - cell "Загрузка..." [ref=e118]

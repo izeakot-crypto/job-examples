@@ -1,0 +1,707 @@
+{
+  "name": "Monitoring of Competitors v2",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1
+            }
+          ]
+        },
+        "cronExpression": "0 9 * * *"
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [250, 300],
+      "notes": "Запуск щодня о 9:00"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "companies-list",
+              "name": "companies",
+              "value": "={{ [\n  {name: 'Ringover', url: 'https://www.ringover.com/'},\n  {name: 'Netelip', url: 'https://www.netelip.com/en/'},\n  {name: 'CloudTalk', url: 'https://www.cloudtalk.io/es/'},\n  {name: 'Gigas CloudVoice', url: 'https://gigas.com/en/cloudvoice.html'},\n  {name: 'Skorozvon', url: 'https://skorozvon.ru/'},\n  {name: 'Naumen', url: 'https://www.naumen.ru/'},\n  {name: 'Binotel', url: 'https://www.binotel.ua/ua'},\n  {name: 'Unitalk', url: 'https://unitalk.cloud/uk/'},\n  {name: 'Webitel', url: 'https://webitel.com/'},\n  {name: 'Daktela', url: 'https://daktela.com'},\n  {name: 'Genesys', url: 'https://www.genesys.com/'},\n  {name: 'Voximplant', url: 'https://voximplant.com/'},\n  {name: 'MightyCall', url: 'https://www.mightycall.com/'},\n  {name: 'VoipTime', url: 'https://voiptime.net'},\n  {name: 'Evecalls', url: 'https://evecalls.com'},\n  {name: 'Stringeex', url: 'https://stringeex.com'},\n  {name: 'Senbac', url: 'https://senbac.com'},\n  {name: 'Callio', url: 'https://callio.vn/'},\n  {name: 'Aimylogic', url: 'https://aimylogic.com'},\n  {name: 'Mango Office', url: 'https://www.mango-office.ru/'},\n  {name: 'Zadarma', url: 'https://zadarma.com/'}\n] }}",
+              "type": "array"
+            }
+          ]
+        }
+      },
+      "id": "set-companies",
+      "name": "Companies List",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [450, 300],
+      "notes": "Список всіх 21 компанії"
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "loop-companies",
+      "name": "Loop Companies",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Sheet1",
+          "mode": "list"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Company",
+              "lookupValue": "={{ $json.name }}"
+            }
+          ]
+        },
+        "options": {
+          "sort": {
+            "fields": [
+              {
+                "fieldName": "Date",
+                "order": "descending"
+              }
+            ]
+          },
+          "limit": 1
+        }
+      },
+      "id": "read-previous-data",
+      "name": "Read Previous Data",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [850, 300],
+      "notes": "Читаємо останні дані компанії для порівняння"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "options": {
+          "timeout": 30000,
+          "redirect": {
+            "followRedirects": true,
+            "maxRedirects": 5
+          }
+        }
+      },
+      "id": "fetch-website",
+      "name": "Fetch Website",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1050, 200]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}/blog",
+        "options": {
+          "timeout": 30000,
+          "allowUnauthorizedCerts": true,
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "fetch-blog",
+      "name": "Fetch Blog",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1050, 350]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}/reviews",
+        "options": {
+          "timeout": 30000,
+          "allowUnauthorizedCerts": true,
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "fetch-reviews",
+      "name": "Fetch Reviews",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1050, 500]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse all data sources\nconst company = $('Loop Companies').item.json.name;\nconst url = $('Loop Companies').item.json.url;\nconst previousData = $('Read Previous Data').all();\n\n// Parse website\nconst websiteHtml = $('Fetch Website').item.json.body || '';\nconst titleMatch = websiteHtml.match(/<title[^>]*>([^<]+)<\\/title>/i);\nconst descMatch = websiteHtml.match(/<meta[^>]*name=[\"']description[\"'][^>]*content=[\"']([^\"']+)[\"']/i);\nconst h1Matches = websiteHtml.match(/<h1[^>]*>([^<]+)<\\/h1>/gi) || [];\n\nconst website = {\n  title: titleMatch ? titleMatch[1].trim() : null,\n  description: descMatch ? descMatch[1].trim() : null,\n  h1Tags: h1Matches.map(h => h.replace(/<[^>]+>/g, '').trim()),\n  hasNews: websiteHtml.toLowerCase().includes('news'),\n  hasBlog: websiteHtml.toLowerCase().includes('blog'),\n  hasPricing: websiteHtml.toLowerCase().includes('pricing'),\n  hasFeatures: websiteHtml.toLowerCase().includes('features')\n};\n\n// Parse blog\nconst blogHtml = $('Fetch Blog').item.json.body || '';\nconst blogArticles = blogHtml.match(/<article[^>]*>([\\s\\S]*?)<\\/article>/gi) || [];\nconst blog = {\n  articlesFound: blogArticles.length,\n  recentArticles: blogArticles.slice(0, 5).map((article, i) => {\n    const titleMatch = article.match(/<h[1-3][^>]*>([^<]+)<\\/h[1-3]>/i);\n    const dateMatch = article.match(/<time[^>]*datetime=[\"']([^\"']+)[\"']/i) || article.match(/(\\d{4}-\\d{2}-\\d{2})/);\n    return {\n      title: titleMatch ? titleMatch[1].trim() : `Article ${i+1}`,\n      date: dateMatch ? dateMatch[1] : null,\n      preview: article.replace(/<[^>]+>/g, '').substring(0, 200).trim()\n    };\n  })\n};\n\n// Parse reviews/testimonials\nconst reviewsHtml = $('Fetch Reviews').item.json.body || '';\nconst reviewMatches = reviewsHtml.match(/<div[^>]*class=\"[^\"]*review[^\"]*\"[^>]*>([\\s\\S]*?)<\\/div>/gi) || [];\nconst reviews = {\n  found: reviewMatches.length > 0,\n  count: reviewMatches.length,\n  samples: reviewMatches.slice(0, 3).map(r => r.replace(/<[^>]+>/g, '').substring(0, 150).trim())\n};\n\n// Extract previous data\nconst previous = previousData.length > 0 ? {\n  date: previousData[0].json.Date || null,\n  summary: previousData[0].json['AI Summary'] || null\n} : null;\n\nreturn {\n  company: company,\n  url: url,\n  currentData: {\n    website: website,\n    blog: blog,\n    reviews: reviews,\n    scrapedAt: new Date().toISOString()\n  },\n  previousData: previous\n};"
+      },
+      "id": "parse-all-data",
+      "name": "Parse All Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 350],
+      "notes": "Об'єднує всі джерела даних"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"gpt-4o-2024-08-06\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"Ти expert аналітик VoIP/Contact Center індустрії. Аналізуй дані компанії та повертай ТІЛЬКИ valid JSON згідно схеми. ВАЖЛИВО: Порівнюй поточні дані з попередніми. Виділяй ЩО ЗМІНИЛОСЬ з останньої перевірки. Будь конкретним та фактичним. Якщо немає даних - повертай пустий масив []. Для blogArticles: витягуй title, date (YYYY-MM-DD), summary. Для customerPains/Wants: базуйся на відгуках та коментарях.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Проаналізуй компанію {{ $json.company }} ({{ $json.url }}):\\n\\n\" +\n                 \"ПОПЕРЕДНІ ДАНІ (з останньої перевірки {{ $json.previousData?.date || 'немає' }}):\\n\" +\n                 \"{{ $json.previousData?.summary || 'Перша перевірка' }}\\n\\n\" +\n                 \"ПОТОЧНІ ДАНІ:\\n\" +\n                 \"Сайт:\\n\" +\n                 \"- Title: {{ $json.currentData.website.title }}\\n\" +\n                 \"- Description: {{ $json.currentData.website.description }}\\n\" +\n                 \"- H1: {{ $json.currentData.website.h1Tags.join(', ') }}\\n\" +\n                 \"- Секції: {{ $json.currentData.website.hasFeatures ? 'Features' : '' }} {{ $json.currentData.website.hasPricing ? 'Pricing' : '' }} {{ $json.currentData.website.hasBlog ? 'Blog' : '' }}\\n\\n\" +\n                 \"Блог:\\n\" +\n                 \"- Знайдено статей: {{ $json.currentData.blog.articlesFound }}\\n\" +\n                 \"- Останні: {{ $json.currentData.blog.recentArticles.map(a => a.title + ' (' + a.date + ')').join('; ') }}\\n\\n\" +\n                 \"Відгуки/Коментарі:\\n\" +\n                 \"- Знайдено: {{ $json.currentData.reviews.found ? 'Так (' + $json.currentData.reviews.count + ')' : 'Ні' }}\\n\" +\n                 \"- Приклади: {{ $json.currentData.reviews.samples.join('; ') }}\\n\\n\" +\n                 \"ЗАВДАННЯ - Поверни valid JSON з такими полями:\\n\" +\n                 \"{\\n\" +\n                 \"  newFeatures: [масив рядків - нові функції],\\n\" +\n                 \"  problems: [масив рядків - проблеми],\\n\" +\n                 \"  reviewInsights: рядок - загальні інсайти з відгуків,\\n\" +\n                 \"  news: [масив рядків - новини],\\n\" +\n                 \"  blogArticles: [масив об'єктів {title, date, summary}],\\n\" +\n                 \"  customerPains: [масив рядків - болі клієнтів],\\n\" +\n                 \"  customerWants: [масив рядків - хотілки клієнтів],\\n\" +\n                 \"  summary: рядок - короткий саммарі 2-3 речення\\n\" +\n                 \"}\"\n    }\n  ],\n  \"response_format\": {\"type\": \"json_object\"},\n  \"temperature\": 0.7,\n  \"max_tokens\": 2000\n}"
+      },
+      "id": "ai-analysis",
+      "name": "AI Analysis",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1450, 350],
+      "notes": "Комплексний AI аналіз всіх даних"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse AI JSON response and handle errors\nconst response = $input.item.json;\nlet aiData;\n\ntry {\n  // Extract content from OpenAI response\n  const content = response.choices?.[0]?.message?.content || '';\n\n  // Parse JSON\n  aiData = JSON.parse(content);\n\n  // Validate required fields\n  const required = ['newFeatures', 'problems', 'reviewInsights', 'news',\n                   'blogArticles', 'customerPains', 'customerWants', 'summary'];\n\n  for (const field of required) {\n    if (!(field in aiData)) {\n      throw new Error(`Missing required field: ${field}`);\n    }\n  }\n\n} catch (error) {\n  // Fallback structure on error\n  console.error('AI JSON parsing error:', error.message);\n  aiData = {\n    newFeatures: [],\n    problems: [`Помилка парсингу AI: ${error.message}`],\n    reviewInsights: 'Дані недоступні',\n    news: [],\n    blogArticles: [],\n    customerPains: [],\n    customerWants: [],\n    summary: 'Аналіз не вдався - потрібна ручна перевірка'\n  };\n}\n\n// Pass through original data + parsed AI\nreturn {\n  company: $('Loop Companies').item.json.name,\n  url: $('Loop Companies').item.json.url,\n  aiAnalysis: aiData,\n  parsedAt: new Date().toISOString()\n};"
+      },
+      "id": "parse-ai-json",
+      "name": "Parse AI JSON Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1550, 350],
+      "notes": "Розпарсує та валідує JSON від AI"
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.item.json;\nconst ai = data.aiAnalysis || {};\n\n// Helper: convert array to comma-separated string\nconst arrayToString = (arr) => {\n  if (!Array.isArray(arr)) return '-';\n  if (arr.length === 0) return '-';\n  return arr.join(', ');\n};\n\n// Helper: convert blog articles to readable string\nconst blogToString = (articles) => {\n  if (!Array.isArray(articles)) return '-';\n  if (articles.length === 0) return '-';\n  return articles.map(a =>\n    `${a.title} (${a.date || 'дата невідома'}): ${a.summary.substring(0, 100)}...`\n  ).join(' | ');\n};\n\n// Create 16-column row\nreturn {\n  // Column 1: Дата\n  'Дата': new Date().toISOString().split('T')[0],\n\n  // Column 2: Компанія\n  'Компанія': data.company,\n\n  // Column 3: URL\n  'URL': data.url,\n\n  // Column 4: Нові фічі\n  'Нові фічі': arrayToString(ai.newFeatures),\n\n  // Column 5: Проблеми\n  'Проблеми': arrayToString(ai.problems),\n\n  // Column 6: Інсайти з коментарів\n  'Інсайти з коментарів': ai.reviewInsights || '-',\n\n  // Column 7: Новини (з останньої перевірки)\n  'Новини (з останньої перевірки)': arrayToString(ai.news),\n\n  // Column 8: Статті в блозі (з останньої перевірки)\n  'Статті в блозі (з останньої перевірки)': blogToString(ai.blogArticles),\n\n  // Column 9: YouTube активність\n  'YouTube активність': data.youtubeActivity || '-',\n\n  // Column 10: Facebook активність\n  'Facebook активність': data.facebookActivity || '-',\n\n  // Column 11: LinkedIn активність\n  'LinkedIn активність': data.linkedinActivity || '-',\n\n  // Column 12: Згадки на агрегаторах\n  'Згадки на агрегаторах': data.aggregatorMentions || '-',\n\n  // Column 13: Кількість згадок в соцмережах (поки пусто)\n  'Кількість згадок в соцмережах': '0',\n\n  // Column 14: Болі клієнтів з коментарів\n  'Болі клієнтів з коментарів': arrayToString(ai.customerPains),\n\n  // Column 15: Хотілки клієнтів з коментарів\n  'Хотілки клієнтів з коментарів': arrayToString(ai.customerWants),\n\n  // Column 16: AI Summary\n  'AI Summary': ai.summary || '-'\n};"
+      },
+      "id": "format-for-sheets",
+      "name": "Format for Sheets",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1650, 350]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Sheet1",
+          "mode": "list"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Дата": "={{ $json['Дата'] }}",
+            "Компанія": "={{ $json['Компанія'] }}",
+            "URL": "={{ $json['URL'] }}",
+            "Нові фічі": "={{ $json['Нові фічі'] }}",
+            "Проблеми": "={{ $json['Проблеми'] }}",
+            "Інсайти з коментарів": "={{ $json['Інсайти з коментарів'] }}",
+            "Новини (з останньої перевірки)": "={{ $json['Новини (з останньої перевірки)'] }}",
+            "Статті в блозі (з останньої перевірки)": "={{ $json['Статті в блозі (з останньої перевірки)'] }}",
+            "YouTube активність": "={{ $json['YouTube активність'] }}",
+            "Facebook активність": "={{ $json['Facebook активність'] }}",
+            "LinkedIn активність": "={{ $json['LinkedIn активність'] }}",
+            "Згадки на агрегаторах": "={{ $json['Згадки на агрегаторах'] }}",
+            "Кількість згадок в соцмережах": "={{ $json['Кількість згадок в соцмережах'] }}",
+            "Болі клієнтів з коментарів": "={{ $json['Болі клієнтів з коментарів'] }}",
+            "Хотілки клієнтів з коментарів": "={{ $json['Хотілки клієнтів з коментарів'] }}",
+            "AI Summary": "={{ $json['AI Summary'] }}"
+          }
+        }
+      },
+      "id": "save-to-sheets",
+      "name": "Save to Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [1850, 350]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Aggregate all companies results\nconst allResults = $input.all();\n\n// Build Telegram message\nlet message = `📊 *Щоденний звіт моніторингу конкурентів*\\n`;\nmessage += `📅 Дата: ${new Date().toLocaleDateString('uk-UA')}\\n\\n`;\n\nallResults.forEach((item, index) => {\n  const summary = item.json['AI Summary'] || '';\n  const company = item.json.Company;\n  \n  // Extract key info from AI summary (first 150 chars)\n  const shortSummary = summary.substring(0, 150).trim() + (summary.length > 150 ? '...' : '');\n  \n  message += `${index + 1}. *${company}*\\n${shortSummary}\\n\\n`;\n});\n\nmessage += `\\n📋 *Детальний звіт:*\\n[Відкрити Google Sheets](YOUR_GOOGLE_SHEET_URL)`;\n\nreturn { message };"
+      },
+      "id": "prepare-telegram",
+      "name": "Prepare Telegram Message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2050, 350],
+      "notes": "Формує підсумкове повідомлення"
+    },
+    {
+      "parameters": {
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
+        "text": "={{ $json.message }}",
+        "additionalFields": {
+          "parse_mode": "Markdown",
+          "disable_web_page_preview": true
+        }
+      },
+      "id": "send-telegram",
+      "name": "Send Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [2250, 350]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Auto-detect YouTube channel from website HTML\nconst websiteHtml = $('Fetch Website').item.json.body || '';\nconst companyName = $('Loop Companies').item.json.name;\n\n// Method 1: Extract from YouTube links in HTML\nconst youtubePatterns = [\n  /youtube\\.com\\/channel\\/([a-zA-Z0-9_-]+)/i,\n  /youtube\\.com\\/c\\/([a-zA-Z0-9_-]+)/i,\n  /youtube\\.com\\/user\\/([a-zA-Z0-9_-]+)/i,\n  /youtube\\.com\\/@([a-zA-Z0-9_-]+)/i\n];\n\nlet channelId = null;\nlet channelUrl = null;\n\nfor (const pattern of youtubePatterns) {\n  const match = websiteHtml.match(pattern);\n  if (match) {\n    channelUrl = match[0];\n    channelId = match[1];\n    break;\n  }\n}\n\nreturn {\n  company: companyName,\n  youtubeChannelId: channelId,\n  youtubeUrl: channelUrl,\n  autoDetected: !!channelId\n};"
+      },
+      "id": "auto-detect-youtube",
+      "name": "Auto-detect YouTube Channel",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 650],
+      "notes": "Витягує YouTube channel ID зі сторінки компанії"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://www.googleapis.com/youtube/v3/search",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "part",
+              "value": "snippet"
+            },
+            {
+              "name": "channelId",
+              "value": "={{ $json.youtubeChannelId }}"
+            },
+            {
+              "name": "order",
+              "value": "date"
+            },
+            {
+              "name": "maxResults",
+              "value": "10"
+            },
+            {
+              "name": "type",
+              "value": "video"
+            },
+            {
+              "name": "publishedAfter",
+              "value": "={{ $now.minus(7, 'days').toISO() }}"
+            },
+            {
+              "name": "key",
+              "value": "={{ $credentials.youtubeApiKey }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "youtube-api-search",
+      "name": "YouTube API Search",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1250, 650],
+      "notes": "Отримує останні відео за тиждень"
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.item.json;\nconst company = $('Loop Companies').item.json.name;\n\n// Check if YouTube API returned data\nif (!response.items || response.items.length === 0) {\n  return {\n    company: company,\n    youtubeActivity: 'Немає нових відео за тиждень'\n  };\n}\n\nconst videos = response.items;\nconst videoCount = videos.length;\nconst latestVideo = videos[0];\n\n// Format activity string\nconst activity = `${videoCount} нових відео за тиждень. ` +\n                 `Останнє: \"${latestVideo.snippet.title}\" (${latestVideo.snippet.publishedAt.split('T')[0]})`;\n\nreturn {\n  company: company,\n  youtubeActivity: activity,\n  youtubeVideos: videos.slice(0, 3).map(v => ({\n    title: v.snippet.title,\n    publishedAt: v.snippet.publishedAt,\n    url: `https://www.youtube.com/watch?v=${v.id.videoId}`\n  }))\n};"
+      },
+      "id": "parse-youtube-data",
+      "name": "Parse YouTube Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1450, 650],
+      "notes": "Форматує YouTube дані для колонки 9"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll"
+      },
+      "id": "merge-all-data",
+      "name": "Merge All Data",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [1600, 500],
+      "notes": "Об'єднує AI, YouTube, Social та Aggregator дані"
+    },
+    {
+      "parameters": {
+        "jsCode": "const websiteHtml = $('Fetch Website').item.json.body || '';\nconst company = $('Loop Companies').item.json.name;\n\n// Extract social media links\nconst extractUrl = (pattern) => {\n  const match = websiteHtml.match(pattern);\n  return match ? match[0] : null;\n};\n\nconst social = {\n  company: company,\n  linkedin: extractUrl(/linkedin\\.com\\/company\\/[a-zA-Z0-9_-]+/i),\n  facebook: extractUrl(/facebook\\.com\\/[a-zA-Z0-9._-]+/i),\n  twitter: extractUrl(/twitter\\.com\\/[a-zA-Z0-9_]+/i),\n  instagram: extractUrl(/instagram\\.com\\/[a-zA-Z0-9._]+/i)\n};\n\nreturn social;"
+      },
+      "id": "auto-detect-social",
+      "name": "Auto-detect Social Links",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 800],
+      "notes": "Витягує LinkedIn, Facebook та інші social URLs"
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.item.json;\n\nconst activities = [];\n\nif (data.linkedin) {\n  activities.push(`LinkedIn: ${data.linkedin}`);\n}\nif (data.facebook) {\n  activities.push(`Facebook: ${data.facebook}`);\n}\nif (data.twitter) {\n  activities.push(`Twitter: ${data.twitter}`);\n}\n\nconst linkedinActivity = data.linkedin ? 'Сторінка знайдена' : '-';\nconst facebookActivity = data.facebook ? 'Сторінка знайдена' : '-';\n\nreturn {\n  company: data.company,\n  linkedinActivity: linkedinActivity,\n  facebookActivity: facebookActivity,\n  allSocialLinks: activities.join('; ') || '-'\n};"
+      },
+      "id": "format-social-activity",
+      "name": "Format Social Activity",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 800],
+      "notes": "Форматує social media дані для колонок 10-11"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://www.g2.com/search?query={{ $('Loop Companies').item.json.name }}",
+        "options": {
+          "timeout": 30000,
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          },
+          "headers": {
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+              }
+            ]
+          }
+        }
+      },
+      "id": "fetch-g2",
+      "name": "Fetch G2 Page",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1050, 950],
+      "notes": "Запит до G2 для пошуку компанії"
+    },
+    {
+      "parameters": {
+        "jsCode": "const html = $input.item.json.body || '';\nconst company = $('Loop Companies').item.json.name;\n\n// Simple parsing for G2 rating\nconst ratingMatch = html.match(/(\\d+\\.\\d+)\\s*out of 5 stars/i) ||\n                     html.match(/\"rating[\"\\s:]*(\\d+\\.\\d+)/i);\n\nconst reviewsMatch = html.match(/(\\d+[\\d,]*)\\s+reviews?/i);\n\nif (!ratingMatch) {\n  return {\n    company: company,\n    g2Data: 'Не знайдено на G2',\n    g2Found: false\n  };\n}\n\nconst rating = ratingMatch[1];\nconst reviewsCount = reviewsMatch ? reviewsMatch[1] : '?';\n\nreturn {\n  company: company,\n  g2Data: `G2: ${rating}⭐ (${reviewsCount} відгуків)`,\n  g2Found: true,\n  g2Rating: parseFloat(rating),\n  g2ReviewsCount: parseInt(reviewsCount.replace(/,/g, '') || '0')\n};"
+      },
+      "id": "parse-g2",
+      "name": "Parse G2 Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 950],
+      "notes": "Парсить рейтинг та відгуки з G2"
+    },
+    {
+      "parameters": {
+        "jsCode": "const g2 = $input.item.json;\nconst company = $('Loop Companies').item.json.name;\n\n// Format aggregator data\nconst aggregatorMentions = g2.g2Data || 'Не знайдено';\n\nreturn {\n  company: company,\n  aggregatorMentions: aggregatorMentions,\n  g2Rating: g2.g2Rating || null,\n  g2ReviewsCount: g2.g2ReviewsCount || 0\n};"
+      },
+      "id": "merge-aggregators",
+      "name": "Merge Aggregator Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1450, 950],
+      "notes": "Об'єднує дані агрегаторів"
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Companies List",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Companies List": {
+      "main": [
+        [
+          {
+            "node": "Loop Companies",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Companies": {
+      "main": [
+        [
+          {
+            "node": "Read Previous Data",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        null,
+        [
+          {
+            "node": "Prepare Telegram Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Previous Data": {
+      "main": [
+        [
+          {
+            "node": "Fetch Website",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch Blog",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch Reviews",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Website": {
+      "main": [
+        [
+          {
+            "node": "Parse All Data",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Auto-detect YouTube Channel",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Auto-detect Social Links",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Blog": {
+      "main": [
+        [
+          {
+            "node": "Parse All Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Reviews": {
+      "main": [
+        [
+          {
+            "node": "Parse All Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse All Data": {
+      "main": [
+        [
+          {
+            "node": "AI Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Analysis": {
+      "main": [
+        [
+          {
+            "node": "Parse AI JSON Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse AI JSON Response": {
+      "main": [
+        [
+          {
+            "node": "Merge All Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse YouTube Data": {
+      "main": [
+        [
+          {
+            "node": "Merge All Data",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge All Data": {
+      "main": [
+        [
+          {
+            "node": "Format for Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format for Sheets": {
+      "main": [
+        [
+          {
+            "node": "Save to Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Sheets": {
+      "main": [
+        [
+          {
+            "node": "Loop Companies",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Telegram Message": {
+      "main": [
+        [
+          {
+            "node": "Send Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Auto-detect YouTube Channel": {
+      "main": [
+        [
+          {
+            "node": "YouTube API Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "YouTube API Search": {
+      "main": [
+        [
+          {
+            "node": "Parse YouTube Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Auto-detect Social Links": {
+      "main": [
+        [
+          {
+            "node": "Format Social Activity",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch G2 Page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Social Activity": {
+      "main": [
+        [
+          {
+            "node": "Merge All Data",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Fetch G2 Page": {
+      "main": [
+        [
+          {
+            "node": "Parse G2 Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse G2 Data": {
+      "main": [
+        [
+          {
+            "node": "Merge Aggregator Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Aggregator Data": {
+      "main": [
+        [
+          {
+            "node": "Merge All Data",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {}
+}

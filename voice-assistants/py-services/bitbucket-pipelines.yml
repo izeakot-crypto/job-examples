@@ -1,0 +1,187 @@
+image: python:3.11-slim
+# Jira integration: комментарии к таскам при деплое в PROD
+
+definitions:
+  steps:
+    - step: &run-tests
+        name: "Тесты"
+        caches:
+          - pip
+        script:
+          - pip install -r services/translation-checker/requirements.txt
+          - pip install pytest httpx
+          - export PYTHONPATH=$BITBUCKET_CLONE_DIR
+          - export TC_API_KEY=test_key_123
+          - export TC_PORT=8585
+          - export OLLAMA_URL=http://localhost:11434
+          - export OLLAMA_MODEL=test-model
+          - export LOG_DIR=/tmp/py-services-test-logs
+          - python -m pytest services/translation-checker/tests/ -v
+          # TTS Google Chirp3
+          - pip install -r services/tts-google-chirp3/requirements.txt
+          - export TGC_API_KEY=test_key_123
+          - export TGC_PORT=8589
+          - export TGC_CACHE_DIR=/tmp/py-services-test-tts-cache
+          - python -m pytest services/tts-google-chirp3/tests/ -v
+          # LIRA Assistants API
+          - pip install -r services/lira-assistants-api/requirements.txt
+          - export LA_API_KEY=test_key_123
+          - export LA_PORT=8590
+          - python -m pytest services/lira-assistants-api/tests/ -v
+        # Будущие сервисы — добавлять тесты ниже:
+        # - python -m pytest services/original-checker/tests/ -v
+
+    - step: &deploy-test
+        name: "Деплой TEST-контейнера"
+        script:
+          - apt-get update && apt-get install -y openssh-client curl git > /dev/null 2>&1
+          - mkdir -p ~/.ssh
+          - echo "$SSH_KEY_B64" | base64 -d > ~/.ssh/deploy_key
+          - chmod 600 ~/.ssh/deploy_key
+          - echo -e "Host deploy\n  HostName $SSH_HOST\n  User $SSH_USER\n  Port $SSH_PORT\n  IdentityFile ~/.ssh/deploy_key\n  StrictHostKeyChecking no" > ~/.ssh/config
+          - ssh deploy "cd /opt/py-services-test && git fetch origin && git checkout staging && git reset --hard origin/staging"
+          - ssh deploy "cd /opt/py-services && docker compose build --no-cache test && docker compose up -d --no-deps test"
+          - sleep 10
+          - |
+            SUCCESS=false
+            for i in 1 2 3 4 5; do
+              HTTP_CODE=$(curl -sk -o /dev/null -w "%{http_code}" https://py-services.oki-toki.net/test/translation-checker/health)
+              if [ "$HTTP_CODE" = "200" ]; then
+                echo "TEST health check OK (attempt $i)"
+                SUCCESS=true
+                break
+              fi
+              echo "TEST health check failed (attempt $i, HTTP $HTTP_CODE), retry in 5s..."
+              sleep 5
+            done
+            if [ "$SUCCESS" != "true" ]; then
+              echo "TEST HEALTH CHECK FAILED — rolling back test container!"
+              ssh deploy "cd /opt/py-services-test && git checkout HEAD~1"
+              ssh deploy "cd /opt/py-services && docker compose build --no-cache test && docker compose up -d --no-deps test"
+              if [ -n "$DISCORD_DEPLOY_WEBHOOK" ]; then
+                COMMIT_MSG=$(git log -1 --pretty=%s)
+                JIRA_KEY=$(echo "$COMMIT_MSG" | grep -oE '[A-Z]+-[0-9]+' | head -1)
+                JIRA_FIELD=""
+                if [ -n "$JIRA_KEY" ]; then
+                  JIRA_FIELD=",{\"name\":\"Задача\",\"value\":\"${JIRA_URL}/browse/${JIRA_KEY}\"}"
+                fi
+                curl -s -H "Content-Type: application/json" -X POST "$DISCORD_DEPLOY_WEBHOOK" -d "{\"embeds\":[{\"title\":\"ERROR\",\"description\":\"TEST health check failed — rollback executed\",\"color\":16711680,\"fields\":[{\"name\":\"Sender script name\",\"value\":\"bitbucket pipeline\"},{\"name\":\"Server\",\"value\":\"py-services.oki-toki.net\"},{\"name\":\"Container\",\"value\":\"TEST\"},{\"name\":\"Branch\",\"value\":\"$BITBUCKET_BRANCH\"},{\"name\":\"Commit\",\"value\":\"${BITBUCKET_COMMIT:0:7}\"},{\"name\":\"Описание\",\"value\":\"$COMMIT_MSG\"}${JIRA_FIELD}]}]}"
+              fi
+              exit 1
+            fi
+          - |
+            if [ -n "$DISCORD_DEPLOY_WEBHOOK" ]; then
+              COMMIT_MSG=$(git log -1 --pretty=%s)
+              JIRA_KEY=$(echo "$COMMIT_MSG" | grep -oE '[A-Z]+-[0-9]+' | head -1)
+              JIRA_FIELD=""
+              if [ -n "$JIRA_KEY" ]; then
+                JIRA_FIELD=",{\"name\":\"Задача\",\"value\":\"${JIRA_URL}/browse/${JIRA_KEY}\"}"
+              fi
+              curl -s -H "Content-Type: application/json" -X POST "$DISCORD_DEPLOY_WEBHOOK" -d "{\"embeds\":[{\"title\":\"NOTICE\",\"description\":\"TEST container deployed successfully\",\"fields\":[{\"name\":\"Sender script name\",\"value\":\"bitbucket pipeline\"},{\"name\":\"Server\",\"value\":\"py-services.oki-toki.net\"},{\"name\":\"Container\",\"value\":\"TEST\"},{\"name\":\"Branch\",\"value\":\"$BITBUCKET_BRANCH\"},{\"name\":\"Commit\",\"value\":\"${BITBUCKET_COMMIT:0:7}\"},{\"name\":\"Описание\",\"value\":\"$COMMIT_MSG\"}${JIRA_FIELD}]}]}"
+            fi
+
+    - step: &notify-jira
+        name: "Jira — комментарий к таске"
+        script:
+          - apt-get update && apt-get install -y git curl > /dev/null 2>&1
+          - |
+            COMMIT_SUBJECT=$(git log -1 --pretty=%s)
+            COMMIT_BODY=$(git log -1 --pretty=%b | sed '/^Co-Authored-By:/d' | sed '/^$/d')
+            echo "Subject: $COMMIT_SUBJECT"
+            echo "Body: $COMMIT_BODY"
+            JIRA_KEY=$(echo "$COMMIT_SUBJECT" | grep -oE '[A-Z]+-[0-9]+' | head -1)
+            if [ -z "$JIRA_KEY" ]; then
+              echo "Ключ Jira не найден в коммите — пропускаем"
+              exit 0
+            fi
+            echo "Найден ключ Jira: $JIRA_KEY"
+            AUTHOR=$(git log -1 --pretty=%an)
+            # Если есть body — используем его как бизнес-описание, иначе subject
+            if [ -n "$COMMIT_BODY" ]; then
+              COMMENT="${COMMIT_BODY}\n\nАвтор: ${AUTHOR}"
+            else
+              # Убираем ключ таски из начала subject
+              CLEAN_MSG=$(echo "$COMMIT_SUBJECT" | sed 's/^[A-Z]*-[0-9]*[: ]*//')
+              COMMENT="${CLEAN_MSG}\n\nАвтор: ${AUTHOR}"
+            fi
+            # Экранируем кавычки и переносы строк для JSON
+            COMMENT_ESCAPED=$(printf '%s' "$COMMENT" | sed 's/"/\\"/g' | awk '{printf "%s\\n", $0}' | sed 's/\\n$//')
+            RESPONSE=$(curl -s -w "\n%{http_code}" -u "${JIRA_USER}:${JIRA_PASSWORD}" \
+              -H "Content-Type: application/json" \
+              -X POST \
+              "${JIRA_URL}/rest/api/2/issue/${JIRA_KEY}/comment" \
+              -d "{\"body\": \"${COMMENT_ESCAPED}\"}")
+            HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+            RESP_BODY=$(echo "$RESPONSE" | head -n -1)
+            if [ "$HTTP_CODE" = "201" ]; then
+              echo "Комментарий добавлен в $JIRA_KEY"
+            else
+              echo "Ошибка Jira API (HTTP $HTTP_CODE): $RESP_BODY"
+              echo "Продолжаем — это не блокирует деплой"
+            fi
+
+    - step: &deploy-prod
+        name: "Деплой PROD-контейнера"
+        script:
+          - apt-get update && apt-get install -y openssh-client curl git > /dev/null 2>&1
+          - mkdir -p ~/.ssh
+          - echo "$SSH_KEY_B64" | base64 -d > ~/.ssh/deploy_key
+          - chmod 600 ~/.ssh/deploy_key
+          - echo -e "Host deploy\n  HostName $SSH_HOST\n  User $SSH_USER\n  Port $SSH_PORT\n  IdentityFile ~/.ssh/deploy_key\n  StrictHostKeyChecking no" > ~/.ssh/config
+          - ssh deploy "cd /opt/py-services && git fetch origin && git checkout main && git reset --hard origin/main"
+          - ssh deploy "cd /opt/py-services && docker compose build --no-cache prod && docker compose up -d --no-deps prod"
+          - sleep 10
+          - |
+            SUCCESS=false
+            for i in 1 2 3 4 5; do
+              HTTP_CODE=$(curl -sk -o /dev/null -w "%{http_code}" https://py-services.oki-toki.net/api/translation-checker/health)
+              if [ "$HTTP_CODE" = "200" ]; then
+                echo "PROD health check OK (attempt $i)"
+                SUCCESS=true
+                break
+              fi
+              echo "PROD health check failed (attempt $i, HTTP $HTTP_CODE), retry in 5s..."
+              sleep 5
+            done
+            if [ "$SUCCESS" != "true" ]; then
+              echo "PROD HEALTH CHECK FAILED — rolling back prod container!"
+              ssh deploy "cd /opt/py-services && git checkout HEAD~1"
+              ssh deploy "cd /opt/py-services && docker compose build --no-cache prod && docker compose up -d --no-deps prod"
+              if [ -n "$DISCORD_DEPLOY_WEBHOOK" ]; then
+                COMMIT_MSG=$(git log -1 --pretty=%s)
+                JIRA_KEY=$(echo "$COMMIT_MSG" | grep -oE '[A-Z]+-[0-9]+' | head -1)
+                JIRA_FIELD=""
+                if [ -n "$JIRA_KEY" ]; then
+                  JIRA_FIELD=",{\"name\":\"Задача\",\"value\":\"${JIRA_URL}/browse/${JIRA_KEY}\"}"
+                fi
+                curl -s -H "Content-Type: application/json" -X POST "$DISCORD_DEPLOY_WEBHOOK" -d "{\"embeds\":[{\"title\":\"ERROR\",\"description\":\"PROD health check failed — rollback executed\",\"color\":16711680,\"fields\":[{\"name\":\"Sender script name\",\"value\":\"bitbucket pipeline\"},{\"name\":\"Server\",\"value\":\"py-services.oki-toki.net\"},{\"name\":\"Container\",\"value\":\"PROD\"},{\"name\":\"Branch\",\"value\":\"$BITBUCKET_BRANCH\"},{\"name\":\"Commit\",\"value\":\"${BITBUCKET_COMMIT:0:7}\"},{\"name\":\"Описание\",\"value\":\"$COMMIT_MSG\"}${JIRA_FIELD}]}]}"
+              fi
+              exit 1
+            fi
+          - |
+            if [ -n "$DISCORD_DEPLOY_WEBHOOK" ]; then
+              COMMIT_MSG=$(git log -1 --pretty=%s)
+              JIRA_KEY=$(echo "$COMMIT_MSG" | grep -oE '[A-Z]+-[0-9]+' | head -1)
+              JIRA_FIELD=""
+              if [ -n "$JIRA_KEY" ]; then
+                JIRA_FIELD=",{\"name\":\"Задача\",\"value\":\"${JIRA_URL}/browse/${JIRA_KEY}\"}"
+              fi
+              curl -s -H "Content-Type: application/json" -X POST "$DISCORD_DEPLOY_WEBHOOK" -d "{\"embeds\":[{\"title\":\"NOTICE\",\"description\":\"PROD container deployed successfully\",\"fields\":[{\"name\":\"Sender script name\",\"value\":\"bitbucket pipeline\"},{\"name\":\"Server\",\"value\":\"py-services.oki-toki.net\"},{\"name\":\"Container\",\"value\":\"PROD\"},{\"name\":\"Branch\",\"value\":\"$BITBUCKET_BRANCH\"},{\"name\":\"Commit\",\"value\":\"${BITBUCKET_COMMIT:0:7}\"},{\"name\":\"Описание\",\"value\":\"$COMMIT_MSG\"}${JIRA_FIELD}]}]}"
+            fi
+
+pipelines:
+  branches:
+    # Feature ветки — только тесты
+    feature/*:
+      - step: *run-tests
+
+    # Staging — тесты + деплой TEST-контейнера
+    staging:
+      - step: *run-tests
+      - step: *deploy-test
+
+    # Main — тесты + деплой PROD-контейнера + Jira
+    main:
+      - step: *run-tests
+      - step: *deploy-prod
+      - step: *notify-jira

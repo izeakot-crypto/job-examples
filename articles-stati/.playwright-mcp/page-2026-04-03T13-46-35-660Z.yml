@@ -1,0 +1,67 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - button "📊 Dashboard" [active] [ref=e4] [cursor=pointer]:
+        - generic [ref=e5]: 📊
+        - text: Dashboard
+      - button "💡 Идеи Статей" [ref=e6] [cursor=pointer]:
+        - generic [ref=e7]: 💡
+        - text: Идеи Статей
+      - button "📝 Проверка Статей" [ref=e8] [cursor=pointer]:
+        - generic [ref=e9]: 📝
+        - text: Проверка Статей
+      - button "🚀 Опубликованные" [ref=e10] [cursor=pointer]:
+        - generic [ref=e11]: 🚀
+        - text: Опубликованные
+    - main [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - heading "📊 Dashboard" [level=2] [ref=e15]
+          - button "🔄 Оновити статистику" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]: 🔄
+            - text: Оновити статистику
+        - generic [ref=e18]:
+          - generic [ref=e19]:
+            - generic [ref=e20]: 📝
+            - generic [ref=e21]:
+              - heading "На проверке" [level=3] [ref=e22]
+              - generic [ref=e23]: "16"
+              - generic [ref=e24]: 16 на проверке
+          - generic [ref=e25]:
+            - generic [ref=e26]: 🚀
+            - generic [ref=e27]:
+              - heading "Опубликовано" [level=3] [ref=e28]
+              - generic [ref=e29]: "1"
+              - generic [ref=e30]: 1 опубликовано
+          - generic [ref=e31]:
+            - generic [ref=e32]: 💡
+            - generic [ref=e33]:
+              - heading "Идей в очереди" [level=3] [ref=e34]
+              - generic [ref=e35]: "27"
+              - generic [ref=e36]: 27 в очереди
+          - generic [ref=e37]:
+            - generic [ref=e38]: 🗑️
+            - generic [ref=e39]:
+              - heading "Отклонено" [level=3] [ref=e40]
+              - generic [ref=e41]: "0"
+              - generic [ref=e42]: Нет отклоненных
+        - generic [ref=e43]:
+          - generic [ref=e44]:
+            - heading "🕐 Последние действия" [level=3] [ref=e45]
+            - paragraph [ref=e48]: Немає активності
+          - generic [ref=e49]:
+            - heading "📈 Статистика публикаций" [level=3] [ref=e50]
+            - generic [ref=e51]:
+              - generic [ref=e52]:
+                - generic [ref=e53]: "Сегодня:"
+                - generic [ref=e54]: 0 статей
+              - generic [ref=e55]:
+                - generic [ref=e56]: "Эта неделя:"
+                - generic [ref=e57]: 0 статей
+              - generic [ref=e58]:
+                - generic [ref=e59]: "Этот месяц:"
+                - generic [ref=e60]: 0 статей
+              - generic [ref=e61]:
+                - generic [ref=e62]: "Всего:"
+                - generic [ref=e63]: 0 статей
+  - generic [ref=e64]: Статья загружена

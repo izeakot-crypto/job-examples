@@ -1,0 +1,151 @@
+- generic [active] [ref=e1]:
+  - complementary [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4] [cursor=pointer]:
+        - generic [ref=e5]: dashboard
+        - generic [ref=e6]: Главная
+      - generic [ref=e7] [cursor=pointer]:
+        - generic [ref=e8]: lightbulb
+        - generic [ref=e9]: Идеи
+      - generic [ref=e10] [cursor=pointer]:
+        - generic [ref=e11]: rate_review
+        - generic [ref=e12]: Проверка
+      - generic [ref=e13] [cursor=pointer]:
+        - generic [ref=e14]: edit_note
+        - generic [ref=e15]: Editor
+      - generic [ref=e16] [cursor=pointer]:
+        - generic [ref=e17]: task_alt
+        - generic [ref=e18]: Опубликованные
+      - generic [ref=e19] [cursor=pointer]:
+        - generic [ref=e20]: person
+        - generic [ref=e21]: Аккаунт
+      - generic [ref=e22] [cursor=pointer]:
+        - generic [ref=e23]: settings
+        - generic [ref=e24]: Настройки
+      - generic [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: menu_book
+        - generic [ref=e28]: Документация
+      - generic [ref=e29] [cursor=pointer]:
+        - generic [ref=e30]: update
+        - generic [ref=e31]: Обновления
+    - generic [ref=e32]:
+      - generic [ref=e33]: izeakot · Администратор
+      - generic [ref=e34] [cursor=pointer]:
+        - generic [ref=e35]: logout
+        - generic [ref=e36]: Выйти
+  - main [ref=e37]:
+    - generic [ref=e38]:
+      - generic [ref=e40]:
+        - generic [ref=e41]: search
+        - textbox "Поиск статей или тем..." [ref=e42]
+      - generic [ref=e43]:
+        - button "notifications" [ref=e44] [cursor=pointer]:
+          - generic [ref=e45]: notifications
+        - generic [ref=e47] [cursor=pointer]: АС
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e51]:
+          - button "arrow_back Все статьи" [ref=e52] [cursor=pointer]:
+            - generic [ref=e53]: arrow_back
+            - generic [ref=e54]: Все статьи
+          - button "format_bold" [ref=e56] [cursor=pointer]:
+            - generic [ref=e57]: format_bold
+          - button "format_italic" [ref=e58] [cursor=pointer]:
+            - generic [ref=e59]: format_italic
+          - button "format_underlined" [ref=e60] [cursor=pointer]:
+            - generic [ref=e61]: format_underlined
+          - button "format_strikethrough" [ref=e62] [cursor=pointer]:
+            - generic [ref=e63]: format_strikethrough
+          - button "format_list_bulleted" [ref=e65] [cursor=pointer]:
+            - generic [ref=e66]: format_list_bulleted
+          - button "format_list_numbered" [ref=e67] [cursor=pointer]:
+            - generic [ref=e68]: format_list_numbered
+          - button "link" [ref=e69] [cursor=pointer]:
+            - generic [ref=e70]: link
+          - button "undo" [ref=e72] [cursor=pointer]:
+            - generic [ref=e73]: undo
+          - button "redo" [ref=e74] [cursor=pointer]:
+            - generic [ref=e75]: redo
+          - button "auto_awesome АВТОФОРМАТ" [ref=e77] [cursor=pointer]:
+            - generic [ref=e78]: auto_awesome
+            - text: АВТОФОРМАТ
+          - button "smart_toy ПРОМТИ" [ref=e79] [cursor=pointer]:
+            - generic [ref=e80]: smart_toy
+            - text: ПРОМТИ
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - button "UA" [ref=e83] [cursor=pointer]
+            - button "EN" [ref=e84] [cursor=pointer]
+            - button "ES" [ref=e85] [cursor=pointer]
+            - button "PL" [ref=e86] [cursor=pointer]
+            - button "RU" [ref=e87] [cursor=pointer]
+            - button "TR" [ref=e88] [cursor=pointer]
+          - generic [ref=e89]:
+            - combobox [ref=e90]:
+              - option "Не проверено" [selected]
+              - option "На проверке"
+              - option "Одобрено"
+              - option "Опубликовано"
+            - button "delete" [ref=e91] [cursor=pointer]:
+              - generic [ref=e92]: delete
+            - button "rocket_launch Опубликовать" [ref=e93] [cursor=pointer]:
+              - generic [ref=e94]: rocket_launch
+              - text: Опубликовать
+        - heading [level=1] [ref=e96]
+      - generic [ref=e99]:
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - heading "ПРЕВЬЮ НА САЙТЕ" [level=3] [ref=e102]
+            - generic [ref=e103]:
+              - button "refresh" [ref=e104] [cursor=pointer]:
+                - generic [ref=e105]: refresh
+              - generic "Загрузить из папки" [ref=e106] [cursor=pointer]:
+                - generic [ref=e107]: upload
+              - button "delete" [ref=e108] [cursor=pointer]:
+                - generic [ref=e109]: delete
+          - generic [ref=e110]:
+            - generic [ref=e112]: image
+            - generic [ref=e113]:
+              - text: SEO / Контент
+              - heading "Название статьи" [level=4] [ref=e114]
+              - generic [ref=e115]:
+                - generic [ref=e116]: —
+                - generic [ref=e117]: stati.io/...
+        - generic [ref=e118]:
+          - heading "ВЕРИФИКАЦИЯ" [level=3] [ref=e119]
+          - generic [ref=e120]:
+            - generic [ref=e122]:
+              - generic [ref=e123]: Детекция ИИ
+              - generic [ref=e124]: —
+            - generic [ref=e127]:
+              - generic [ref=e128]: Плагиат
+              - generic [ref=e129]: —
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - generic [ref=e133]:
+                - generic [ref=e134]: water_drop
+                - generic [ref=e135]: Водность текста
+              - generic [ref=e136]: —
+            - generic [ref=e137]:
+              - generic [ref=e138]:
+                - generic [ref=e139]: sentiment_neutral
+                - generic [ref=e140]: Тошнота (классич.)
+              - generic [ref=e141]: —
+            - generic [ref=e142]:
+              - generic [ref=e143]:
+                - generic [ref=e144]: code
+                - generic [ref=e145]: HTML структура
+              - generic [ref=e146]: —
+            - generic [ref=e147]:
+              - generic [ref=e148]:
+                - generic [ref=e149]: format_size
+                - generic [ref=e150]: Символів
+              - generic [ref=e151]: —
+        - generic [ref=e152]:
+          - heading "КЛЮЧЕВЫЕ СЛОВА (SEO)" [level=3] [ref=e153]
+          - generic [ref=e155]: —
+        - generic [ref=e156]:
+          - generic [ref=e157]:
+            - heading "META DESCRIPTION" [level=3] [ref=e158]
+            - generic [ref=e159]: 0 / 160
+          - textbox "SEO-опис статті (150–160 символів)..." [ref=e160]

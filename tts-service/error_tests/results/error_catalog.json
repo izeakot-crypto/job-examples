@@ -1,0 +1,667 @@
+{
+  "metadata": {
+    "generated_at": "2026-02-27T13:59:38.641937",
+    "base_url": "https://py-services.oki-toki.net/api/tts-google-chirp3",
+    "total_tests": 41,
+    "elapsed_sec": 34.2
+  },
+  "errors": {
+    "401": [
+      {
+        "test_name": "auth_no_header",
+        "category": "01_auth",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/open",
+        "response_body": {
+          "detail": "Not authenticated"
+        },
+        "latency_ms": 409,
+        "error": null
+      },
+      {
+        "test_name": "auth_wrong_key",
+        "category": "01_auth",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/open",
+        "response_body": {
+          "detail": "Invalid API key"
+        },
+        "latency_ms": 398,
+        "error": null
+      },
+      {
+        "test_name": "auth_no_bearer_prefix",
+        "category": "01_auth",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/open",
+        "response_body": {
+          "detail": "Not authenticated"
+        },
+        "latency_ms": 352,
+        "error": null
+      },
+      {
+        "test_name": "auth_empty_bearer",
+        "category": "01_auth",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/open",
+        "response_body": {
+          "detail": "Not authenticated"
+        },
+        "latency_ms": 338,
+        "error": null
+      },
+      {
+        "test_name": "auth_status_no_auth",
+        "category": "01_auth",
+        "method": "GET",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/status",
+        "response_body": {
+          "detail": "Not authenticated"
+        },
+        "latency_ms": 333,
+        "error": null
+      }
+    ],
+    "200": [
+      {
+        "test_name": "auth_health_no_auth",
+        "category": "01_auth",
+        "method": "GET",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/health",
+        "response_body": {
+          "status": "ok",
+          "service": "tts-google-chirp3",
+          "version": "1.0.0"
+        },
+        "latency_ms": 328,
+        "error": null
+      },
+      {
+        "test_name": "session_double_open_first",
+        "category": "03_session",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/open",
+        "response_body": {
+          "status": "ready",
+          "session_id": "double_open_1772197150",
+          "comp_schema": "test_schema",
+          "session_key": "double_open_1772197150_test_schema",
+          "startup_ms": 735,
+          "voices": [
+            "Leda",
+            "Puck",
+            "Kore",
+            "Aoede",
+            "Charon",
+            "Fenrir"
+          ],
+          "timeout_sec": 300
+        },
+        "latency_ms": 1126,
+        "error": null
+      },
+      {
+        "test_name": "session_double_open_second",
+        "category": "03_session",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/open",
+        "response_body": {
+          "status": "ready",
+          "session_id": "double_open_1772197150",
+          "comp_schema": "test_schema",
+          "session_key": "double_open_1772197150_test_schema",
+          "startup_ms": 0,
+          "voices": [
+            "Leda",
+            "Puck",
+            "Kore",
+            "Aoede",
+            "Charon",
+            "Fenrir"
+          ],
+          "timeout_sec": 300
+        },
+        "latency_ms": 424,
+        "error": null
+      },
+      {
+        "test_name": "session_double_close_first",
+        "category": "03_session",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/close",
+        "response_body": {
+          "status": "closed",
+          "session_id": "double_close_1772197152",
+          "comp_schema": "test_schema"
+        },
+        "latency_ms": 373,
+        "error": null
+      },
+      {
+        "test_name": "locale_dash_format_uk-UA",
+        "category": "04_locale",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/generate",
+        "response_body": "RIFF�4\u0000\u0000WAVEfmt \u0010\u0000\u0000\u0000\u0001\u0000\u0001\u0000@\u001f\u0000\u0000�>\u0000\u0000\u0002\u0000\u0010\u0000data�4\u0000\u0000\u0000\u0000������������������\u0003\u0000\u0005\u0000\n\u0000\u0019\u0000\u0019\u0000\u0014\u0000\u001a\u0000\u001f\u0000\"\u0000!\u0000&\u0000\"\u0000#\u0000#\u0000\u001f\u0000\u001d\u0000\u0017\u0000\u001d\u0000\u001f\u0000\u0019\u0000\u0014\u0000\u0016\u0000\u0015\u0000\u0016\u0000 \u0000\u0013\u0000\f\u0000\u0012\u0000\u0013\u0000\u000e\u0000\u0014\u0000\u0012\u0000\u0015\u0000\u0016\u0000\u0011\u0000\u0012\u0000\u0013\u0000\f\u0000\u000e\u0000\u000f\u0000\u0005\u0000\u0003\u0000\t\u0000\b\u0000��������������������������������������������������������������������������������y�t�q�h�d�_�W�Q�P�M�L�J�B�>�<�6�1�1�2�-�(�(�(�)�&�#�&�)�)�'�\u001f�\u001f�\"�$�&�#�!�\"�(�,�1�5�5�5�5�8�<�?�F�G�J�N�S�W�X�Z�`�b�d�h�m�o�s�v�z������������������������������������������������������������������������������������\u0000\u0000\u0000\u0000\u0003\u0000\f\u0000\r\u0000\u000e\u0000\u0010\u0000\u0010\u0000\u0012\u0000\u0015\u0000\u0014\u0000\u0017\u0000\u001a\u0000\u001d\u0000 \u0000!\u0000\u001d\u0000\u001b\u0000\u001f\u0000 \u0000\u001c\u0000\u001b\u0000\u001e\u0000\u001f\u0000\"\u0000\u001f\u0000\u001e\u0000",
+        "latency_ms": 678,
+        "error": null
+      },
+      {
+        "test_name": "text_1000_chars",
+        "category": "05_text",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/generate",
+        "response_body": "RIFF0h\u0013\u0000WAVEfmt \u0010\u0000\u0000\u0000\u0001\u0000\u0001\u0000@\u001f\u0000\u0000�>\u0000\u0000\u0002\u0000\u0010\u0000data\fh\u0013\u0000\u0000\u0000��������������\u0000\u0000\u0002\u0000\u0004\u0000\u0006\u0000\b\u0000\u000f\u0000\u000f\u0000\u000b\u0000\u000e\u0000\u000f\u0000\u0010\u0000\u0010\u0000\u0010\u0000\u0010\u0000\u0010\u0000\u0011\u0000\u0013\u0000\u0012\u0000\r\u0000\u0013\u0000\u0016\u0000\u0014\u0000\u0012\u0000\u0013\u0000\u0014\u0000\u0012\u0000\u0015\u0000\u0012\u0000\r\u0000\u000b\u0000\u000f\u0000\r\u0000\u000b\u0000\u000e\u0000\u000e\u0000\u0011\u0000\f\u0000\f\u0000\f\u0000\b\u0000\u0005\u0000\u0007\u0000\u0004\u0000��\u0001\u0000\u0003\u0000������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������\u0000\u0000\u0003\u0000\u0005\u0000\u0007\u0000\u0006\u0000\t\u0000\u000e\u0000\u000e\u0000\u0010\u0000\u0015\u0000\u0019\u0000\u0019\u0000\u0019\u0000\u001a\u0000\u0019\u0000\u0016\u0000\u0019\u0000\u001b\u0000\u001c\u0000\u001e\u0000\u001f\u0000\u001f\u0000 \u0000#\u0000'\u0000&\u0000'\u0000(\u0000%\u0000&\u0000&\u0000#\u0000'\u0000,\u0000-\u0000+\u0000,\u0000*\u0000%\u0000%\u0000&\u0000%\u0000#\u0000%\u0000&\u0000%\u0000!\u0000!\u0000",
+        "latency_ms": 1707,
+        "error": null
+      },
+      {
+        "test_name": "text_5000_chars",
+        "category": "05_text",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/generate",
+        "response_body": "RIFF�N\\\u0000WAVEfmt \u0010\u0000\u0000\u0000\u0001\u0000\u0001\u0000@\u001f\u0000\u0000�>\u0000\u0000\u0002\u0000\u0010\u0000data�N\\\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000����\u0000\u0000\u0002\u0000\u0004\u0000\u0006\u0000\t\u0000\u000b\u0000\r\u0000\u0014\u0000\u0014\u0000\u0011\u0000\u0014\u0000\u0016\u0000\u0016\u0000\u0015\u0000\u0015\u0000\u0015\u0000\u0015\u0000\u0015\u0000\u0015\u0000\u0014\u0000\u000f\u0000\u0014\u0000\u0016\u0000\u0013\u0000\u0011\u0000\u0012\u0000\u0011\u0000\u000f\u0000\u000f\u0000\r\u0000\n\u0000\b\u0000\t\u0000\u0006\u0000\u0005\u0000\b\u0000\t\u0000\u000b\u0000\u0007\u0000\u0007\u0000\t\u0000\b\u0000\u0005\u0000\b\u0000\t\u0000\u0004\u0000\u0007\u0000\t\u0000\b\u0000\u0005\u0000\u0005\u0000\n\u0000\f\u0000\n\u0000\u000b\u0000\n\u0000\u0006\u0000\u0005\u0000\u0003\u0000���������������������������������������������������������������������������������������������������|�|�|�{�y�y�|�z�y�w�v�v�t�v�u�t�t�v�v�z�~�����������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������",
+        "latency_ms": 4325,
+        "error": null
+      },
+      {
+        "test_name": "text_xss_payload",
+        "category": "05_text",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/generate",
+        "response_body": "RIFF.@\u0001\u0000WAVEfmt \u0010\u0000\u0000\u0000\u0001\u0000\u0001\u0000@\u001f\u0000\u0000�>\u0000\u0000\u0002\u0000\u0010\u0000data\n@\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0003\u0000\u0005\u0000\u0006\u0000\t\u0000\t\u0000\n\u0000\u000e\u0000\u000e\u0000\u000b\u0000\f\u0000\u000e\u0000\r\u0000\r\u0000\f\u0000\f\u0000\r\u0000\f\u0000\f\u0000\u000b\u0000\u0007\u0000\n\u0000\f\u0000\n\u0000\n\u0000\u000b\u0000\n\u0000\n\u0000\n\u0000\n\u0000\t\u0000\b\u0000\b\u0000\b\u0000\u0007\u0000\n\u0000\u000b\u0000\n\u0000\b\u0000\b\u0000\n\u0000\b\u0000\u0005\u0000\u0005\u0000\u0005\u0000\u0001\u0000\u0002\u0000\u0003\u0000������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������\u0000\u0000\u0002\u0000\u0003\u0000\u0005\u0000\t\u0000\n\u0000\u000b\u0000\u000f\u0000\u000f\u0000\u0010\u0000\u0011\u0000\u0013\u0000\u0018\u0000\u0018\u0000\u0019\u0000\u001d\u0000\u001f\u0000 \u0000\"\u0000%\u0000%\u0000%\u0000(\u0000*\u0000-\u0000/\u0000/\u00002\u00004\u00006\u00008\u0000:\u0000;\u0000=\u0000A\u0000A\u0000@\u0000A\u0000C\u0000B\u0000C\u0000E\u0000F\u0000F\u0000F\u0000H\u0000I\u0000K\u0000N\u0000O\u0000N\u0000O\u0000N\u0000N\u0000O\u0000O\u0000N\u0000P\u0000Q\u0000P\u0000P\u0000O\u0000N\u0000N\u0000M\u0000K\u0000K\u0000K\u0000J\u0000K\u0000J\u0000I\u0000",
+        "latency_ms": 1383,
+        "error": null
+      },
+      {
+        "test_name": "text_emoji",
+        "category": "05_text",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/generate",
+        "response_body": "RIFF\u0018�\u0000\u0000WAVEfmt \u0010\u0000\u0000\u0000\u0001\u0000\u0001\u0000@\u001f\u0000\u0000�>\u0000\u0000\u0002\u0000\u0010\u0000data��\u0000\u0000\u0002\u0000\u0002\u0000\u0001\u0000��������\u0001\u0000\u0006\u0000\f\u0000\u0013\u0000\u0016\u0000\u001d\u0000*\u0000,\u0000+\u00002\u00009\u0000=\u0000@\u0000G\u0000F\u0000J\u0000M\u0000L\u0000M\u0000J\u0000O\u0000U\u0000P\u0000N\u0000R\u0000O\u0000Q\u0000Z\u0000P\u0000H\u0000N\u0000L\u0000K\u0000P\u0000K\u0000M\u0000O\u0000J\u0000K\u0000G\u0000@\u0000D\u0000G\u00008\u00003\u00008\u00007\u0000-\u0000(\u0000)\u0000'\u0000(\u0000%\u0000!\u0000\u001d\u0000\u0018\u0000\u001a\u0000\u0016\u0000\u0011\u0000\f\u0000\u000b\u0000\u0007\u0000��\u0001\u0000����������������������������������������������������������z�q�o�l�f�a�Y�Q�N�F�;�:�8�-�&�#�\u001f�\u001e�\u0018�\u0015�\u0016�\u0015�\u0015�\u0012�\n�\t�\u0007�\b�\t�\u0005�\u0005�\u0003�\t�\f�\f�\u0011�\u0013�\u0012�\u0010�\u0013�\u0016�\u0019�\u001e�\u001e�!�%�(�*�+�/�3�4�5�;�A�C�G�K�N�S�U�W�^�d�d�g�j�q�w�y��������������������������������������������\u0006\u0000\t\u0000\n\u0000\u0010\u0000\u0017\u0000\u001b\u0000\u001f\u0000#\u0000*\u0000-\u0000-\u00006\u0000@\u0000A\u0000G\u0000K\u0000L\u0000O\u0000T\u0000X\u0000Y\u0000^\u0000f\u0000i\u0000k\u0000h\u0000h\u0000n\u0000m\u0000m\u0000r\u0000t\u0000u\u0000z\u0000x\u0000w\u0000",
+        "latency_ms": 799,
+        "error": null
+      },
+      {
+        "test_name": "edge_long_session_id",
+        "category": "07_edge_cases",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/open",
+        "response_body": {
+          "status": "ready",
+          "session_id": "YOUR_SECRET_TOKEN",
+          "comp_schema": "test_schema",
+          "session_key": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx_test_schema",
+          "startup_ms": 684,
+          "voices": [
+            "Leda",
+            "Puck",
+            "Kore",
+            "Aoede",
+            "Charon",
+            "Fenrir"
+          ],
+          "timeout_sec": 300
+        },
+        "latency_ms": 1305,
+        "error": null
+      }
+    ],
+    "422": [
+      {
+        "test_name": "validation_open_no_session_id",
+        "category": "02_validation",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/open",
+        "response_body": {
+          "detail": [
+            {
+              "type": "missing",
+              "loc": [
+                "body",
+                "session_id"
+              ],
+              "msg": "Field required",
+              "input": {
+                "comp_schema": "test_schema"
+              }
+            }
+          ]
+        },
+        "latency_ms": 388,
+        "error": null
+      },
+      {
+        "test_name": "validation_open_no_comp_schema",
+        "category": "02_validation",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/open",
+        "response_body": {
+          "detail": [
+            {
+              "type": "missing",
+              "loc": [
+                "body",
+                "comp_schema"
+              ],
+              "msg": "Field required",
+              "input": {
+                "session_id": "test_session"
+              }
+            }
+          ]
+        },
+        "latency_ms": 339,
+        "error": null
+      },
+      {
+        "test_name": "validation_open_empty_body",
+        "category": "02_validation",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/open",
+        "response_body": {
+          "detail": [
+            {
+              "type": "missing",
+              "loc": [
+                "body",
+                "session_id"
+              ],
+              "msg": "Field required",
+              "input": {}
+            },
+            {
+              "type": "missing",
+              "loc": [
+                "body",
+                "comp_schema"
+              ],
+              "msg": "Field required",
+              "input": {}
+            }
+          ]
+        },
+        "latency_ms": 370,
+        "error": null
+      },
+      {
+        "test_name": "validation_generate_no_session_id",
+        "category": "02_validation",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/generate",
+        "response_body": {
+          "detail": [
+            {
+              "type": "missing",
+              "loc": [
+                "body",
+                "session_id"
+              ],
+              "msg": "Field required",
+              "input": {
+                "comp_schema": "test_schema",
+                "text": "Тест"
+              }
+            }
+          ]
+        },
+        "latency_ms": 420,
+        "error": null
+      },
+      {
+        "test_name": "validation_generate_no_comp_schema",
+        "category": "02_validation",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/generate",
+        "response_body": {
+          "detail": [
+            {
+              "type": "missing",
+              "loc": [
+                "body",
+                "comp_schema"
+              ],
+              "msg": "Field required",
+              "input": {
+                "session_id": "test_session",
+                "text": "Тест"
+              }
+            }
+          ]
+        },
+        "latency_ms": 381,
+        "error": null
+      },
+      {
+        "test_name": "validation_generate_no_text",
+        "category": "02_validation",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/generate",
+        "response_body": {
+          "detail": [
+            {
+              "type": "missing",
+              "loc": [
+                "body",
+                "text"
+              ],
+              "msg": "Field required",
+              "input": {
+                "session_id": "test_session",
+                "comp_schema": "test_schema"
+              }
+            }
+          ]
+        },
+        "latency_ms": 386,
+        "error": null
+      },
+      {
+        "test_name": "validation_close_no_session_id",
+        "category": "02_validation",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/close",
+        "response_body": {
+          "detail": [
+            {
+              "type": "missing",
+              "loc": [
+                "body",
+                "session_id"
+              ],
+              "msg": "Field required",
+              "input": {
+                "comp_schema": "test_schema"
+              }
+            }
+          ]
+        },
+        "latency_ms": 319,
+        "error": null
+      },
+      {
+        "test_name": "validation_close_no_comp_schema",
+        "category": "02_validation",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/close",
+        "response_body": {
+          "detail": [
+            {
+              "type": "missing",
+              "loc": [
+                "body",
+                "comp_schema"
+              ],
+              "msg": "Field required",
+              "input": {
+                "session_id": "test_session"
+              }
+            }
+          ]
+        },
+        "latency_ms": 401,
+        "error": null
+      },
+      {
+        "test_name": "validation_close_empty_body",
+        "category": "02_validation",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/close",
+        "response_body": {
+          "detail": [
+            {
+              "type": "missing",
+              "loc": [
+                "body",
+                "session_id"
+              ],
+              "msg": "Field required",
+              "input": {}
+            },
+            {
+              "type": "missing",
+              "loc": [
+                "body",
+                "comp_schema"
+              ],
+              "msg": "Field required",
+              "input": {}
+            }
+          ]
+        },
+        "latency_ms": 327,
+        "error": null
+      },
+      {
+        "test_name": "content_type_plain_text",
+        "category": "06_content_type",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/open",
+        "response_body": {
+          "detail": [
+            {
+              "type": "model_attributes_type",
+              "loc": [
+                "body"
+              ],
+              "msg": "Input should be a valid dictionary or object to extract fields from",
+              "input": "{\"session_id\": \"error_test_session\", \"comp_schema\": \"test_schema\"}"
+            }
+          ]
+        },
+        "latency_ms": 394,
+        "error": null
+      },
+      {
+        "test_name": "content_type_xml",
+        "category": "06_content_type",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/open",
+        "response_body": {
+          "detail": [
+            {
+              "type": "model_attributes_type",
+              "loc": [
+                "body"
+              ],
+              "msg": "Input should be a valid dictionary or object to extract fields from",
+              "input": "<request><session_id>test</session_id></request>"
+            }
+          ]
+        },
+        "latency_ms": 395,
+        "error": null
+      },
+      {
+        "test_name": "content_type_empty_body",
+        "category": "06_content_type",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/open",
+        "response_body": {
+          "detail": [
+            {
+              "type": "missing",
+              "loc": [
+                "body"
+              ],
+              "msg": "Field required",
+              "input": null
+            }
+          ]
+        },
+        "latency_ms": 457,
+        "error": null
+      },
+      {
+        "test_name": "content_type_malformed_json",
+        "category": "06_content_type",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/open",
+        "response_body": {
+          "detail": [
+            {
+              "type": "json_invalid",
+              "loc": [
+                "body",
+                37
+              ],
+              "msg": "JSON decode error",
+              "input": {},
+              "ctx": {
+                "error": "Expecting value"
+              }
+            }
+          ]
+        },
+        "latency_ms": 686,
+        "error": null
+      }
+    ],
+    "400": [
+      {
+        "test_name": "session_generate_without_open",
+        "category": "03_session",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/generate",
+        "response_body": {
+          "error": "Invalid session. session_id='nonexistent_session_xyz', comp_schema='test_schema'. Call POST /open first."
+        },
+        "latency_ms": 382,
+        "error": null
+      },
+      {
+        "test_name": "locale_unsupported_fr_FR",
+        "category": "04_locale",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/generate",
+        "response_body": {
+          "error": "Unsupported locale: 'fr_FR'. Supported: en_US, es_ES, pl_PL, ru_RU, tr_TR, uk_UA"
+        },
+        "latency_ms": 385,
+        "error": null
+      },
+      {
+        "test_name": "locale_nonexistent_xx_XX",
+        "category": "04_locale",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/generate",
+        "response_body": {
+          "error": "Unsupported locale: 'xx_XX'. Supported: en_US, es_ES, pl_PL, ru_RU, tr_TR, uk_UA"
+        },
+        "latency_ms": 425,
+        "error": null
+      },
+      {
+        "test_name": "locale_wrong_case_UK_ua",
+        "category": "04_locale",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/generate",
+        "response_body": {
+          "error": "Unsupported locale: 'UK_ua'. Supported: en_US, es_ES, pl_PL, ru_RU, tr_TR, uk_UA"
+        },
+        "latency_ms": 446,
+        "error": null
+      },
+      {
+        "test_name": "locale_empty",
+        "category": "04_locale",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/generate",
+        "response_body": {
+          "error": "Unsupported locale: ''. Supported: en_US, es_ES, pl_PL, ru_RU, tr_TR, uk_UA"
+        },
+        "latency_ms": 339,
+        "error": null
+      }
+    ],
+    "404": [
+      {
+        "test_name": "session_close_without_open",
+        "category": "03_session",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/close",
+        "response_body": {
+          "error": "Session not found: session_id='nonexistent_session_xyz', comp_schema='test_schema'"
+        },
+        "latency_ms": 382,
+        "error": null
+      },
+      {
+        "test_name": "session_double_close_second",
+        "category": "03_session",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/close",
+        "response_body": {
+          "error": "Session not found: session_id='double_close_1772197152', comp_schema='test_schema'"
+        },
+        "latency_ms": 409,
+        "error": null
+      },
+      {
+        "test_name": "edge_nonexistent_endpoint",
+        "category": "07_edge_cases",
+        "method": "GET",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/nonexistent",
+        "response_body": {
+          "detail": "Not Found"
+        },
+        "latency_ms": 700,
+        "error": null
+      }
+    ],
+    "500": [
+      {
+        "test_name": "text_only_spaces",
+        "category": "05_text",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/generate",
+        "response_body": "Internal Server Error",
+        "latency_ms": 424,
+        "error": null
+      },
+      {
+        "test_name": "text_single_char",
+        "category": "05_text",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/generate",
+        "response_body": "Internal Server Error",
+        "latency_ms": 403,
+        "error": null
+      },
+      {
+        "test_name": "text_numbers_only",
+        "category": "05_text",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/generate",
+        "response_body": "Internal Server Error",
+        "latency_ms": 391,
+        "error": null
+      }
+    ],
+    "405": [
+      {
+        "test_name": "edge_get_on_post_endpoint",
+        "category": "07_edge_cases",
+        "method": "GET",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/open",
+        "response_body": {
+          "detail": "Method Not Allowed"
+        },
+        "latency_ms": 690,
+        "error": null
+      },
+      {
+        "test_name": "edge_post_on_get_endpoint",
+        "category": "07_edge_cases",
+        "method": "POST",
+        "url": "https://py-services.oki-toki.net/api/tts-google-chirp3/status",
+        "response_body": {
+          "detail": "Method Not Allowed"
+        },
+        "latency_ms": 692,
+        "error": null
+      }
+    ]
+  }
+}

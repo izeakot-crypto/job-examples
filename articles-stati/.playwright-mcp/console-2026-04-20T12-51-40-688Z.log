@@ -1,0 +1,49 @@
+[    1949ms] TypeError: Cannot read properties of null (reading 'value')
+    at updateSliderFill (https://plagiarismdetector.net/:1596:28)
+    at https://plagiarismdetector.net/:1602:5
+[    1958ms] TypeError: Cannot read properties of null (reading 'addEventListener')
+    at https://plagiarismdetector.net/:3279:34
+[    4187ms] [ERROR] Failed to load resource: the server responded with a status of 422 () @ https://api.livechatinc.com/v3.6/customer/action/check_goals?organization_id=97cb7b86-5082-465c-bfe1-2e076d4db12a&x-region=us-south1:0
+[    5339ms] [LOG] Runs after ~100ms (no setTimeout). @ https://plagiarismdetector.net/:3071
+[ 1017032ms] [ERROR] Error retrieving token: FirebaseError: Messaging: The notification permission was not granted and blocked instead. (messaging/permission-blocked).
+    at getToken$1 (https://www.gstatic.com/firebasejs/9.6.10/firebase-messaging.js:2273:29)
+    at async https://plagiarismdetector.net/js/fcm-notifications.js?1776689502:29:38 @ https://plagiarismdetector.net/js/fcm-notifications.js?1776689502:40
+[ 1018955ms] TypeError: Cannot read properties of null (reading 'value')
+    at updateSliderFill (https://plagiarismdetector.net/:1596:28)
+    at https://plagiarismdetector.net/:1602:5
+[ 1018960ms] TypeError: Cannot read properties of null (reading 'addEventListener')
+    at https://plagiarismdetector.net/:3279:34
+[ 1019450ms] TypeError: Cannot read properties of null (reading 'value')
+    at updateSliderFill (https://plagiarismdetector.net/:1596:28)
+    at https://plagiarismdetector.net/:1602:5
+[ 1019451ms] TypeError: Cannot read properties of null (reading 'addEventListener')
+    at https://plagiarismdetector.net/:3279:34
+[ 1021038ms] [ERROR] Failed to load resource: the server responded with a status of 422 () @ https://api.livechatinc.com/v3.6/customer/action/check_goals?organization_id=97cb7b86-5082-465c-bfe1-2e076d4db12a&x-region=us-south1:0
+[ 1022599ms] [LOG] Runs after ~100ms (no setTimeout). @ https://plagiarismdetector.net/:3071
+[ 1024922ms] [ERROR] Failed to load resource: the server responded with a status of 422 () @ https://api.livechatinc.com/v3.6/customer/action/check_goals?organization_id=97cb7b86-5082-465c-bfe1-2e076d4db12a&x-region=us-south1:0
+[ 1026899ms] [LOG] 0 @ https://plagiarismdetector.net/:3251
+[ 1026899ms] [LOG] CZ @ https://plagiarismdetector.net/:3252
+[ 1027366ms] [LOG] Runs after ~100ms (no setTimeout). @ https://plagiarismdetector.net/:6267
+[ 1027788ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://plagiarismdetector.net/new-home-img/error-alert.svg:0
+[ 1035896ms] [ERROR] Failed to load resource: the server responded with a status of 422 () @ https://api.livechatinc.com/v3.6/customer/action/check_goals?organization_id=97cb7b86-5082-465c-bfe1-2e076d4db12a&x-region=us-south1:0
+[ 1037646ms] [LOG] 0 @ https://plagiarismdetector.net/:3412
+[ 1037646ms] [LOG] CZ @ https://plagiarismdetector.net/:3413
+[ 1038150ms] [LOG] Runs after ~100ms (no setTimeout). @ https://plagiarismdetector.net/:6428
+[ 1041598ms] [ERROR] Error retrieving token: FirebaseError: Messaging: The notification permission was not granted and blocked instead. (messaging/permission-blocked).
+    at getToken$1 (https://www.gstatic.com/firebasejs/9.6.10/firebase-messaging.js:2273:29)
+    at async https://plagiarismdetector.net/js/fcm-notifications.js?1776690536:29:38 @ https://plagiarismdetector.net/js/fcm-notifications.js?1776690536:40
+[ 1054112ms] [LOG] 0 @ https://plagiarismdetector.net/:3738
+[ 1054114ms] [LOG] ffffffffffffff @ https://plagiarismdetector.net/:3872
+[ 1054125ms] [LOG] ffffffffffffff @ https://plagiarismdetector.net/:3872
+[ 2506819ms] [ERROR] Framing 'https://www.google.com/' violates the following report-only Content Security Policy directive: "frame-ancestors 'self'". The violation has been logged, but no further action has been taken.
+ @ :0
+[ 4066825ms] [ERROR] Framing 'https://www.google.com/' violates the following report-only Content Security Policy directive: "frame-ancestors 'self'". The violation has been logged, but no further action has been taken.
+ @ :0
+[ 4216813ms] [ERROR] Framing 'https://www.google.com/' violates the following report-only Content Security Policy directive: "frame-ancestors 'self'". The violation has been logged, but no further action has been taken.
+ @ :0
+[ 4456874ms] [ERROR] Framing 'https://www.google.com/' violates the following report-only Content Security Policy directive: "frame-ancestors 'self'". The violation has been logged, but no further action has been taken.
+ @ :0
+[ 6646832ms] [ERROR] Framing 'https://www.google.com/' violates the following report-only Content Security Policy directive: "frame-ancestors 'self'". The violation has been logged, but no further action has been taken.
+ @ :0
+[ 6766875ms] [ERROR] Framing 'https://www.google.com/' violates the following report-only Content Security Policy directive: "frame-ancestors 'self'". The violation has been logged, but no further action has been taken.
+ @ :0

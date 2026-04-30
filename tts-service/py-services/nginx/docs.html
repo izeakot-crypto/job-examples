@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>py-services API</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px 20px;
+        }
+        .container { max-width: 700px; width: 100%; }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .subtitle {
+            color: #888;
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+        .service {
+            background: #16213e;
+            border: 1px solid #0f3460;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: border-color 0.2s;
+        }
+        .service:hover { border-color: #e94560; }
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .service-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        .service-status {
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: #0a3d2a;
+            color: #4ade80;
+        }
+        .service-status.offline {
+            background: #3d0a0a;
+            color: #f87171;
+        }
+        .service-desc {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+        .links { display: flex; gap: 12px; flex-wrap: wrap; }
+        .links a {
+            color: #e94560;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 16px;
+            border: 1px solid #e94560;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .links a:hover {
+            background: #e94560;
+            color: #fff;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #555;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>py-services</h1>
+        <p class="subtitle">API Documentation Hub</p>
+
+        <div class="service" id="svc-translation-checker">
+            <div class="service-header">
+                <span class="service-name">Translation Checker</span>
+                <span class="service-status" id="status-translation-checker">checking...</span>
+            </div>
+            <p class="service-desc">Проверка качества переводов с помощью LLM</p>
+            <div class="links">
+                <a href="/api/translation-checker/docs">Swagger UI</a>
+                <a href="/api/translation-checker/redoc">ReDoc</a>
+                <a href="/api/translation-checker/health">Health</a>
+            </div>
+        </div>
+
+        <div class="service" id="svc-tts-google-chirp3">
+            <div class="service-header">
+                <span class="service-name">TTS Google Chirp3-HD</span>
+                <span class="service-status" id="status-tts-google-chirp3">checking...</span>
+            </div>
+            <p class="service-desc">Синтез мовлення через Google Chirp3-HD (6 мов, кешування)</p>
+            <div class="links">
+                <a href="/api/tts-google-chirp3/docs">Swagger UI</a>
+                <a href="/api/tts-google-chirp3/redoc">ReDoc</a>
+                <a href="/api/tts-google-chirp3/health">Health</a>
+            </div>
+        </div>
+
+        <div class="service" id="svc-lira-assistants-api">
+            <div class="service-header">
+                <span class="service-name">LIRA Assistants API</span>
+                <span class="service-status" id="status-lira-assistants-api">checking...</span>
+            </div>
+            <p class="service-desc">Universal API for AI assistant sessions (OpenAI, Claude, n8n)</p>
+            <div class="links">
+                <a href="/api/lira-assistants-api/docs">Swagger UI</a>
+                <a href="/api/lira-assistants-api/redoc">ReDoc</a>
+                <a href="/api/lira-assistants-api/health">Health</a>
+            </div>
+        </div>
+
+        <div class="service" id="svc-quality-check">
+            <div class="service-header">
+                <span class="service-name">Quality Check</span>
+                <span class="service-status" id="status-quality-check">checking...</span>
+            </div>
+            <p class="service-desc">Автоматическая проверка качества звонков колл-центра через LLM</p>
+            <div class="links">
+                <a href="/api/quality-check/docs">Swagger UI</a>
+                <a href="/api/quality-check/redoc">ReDoc</a>
+                <a href="/api/quality-check/health">Health</a>
+            </div>
+        </div>
+
+        <div class="service" id="svc-competitor-monitor">
+            <div class="service-header">
+                <span class="service-name">Competitor Monitor</span>
+                <span class="service-status" id="status-competitor-monitor">checking...</span>
+            </div>
+            <p class="service-desc">Автоматичний моніторинг конкурентів по розкладу (щопонеділка 12:30 Київ)</p>
+            <div class="links">
+                <a href="/api/competitor-monitor/docs">Swagger UI</a>
+                <a href="/api/competitor-monitor/redoc">ReDoc</a>
+                <a href="/api/competitor-monitor/health">Health</a>
+            </div>
+        </div>
+
+        <!-- Будущие сервисы: скопировать блок выше и заменить имя -->
+        <!--
+        <div class="service" id="svc-original-checker">
+            <div class="service-header">
+                <span class="service-name">Original Checker</span>
+                <span class="service-status" id="status-original-checker">checking...</span>
+            </div>
+            <p class="service-desc">Проверка оригинальных текстов</p>
+            <div class="links">
+                <a href="/api/original-checker/docs">Swagger UI</a>
+                <a href="/api/original-checker/redoc">ReDoc</a>
+                <a href="/api/original-checker/health">Health</a>
+            </div>
+        </div>
+        -->
+
+        <div class="footer">py-services.oki-toki.net</div>
+    </div>
+
+    <script>
+        async function checkHealth(service) {
+            const el = document.getElementById('status-' + service);
+            if (!el) return;
+            try {
+                const r = await fetch('/api/' + service + '/health', { signal: AbortSignal.timeout(5000) });
+                if (r.ok) {
+                    el.textContent = 'online';
+                    el.className = 'service-status';
+                } else {
+                    el.textContent = 'offline';
+                    el.className = 'service-status offline';
+                }
+            } catch {
+                el.textContent = 'offline';
+                el.className = 'service-status offline';
+            }
+        }
+        checkHealth('translation-checker');
+        checkHealth('tts-google-chirp3');
+        checkHealth('lira-assistants-api');
+        checkHealth('quality-check');
+        checkHealth('competitor-monitor');
+        // checkHealth('original-checker');
+    </script>
+</body>
+</html>

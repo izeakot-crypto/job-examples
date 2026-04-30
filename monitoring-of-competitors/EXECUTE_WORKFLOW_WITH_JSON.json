@@ -1,0 +1,20 @@
+{
+  "parameters": {
+    "source": "database",
+    "workflowId": {
+      "__rl": true,
+      "value": "ВСТАВИТИ_ID_WORKFLOW_website_checker",
+      "mode": "list",
+      "cachedResultName": "website checker_backup(единственный раочий) (вебхук не тот)"
+    },
+    "mode": "each",
+    "options": {
+      "waitForSubWorkflow": true
+    }
+  },
+  "type": "n8n-nodes-base.executeWorkflow",
+  "typeVersion": 1.3,
+  "position": [1232, -672],
+  "id": "852f1f27-5a86-47f3-8690-063daf0bea46",
+  "name": "Call Website Checker"
+}

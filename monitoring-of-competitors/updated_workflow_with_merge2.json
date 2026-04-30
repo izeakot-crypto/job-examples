@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "instanceId": "workflow_update"
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "numberInputs": 4
+      },
+      "id": "MERGE2_NODE_ID",
+      "name": "Merge2",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [2368, -400],
+      "notes": "Об'єднує Parse AI JSON Response1, Parse YouTube Data1, Format Social Activity1, Merge Aggregator Data"
+    }
+  ],
+  "connections": {
+    "Parse AI JSON Response1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse YouTube Data1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Format Social Activity1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Merge Aggregator Data": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Merge2": {
+      "main": [
+        [
+          {
+            "node": "Format for Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

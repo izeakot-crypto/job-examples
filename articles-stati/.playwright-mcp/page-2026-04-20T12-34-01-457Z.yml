@@ -1,0 +1,527 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - link "Close Popup":
+      - /url: ""
+  - navigation [ref=e3]:
+    - link "Image of website logo" [ref=e4] [cursor=pointer]:
+      - /url: https://smallseotools.com/
+      - img "Image of website logo" [ref=e5]
+    - generic [ref=e6]:
+      - list [ref=e7]:
+        - listitem
+        - listitem [ref=e8]:
+          - link "PRO Pricing Pricing" [ref=e9] [cursor=pointer]:
+            - /url: https://pro.smallseotools.com/pricing#plagiarism-checker
+            - img "PRO Pricing" [ref=e10]
+            - text: Pricing
+        - listitem [ref=e11]:
+          - link "Plagiarism Checker" [ref=e12] [cursor=pointer]:
+            - /url: https://smallseotools.com/plagiarism-checker/
+            - text: Plagiarism Checker
+        - listitem [ref=e13]:
+          - link "Free Grammar Checker" [ref=e14] [cursor=pointer]:
+            - /url: https://smallseotools.com/grammar-checker/
+            - text: Free Grammar Checker
+        - listitem [ref=e15]:
+          - link "Reverse Image Search" [ref=e16] [cursor=pointer]:
+            - /url: https://smallseotools.com/reverse-image-search/
+            - text: Reverse Image Search
+        - listitem [ref=e17]:
+          - link "Paraphrasing Tool" [ref=e18] [cursor=pointer]:
+            - /url: https://smallseotools.com/paraphrasing-tool/
+        - listitem [ref=e19]:
+          - link "Login" [ref=e20] [cursor=pointer]:
+            - /url: https://smallseotools.com/login/
+      - button "image of languages EN" [ref=e22] [cursor=pointer]:
+        - img "image of languages" [ref=e23]
+        - text: EN
+  - checkbox "theme change" [ref=e28]
+  - generic [ref=e30]:
+    - heading "Plagiarism Checker" [level=1] [ref=e32]
+    - generic [ref=e34]:
+      - link "pct_off_img No Words Limit No Words Limit Plagiarism API Plagiarism API User Seats User Seats No Ads No Ads Accurate Result Accurate Result Starting from $9.80" [ref=e36] [cursor=pointer]:
+        - /url: https://pro.smallseotools.com/pricing
+        - generic [ref=e37]:
+          - img "pct_off_img" [ref=e38]
+          - generic [ref=e39]:
+            - img "No Words Limit" [ref=e40]
+            - text: No Words Limit
+          - generic [ref=e41]:
+            - img "Plagiarism API" [ref=e42]
+            - text: Plagiarism API
+          - generic [ref=e43]:
+            - img "User Seats" [ref=e44]
+            - text: User Seats
+          - generic [ref=e45]:
+            - img "No Ads" [ref=e46]
+            - text: No Ads
+          - generic [ref=e47]:
+            - img "Accurate Result" [ref=e48]
+            - text: Accurate Result
+        - generic [ref=e49]: Starting from $9.80
+      - generic [ref=e52]:
+        - textbox "Start typing or paste (Ctrl + V) your content here..." [ref=e54]
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - button "English" [ref=e58] [cursor=pointer]:
+              - generic [ref=e59]: English
+            - img "Upload File" [ref=e61] [cursor=pointer]
+            - generic [ref=e63]: 0/1000 Words
+          - generic [ref=e64]:
+            - generic [ref=e65] [cursor=pointer]:
+              - generic [ref=e66]: 4.9/5
+              - img "rating" [ref=e67]
+              - generic [ref=e68]: 9M+ Reviews
+            - button "Check by URL 1 Check by URL" [ref=e69] [cursor=pointer]:
+              - img "Check by URL 1" [ref=e70]
+              - text: Check by URL
+            - img "Remove Text" [ref=e72] [cursor=pointer]
+      - generic [ref=e76]:
+        - button "Check Plagiarism" [ref=e77] [cursor=pointer]
+        - link "Deep Plagiarism Checker" [ref=e78] [cursor=pointer]:
+          - /url: https://pro.smallseotools.com/pricing
+          - text: Deep Plagiarism Checker
+        - generic [ref=e80] [cursor=pointer]: Check Grammar
+        - link "Detect AI Content" [ref=e81] [cursor=pointer]:
+          - /url: https://smallseotools.com/ai-content-detector/
+  - generic [ref=e85]:
+    - generic [ref=e86]:
+      - paragraph [ref=e87]: To use this plagiarism checker, please copy and paste your text in the box above, then click on the button “Check Plagiarism”. The tool will scan your article to check for duplicate content.
+      - heading "FEATURES OF OUR PLAGIARISM CHECKER" [level=2] [ref=e88]:
+        - strong [ref=e92]: FEATURES OF OUR PLAGIARISM CHECKER
+      - paragraph [ref=e93]:
+        - generic [ref=e95]: "A list of key features:"
+      - list [ref=e96]:
+        - listitem [ref=e97]:
+          - heading "Extensive Web Coverage (Billions of web pages)" [level=3] [ref=e98]:
+            - strong [ref=e102]: Extensive Web Coverage (Billions of web pages
+            - strong [ref=e106]: )
+      - paragraph [ref=e107]:
+        - generic [ref=e109]: Our plagiarism checker scans your content against billions of indexed web pages in seconds. Once you upload your content, it will automatically run it against every existing piece of content on the web within seconds.
+      - list [ref=e110]:
+        - listitem [ref=e111]:
+          - heading "Multiple document formats" [level=3] [ref=e112]:
+            - strong [ref=e116]: Multiple document formats
+      - paragraph [ref=e117]:
+        - generic [ref=e119]: Our plagiarism checker supports a range of document formats, including .doc, .docx, .txt, .tex, .rtf, .odt, and .pdf. This means it does not matter what format your content takes; as long as it is digital, our tool will handle the rest.
+      - list [ref=e120]:
+        - listitem [ref=e121]:
+          - heading "URL integration" [level=3] [ref=e122]:
+            - strong [ref=e126]: URL integration
+      - paragraph [ref=e127]:
+        - generic [ref=e129]: With this online plagiarism checker free, not only are you able to upload different formats of documents, but you can also check plagiarism via a website URL.
+      - list [ref=e130]:
+        - listitem [ref=e131]:
+          - heading "Reporting option" [level=3] [ref=e132]:
+            - strong [ref=e136]: Reporting option
+      - paragraph [ref=e137]:
+        - generic [ref=e139]: Generate detailed plagiarism reports with just one click. These reports can be downloaded and shared as proof of originality or stored for future reference, ideal for academic, professional, and legal use.
+      - list [ref=e140]:
+        - listitem [ref=e141]:
+          - heading "Multilingual Plagiarism Checker" [level=3] [ref=e142]:
+            - strong [ref=e146]: Multilingual Plagiarism Checker
+      - paragraph [ref=e147]:
+        - generic [ref=e149]: This feature allows you to check plagiarism on documents in languages other than English. Whether your content is written in
+        - link "русский" [ref=e150] [cursor=pointer]:
+          - /url: https://smallseotools.com/ru/plagiarism-checker
+          - generic [ref=e153]: русский
+        - generic [ref=e155]: ","
+        - link "日本語" [ref=e156] [cursor=pointer]:
+          - /url: https://smallseotools.com/ja/plagiarism-checker/
+          - generic [ref=e159]: 日本語
+        - generic [ref=e161]: ","
+        - link "italiano" [ref=e162] [cursor=pointer]:
+          - /url: https://smallseotools.com/it/plagiarism-checker/
+          - generic [ref=e165]: italiano
+        - generic [ref=e167]: ","
+        - link "français" [ref=e168] [cursor=pointer]:
+          - /url: https://smallseotools.com/fr/plagiarism-checker/
+          - generic [ref=e171]: français
+        - generic [ref=e173]: ","
+        - link "Português" [ref=e174] [cursor=pointer]:
+          - /url: https://smallseotools.com/pt/plagiarism-checker/
+          - generic [ref=e177]: Português
+        - generic [ref=e179]: ","
+        - link "Español" [ref=e180] [cursor=pointer]:
+          - /url: https://smallseotools.com/es/plagiarism-checker/
+          - generic [ref=e183]: Español
+        - generic [ref=e185]: ","
+        - link "Deutsche" [ref=e186] [cursor=pointer]:
+          - /url: https://smallseotools.com/de/plagiarism-checker/
+          - generic [ref=e189]: Deutsche
+        - generic [ref=e191]: ","
+        - link "中文" [ref=e192] [cursor=pointer]:
+          - /url: https://smallseotools.com/zh/plagiarism-checker/
+          - generic [ref=e195]: 中文
+        - generic [ref=e197]: ", our tool can check in your language."
+      - list [ref=e198]:
+        - listitem [ref=e199]:
+          - heading "Cloud Compatibility" [level=3] [ref=e200]:
+            - strong [ref=e204]: Cloud Compatibility
+      - paragraph [ref=e205]:
+        - generic [ref=e207]: Our plagiarism checker can check content in the cloud, including Google Drive and Dropbox. Simply choose where your content lives in the cloud and select the specific document you want to run, and our copyright checker will do the rest.
+      - list [ref=e208]:
+        - listitem [ref=e209]:
+          - heading "Percentage-Based Originality Scores" [level=3] [ref=e210]:
+            - strong [ref=e214]: Percentage-Based Originality Scores
+      - paragraph [ref=e215]:
+        - generic [ref=e217]: After uploading your content and running a plagiarism check, our tool displays clear percentage scores for both unique and plagiarized content. For example, you’ll instantly see results like 82% unique and 18% plagiarized, helping you assess content quality at a glance.
+      - list [ref=e218]:
+        - listitem [ref=e219]:
+          - heading "Sentence-Level Plagiarism Breakdown" [level=3] [ref=e220]:
+            - strong [ref=e224]: Sentence-Level Plagiarism Breakdown
+      - paragraph [ref=e225]:
+        - generic [ref=e227]: Instead of giving you a single overall score, the tool analyzes your content line by line to reveal how originality is distributed across the text. Each sentence is individually evaluated and categorized, allowing you to clearly see which parts are fully original and which require revision.
+      - list [ref=e228]:
+        - listitem [ref=e229]:
+          - heading "Plagiarism Checker API" [level=3] [ref=e230]:
+            - strong [ref=e234]: Plagiarism Checker API
+      - paragraph [ref=e235]:
+        - generic [ref=e237]: If you want to develop a real-time, multi-tasking plagiarism-detection system integrated into your website, we have your back. The
+        - link "Plagiarism Checker API" [ref=e238] [cursor=pointer]:
+          - /url: https://smallseotools.com/plagiarism-checker-api/
+          - generic [ref=e241]: Plagiarism Checker API
+        - generic [ref=e243]: offers you a great API integration solution. This eliminates the need to check each article for every student individually and saves you hours of work and headaches. You can check plagiarism for multiple essays, theses, or assignments of your students in just one click. This also works well for large websites that frequently publish dozens of contributor articles.
+      - heading "Benefits of SmallSEOTools’ Plagiarism Checker" [level=2] [ref=e244]:
+        - strong [ref=e248]: Benefits of SmallSEOTools’ Plagiarism Checker
+      - paragraph [ref=e249]:
+        - generic [ref=e251]: Our plagiarism checker is built to deliver speed, accessibility, and reliability for anyone who values original content. Whether you’re a student, educator, researcher, writer, or publisher, this tool simplifies plagiarism detection while delivering accurate results you can trust.
+      - list [ref=e252]:
+        - listitem [ref=e253]:
+          - heading "Quick Plagiarism Detection" [level=3] [ref=e254]:
+            - strong [ref=e258]: Quick Plagiarism Detection
+      - paragraph [ref=e259]:
+        - generic [ref=e261]: Check your content and get results within seconds. The tool scans your text efficiently without complicated steps, allowing you to verify originality quickly and move forward with confidence.
+      - list [ref=e262]:
+        - listitem [ref=e263]:
+          - heading "Multi-Platform Supportive" [level=3] [ref=e264]:
+            - strong [ref=e268]: Multi-Platform Supportive
+      - paragraph [ref=e269]:
+        - generic [ref=e271]: Our plagiarism detector is accessible on any device. You don’t need to install any plugins or software to check for duplicates with this utility. Whether you use Android, iOS, Windows, Linux, or macOS, you can easily access our tool.
+      - list [ref=e272]:
+        - listitem [ref=e273]:
+          - heading "Find Matching Sources" [level=3] [ref=e274]:
+            - strong [ref=e278]: Find Matching Sources
+      - paragraph [ref=e279]:
+        - generic [ref=e281]: When it comes to detecting plagiarism, everyone wants to know the sources from which their text matches. The best free plagiarism checker by SmallSEOTools not only detects the plagiarized portions of your text but also provides you with a list of sources from which your entered text matches.
+      - heading "Importance of Plagiarism Checker" [level=2] [ref=e282]:
+        - strong [ref=e286]: Importance of Plagiarism Checker
+      - paragraph [ref=e287]:
+        - generic [ref=e289]: "Why? Plagiarism is an act of academic dishonesty, a breach of journalistic ethics, and above all, a publishing crime. As such, you don't want to fall victim. If your work contains plagiarized content, whether intentionally or by ignorance, you stand to face severe penalties, including:"
+      - list [ref=e290]:
+        - listitem [ref=e291]:
+          - generic [ref=e293]: Legal actions
+        - listitem [ref=e294]:
+          - generic [ref=e296]: Monetary restitution and fines
+        - listitem [ref=e297]:
+          - generic [ref=e299]: Damaged reputation
+      - paragraph [ref=e300]:
+        - generic [ref=e302]: This does not include other consequences, such as SEO penalties for duplicate content, lower rankings, loss of trust, potential academic sanctions, and more. Now, on the other end of the spectrum, as a content consumer or user (reader, professor or teacher who vets students' work, client of freelance writers, etc.), it is equally important to check for plagiarism before accepting or taking action on any content you come across or submit to you. That is why we created the
+        - link "Plagiarism Checker" [ref=e303] [cursor=pointer]:
+          - /url: https://smallseotools.com/plagiarism-checker/
+          - generic [ref=e306]: Plagiarism Checker
+        - generic [ref=e308]: by Small SEO Tools.
+      - heading "Frequently Asked Questions (FAQs)" [level=2] [ref=e309]:
+        - strong [ref=e313]: Frequently Asked Questions (FAQs)
+      - heading "What is the word limit to check plagiarism?" [level=3] [ref=e314]:
+        - strong [ref=e318]: What is the word limit to check plagiarism?
+      - paragraph [ref=e319]:
+        - generic [ref=e321]: Our plagiarism checker offers users a distinct word limit for plagiarism checks. You can check the word limit for the plagiarism detector on the
+        - link "pricing" [ref=e322] [cursor=pointer]:
+          - /url: https://pro.smallseotools.com/pricing
+          - generic [ref=e325]: pricing
+        - generic [ref=e327]: page.
+      - heading "How Can I Get a Premium Subscription to this Plagiarism Checker Online?" [level=3] [ref=e328]:
+        - strong [ref=e332]: How Can I Get a Premium Subscription to this Plagiarism Checker Online?
+      - paragraph [ref=e333]:
+        - generic [ref=e335]: You can get the premium subscription to the plagiarism checker by clicking the GoPro button available on the landing page. After accessing the pricing page, you can explore the available plans and click Subscribe to purchase the plan you want.
+      - paragraph [ref=e336]:
+        - strong [ref=e340]: Does My Content Remain Secure on SmallSEOTools?
+      - paragraph [ref=e341]:
+        - generic [ref=e343]: Yes! Our tool ensures that users’ content remains 100% safe and secure. The databases of our plagiarism detector are designed not to store any user-uploaded text or files.
+      - heading "What Languages Are Supported by this Plagiarism Detector?" [level=3] [ref=e344]:
+        - strong [ref=e348]: What Languages Are Supported by this Plagiarism Detector?
+      - paragraph [ref=e349]:
+        - generic [ref=e351]: The online plagiarism checker from SmallSEOTools supports 30+ languages. You don’t need to use a specific plagiarism detection tool to check a text for plagiarism in a language other than English.
+      - heading "Which Sources Does this Plagiarism Checker Compare Content Against?" [level=3] [ref=e352]:
+        - strong [ref=e356]: Which Sources Does this Plagiarism Checker Compare Content Against?
+      - paragraph [ref=e357]:
+        - generic [ref=e359]: Our database includes publicly available pages, academic publications, journals, and books.
+      - heading "Does a plagiarism checker distinguish between cited content and plagiarism?" [level=3] [ref=e360]:
+        - strong [ref=e364]: Does a plagiarism checker distinguish between cited content and plagiarism?
+      - paragraph [ref=e365]:
+        - generic [ref=e367]: Yes, advanced reports can separately highlight correctly cited text. However, always review matches manually to confirm the correct citation.
+      - heading "Does each plagiarism check have a word limit?" [level=3] [ref=e368]:
+        - strong [ref=e372]: Does each plagiarism check have a word limit?
+      - paragraph [ref=e373]:
+        - generic [ref=e375]: Free versions allow up to 1,000 words per search. Premium plans offer up to 30,000 words or more per check.
+      - heading "Does the plagiarism checker save my submitted documents?" [level=3] [ref=e376]:
+        - strong [ref=e380]: Does the plagiarism checker save my submitted documents?
+      - paragraph [ref=e381]:
+        - generic [ref=e383]: We respect user privacy. Documents are stored temporarily for processing and deleted automatically after generating the report.
+    - generic [ref=e385]:
+      - button "pricing imagePricing" [ref=e387] [cursor=pointer]:
+        - img "pricing image" [ref=e388]
+        - text: Pricing
+      - generic [ref=e390]:
+        - textbox "Search With SmallSEOTools" [ref=e391]
+        - img "search" [ref=e392]
+      - generic [ref=e395]:
+        - generic [ref=e396]: Popular Tools
+        - link "Plagiarism Checker" [ref=e398] [cursor=pointer]:
+          - /url: https://smallseotools.com/plagiarism-checker/
+        - link "Paraphrasing Tool" [ref=e400] [cursor=pointer]:
+          - /url: https://smallseotools.com/paraphrasing-tool/
+        - link "AI Detector" [ref=e402] [cursor=pointer]:
+          - /url: https://smallseotools.com/ai-content-detector/
+        - link "Free Grammar Checker" [ref=e404] [cursor=pointer]:
+          - /url: https://smallseotools.com/grammar-checker/
+        - link "Reverse Image Search" [ref=e406] [cursor=pointer]:
+          - /url: https://smallseotools.com/reverse-image-search/
+        - link "Logo Maker" [ref=e408] [cursor=pointer]:
+          - /url: https://smallseotools.com/logo-maker/
+        - link "Website SEO Score Checker" [ref=e410] [cursor=pointer]:
+          - /url: https://smallseotools.com/website-seo-score-checker/
+        - link "Emojis" [ref=e412] [cursor=pointer]:
+          - /url: https://smallseotools.com/emojis/
+        - link "Citation Generator" [ref=e414] [cursor=pointer]:
+          - /url: https://smallseotools.com/citation-generator/
+        - link "AI Humanizer" [ref=e416] [cursor=pointer]:
+          - /url: https://smallseotools.com/ai-humanizer/
+      - generic [ref=e417]:
+        - generic [ref=e418]: Related Tools
+        - link "Article Rewriter" [ref=e420] [cursor=pointer]:
+          - /url: https://smallseotools.com/article-rewriter/
+        - link "Keyword Position" [ref=e422] [cursor=pointer]:
+          - /url: https://smallseotools.com/keyword-position/
+        - link "Domain Authority Checker" [ref=e424] [cursor=pointer]:
+          - /url: https://smallseotools.com/domain-authority-checker/
+        - link "Backlink Checker" [ref=e426] [cursor=pointer]:
+          - /url: https://smallseotools.com/backlink-checker/
+        - link "Image Compressor" [ref=e428] [cursor=pointer]:
+          - /url: https://smallseotools.com/image-compressor/
+        - link "Video Downloader" [ref=e430] [cursor=pointer]:
+          - /url: https://smallseotools.com/video-downloader/
+        - link "Facebook Video Downloader" [ref=e432] [cursor=pointer]:
+          - /url: https://smallseotools.com/facebook-video-downloader/
+        - link "Word To PDF" [ref=e434] [cursor=pointer]:
+          - /url: https://smallseotools.com/word-to-pdf/
+        - link "PDF To Word" [ref=e436] [cursor=pointer]:
+          - /url: https://smallseotools.com/pdf-to-word-converter/
+        - link "RGB To Hex" [ref=e438] [cursor=pointer]:
+          - /url: https://smallseotools.com/rgb-to-hex/
+        - link "Video To GIF Converter" [ref=e440] [cursor=pointer]:
+          - /url: https://smallseotools.com/video-to-gif/
+  - generic [ref=e441]:
+    - generic [ref=e442]:
+      - generic [ref=e443]: Our tool is available in multiple languages
+      - link "PLAGIARISM CHECKER" [ref=e444] [cursor=pointer]:
+        - /url: https://smallseotools.com/plagiarism-checker/
+        - text: PLAGIARISM CHECKER
+      - link "Антиплагиат" [ref=e446] [cursor=pointer]:
+        - /url: https://smallseotools.com/ru/plagiarism-checker/
+        - text: Антиплагиат
+      - link "コピペチェック (剽窃チェッカー)" [ref=e448] [cursor=pointer]:
+        - /url: https://smallseotools.com/ja/plagiarism-checker/
+        - text: コピペチェック (剽窃チェッカー)
+      - link "Antiplagio" [ref=e450] [cursor=pointer]:
+        - /url: https://smallseotools.com/it/plagiarism-checker/
+        - text: Antiplagio
+      - link "Plagiat Detecteur" [ref=e452] [cursor=pointer]:
+        - /url: https://smallseotools.com/fr/plagiarism-checker/
+        - text: Plagiat Detecteur
+      - link "Detector De Plagio" [ref=e454] [cursor=pointer]:
+        - /url: https://smallseotools.com/pt/plagiarism-checker/
+        - text: Detector De Plagio
+      - link "Detector De Plagio" [ref=e456] [cursor=pointer]:
+        - /url: https://smallseotools.com/es/plagiarism-checker/
+        - text: Detector De Plagio
+      - link "Plagiatsprüfung" [ref=e458] [cursor=pointer]:
+        - /url: https://smallseotools.com/de/plagiarism-checker/
+        - text: Plagiatsprüfung
+      - link "抄襲檢查" [ref=e460] [cursor=pointer]:
+        - /url: https://smallseotools.com/zh/plagiarism-checker/
+        - text: 抄襲檢查
+      - link "مدقق الانتحال" [ref=e462] [cursor=pointer]:
+        - /url: https://smallseotools.com/ar/plagiarism-checker/
+        - text: مدقق الانتحال
+      - link "Cek Plagiarisme" [ref=e464] [cursor=pointer]:
+        - /url: https://smallseotools.com/id/plagiarism-checker/
+        - text: Cek Plagiarisme
+      - link "İntihal Programı" [ref=e466] [cursor=pointer]:
+        - /url: https://smallseotools.com/tr/plagiarism-checker/
+        - text: İntihal Programı
+      - link "표절 검사" [ref=e468] [cursor=pointer]:
+        - /url: https://smallseotools.com/ko/plagiarism-checker/
+        - text: 표절 검사
+      - link "Check đạo văn" [ref=e470] [cursor=pointer]:
+        - /url: https://smallseotools.com/vi/plagiarism-checker/
+        - text: Check đạo văn
+      - link "Plagiaat Checker" [ref=e472] [cursor=pointer]:
+        - /url: https://smallseotools.com/nl/plagiarism-checker/
+        - text: Plagiaat Checker
+      - link "Antyplagiat online" [ref=e474] [cursor=pointer]:
+        - /url: https://smallseotools.com/pl/plagiarism-checker/
+        - text: Antyplagiat online
+      - link "Plagiatkontroll" [ref=e476] [cursor=pointer]:
+        - /url: https://smallseotools.com/no/plagiarism-checker/
+        - text: Plagiatkontroll
+      - link "kontrola plagiátorství" [ref=e478] [cursor=pointer]:
+        - /url: https://smallseotools.com/cs/plagiarism-checker/
+        - text: kontrola plagiátorství
+      - link "Plagiatkontroll Gratis" [ref=e480] [cursor=pointer]:
+        - /url: https://smallseotools.com/sv/plagiarism-checker/
+        - text: Plagiatkontroll Gratis
+      - link "Plagiat Online" [ref=e482] [cursor=pointer]:
+        - /url: https://smallseotools.com/ro/plagiarism-checker/
+        - text: Plagiat Online
+      - link "Plagiat tjek" [ref=e484] [cursor=pointer]:
+        - /url: https://smallseotools.com/da/plagiarism-checker/
+        - text: Plagiat tjek
+      - link "Checker Ng Plagiarism" [ref=e486] [cursor=pointer]:
+        - /url: https://smallseotools.com/tl/plagiarism-checker/
+        - text: Checker Ng Plagiarism
+      - link "ตรวจ plagiarism" [ref=e488] [cursor=pointer]:
+        - /url: https://smallseotools.com/th/plagiarism-checker/
+        - text: ตรวจ plagiarism
+      - link "Plagiointi Tarkistus" [ref=e490] [cursor=pointer]:
+        - /url: https://smallseotools.com/fi/plagiarism-checker/
+        - text: Plagiointi Tarkistus
+      - link "साहित्यिक चोरी करने वाला" [ref=e492] [cursor=pointer]:
+        - /url: https://smallseotools.com/hi/plagiarism-checker/
+        - text: साहित्यिक चोरी करने वाला
+    - generic [ref=e494]:
+      - generic [ref=e495]:
+        - img "Rating based on"
+        - generic [ref=e496]: 4.9/5
+        - text: Rating based on
+        - generic [ref=e497]: 9M+
+        - text: Users
+      - generic [ref=e498]: What Our Users Say?
+      - generic [ref=e499]:
+        - generic [ref=e502]:
+          - generic [ref=e504]:
+            - img "PC Testimonial"
+            - generic [ref=e505]: As a high school teacher, checking every student's assignment for originality is overwhelming. The content checker by SmallSEOTools has helped me for almost a year! It quickly scans and identifies copied assignments to save my time and guarantee fair assessment. I highly recommend it to fellow educators!
+            - generic [ref=e506]:
+              - generic [ref=e507]: "5.0"
+              - img "Ratings"
+            - generic [ref=e508]:
+              - img "PC Testimonial"
+              - generic [ref=e509]: "-Alanna"
+          - generic [ref=e511]:
+            - img "PC Testimonial"
+            - generic [ref=e512]: Plagiarism was hard to catch, especially when copied from multiple resources. So, I use smallseotools.com to detect partial plagiarism with proven accuracy. It even checks little similarities between texts and highlights each plagiarized sentence. I can easily track the areas of improvement and make changes accordingly.
+            - generic [ref=e513]:
+              - generic [ref=e514]: "5.0"
+              - img "Ratings"
+            - generic [ref=e515]:
+              - img "PC Testimonial"
+              - generic [ref=e516]: "-Murphy"
+          - generic [ref=e518]:
+            - img "PC Testimonial"
+            - generic [ref=e519]: Smallseotools is my bookmarked free plagiarism checker for checking plagiarism in content. It is super too with modern features. It scans everything seamlessly. The results are quick, detailed, and reliable. Worth bookmarking!
+            - generic [ref=e520]:
+              - generic [ref=e521]: "5.0"
+              - img "Ratings"
+            - generic [ref=e522]:
+              - img "PC Testimonial"
+              - generic [ref=e523]: "-Sherie"
+        - link "PC Testimonial" [ref=e524] [cursor=pointer]:
+          - /url: "#demo1"
+          - img "PC Testimonial"
+        - link "PC Testimonial" [ref=e525] [cursor=pointer]:
+          - /url: "#demo1"
+          - img "PC Testimonial"
+  - generic [ref=e526]:
+    - heading "AS SEEN ON:" [level=3] [ref=e527]
+    - generic [ref=e528]:
+      - link "data slide previous" [ref=e542] [cursor=pointer]:
+        - /url: "#demo"
+      - link "data slide next" [ref=e543] [cursor=pointer]:
+        - /url: "#demo"
+  - generic [ref=e544]:
+    - generic [ref=e545]:
+      - generic [ref=e546]:
+        - generic [ref=e548]:
+          - link "Image of website logo" [ref=e549] [cursor=pointer]:
+            - /url: https://smallseotools.com/
+            - img "Image of website logo" [ref=e550]
+          - paragraph [ref=e551]: Languages
+          - button "image of languages English" [ref=e554] [cursor=pointer]:
+            - img "image of languages" [ref=e555]
+            - text: English
+          - generic [ref=e557]: Contact Us
+          - generic [ref=e558]: support@smallseotools.com
+          - generic [ref=e559]: Address
+          - generic [ref=e560]:
+            - text: 438, Streatham High Road
+            - text: London, UK.
+            - text: SW16 3PX
+        - generic [ref=e562]:
+          - text: Popular Tools
+          - link "Plagiarism Checker" [ref=e563] [cursor=pointer]:
+            - /url: https://smallseotools.com/plagiarism-checker/
+          - link "Reverse Image Search" [ref=e564] [cursor=pointer]:
+            - /url: https://smallseotools.com/reverse-image-search/
+          - link "Video Downloader" [ref=e565] [cursor=pointer]:
+            - /url: https://smallseotools.com/video-downloader/
+          - link "Paraphrasing Tool" [ref=e566] [cursor=pointer]:
+            - /url: https://smallseotools.com/paraphrasing-tool/
+          - link "AI Detector" [ref=e567] [cursor=pointer]:
+            - /url: https://smallseotools.com/ai-content-detector/
+          - link "Free Grammar Checker" [ref=e568] [cursor=pointer]:
+            - /url: https://smallseotools.com/grammar-checker/
+        - generic [ref=e570]:
+          - link "Terms of Services" [ref=e571] [cursor=pointer]:
+            - /url: https://smallseotools.com/term-of-services/
+          - link "Testimonials" [ref=e572] [cursor=pointer]:
+            - /url: https://smallseotools.com/testimonials/
+          - link "Contact Us" [ref=e573] [cursor=pointer]:
+            - /url: https://smallseotools.com/contact-us/
+          - link "About us" [ref=e574] [cursor=pointer]:
+            - /url: https://smallseotools.com/about-us/
+          - link "Advertise" [ref=e575] [cursor=pointer]:
+            - /url: https://smallseotools.com/advertise/
+          - link "Privacy" [ref=e576] [cursor=pointer]:
+            - /url: https://smallseotools.com/privacy/
+        - generic [ref=e578]:
+          - link "Refund Policy" [ref=e579] [cursor=pointer]:
+            - /url: https://smallseotools.com/refund-policy/
+          - link "Blog" [ref=e580] [cursor=pointer]:
+            - /url: https://smallseotools.com/blog/
+          - link "FAQs" [ref=e581] [cursor=pointer]:
+            - /url: https://smallseotools.com/faqs/
+          - link "Pricing" [ref=e582] [cursor=pointer]:
+            - /url: https://pro.smallseotools.com/pricing
+          - link "Design Studio" [ref=e583] [cursor=pointer]:
+            - /url: https://designstudio.smallseotools.com/
+          - link "Sitemap" [ref=e584] [cursor=pointer]:
+            - /url: https://smallseotools.com/sitemap.html/
+      - generic [ref=e585]:
+        - generic [ref=e587]:
+          - generic [ref=e588]: You May Like Our Most Popular Tools & Apps
+          - generic [ref=e589]:
+            - link "plagiarism checker api" [ref=e590] [cursor=pointer]:
+              - /url: https://smallseotools.com/plagiarism-checker-api/
+            - link "wordpress plagiarism checker" [ref=e592] [cursor=pointer]:
+              - /url: https://smallseotools.com/wordpress-plagiarism-checker/
+        - generic [ref=e595]:
+          - generic [ref=e596]: Subscribe to our Newsletter & Stay updated
+          - generic [ref=e597]:
+            - textbox "Enter your email address" [ref=e598]
+            - button "Subscribe" [ref=e600] [cursor=pointer]: Subscribe
+          - generic [ref=e601]:
+            - link "facebook" [ref=e602] [cursor=pointer]:
+              - /url: https://www.facebook.com/smallseotools
+            - link "twitter" [ref=e603] [cursor=pointer]:
+              - /url: https://twitter.com/smallseotools1
+            - link "youtube" [ref=e604] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCuqHvzAavqmyVlolYO1SXMQ
+            - link "pinterest" [ref=e605] [cursor=pointer]:
+              - /url: https://www.pinterest.co.uk/smallseotools7/
+    - paragraph [ref=e606]:
+      - text: Copyright © 2012-2026 by
+      - link "SmallSEOTools.com" [ref=e607] [cursor=pointer]:
+        - /url: https://smallseotools.com/
+      - text: All Rights Reserved.

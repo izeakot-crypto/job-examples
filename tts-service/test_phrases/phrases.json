@@ -1,0 +1,251 @@
+{
+  "version": "1.0",
+  "description": "Test phrases for TTS evaluation - 6 languages",
+  "categories": ["basic", "technical", "numbers", "foreign_words", "intonation", "mixed"],
+
+  "UA": {
+    "name": "Ukrainian",
+    "phrases": {
+      "basic": [
+        "Доброго дня, мене звати Олександра.",
+        "Будь ласка, зачекайте на лінії.",
+        "Ваш дзвінок дуже важливий для нас.",
+        "Дякуємо, що зателефонували в нашу компанію."
+      ],
+      "technical": [
+        "Ваш API-ключ недійсний, оновіть його в налаштуваннях.",
+        "Системний адміністратор виконує технічне обслуговування сервера.",
+        "Будь ласка, введіть ваш ідентифікаційний номер платника податків.",
+        "Завантажте останню версію програмного забезпечення з офіційного сайту."
+      ],
+      "numbers": [
+        "Ваш номер замовлення: 7849235.",
+        "Сума до сплати: 1234 гривні 56 копійок.",
+        "Дата доставки: 15 лютого 2025 року.",
+        "Зателефонуйте за номером +380 44 123 45 67."
+      ],
+      "foreign_words": [
+        "Завантажте файл у форматі PDF або Microsoft Word.",
+        "Оплата через PayPal або криптовалютою Bitcoin.",
+        "Ваш логін та пароль надіслано на email.",
+        "Підключіться до мережі WiFi для синхронізації."
+      ],
+      "intonation": [
+        "Ви впевнені, що хочете видалити цей файл?",
+        "Вітаємо! Ви виграли головний приз!",
+        "На жаль, ваш запит відхилено.",
+        "Чи бажаєте ви продовжити оформлення замовлення?"
+      ],
+      "mixed": [
+        "Ваш iPhone 15 Pro Max готовий до видачі в магазині Apple Store на Хрещатику.",
+        "Зверніться до служби підтримки через Telegram або WhatsApp.",
+        "Статус вашого замовлення на Amazon: shipped, tracking number UA123456789."
+      ]
+    }
+  },
+
+  "EN": {
+    "name": "English",
+    "phrases": {
+      "basic": [
+        "Hello, my name is Alexander.",
+        "Please hold the line.",
+        "Your call is very important to us.",
+        "Thank you for calling our company."
+      ],
+      "technical": [
+        "Your API key is invalid, please update it in the settings.",
+        "The system administrator is performing server maintenance.",
+        "Please enter your tax identification number.",
+        "Download the latest software version from the official website."
+      ],
+      "numbers": [
+        "Your order number is: 7849235.",
+        "The amount due is: $1,234.56.",
+        "Delivery date: February 15th, 2025.",
+        "Call us at +1 800 555 1234."
+      ],
+      "foreign_words": [
+        "Your rendezvous is scheduled for tomorrow.",
+        "The entrepreneur launched a successful startup.",
+        "Please check the FAQ section for more information.",
+        "The zeitgeist of our era demands innovation."
+      ],
+      "intonation": [
+        "Are you sure you want to delete this file?",
+        "Congratulations! You've won the grand prize!",
+        "Unfortunately, your request has been declined.",
+        "Would you like to continue with the checkout?"
+      ],
+      "mixed": [
+        "Your iPhone 15 Pro Max is ready for pickup at the Apple Store in Kyiv.",
+        "Contact our support team via Telegram or WhatsApp.",
+        "Your order status on Amazon: shipped, tracking number US123456789."
+      ]
+    }
+  },
+
+  "RU": {
+    "name": "Russian",
+    "phrases": {
+      "basic": [
+        "Здравствуйте, меня зовут Александр.",
+        "Пожалуйста, оставайтесь на линии.",
+        "Ваш звонок очень важен для нас.",
+        "Спасибо, что позвонили в нашу компанию."
+      ],
+      "technical": [
+        "Ваш API-ключ недействителен, обновите его в настройках.",
+        "Системный администратор выполняет техническое обслуживание сервера.",
+        "Пожалуйста, введите ваш идентификационный номер налогоплательщика.",
+        "Загрузите последнюю версию программного обеспечения с официального сайта."
+      ],
+      "numbers": [
+        "Ваш номер заказа: 7849235.",
+        "Сумма к оплате: 1234 рубля 56 копеек.",
+        "Дата доставки: 15 февраля 2025 года.",
+        "Позвоните по номеру +7 495 123 45 67."
+      ],
+      "foreign_words": [
+        "Загрузите файл в формате PDF или Microsoft Word.",
+        "Оплата через PayPal или криптовалютой Bitcoin.",
+        "Ваш логин и пароль отправлены на email.",
+        "Подключитесь к сети WiFi для синхронизации."
+      ],
+      "intonation": [
+        "Вы уверены, что хотите удалить этот файл?",
+        "Поздравляем! Вы выиграли главный приз!",
+        "К сожалению, ваш запрос отклонён.",
+        "Желаете ли вы продолжить оформление заказа?"
+      ],
+      "mixed": [
+        "Ваш iPhone 15 Pro Max готов к выдаче в магазине Apple Store на Тверской.",
+        "Обратитесь в службу поддержки через Telegram или WhatsApp.",
+        "Статус вашего заказа на Amazon: shipped, tracking number RU123456789."
+      ]
+    }
+  },
+
+  "PL": {
+    "name": "Polish",
+    "phrases": {
+      "basic": [
+        "Dzień dobry, mam na imię Aleksander.",
+        "Proszę pozostać na linii.",
+        "Pani/Pana połączenie jest dla nas bardzo ważne.",
+        "Dziękujemy za telefon do naszej firmy."
+      ],
+      "technical": [
+        "Twój klucz API jest nieprawidłowy, zaktualizuj go w ustawieniach.",
+        "Administrator systemu przeprowadza konserwację serwera.",
+        "Proszę podać numer identyfikacji podatkowej.",
+        "Pobierz najnowszą wersję oprogramowania z oficjalnej strony."
+      ],
+      "numbers": [
+        "Twój numer zamówienia: 7849235.",
+        "Kwota do zapłaty: 1234 złote 56 groszy.",
+        "Data dostawy: 15 lutego 2025 roku.",
+        "Zadzwoń pod numer +48 22 123 45 67."
+      ],
+      "foreign_words": [
+        "Pobierz plik w formacie PDF lub Microsoft Word.",
+        "Płatność przez PayPal lub kryptowalutą Bitcoin.",
+        "Twój login i hasło zostały wysłane na email.",
+        "Połącz się z siecią WiFi, aby zsynchronizować."
+      ],
+      "intonation": [
+        "Czy na pewno chcesz usunąć ten plik?",
+        "Gratulacje! Wygrałeś główną nagrodę!",
+        "Niestety, twoja prośba została odrzucona.",
+        "Czy chciałbyś kontynuować realizację zamówienia?"
+      ],
+      "mixed": [
+        "Twój iPhone 15 Pro Max jest gotowy do odbioru w sklepie Apple Store w Warszawie.",
+        "Skontaktuj się z pomocą techniczną przez Telegram lub WhatsApp.",
+        "Status twojego zamówienia na Amazon: shipped, tracking number PL123456789."
+      ]
+    }
+  },
+
+  "ES": {
+    "name": "Spanish",
+    "phrases": {
+      "basic": [
+        "Buenos días, me llamo Alejandro.",
+        "Por favor, permanezca en la línea.",
+        "Su llamada es muy importante para nosotros.",
+        "Gracias por llamar a nuestra empresa."
+      ],
+      "technical": [
+        "Su clave API no es válida, actualícela en la configuración.",
+        "El administrador del sistema está realizando el mantenimiento del servidor.",
+        "Por favor, introduzca su número de identificación fiscal.",
+        "Descargue la última versión del software desde el sitio oficial."
+      ],
+      "numbers": [
+        "Su número de pedido es: 7849235.",
+        "El importe a pagar es: 1234 euros con 56 céntimos.",
+        "Fecha de entrega: 15 de febrero de 2025.",
+        "Llame al número +34 91 123 45 67."
+      ],
+      "foreign_words": [
+        "Descargue el archivo en formato PDF o Microsoft Word.",
+        "Pago a través de PayPal o criptomoneda Bitcoin.",
+        "Su login y contraseña han sido enviados a su email.",
+        "Conéctese a la red WiFi para sincronizar."
+      ],
+      "intonation": [
+        "¿Está seguro de que desea eliminar este archivo?",
+        "¡Felicidades! ¡Ha ganado el premio principal!",
+        "Lamentablemente, su solicitud ha sido rechazada.",
+        "¿Desea continuar con el proceso de compra?"
+      ],
+      "mixed": [
+        "Su iPhone 15 Pro Max está listo para recoger en la tienda Apple Store en Madrid.",
+        "Contacte con nuestro equipo de soporte a través de Telegram o WhatsApp.",
+        "Estado de su pedido en Amazon: shipped, tracking number ES123456789."
+      ]
+    }
+  },
+
+  "TR": {
+    "name": "Turkish",
+    "phrases": {
+      "basic": [
+        "Merhaba, benim adım İskender.",
+        "Lütfen hatta kalın.",
+        "Aramanız bizim için çok önemli.",
+        "Şirketimizi aradığınız için teşekkür ederiz."
+      ],
+      "technical": [
+        "API anahtarınız geçersiz, lütfen ayarlardan güncelleyin.",
+        "Sistem yöneticisi sunucu bakımı yapıyor.",
+        "Lütfen vergi kimlik numaranızı girin.",
+        "Yazılımın en son sürümünü resmi siteden indirin."
+      ],
+      "numbers": [
+        "Sipariş numaranız: 7849235.",
+        "Ödenecek tutar: 1234 lira 56 kuruş.",
+        "Teslimat tarihi: 15 Şubat 2025.",
+        "Bizi +90 212 123 45 67 numarasından arayın."
+      ],
+      "foreign_words": [
+        "Dosyayı PDF veya Microsoft Word formatında indirin.",
+        "PayPal veya Bitcoin kripto para birimi ile ödeme yapın.",
+        "Kullanıcı adı ve şifreniz email'inize gönderildi.",
+        "Senkronizasyon için WiFi ağına bağlanın."
+      ],
+      "intonation": [
+        "Bu dosyayı silmek istediğinizden emin misiniz?",
+        "Tebrikler! Büyük ödülü kazandınız!",
+        "Maalesef talebiniz reddedildi.",
+        "Siparişe devam etmek ister misiniz?"
+      ],
+      "mixed": [
+        "iPhone 15 Pro Max'iniz İstanbul'daki Apple Store'dan teslim almaya hazır.",
+        "Telegram veya WhatsApp üzerinden destek ekibimizle iletişime geçin.",
+        "Amazon'daki sipariş durumunuz: shipped, tracking number TR123456789."
+      ]
+    }
+  }
+}

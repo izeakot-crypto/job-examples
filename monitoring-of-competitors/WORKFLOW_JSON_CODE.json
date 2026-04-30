@@ -1,0 +1,12 @@
+{
+  "source": "database",
+  "workflowId": {
+    "__rl": true,
+    "value": "EMj5nBku5u0UQQbC",
+    "mode": "list"
+  },
+  "mode": "each",
+  "options": {
+    "waitForSubWorkflow": true
+  }
+}

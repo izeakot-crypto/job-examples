@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_tabs",
+      "mcp__playwright__browser_run_code",
+      "WebFetch(domain:api.bitbucket.org)",
+      "WebFetch(domain:bitbucket.org)",
+      "WebFetch(domain:py-services.oki-toki.net)",
+      "Bash(curl:*)",
+      "Bash(python:*)"
+    ]
+  }
+}

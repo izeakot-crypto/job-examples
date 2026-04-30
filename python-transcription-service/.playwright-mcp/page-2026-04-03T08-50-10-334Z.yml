@@ -1,0 +1,36 @@
+- generic [ref=e2]:
+  - dialog "Atlassian cookies and tracking notice , (opens new window)" [ref=e6]:
+    - generic [ref=e7]:
+      - generic [ref=e9]:
+        - text: Atlassian uses cookies to improve your browsing experience, perform analytics and research, and conduct advertising. Accept all cookies to indicate that you agree to our use of cookies on your device.
+        - link "Atlassian cookies and tracking notice , (opens new window)" [ref=e10] [cursor=pointer]:
+          - /url: https://www.atlassian.com/legal/cookies
+          - text: Atlassian cookies and tracking notice
+          - generic [ref=e11]: ", (opens new window)"
+      - generic [ref=e12]:
+        - button "Preferences" [ref=e13] [cursor=pointer]:
+          - generic [ref=e14]: Preferences
+        - button "Only necessary" [ref=e15] [cursor=pointer]:
+          - generic [ref=e16]: Only necessary
+        - button "Accept all" [ref=e17] [cursor=pointer]:
+          - generic [ref=e20]: Accept all
+  - generic [ref=e21]:
+    - banner
+    - main [ref=e22]:
+      - generic [ref=e23]:
+        - generic:
+          - heading [level=1]
+      - generic [ref=e27]:
+        - heading "Repository not found" [level=1] [ref=e29]
+        - paragraph [ref=e30]: You may not have access to this repository or it no longer exists in this workspace. If you think this repository exists and you have access, make sure you are authenticated.
+        - paragraph [ref=e31]:
+          - text: Return to the
+          - link "previous page" [ref=e32] [cursor=pointer]:
+            - /url: "#"
+          - text: or go back to your
+          - link "dashboard" [ref=e33] [cursor=pointer]:
+            - /url: /
+          - text: .
+        - paragraph [ref=e34]:
+          - link "Log in" [ref=e35] [cursor=pointer]:
+            - /url: /account/signin/?next=%2Fdintsin010%2Ftranscribe

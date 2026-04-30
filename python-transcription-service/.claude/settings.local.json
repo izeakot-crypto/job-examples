@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:bitbucket.org)",
+      "mcp__playwright__browser_navigate",
+      "Bash(curl:*)",
+      "WebFetch(domain:py-services.oki-toki.net)",
+      "Bash(pip install:*)",
+      "Bash(python -m pytest services/translation-checker/ -v --tb=short)",
+      "Bash(python -m pytest services/translation-checker/tests/ -v --tb=short)",
+      "Bash(python -m pytest services/translation-checker/tests/ -v)",
+      "Bash(python:*)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(echo \"EXIT_CODE: $?\")",
+      "Bash(tee C:/Users/izeak/AppData/Local/Temp/pytest_tee.txt)",
+      "Bash(echo \"PYTEST_DONE=$?\")",
+      "Bash(cmd /c \"set PYTHONUTF8=1 && set PYTHONIOENCODING=utf-8 && python -m pytest services/translation-checker/tests/ -v --tb=short --timeout=60 > C:\\\\Users\\\\izeak\\\\AppData\\\\Local\\\\Temp\\\\pytest_out3.txt 2>&1\")",
+      "Bash(PYTHONUTF8=1 PYTHONIOENCODING=utf-8 python -m pytest services/translation-checker/tests/ -v --tb=short --timeout=60)",
+      "Bash(echo \"EXIT: $?\")",
+      "Read(//tmp/**)",
+      "Bash(sshpass:*)",
+      "Bash(SSHPASS='YOUR_SECRET_TOKEN' sshpass:*)",
+      "Bash(expect:*)",
+      "Bash(python3:*)",
+      "Bash(ssh:*)",
+      "Bash(scp -i ~/.ssh/id_rsa -P 1300 \"C:\\\\Users\\\\izeak\\\\OneDrive\\\\Work.Oki-toki\\\\py-services\\\\services\\\\transcribe\\\\whisper_client.py\" root@65.109.131.32:/opt/py-services/services/transcribe/whisper_client.py)"
+    ]
+  }
+}
+

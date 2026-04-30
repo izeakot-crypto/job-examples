@@ -1,0 +1,3335 @@
+<!DOCTYPE html>
+<html class="light" lang="uk">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>STATI — Editorial Intelligence</title>
+  <link rel="icon" type="image/png" href="/favicon.png"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary-fixed": "#ffdbcd",
+            "surface-container-low": "#f1f3ff",
+            "surface-variant": "#dde2f3",
+            "tertiary": "#974822",
+            "primary-container": "#0ea5a0",
+            "on-primary": "#ffffff",
+            "background": "#f9f9ff",
+            "on-error": "#ffffff",
+            "secondary-container": "#d5e3fd",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#6d7a78",
+            "surface-container": "#e8eefe",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#ffb597",
+            "inverse-on-surface": "#ecf0ff",
+            "tertiary-container": "#d97b51",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "on-secondary-container": "#57657b",
+            "surface-container-highest": "#dde2f3",
+            "outline-variant": "#bcc9c8",
+            "on-surface": "#161c27",
+            "on-background": "#161c27",
+            "secondary": "#515f74",
+            "surface-bright": "#f9f9ff",
+            "primary-fixed": "#7df6ef",
+            "surface-dim": "#d4daea",
+            "primary-fixed-dim": "#5ed9d3",
+            "surface-container-high": "#e3e8f9",
+            "inverse-primary": "#5ed9d3",
+            "secondary-fixed-dim": "#b9c7e0",
+            "inverse-surface": "#2a303d",
+            "error-container": "#ffdad6",
+            "surface": "#f9f9ff",
+            "on-surface-variant": "#3d4948",
+            "secondary-fixed": "#d5e3fd",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#003331",
+            "primary": "#006a66"
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          fontFamily: { "headline": ["Inter"], "body": ["Inter"], "label": ["Inter"] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      vertical-align: middle;
+    }
+    body { font-family: 'Inter', sans-serif; background-color: #f9f9ff; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    [contenteditable]:focus { outline: none; }
+    .view { display: none; }
+    .view.active { display: block; }
+    .view-flex { display: none; }
+    .view-flex.active { display: flex; }
+    .teal-gradient { background: linear-gradient(135deg, #006a66 0%, #0ea5a0 100%); }
+    .toast-enter { animation: slideInRight 0.3s ease-out; }
+    .toast-exit { animation: slideOutRight 0.3s ease-in forwards; }
+    @keyframes slideInRight { from { transform: translateX(120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    @keyframes slideOutRight { from { transform: translateX(0); opacity: 1; } to { transform: translateX(120%); opacity: 0; } }
+    .modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 200; align-items: center; justify-content: center; }
+    .modal-backdrop.open { display: flex; }
+    .progress-bar-inner { transition: width 0.5s ease-in-out; }
+    .lang-tab-btn.active { background: #0ea5a0; color: white; }
+    .lang-tab-btn { transition: background 0.2s; }
+    .settings-tab.active { background: #0ea5a0; color: white; }
+    .settings-tab { transition: background 0.2s; }
+    .article-list-item.selected { background: #e8eefe; border-left: 3px solid #006a66; }
+  </style>
+</head>
+<body class="text-on-background">
+
+<!-- =================== SIDEBAR =================== -->
+<aside class="fixed h-screen w-[240px] left-0 top-0 bg-[#2a303d] flex flex-col py-6 z-50">
+  <div class="px-6 mb-8"></div>
+  <nav class="flex-1 space-y-1 px-2">
+    <a onclick="navigateTo('dashboard')" data-view="dashboard" class="nav-link flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-r-full mr-4 transition-all duration-200 cursor-pointer text-sm font-medium">
+      <span class="material-symbols-outlined">dashboard</span><span>Главная</span>
+    </a>
+    <a onclick="navigateTo('ideas')" data-view="ideas" class="nav-link flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-r-full mr-4 transition-all duration-200 cursor-pointer text-sm font-medium">
+      <span class="material-symbols-outlined">lightbulb</span><span>Идеи</span>
+    </a>
+    <a onclick="navigateTo('review')" data-view="review" class="nav-link flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-r-full mr-4 transition-all duration-200 cursor-pointer text-sm font-medium">
+      <span class="material-symbols-outlined">rate_review</span><span>Проверка</span>
+    </a>
+    <a onclick="navigateTo('editor')" data-view="editor" class="nav-link flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-r-full mr-4 transition-all duration-200 cursor-pointer text-sm font-medium" style="display:none;">
+      <span class="material-symbols-outlined">edit_note</span><span>Editor</span>
+    </a>
+    <a onclick="navigateTo('published')" data-view="published" class="nav-link flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-r-full mr-4 transition-all duration-200 cursor-pointer text-sm font-medium">
+      <span class="material-symbols-outlined">task_alt</span><span>Опубликованные</span>
+    </a>
+    <a onclick="navigateTo('account')" data-view="account" class="nav-link flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-r-full mr-4 transition-all duration-200 cursor-pointer text-sm font-medium">
+      <span class="material-symbols-outlined">person</span><span>Аккаунт</span>
+    </a>
+    <a onclick="navigateTo('settings')" data-view="settings" class="nav-link flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-r-full mr-4 transition-all duration-200 cursor-pointer text-sm font-medium">
+      <span class="material-symbols-outlined">settings</span><span>Настройки</span>
+    </a>
+    <div class="mx-4 my-2 border-t border-white/10"></div>
+    <a onclick="navigateTo('docs')" data-view="docs" class="nav-link flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-r-full mr-4 transition-all duration-200 cursor-pointer text-sm font-medium">
+      <span class="material-symbols-outlined">menu_book</span><span>Документация</span>
+    </a>
+    <a onclick="navigateTo('changelog')" data-view="changelog" class="nav-link flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-r-full mr-4 transition-all duration-200 cursor-pointer text-sm font-medium">
+      <span class="material-symbols-outlined">update</span><span>Обновления</span>
+    </a>
+  </nav>
+  <div class="px-2 mt-auto">
+    <div class="px-4 py-2 text-xs text-slate-500 font-medium" id="sidebar-user-info"></div>
+    <a onclick="doLogout()" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-red-500/10 rounded-r-full mr-4 transition-all duration-200 cursor-pointer text-sm font-medium">
+      <span class="material-symbols-outlined">logout</span><span>Выйти</span>
+    </a>
+  </div>
+</aside>
+
+<!-- =================== MAIN CONTENT =================== -->
+<main class="ml-[240px] min-h-screen flex flex-col">
+
+  <!-- TOP HEADER -->
+  <header class="sticky top-0 w-full z-40 bg-white/80 backdrop-blur-md shadow-sm shadow-slate-200/50 flex items-center justify-between px-8 py-4">
+    <div class="flex items-center gap-4 flex-1">
+      <div class="relative w-full max-w-md">
+        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-xl">search</span>
+        <input id="global-search" class="w-full bg-surface-container-low border-none rounded-full py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-outline/60" placeholder="Поиск статей или тем..." type="text"/>
+      </div>
+    </div>
+    <div class="flex items-center gap-4">
+      <button class="relative p-2 hover:bg-surface-container-high rounded-full transition-colors">
+        <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+        <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+      </button>
+      <div class="w-9 h-9 rounded-full bg-[#0ea5a0] flex items-center justify-center text-white font-bold text-sm cursor-pointer">АС</div>
+    </div>
+  </header>
+
+  <!-- =================== VIEW: DASHBOARD =================== -->
+  <div id="view-dashboard" class="view active p-8 max-w-[1600px] mx-auto w-full">
+    <div class="mb-8">
+      <h2 class="text-3xl font-extrabold text-on-surface tracking-tight">Главная</h2>
+      <p class="text-on-surface-variant mt-1 text-sm">Статистика за последние 30 дней</p>
+    </div>
+    <!-- Stat Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow group">
+        <div class="flex items-center justify-between mb-4">
+          <div class="p-3 bg-tertiary-container/10 rounded-full text-tertiary-container group-hover:bg-tertiary-container/20 transition-colors">
+            <span class="material-symbols-outlined">pending_actions</span>
+          </div>
+          <span id="stat-badge-review" class="text-[0.6875rem] font-bold text-tertiary px-2 py-1 bg-tertiary-fixed rounded-full">...</span>
+        </div>
+        <h3 class="text-on-surface-variant text-sm font-medium">На проверке</h3>
+        <p id="stat-review" class="text-4xl font-extrabold text-on-surface mt-2">—</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow group border-b-4 border-primary">
+        <div class="flex items-center justify-between mb-4">
+          <div class="p-3 bg-primary/10 rounded-full text-primary group-hover:bg-primary/20 transition-colors">
+            <span class="material-symbols-outlined">check_circle</span>
+          </div>
+          <span class="text-[0.6875rem] font-bold text-on-primary-container px-2 py-1 bg-primary-fixed rounded-full">Опубликовано</span>
+        </div>
+        <h3 class="text-on-surface-variant text-sm font-medium">Опубликовано</h3>
+        <p id="stat-published" class="text-4xl font-extrabold text-on-surface mt-2">—</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow group">
+        <div class="flex items-center justify-between mb-4">
+          <div class="p-3 bg-secondary-container/30 rounded-full text-secondary group-hover:bg-secondary-container/50 transition-colors">
+            <span class="material-symbols-outlined">lightbulb</span>
+          </div>
+          <span class="text-[0.6875rem] font-bold text-on-secondary-container px-2 py-1 bg-secondary-fixed rounded-full">В очереди</span>
+        </div>
+        <h3 class="text-on-surface-variant text-sm font-medium">Идей в очереди</h3>
+        <p id="stat-ideas" class="text-4xl font-extrabold text-on-surface mt-2">—</p>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow group">
+        <div class="flex items-center justify-between mb-4">
+          <div class="p-3 bg-error-container/20 rounded-full text-error group-hover:bg-error-container/40 transition-colors">
+            <span class="material-symbols-outlined">cancel</span>
+          </div>
+          <span class="text-[0.6875rem] font-bold text-on-error-container px-2 py-1 bg-error-container rounded-full">Отклонено</span>
+        </div>
+        <h3 class="text-on-surface-variant text-sm font-medium">Отклонено</h3>
+        <p id="stat-failed" class="text-4xl font-extrabold text-on-surface mt-2">—</p>
+      </div>
+    </div>
+    <!-- Charts Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-8">
+      <div class="lg:col-span-3 bg-surface-container-lowest p-8 rounded-lg shadow-sm">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="font-bold text-lg text-on-surface">Статьи за последние 30 дней</h3>
+          <div class="flex gap-2 items-center">
+            <span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
+            <span class="text-xs text-on-surface-variant font-medium">Количество публикаций</span>
+          </div>
+        </div>
+        <div class="relative h-48">
+          <svg class="w-full h-full" viewBox="0 0 1000 200" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#006a66" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#006a66" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,180 Q100,160 200,140 T400,90 T600,110 T800,40 T1000,60" fill="none" stroke="#006a66" stroke-width="3" stroke-linecap="round"/>
+            <path d="M0,180 Q100,160 200,140 T400,90 T600,110 T800,40 T1000,60 L1000,200 L0,200 Z" fill="url(#chartGradient)"/>
+          </svg>
+          <div class="flex justify-between mt-2 text-[10px] text-on-surface-variant font-medium">
+            <span>01</span><span>07</span><span>14</span><span>21</span><span>28</span><span>30</span>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-lg shadow-sm">
+        <h3 class="font-bold text-lg text-on-surface mb-6">Языковая статистика</h3>
+        <div id="lang-stats" class="space-y-4">
+          <p class="text-sm text-on-surface-variant">Загрузка...</p>
+        </div>
+      </div>
+    </div>
+    <!-- Recent Drafts Table -->
+    <div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+      <div class="p-6 border-b border-outline-variant/10 flex justify-between items-center">
+        <div>
+          <h3 class="font-bold text-lg text-on-surface">Последние черновики</h3>
+          <p class="text-xs text-on-surface-variant">Вы работали над ними недавно</p>
+        </div>
+        <button onclick="navigateTo('ideas')" class="teal-gradient text-white px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 hover:opacity-90 transition-opacity shadow-lg shadow-primary/20">
+          <span class="material-symbols-outlined text-lg">add</span>Новая статья
+        </button>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left">
+          <thead>
+            <tr class="bg-surface-container-low/50">
+              <th class="px-8 py-4 text-xs font-bold uppercase tracking-wider text-on-surface-variant">Название статьи</th>
+              <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-on-surface-variant">Языки</th>
+              <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-on-surface-variant">Статус</th>
+              <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-on-surface-variant">Дата изменения</th>
+              <th class="px-8 py-4 text-xs font-bold uppercase tracking-wider text-on-surface-variant text-right">Действия</th>
+            </tr>
+          </thead>
+          <tbody id="dashboard-table-body" class="divide-y divide-outline-variant/10">
+            <tr><td colspan="5" class="px-8 py-8 text-center text-sm text-on-surface-variant">Загрузка...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== VIEW: IDEAS =================== -->
+  <div id="view-ideas" class="view p-8 max-w-[1600px] mx-auto w-full">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-3xl font-extrabold tracking-tight text-on-surface">Идеи статей</h2>
+      <div class="flex gap-3">
+        <button onclick="navigateTo('review')" class="flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-outline-variant text-on-surface-variant font-semibold hover:bg-surface-container-low transition-colors text-sm">
+          <span class="material-symbols-outlined text-[18px]">rate_review</span>Просмотр статей
+        </button>
+        <button id="btn-generate-ideas" onclick="generateIdeas()" class="flex items-center gap-2 px-5 py-2.5 rounded-full teal-gradient text-white font-semibold shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all text-sm">
+          <span class="material-symbols-outlined text-[18px]">refresh</span>Ещё идеи
+        </button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Active Ideas -->
+      <div class="flex flex-col">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-2 h-2 rounded-full bg-[#0ea5a0] animate-pulse"></span>
+          <h3 class="text-lg font-bold text-on-surface">Активные идеи</h3>
+          <span id="active-ideas-count" class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-xs font-bold text-on-secondary-container">0</span>
+        </div>
+        <div id="active-ideas-list" class="flex-1 overflow-y-auto no-scrollbar space-y-4 pr-2" style="max-height: calc(100vh - 300px);">
+          <p class="text-sm text-on-surface-variant p-4">Загрузка...</p>
+        </div>
+      </div>
+      <!-- Rejected Ideas -->
+      <div class="flex flex-col">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+          <h3 class="text-lg font-bold text-on-surface">Отклонённые идеи</h3>
+          <span id="rejected-ideas-count" class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-xs font-bold text-on-secondary-container">0</span>
+        </div>
+        <div id="rejected-ideas-list" class="flex-1 overflow-y-auto no-scrollbar space-y-4 pr-2" style="max-height: calc(100vh - 300px);">
+          <p class="text-sm text-on-surface-variant p-4">Загрузка...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== VIEW: REVIEW =================== -->
+  <div id="view-review" class="view p-8 max-w-[1600px] mx-auto w-full">
+    <div class="flex justify-between items-end mb-8">
+      <div>
+        <div class="flex items-center gap-3 mb-1">
+          <h2 class="text-3xl font-bold tracking-tight text-on-surface">Проверка статей</h2>
+          <div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary/10">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            <span class="text-[10px] font-bold text-primary tracking-wider uppercase">Live</span>
+          </div>
+        </div>
+        <p id="review-subtitle" class="text-on-surface-variant font-medium text-sm">Загрузка...</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="relative">
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">search</span>
+          <input id="review-search" oninput="filterReviewCards()" class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm w-64 focus:ring-2 focus:ring-primary/20 placeholder:text-outline/60" placeholder="Поиск по названию..."/>
+        </div>
+      </div>
+    </div>
+    <div id="review-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="col-span-3 py-16 text-center text-sm text-on-surface-variant">Загрузка...татей...</div>
+    </div>
+  </div>
+
+  <!-- =================== VIEW: EDITOR =================== -->
+  <div id="view-editor" class="view-flex active:flex" style="display:none; height: calc(100vh - 72px);">
+    <!-- Center Panel: Editor -->
+    <section class="flex-1 bg-white overflow-y-auto no-scrollbar relative flex flex-col">
+      <!-- Toolbar -->
+      <div class="sticky top-0 bg-white/95 backdrop-blur-sm z-30 px-6 py-3 border-b border-surface-container-high flex items-center justify-between gap-4 flex-shrink-0">
+        <div class="flex items-center gap-1 flex-wrap">
+          <button onclick="navigateTo('review')" class="flex items-center gap-1 text-primary text-sm font-semibold hover:underline px-2 py-1 mr-2" title="Все статьи">
+            <span class="material-symbols-outlined text-[18px]">arrow_back</span><span>Все статьи</span>
+          </button>
+          <div class="h-4 w-px bg-slate-200 mx-1"></div>
+          <button onclick="execCmd('bold')" class="p-1.5 hover:bg-surface-container-low rounded transition-colors" title="Bold"><span class="material-symbols-outlined text-lg">format_bold</span></button>
+          <button onclick="execCmd('italic')" class="p-1.5 hover:bg-surface-container-low rounded transition-colors" title="Italic"><span class="material-symbols-outlined text-lg">format_italic</span></button>
+          <button onclick="execCmd('underline')" class="p-1.5 hover:bg-surface-container-low rounded transition-colors" title="Underline"><span class="material-symbols-outlined text-lg">format_underlined</span></button>
+          <button onclick="execCmd('strikeThrough')" class="p-1.5 hover:bg-surface-container-low rounded transition-colors" title="Strikethrough"><span class="material-symbols-outlined text-lg">format_strikethrough</span></button>
+          <div class="h-4 w-px bg-slate-200 mx-1"></div>
+          <button onclick="execCmd('insertUnorderedList')" class="p-1.5 hover:bg-surface-container-low rounded transition-colors"><span class="material-symbols-outlined text-lg">format_list_bulleted</span></button>
+          <button onclick="execCmd('insertOrderedList')" class="p-1.5 hover:bg-surface-container-low rounded transition-colors"><span class="material-symbols-outlined text-lg">format_list_numbered</span></button>
+          <button onclick="insertLink()" class="p-1.5 hover:bg-surface-container-low rounded transition-colors"><span class="material-symbols-outlined text-lg">link</span></button>
+          <div class="h-4 w-px bg-slate-200 mx-1"></div>
+          <button onclick="execCmd('undo')" class="p-1.5 hover:bg-surface-container-low rounded transition-colors"><span class="material-symbols-outlined text-lg">undo</span></button>
+          <button onclick="execCmd('redo')" class="p-1.5 hover:bg-surface-container-low rounded transition-colors"><span class="material-symbols-outlined text-lg">redo</span></button>
+          <div class="h-4 w-px bg-slate-200 mx-1"></div>
+          <button onclick="autoFormat()" class="px-3 py-1.5 bg-secondary text-white text-xs font-bold rounded-full flex items-center gap-1 hover:bg-[#3a485c] transition-colors">
+            <span class="material-symbols-outlined text-sm">auto_awesome</span>АВТОФОРМАТ
+          </button>
+        </div>
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <span id="save-indicator" class="text-xs text-on-surface-variant hidden">✅ Сохранено</span>
+        </div>
+      </div>
+      <!-- Secondary Toolbar: Lang tabs + status -->
+      <div class="px-6 py-3 border-b border-surface-container-low flex items-center justify-between flex-shrink-0">
+        <div class="flex gap-2">
+          <button onclick="switchLang('ua')" data-lang="ua" class="lang-tab-btn active px-3 py-1.5 rounded-full bg-[#0ea5a0] text-white text-xs font-bold transition-colors">UA</button>
+          <button onclick="switchLang('en')" data-lang="en" class="lang-tab-btn px-3 py-1.5 rounded-full bg-surface-container-high text-slate-600 text-xs font-bold hover:bg-surface-container-highest transition-colors">EN</button>
+          <button onclick="switchLang('es')" data-lang="es" class="lang-tab-btn px-3 py-1.5 rounded-full bg-surface-container-high text-slate-600 text-xs font-bold hover:bg-surface-container-highest transition-colors">ES</button>
+          <button onclick="switchLang('pl')" data-lang="pl" class="lang-tab-btn px-3 py-1.5 rounded-full bg-surface-container-high text-slate-600 text-xs font-bold hover:bg-surface-container-highest transition-colors">PL</button>
+          <button onclick="switchLang('ru')" data-lang="ru" class="lang-tab-btn px-3 py-1.5 rounded-full bg-surface-container-high text-slate-600 text-xs font-bold hover:bg-surface-container-highest transition-colors">RU</button>
+          <button onclick="switchLang('tr')" data-lang="tr" class="lang-tab-btn px-3 py-1.5 rounded-full bg-surface-container-high text-slate-600 text-xs font-bold hover:bg-surface-container-highest transition-colors">TR</button>
+        </div>
+        <div class="flex items-center gap-3">
+          <select id="editor-status-select" onchange="updateArticleStatus()" class="text-xs font-bold border border-outline-variant/30 rounded-lg px-3 py-1.5 bg-white text-on-surface-variant focus:ring-2 focus:ring-primary/20">
+            <option value="not_checked">Не проверено</option>
+            <option value="checking">На проверке</option>
+            <option value="approved">Одобрено</option>
+            <option value="published">Опубликовано</option>
+          </select>
+          <button onclick="confirmDeleteArticle()" class="p-1.5 hover:text-error transition-colors rounded"><span class="material-symbols-outlined">delete</span></button>
+          <button onclick="confirmPublish()" class="px-4 py-1.5 teal-gradient text-white text-xs font-bold rounded-full flex items-center gap-1.5 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+            <span class="material-symbols-outlined text-sm">rocket_launch</span>Опубликовать
+          </button>
+        </div>
+      </div>
+      <!-- Editable Content -->
+      <div class="flex-1 px-8 py-8 max-w-3xl mx-auto w-full">
+        <h1 id="editor-title" class="text-3xl font-black text-on-surface tracking-tight mb-6 leading-tight" contenteditable="true" data-placeholder="Заголовок статьи..."></h1>
+        <div id="editor-content" contenteditable="true" class="prose max-w-none text-on-surface-variant leading-relaxed text-base min-h-[400px]" data-placeholder="Начните редактирование..."></div>
+      </div>
+    </section>
+
+    <!-- Right Sidebar -->
+    <section class="w-[360px] bg-surface-container-low border-l border-outline-variant/15 overflow-y-auto no-scrollbar flex-shrink-0">
+      <div class="p-6 space-y-8">
+        <!-- Preview -->
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs font-black uppercase tracking-widest text-slate-500">ПРЕВЬЮ НА САЙТЕ</h3>
+            <div class="flex gap-1">
+              <button onclick="regenerateImage()" title="Перегенерировать фото" class="p-1.5 hover:bg-surface-container-high rounded-full transition-colors"><span class="material-symbols-outlined text-lg">refresh</span></button>
+              <label title="Загрузить из папки" class="p-1.5 hover:bg-surface-container-high rounded-full transition-colors cursor-pointer">
+                <span class="material-symbols-outlined text-lg">upload</span>
+                <input id="image-upload-input" type="file" accept="image/*" class="hidden" onchange="uploadImage(this)"/>
+              </label>
+              <button onclick="deleteImage()" title="Удалить зображення" class="p-1.5 hover:text-error rounded-full transition-colors"><span class="material-symbols-outlined text-lg">delete</span></button>
+            </div>
+          </div>
+          <!-- Blog card preview -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-outline-variant/10">
+            <div id="preview-image-container" class="relative aspect-video bg-surface-container flex items-center justify-center overflow-hidden">
+              <span class="material-symbols-outlined text-4xl text-outline-variant">image</span>
+              <img id="preview-image" class="absolute inset-0 w-full h-full object-cover hidden"/>
+            </div>
+            <div class="p-4 space-y-1">
+              <span class="text-[10px] font-bold text-primary uppercase tracking-widest">SEO / Контент</span>
+              <h4 id="preview-title" class="text-sm font-bold leading-tight">Название статьи</h4>
+              <div class="flex items-center justify-between pt-1">
+                <span id="preview-date" class="text-[10px] text-slate-400">—</span>
+                <span id="preview-slug" class="text-[10px] text-primary font-bold truncate max-w-[120px]">stati.io/...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Verification -->
+        <div class="space-y-3">
+          <h3 class="text-xs font-black uppercase tracking-widest text-slate-500">ВЕРИФИКАЦИЯ</h3>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-white p-3 rounded-lg border border-outline-variant/10">
+              <div class="flex justify-between items-start mb-1">
+                <span class="text-[10px] font-medium text-slate-500">Детекция ИИ</span>
+                <span id="vrf-ai-label" class="text-xs font-black text-tertiary">—</span>
+              </div>
+              <div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
+                <div id="vrf-ai-bar" class="h-full bg-tertiary progress-bar-inner" style="width:0%"></div>
+              </div>
+            </div>
+            <div class="bg-white p-3 rounded-lg border border-outline-variant/10">
+              <div class="flex justify-between items-start mb-1">
+                <span class="text-[10px] font-medium text-slate-500">Плагиат</span>
+                <span id="vrf-plag-label" class="text-xs font-black text-primary">—</span>
+              </div>
+              <div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
+                <div id="vrf-plag-bar" class="h-full bg-primary progress-bar-inner" style="width:0%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <div class="flex items-center justify-between p-2.5 bg-white rounded-lg border border-outline-variant/10">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#0ea5a0]" style="font-size:18px">water_drop</span>
+                <span class="text-xs font-medium text-slate-600">Водность текста</span>
+              </div>
+              <span id="vrf-water" class="px-2 py-0.5 bg-primary-container/10 text-primary text-[10px] font-black rounded-full">—</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 bg-white rounded-lg border border-outline-variant/10">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-slate-400" style="font-size:18px">sentiment_neutral</span>
+                <span class="text-xs font-medium text-slate-600">Тошнота (классич.)</span>
+              </div>
+              <span id="vrf-nausea" class="px-2 py-0.5 bg-surface-container-high text-slate-500 text-[10px] font-black rounded-full">—</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 bg-white rounded-lg border border-outline-variant/10">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary" style="font-size:18px">code</span>
+                <span class="text-xs font-medium text-slate-600">HTML структура</span>
+              </div>
+              <span id="vrf-html" class="px-2 py-0.5 bg-surface-container-high text-slate-500 text-[10px] font-black rounded-full">—</span>
+            </div>
+          </div>
+        </div>
+        <!-- Keywords -->
+        <div class="space-y-3">
+          <h3 class="text-xs font-black uppercase tracking-widest text-slate-500">КЛЮЧЕВЫЕ СЛОВА (SEO)</h3>
+          <div id="editor-keywords" class="flex flex-wrap gap-2">
+            <span class="text-xs text-on-surface-variant">—</span>
+          </div>
+        </div>
+        <!-- Meta Description -->
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs font-black uppercase tracking-widest text-slate-500">META DESCRIPTION</h3>
+            <span id="meta-desc-counter" class="text-[10px] font-mono text-slate-400">0 / 160</span>
+          </div>
+          <textarea id="meta-desc-input"
+            onblur="saveMetaDescription()"
+            oninput="updateMetaCounter()"
+            placeholder="SEO-опис статті (150–160 символів)..."
+            class="w-full text-xs text-slate-700 bg-white border border-outline-variant/20 rounded-lg p-3 resize-none focus:outline-none focus:ring-2 focus:ring-primary/30 leading-relaxed"
+            rows="4"></textarea>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- =================== VIEW: PUBLISHED =================== -->
+  <div id="view-published" class="view p-8 max-w-[1600px] mx-auto w-full">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div>
+        <div class="flex items-center gap-3 mb-1">
+          <h2 class="text-3xl font-extrabold tracking-tight text-on-surface">Опубликованные статьи</h2>
+          <span id="published-count-badge" class="bg-primary-container/10 text-primary px-3 py-0.5 rounded-full text-sm font-bold">0</span>
+        </div>
+        <p class="text-on-surface-variant/70 font-medium text-sm">Управление контентом на всех подключённых платформах</p>
+      </div>
+      <button onclick="loadPublished(0)" class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-low rounded-full text-on-surface-variant font-semibold text-sm hover:bg-surface-container-high transition-colors">
+        <span class="material-symbols-outlined text-[18px]">refresh</span>Оновити
+      </button>
+    </div>
+    <div id="published-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+      <div class="col-span-3 py-16 text-center text-sm text-on-surface-variant">Загрузка...</div>
+    </div>
+    <div class="flex justify-center mt-8">
+      <button id="published-load-more" onclick="loadMorePublished()" class="px-6 py-3 bg-surface-container-low text-on-surface-variant font-semibold rounded-full hover:bg-surface-container-high transition-colors text-sm hidden">
+        Загрузить ещё
+      </button>
+    </div>
+  </div>
+
+  <!-- =================== VIEW: ACCOUNT =================== -->
+  <div id="view-account" class="view p-8 max-w-[800px] mx-auto w-full">
+    <div class="mb-8">
+      <h2 class="text-3xl font-extrabold text-on-surface tracking-tight">Аккаунт</h2>
+      <p class="text-on-surface-variant mt-1 text-sm">Управление профилем</p>
+    </div>
+    <div class="bg-surface-container-lowest rounded-lg shadow-sm p-8 flex items-center gap-6">
+      <div class="w-20 h-20 rounded-full bg-[#0ea5a0] flex items-center justify-center text-white font-bold text-3xl flex-shrink-0">АС</div>
+      <div>
+        <h3 class="text-xl font-bold text-on-surface">Администратор</h3>
+        <p class="text-on-surface-variant text-sm">Головний редактор</p>
+        <p class="text-xs text-outline mt-1">admin@stati.io</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== VIEW: SETTINGS =================== -->
+  <div id="view-settings" class="view p-8 max-w-[1200px] mx-auto w-full">
+    <div class="mb-8">
+      <h2 class="text-4xl font-extrabold text-on-surface tracking-tight mb-2">Настройки</h2>
+      <p class="text-on-surface-variant font-medium">Конфигурация редакционной экосистемы и интеграций.</p>
+    </div>
+    <div class="grid grid-cols-12 gap-6">
+      <!-- Tabs -->
+      <div class="col-span-12 lg:col-span-3 flex flex-col gap-2">
+        <button onclick="switchSettingsTab('database')" data-tab="database" class="settings-tab active flex items-center gap-3 px-5 py-3.5 rounded-full text-white text-left font-semibold transition-all text-sm">
+          <span class="material-symbols-outlined text-[18px]">storage</span>База даних
+        </button>
+        <button onclick="switchSettingsTab('api')" data-tab="api" class="settings-tab flex items-center gap-3 px-5 py-3.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all text-left font-medium text-sm">
+          <span class="material-symbols-outlined text-[18px]">key</span>API ключи
+        </button>
+        <button onclick="switchSettingsTab('wordpress')" data-tab="wordpress" class="settings-tab flex items-center gap-3 px-5 py-3.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all text-left font-medium text-sm">
+          <span class="material-symbols-outlined text-[18px]">integration_instructions</span>WordPress
+        </button>
+        <button onclick="switchSettingsTab('languages')" data-tab="languages" class="settings-tab flex items-center gap-3 px-5 py-3.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all text-left font-medium text-sm">
+          <span class="material-symbols-outlined text-[18px]">language</span>Языки
+        </button>
+        <button id="users-tab-btn" onclick="switchSettingsTab('users')" data-tab="users" class="settings-tab hidden flex items-center gap-3 px-5 py-3.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all text-left font-medium text-sm">
+          <span class="material-symbols-outlined text-[18px]">manage_accounts</span>Пользователи
+        </button>
+      </div>
+      <!-- Content Panel -->
+      <div class="col-span-12 lg:col-span-9">
+        <div class="bg-surface-container-lowest rounded-lg p-8 shadow-sm border border-outline-variant/10">
+          <!-- Database Tab -->
+          <div id="settings-tab-database" class="settings-tab-content">
+            <div class="flex items-center justify-between mb-8">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center text-[#0ea5a0]">
+                  <span class="material-symbols-outlined text-2xl">storage</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold">Настройки Supabase</h3>
+                  <p class="text-sm text-on-surface-variant">Подключите базу данных для хранения контента.</p>
+                </div>
+              </div>
+              <div id="db-status-badge" class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full">
+                <span class="w-2 h-2 bg-outline-variant rounded-full"></span>
+                <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Проверка...</span>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <label class="block">
+                <span class="text-sm font-semibold text-on-surface-variant ml-1 mb-2 block">Supabase URL</span>
+                <input id="cfg-supabase-url" type="text" class="w-full px-5 py-3.5 bg-surface-container-low border-none rounded-lg text-on-surface font-medium focus:ring-2 focus:ring-[#0ea5a0] transition-all text-sm" placeholder="https://xxx.supabase.co"/>
+              </label>
+              <label class="block">
+                <span class="text-sm font-semibold text-on-surface-variant ml-1 mb-2 block">Anon Key</span>
+                <div class="relative">
+                  <input id="cfg-supabase-key" type="password" class="w-full px-5 py-3.5 bg-surface-container-low border-none rounded-lg text-on-surface font-medium focus:ring-2 focus:ring-[#0ea5a0] transition-all pr-12 text-sm" placeholder="eyJhbGci..."/>
+                  <button onclick="togglePasswordVisibility('cfg-supabase-key')" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined">visibility</span>
+                  </button>
+                </div>
+              </label>
+            </div>
+            <div class="flex items-center gap-4 mt-6">
+              <button onclick="testConnection()" class="flex items-center gap-2 px-5 py-2.5 border-2 border-[#0ea5a0] text-[#0ea5a0] rounded-full font-bold text-sm hover:bg-[#0ea5a0]/5 transition-all">
+                <span class="material-symbols-outlined text-lg">bolt</span>Тестировать соединение
+              </button>
+              <button onclick="saveSettings()" class="px-5 py-2.5 teal-gradient text-white rounded-full font-bold text-sm hover:opacity-90 transition-all">Сохранить</button>
+            </div>
+          </div>
+          <!-- API Keys Tab -->
+          <div id="settings-tab-api" class="settings-tab-content hidden">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center text-[#0ea5a0]">
+                <span class="material-symbols-outlined text-2xl">key</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold">API Ключи</h3>
+                <p class="text-sm text-on-surface-variant">Настройте ключи для внешних сервисов.</p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <label class="block">
+                <span class="text-sm font-semibold text-on-surface-variant ml-1 mb-2 block">Claude / Anthropic API Key</span>
+                <div class="relative">
+                  <input id="cfg-anthropic-key" type="password" class="w-full px-5 py-3.5 bg-surface-container-low border-none rounded-lg font-medium focus:ring-2 focus:ring-[#0ea5a0] transition-all pr-12 text-sm" placeholder="sk-ant-..."/>
+                  <button onclick="togglePasswordVisibility('cfg-anthropic-key')" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined">visibility</span>
+                  </button>
+                </div>
+              </label>
+              <label class="block">
+                <span class="text-sm font-semibold text-on-surface-variant ml-1 mb-2 block">Content Watch API Key</span>
+                <input id="cfg-cw-key" type="password" class="w-full px-5 py-3.5 bg-surface-container-low border-none rounded-lg font-medium focus:ring-2 focus:ring-[#0ea5a0] transition-all text-sm" placeholder="cw_..."/>
+              </label>
+            </div>
+            <div class="mt-6">
+              <button onclick="saveSettings()" class="px-5 py-2.5 teal-gradient text-white rounded-full font-bold text-sm hover:opacity-90 transition-all">Сохранить</button>
+            </div>
+          </div>
+          <!-- WordPress Tab -->
+          <div id="settings-tab-wordpress" class="settings-tab-content hidden">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center text-[#0ea5a0]">
+                <span class="material-symbols-outlined text-2xl">integration_instructions</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold">WordPress Integration</h3>
+                <p class="text-sm text-on-surface-variant">Настройте подключение к WordPress сайту.</p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <label class="block">
+                <span class="text-sm font-semibold text-on-surface-variant ml-1 mb-2 block">WordPress URL</span>
+                <input id="cfg-wp-url" type="text" class="w-full px-5 py-3.5 bg-surface-container-low border-none rounded-lg font-medium focus:ring-2 focus:ring-[#0ea5a0] transition-all text-sm" placeholder="https://yoursite.com"/>
+              </label>
+              <label class="block">
+                <span class="text-sm font-semibold text-on-surface-variant ml-1 mb-2 block">WordPress Application Password</span>
+                <div class="relative">
+                  <input id="cfg-wp-pass" type="password" class="w-full px-5 py-3.5 bg-surface-container-low border-none rounded-lg font-medium focus:ring-2 focus:ring-[#0ea5a0] transition-all pr-12 text-sm" placeholder="xxxx xxxx xxxx xxxx"/>
+                  <button onclick="togglePasswordVisibility('cfg-wp-pass')" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined">visibility</span>
+                  </button>
+                </div>
+              </label>
+              <label class="block">
+                <span class="text-sm font-semibold text-on-surface-variant ml-1 mb-2 block">Webhook URL (необов'язково)</span>
+                <input id="cfg-wp-webhook" type="text" class="w-full px-5 py-3.5 bg-surface-container-low border-none rounded-lg font-medium focus:ring-2 focus:ring-[#0ea5a0] transition-all text-sm" placeholder="https://yoursite.com/wp-json/webhook/..."/>
+              </label>
+            </div>
+            <div class="mt-6">
+              <button onclick="saveSettings()" class="px-5 py-2.5 teal-gradient text-white rounded-full font-bold text-sm hover:opacity-90 transition-all">Сохранить</button>
+            </div>
+          </div>
+          <!-- Languages Tab -->
+          <div id="settings-tab-languages" class="settings-tab-content hidden">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center text-[#0ea5a0]">
+                <span class="material-symbols-outlined text-2xl">language</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold">Настройки языков</h3>
+                <p class="text-sm text-on-surface-variant">Включите или выключите языки для генерации контента.</p>
+              </div>
+            </div>
+            <div id="lang-toggles" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <!-- Rendered by JS -->
+            </div>
+            <div class="mt-6">
+              <button onclick="saveSettings()" class="px-5 py-2.5 teal-gradient text-white rounded-full font-bold text-sm hover:opacity-90 transition-all">Сохранить</button>
+            </div>
+          </div>
+
+          <!-- Users Tab (admin only) -->
+          <div id="settings-tab-users" class="settings-tab-content hidden">
+            <div class="flex items-center justify-between mb-8">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center text-[#0ea5a0]">
+                  <span class="material-symbols-outlined text-2xl">manage_accounts</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold">Управление пользователями</h3>
+                  <p class="text-sm text-on-surface-variant">Добавляйте и редактируйте аккаунты.</p>
+                </div>
+              </div>
+              <button onclick="openAddUserModal()" class="flex items-center gap-2 px-5 py-2.5 teal-gradient text-white rounded-full font-bold text-sm hover:opacity-90 transition-all">
+                <span class="material-symbols-outlined text-lg">person_add</span>Добавить
+              </button>
+            </div>
+            <div id="users-list" class="space-y-3">
+              <div class="text-center py-8 text-on-surface-variant text-sm">Загрузка...</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== VIEW: DOCS =================== -->
+  <div id="view-docs" class="view p-8 max-w-[960px] mx-auto w-full">
+    <div class="mb-8">
+      <h2 class="text-4xl font-extrabold text-on-surface tracking-tight mb-2">Документация</h2>
+      <p class="text-on-surface-variant font-medium">Полное описание архитектуры, компонентов и процессов сервиса STATI.</p>
+    </div>
+
+    <!-- Nav pills -->
+    <div class="flex flex-wrap gap-2 mb-8">
+      <button onclick="showDocSection('overview')" data-doc="overview" class="doc-pill px-4 py-2 rounded-full text-sm font-semibold bg-[#0ea5a0] text-white transition-all">Обзор</button>
+      <button onclick="showDocSection('ideas')" data-doc="ideas" class="doc-pill px-4 py-2 rounded-full text-sm font-semibold bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all">Идеи</button>
+      <button onclick="showDocSection('pipeline')" data-doc="pipeline" class="doc-pill px-4 py-2 rounded-full text-sm font-semibold bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all">Пайплайн</button>
+      <button onclick="showDocSection('prompts')" data-doc="prompts" class="doc-pill px-4 py-2 rounded-full text-sm font-semibold bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all">Промпты</button>
+      <button onclick="showDocSection('verification')" data-doc="verification" class="doc-pill px-4 py-2 rounded-full text-sm font-semibold bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all">Верификация</button>
+      <button onclick="showDocSection('api')" data-doc="api" class="doc-pill px-4 py-2 rounded-full text-sm font-semibold bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all">API</button>
+      <button onclick="showDocSection('roles')" data-doc="roles" class="doc-pill px-4 py-2 rounded-full text-sm font-semibold bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-all">Роли и auth</button>
+    </div>
+
+    <!-- Content -->
+    <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/10 shadow-sm p-8 text-sm leading-relaxed text-on-surface">
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- OVERVIEW -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <div id="doc-overview" class="doc-section space-y-8 py-2">
+
+        <div>
+          <h3 class="text-2xl font-extrabold mb-1">Обзор системы</h3>
+          <p class="text-on-surface-variant">STATI — внутренняя редакционная платформа Oki-Toki для автоматической генерации, верификации и публикации SEO-статей на 6 языках одновременно.</p>
+        </div>
+
+        <!-- Architecture diagram -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Архитектура системы</h4>
+          <div class="rounded-2xl bg-slate-900 p-6 text-xs font-mono text-slate-300 leading-relaxed overflow-x-auto">
+<pre class="text-slate-300">
+┌─────────────────────────────────────────────────────────────┐
+│                        БРАУЗЕР                              │
+│         STATI SPA  (Vanilla JS + Tailwind CSS)              │
+│   Dashboard · Идеи · Проверка · Редактор · Опубликованные  │
+└──────────────┬───────────────────────────────┬──────────────┘
+               │ REST API + SSE                │ /login.html
+               ▼                               │
+┌──────────────────────────┐                   │
+│       nginx (порт 80)    │◄──────────────────┘
+│  /api/*  → :3000         │
+│  /auth/* → :3000         │
+│  /sse/*  → :3000         │
+│  *.html  → static files  │
+└──────────────┬───────────┘
+               │
+               ▼
+┌──────────────────────────────────────────────────────────────┐
+│              Express API  (Node.js, порт 3000)               │
+│                                                              │
+│  /auth/*     — авторизация, управление пользователями        │
+│  /api/ideas  — CRUD идей, генерация, одобрение               │
+│  /api/articles — CRUD статей, публикация в WP                │
+│  /sse/articles — SSE stream для real-time обновлений         │
+│  /api/changelog — git log                                    │
+└──────────┬───────────────────────┬───────────────────────────┘
+           │ Supabase SDK          │ HTTP POST /pipeline/approve
+           ▼                       ▼
+┌──────────────────┐   ┌───────────────────────────────────────┐
+│   Supabase       │   │   Python Pipeline (FastAPI, порт 8000) │
+│  (PostgreSQL)    │   │                                        │
+│                  │   │  WF1: generator.py  — генерация       │
+│  articles_audit  │◄──│  WF2: verifier.py   — верификация     │
+│  ideas           │   │  WF3: regenerator.py — перегенерация  │
+└──────────────────┘   │                                        │
+                       │  Claude proxy (порт 5003, limit: 1)   │
+                       │  LanguageTool API                      │
+                       │  Google CSE API                        │
+                       │  Gemini (генерация изображений)        │
+                       └────────────────────────────────────────┘</pre>
+          </div>
+        </div>
+
+        <!-- Stack cards -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Технологии</h4>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/10">
+              <div class="font-bold text-sm mb-1">Node.js + Express</div>
+              <div class="text-xs text-on-surface-variant">REST API, SSE, управление пользователями, прокси к пайплайну. PM2: <code class="bg-surface-container-high px-1 rounded">seo-api</code></div>
+            </div>
+            <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/10">
+              <div class="font-bold text-sm mb-1">Python 3.12 + FastAPI</div>
+              <div class="text-xs text-on-surface-variant">Пайплайн генерации. PM2: <code class="bg-surface-container-high px-1 rounded">article-pipeline</code></div>
+            </div>
+            <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/10">
+              <div class="font-bold text-sm mb-1">Supabase / PostgreSQL</div>
+              <div class="text-xs text-on-surface-variant">Таблицы <b>articles_audit</b> и <b>ideas</b>. UPSERT вместо UPDATE.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/10">
+              <div class="font-bold text-sm mb-1">Claude API (Anthropic)</div>
+              <div class="text-xs text-on-surface-variant">Генерация статей и идей. Через локальный прокси с concurrency limit: 1</div>
+            </div>
+            <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/10">
+              <div class="font-bold text-sm mb-1">nginx</div>
+              <div class="text-xs text-on-surface-variant">Реверс-прокси. Отдаёт статику, проксирует /api/, /auth/, /sse/</div>
+            </div>
+            <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/10">
+              <div class="font-bold text-sm mb-1">Vanilla JS SPA</div>
+              <div class="text-xs text-on-surface-variant">Один HTML файл. Tailwind CSS (CDN). Material Symbols иконки.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/10">
+              <div class="font-bold text-sm mb-1">Gemini API</div>
+              <div class="text-xs text-on-surface-variant">Автоматическая генерация обложки статьи после верификации</div>
+            </div>
+            <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/10">
+              <div class="font-bold text-sm mb-1">LanguageTool + CSE</div>
+              <div class="text-xs text-on-surface-variant">Проверка грамматики и уникальности по Google</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status flow -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Жизненный цикл статьи</h4>
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-bold">
+              <span class="w-2 h-2 rounded-full bg-slate-400"></span>not_checked
+            </div>
+            <span class="text-on-surface-variant">→ редактор проверяет →</span>
+            <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 text-amber-700 font-bold">
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span>checking
+            </div>
+            <span class="text-on-surface-variant">→ одобряет →</span>
+            <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 text-emerald-700 font-bold">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>approved
+            </div>
+            <span class="text-on-surface-variant">→ публикует в WP →</span>
+            <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-bold">
+              <span class="w-2 h-2 rounded-full bg-blue-400"></span>published
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- IDEAS -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <div id="doc-ideas" class="doc-section hidden space-y-8 py-2">
+
+        <div>
+          <h3 class="text-2xl font-extrabold mb-1">Как работают идеи</h3>
+          <p class="text-on-surface-variant">Идея — это тема будущей статьи. Все статьи начинаются с идеи. Идея проходит путь: создание → одобрение → генерация статьи.</p>
+        </div>
+
+        <!-- Flow diagram -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Схема жизненного цикла идеи</h4>
+          <div class="rounded-2xl bg-slate-900 p-6 text-xs font-mono text-slate-300 overflow-x-auto">
+<pre class="text-slate-300">
+Администратор нажимает "Генерировать идеи"
+        │
+        ▼
+POST /api/ideas/generate  {count: 10}
+        │
+        ▼
+Express: generateIdeas.js
+  • Берёт темы из предустановленного списка (20 тем о call-центрах)
+  • Случайно выбирает N тем и перемешивает
+  • Для каждой темы:
+    - генерирует UUID
+    - извлекает ключевые слова из названия (фильтрует стоп-слова)
+    - устанавливает priority_score (60–100, случайный)
+    - status = "pending"
+  • Сохраняет в таблицу ideas (Supabase)
+        │
+        ▼
+Идеи появляются в разделе "Идеи" со статусом PENDING
+        │
+   ┌────┴────┐
+   ▼         ▼
+ОДОБРИТЬ   ОТКЛОНИТЬ
+   │         │
+   │         ▼
+   │    status = "rejected"
+   │    (можно восстановить)
+   │
+   ▼
+POST /api/ideas/:id/approve
+        │
+        ▼
+Express: ideasController.approveIdea
+  • Меняет status = "approved" в Supabase
+  • Делает HTTP POST → FastAPI :8000/pipeline/approve
+        │
+        ▼
+FastAPI запускает WF1 (генерация статьи)
+— см. раздел "Пайплайн"</pre>
+          </div>
+        </div>
+
+        <!-- Ideas table structure -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Структура записи идеи (таблица ideas)</h4>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs border-collapse">
+              <thead>
+                <tr class="bg-surface-container">
+                  <th class="text-left px-4 py-2 font-bold border border-outline-variant/20">Поле</th>
+                  <th class="text-left px-4 py-2 font-bold border border-outline-variant/20">Тип</th>
+                  <th class="text-left px-4 py-2 font-bold border border-outline-variant/20">Описание</th>
+                </tr>
+              </thead>
+              <tbody class="text-on-surface-variant">
+                <tr><td class="px-4 py-2 border border-outline-variant/20 font-mono">id</td><td class="px-4 py-2 border border-outline-variant/20">UUID</td><td class="px-4 py-2 border border-outline-variant/20">Уникальный идентификатор</td></tr>
+                <tr class="bg-surface-container/30"><td class="px-4 py-2 border border-outline-variant/20 font-mono">title</td><td class="px-4 py-2 border border-outline-variant/20">text</td><td class="px-4 py-2 border border-outline-variant/20">Тема статьи (на украинском)</td></tr>
+                <tr><td class="px-4 py-2 border border-outline-variant/20 font-mono">keywords</td><td class="px-4 py-2 border border-outline-variant/20">text[]</td><td class="px-4 py-2 border border-outline-variant/20">Массив ключевых слов (используется в промпте)</td></tr>
+                <tr class="bg-surface-container/30"><td class="px-4 py-2 border border-outline-variant/20 font-mono">status</td><td class="px-4 py-2 border border-outline-variant/20">text</td><td class="px-4 py-2 border border-outline-variant/20"><b>pending</b> / <b>approved</b> / <b>rejected</b></td></tr>
+                <tr><td class="px-4 py-2 border border-outline-variant/20 font-mono">priority_score</td><td class="px-4 py-2 border border-outline-variant/20">int</td><td class="px-4 py-2 border border-outline-variant/20">Приоритет 60–100</td></tr>
+                <tr class="bg-surface-container/30"><td class="px-4 py-2 border border-outline-variant/20 font-mono">description</td><td class="px-4 py-2 border border-outline-variant/20">text</td><td class="px-4 py-2 border border-outline-variant/20">Краткое описание темы</td></tr>
+                <tr><td class="px-4 py-2 border border-outline-variant/20 font-mono">created_at</td><td class="px-4 py-2 border border-outline-variant/20">timestamptz</td><td class="px-4 py-2 border border-outline-variant/20">Дата создания</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Доступные действия с идеями</h4>
+          <div class="space-y-2 text-xs">
+            <div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container">
+              <span class="font-bold text-emerald-600 w-24 flex-shrink-0">Одобрить</span>
+              <span class="text-on-surface-variant">status → approved, запускает пайплайн генерации. Только Admin.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container">
+              <span class="font-bold text-red-500 w-24 flex-shrink-0">Отклонить</span>
+              <span class="text-on-surface-variant">status → rejected, идея перемещается в "Отклонённые". Только Admin.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container">
+              <span class="font-bold text-amber-600 w-24 flex-shrink-0">Восстановить</span>
+              <span class="text-on-surface-variant">Возвращает отклонённую идею в pending (через /approve). Только Admin.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container">
+              <span class="font-bold text-slate-500 w-24 flex-shrink-0">Удалить</span>
+              <span class="text-on-surface-variant">Полное удаление из БД. Только Admin.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- PIPELINE -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <div id="doc-pipeline" class="doc-section hidden space-y-8 py-2">
+        <div>
+          <h3 class="text-2xl font-extrabold mb-1">Пайплайн генерации статей</h3>
+          <p class="text-on-surface-variant">Запускается автоматически при одобрении идеи. Состоит из 3 воркфлоу (WF). Код: <code class="bg-surface-container px-1.5 py-0.5 rounded font-mono">/python-pipeline/pipeline/</code></p>
+        </div>
+
+        <!-- Full flow diagram -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Полная схема пайплайна</h4>
+          <div class="rounded-2xl bg-slate-900 p-6 text-xs font-mono text-slate-300 overflow-x-auto">
+<pre class="text-slate-300">
+Одобрение идеи (Admin нажимает "Одобрить")
+        │
+        ▼
+POST /api/ideas/:id/approve  (Express)
+  └─► status = "approved" в Supabase
+  └─► HTTP POST → FastAPI :8000/pipeline/approve
+        │
+        │  SSE → браузер: type:"progress-update" stage:"generating" 30%
+        ▼
+╔══════════════════════════════════════════════════════╗
+║           WF1 — generator.py                        ║
+║                                                      ║
+║  Языки по очереди: en → ru → pl → es → tr → uk      ║
+║  (задержка 3 сек между языками — лимит прокси)       ║
+║                                                      ║
+║  Для каждого языка:                                  ║
+║  1. Claude API (через прокси :5003)                  ║
+║     • Промпт: тема + ключевые слова на нужном языке  ║
+║     • JSON ответ: {SEO_HEADING, ARTICLE_HTML}        ║
+║  2. Парсинг JSON (regex fallback если не чистый JSON)║
+║  3. Проверка длины: мин 12 000 символов без пробелов ║
+║     • Если короче → retry (до 3 попыток)             ║
+║  4. Проверка грамматики:                             ║
+║     • en/ru/pl/es/uk → LanguageTool API              ║
+║     • tr → Turkish Grammar Checker (браузер)         ║
+║  5. fix_html_structure():                            ║
+║     • лишние h1 → h2                                 ║
+║     • незакрытые &lt;p&gt; закрываются                     ║
+╚══════════════════════════════════════════════════════╝
+        │
+        │  SSE → браузер: type:"progress-update" stage:"verifying" 70%
+        ▼
+╔══════════════════════════════════════════════════════╗
+║           WF2 — verifier.py                         ║
+║                                                      ║
+║  Все 5 проверок параллельно (asyncio.gather):        ║
+║  ┌──────────────────────────────────────────────┐    ║
+║  │ text_stats.py  — водность + тошнота (локально)│   ║
+║  │ ai_detector.py — AI-детекция (Claude прокси) │    ║
+║  │ self_plagiarism.py — шингл-сравнение с БД    │    ║
+║  │ google_checker.py  — Google CSE API          │    ║
+║  │ HTML структура — regex count &lt;ul&gt;           │    ║
+║  └──────────────────────────────────────────────┘    ║
+║                                                      ║
+║  Если язык провалил хотя бы 1 проверку → WF3        ║
+║  Максимум 2 цикла верификации                        ║
+╚══════════════════════════════════════════════════════╝
+        │
+        ├──► Есть провалившиеся языки?
+        │         │
+        │         ▼
+        │    ╔════════════════════════════════════╗
+        │    ║     WF3 — regenerator.py          ║
+        │    ║                                    ║
+        │    ║  Для каждого failed языка:         ║
+        │    ║  1. Получает причину провала       ║
+        │    ║     (напр: "AI:97%; no &lt;ul&gt;")    ║
+        │    ║  2. Добавляет REGEN_INSTRUCTIONS   ║
+        │    ║     к промпту (как исправить)      ║
+        │    ║  3. Повторная генерация (до 3 раз) ║
+        │    ║  4. Берёт лучший по длине          ║
+        │    ╚═══════════════╦════════════════════╝
+        │                    │
+        │                    └─► Повторный WF2
+        │
+        ▼
+  Сохраняет в Supabase (UPSERT articles_audit)
+  Автоматически генерирует изображение (Gemini API)
+        │
+        │  SSE → браузер: type:"new-article"  (карточка появляется)
+        │  SSE → браузер: type:"image-ready"  (изображение обновляется)
+        ▼
+  Статья доступна в разделе "Проверка статей"
+  со статусом not_checked</pre>
+          </div>
+        </div>
+
+        <!-- WF details -->
+        <div class="space-y-4">
+          <div class="rounded-xl border border-outline-variant/10 overflow-hidden">
+            <div class="flex items-center gap-3 px-5 py-4 bg-surface-container">
+              <div class="w-8 h-8 rounded-full bg-[#0ea5a0] text-white font-extrabold flex items-center justify-center flex-shrink-0">1</div>
+              <div>
+                <div class="font-bold text-sm">WF1 — Генерация</div>
+                <div class="text-xs text-on-surface-variant font-mono">pipeline/generator.py · FastAPI endpoint: POST /pipeline/approve</div>
+              </div>
+            </div>
+            <div class="px-5 py-4 text-xs text-on-surface-variant space-y-1.5">
+              <div>· Языки генерируются <b>последовательно</b> (не параллельно) — Claude прокси принимает только 1 запрос одновременно</div>
+              <div>· Порядок: <code class="bg-surface-container px-1 rounded">en → ru → pl → es → tr → uk</code></div>
+              <div>· Задержка 3 сек между языками</div>
+              <div>· При коротком результате — до <b>3 попыток</b> на язык</div>
+              <div>· Если все попытки исчерпаны — принимает что есть (не блокирует)</div>
+              <div>· Результат передаётся напрямую в WF2 (не через БД)</div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-outline-variant/10 overflow-hidden">
+            <div class="flex items-center gap-3 px-5 py-4 bg-surface-container">
+              <div class="w-8 h-8 rounded-full bg-[#0ea5a0] text-white font-extrabold flex items-center justify-center flex-shrink-0">2</div>
+              <div>
+                <div class="font-bold text-sm">WF2 — Верификация</div>
+                <div class="text-xs text-on-surface-variant font-mono">pipeline/verifier.py · Вызывается WF1 автоматически</div>
+              </div>
+            </div>
+            <div class="px-5 py-4 text-xs text-on-surface-variant space-y-1.5">
+              <div>· Все 5 проверок запускаются <b>параллельно</b> через asyncio.gather()</div>
+              <div>· Если язык провалил → передаётся в WF3, потом WF2 повторяется</div>
+              <div>· Максимум <b>2 полных цикла</b> верификации</div>
+              <div>· После WF2 сохраняет всё в Supabase (UPSERT) и уведомляет фронтенд</div>
+              <div>· Автоматически запускает генерацию изображения через Gemini</div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-outline-variant/10 overflow-hidden">
+            <div class="flex items-center gap-3 px-5 py-4 bg-surface-container">
+              <div class="w-8 h-8 rounded-full bg-[#0ea5a0] text-white font-extrabold flex items-center justify-center flex-shrink-0">3</div>
+              <div>
+                <div class="font-bold text-sm">WF3 — Перегенерация</div>
+                <div class="text-xs text-on-surface-variant font-mono">pipeline/regenerator.py · Вызывается WF2 при провале</div>
+              </div>
+            </div>
+            <div class="px-5 py-4 text-xs text-on-surface-variant space-y-1.5">
+              <div>· Получает точную причину провала: напр. <code class="bg-surface-container px-1 rounded">"AI: 97% (&gt;95% = fail); missing &lt;ul&gt;: found 1, need 2"</code></div>
+              <div>· Добавляет к промпту блок REGEN_INSTRUCTIONS с конкретными инструкциями</div>
+              <div>· Языки регенерируются <b>последовательно</b>, задержка 3 сек</div>
+              <div>· До <b>3 попыток</b> на язык, возвращает лучший по длине</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SSE events -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">SSE события (real-time в браузер)</h4>
+          <div class="space-y-2 text-xs">
+            <div class="flex gap-3 p-3 rounded-lg bg-surface-container items-start">
+              <code class="font-mono font-bold text-amber-600 w-36 flex-shrink-0">progress-update</code>
+              <div class="text-on-surface-variant"><div>Прогресс генерации. Поля: <code class="bg-surface-container-high px-1 rounded">idea_id, stage, percent, message</code></div><div class="mt-1 text-slate-400">stages: "generating"(30%) → "verifying"(70%) → "review_ready"(100%)</div></div>
+            </div>
+            <div class="flex gap-3 p-3 rounded-lg bg-surface-container items-start">
+              <code class="font-mono font-bold text-emerald-600 w-36 flex-shrink-0">new-article</code>
+              <div class="text-on-surface-variant">Статья готова. Поле <code class="bg-surface-container-high px-1 rounded">article</code> содержит полный объект — карточка появляется в списке</div>
+            </div>
+            <div class="flex gap-3 p-3 rounded-lg bg-surface-container items-start">
+              <code class="font-mono font-bold text-blue-600 w-36 flex-shrink-0">image-ready</code>
+              <div class="text-on-surface-variant">Изображение сгенерировано. Поле <code class="bg-surface-container-high px-1 rounded">article_image</code> содержит base64 строку</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- PROMPTS -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <div id="doc-prompts" class="doc-section hidden space-y-8 py-2">
+        <div>
+          <h3 class="text-2xl font-extrabold mb-1">Промпты Claude</h3>
+          <p class="text-on-surface-variant">Файл: <code class="bg-surface-container px-1.5 py-0.5 rounded font-mono">services/anthropic_client.py</code>. Каждый язык имеет свой промпт и системное сообщение.</p>
+        </div>
+
+        <!-- Models table -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Модели и лимиты токенов</h4>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs border-collapse">
+              <thead>
+                <tr class="bg-surface-container">
+                  <th class="text-left px-4 py-2 font-bold border border-outline-variant/20">Язык</th>
+                  <th class="text-left px-4 py-2 font-bold border border-outline-variant/20">Модель</th>
+                  <th class="text-left px-4 py-2 font-bold border border-outline-variant/20">Max tokens</th>
+                  <th class="text-left px-4 py-2 font-bold border border-outline-variant/20">System message</th>
+                </tr>
+              </thead>
+              <tbody class="text-on-surface-variant">
+                <tr><td class="px-4 py-2 border border-outline-variant/20 font-mono font-bold">en</td><td class="px-4 py-2 border border-outline-variant/20 font-mono">claude-sonnet-4-5-20250929</td><td class="px-4 py-2 border border-outline-variant/20">3 500</td><td class="px-4 py-2 border border-outline-variant/20">«You are an expert SEO copywriter... ONLY JSON.»</td></tr>
+                <tr class="bg-surface-container/30"><td class="px-4 py-2 border border-outline-variant/20 font-mono font-bold">ru</td><td class="px-4 py-2 border border-outline-variant/20 font-mono">claude-sonnet-4-20250514</td><td class="px-4 py-2 border border-outline-variant/20">8 000</td><td class="px-4 py-2 border border-outline-variant/20">«Ты SEO копирайтер. Пиши только JSON.»</td></tr>
+                <tr><td class="px-4 py-2 border border-outline-variant/20 font-mono font-bold">pl</td><td class="px-4 py-2 border border-outline-variant/20 font-mono">claude-sonnet-4-20250514</td><td class="px-4 py-2 border border-outline-variant/20">8 000</td><td class="px-4 py-2 border border-outline-variant/20">«Jesteś copywriterem SEO. MUSISZ...»</td></tr>
+                <tr class="bg-surface-container/30"><td class="px-4 py-2 border border-outline-variant/20 font-mono font-bold">es</td><td class="px-4 py-2 border border-outline-variant/20 font-mono">claude-sonnet-4-20250514</td><td class="px-4 py-2 border border-outline-variant/20">5 000</td><td class="px-4 py-2 border border-outline-variant/20">«Eres un redactor SEO experto... SOLO JSON.»</td></tr>
+                <tr><td class="px-4 py-2 border border-outline-variant/20 font-mono font-bold">tr</td><td class="px-4 py-2 border border-outline-variant/20 font-mono">claude-sonnet-4-20250514</td><td class="px-4 py-2 border border-outline-variant/20">10 000</td><td class="px-4 py-2 border border-outline-variant/20">«Oki-Toki için uzman SEO metin yazarısınız... YALNIZCA JSON.»</td></tr>
+                <tr class="bg-surface-container/30"><td class="px-4 py-2 border border-outline-variant/20 font-mono font-bold">uk</td><td class="px-4 py-2 border border-outline-variant/20 font-mono">claude-sonnet-4-20250514</td><td class="px-4 py-2 border border-outline-variant/20">8 000</td><td class="px-4 py-2 border border-outline-variant/20">«Ти досвідчений SEO-копірайтер Oki-Toti...»</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Prompt requirements -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Общие требования (все языки)</h4>
+          <div class="rounded-xl bg-surface-container border border-outline-variant/10 overflow-hidden">
+            <div class="divide-y divide-outline-variant/10 text-xs text-on-surface-variant">
+              <div class="flex gap-4 px-4 py-3"><span class="font-bold text-on-surface w-40 flex-shrink-0">Формат ответа</span><span>JSON: <code class="bg-surface-container-high px-1 rounded">{{"SEO_HEADING": "...", "ARTICLE_HTML": "..."}}</code></span></div>
+              <div class="flex gap-4 px-4 py-3 bg-surface-container/50"><span class="font-bold text-on-surface w-40 flex-shrink-0">Длина текста</span><span>Мин. <b>12 000</b> символов без пробелов / макс. 18 000. При коротком → retry</span></div>
+              <div class="flex gap-4 px-4 py-3"><span class="font-bold text-on-surface w-40 flex-shrink-0">Структура</span><span>Ровно <b>1×&lt;h1&gt;</b>, 10–12×&lt;h2&gt;, под каждым 4–5×&lt;p&gt; по 50–80 слов</span></div>
+              <div class="flex gap-4 px-4 py-3 bg-surface-container/50"><span class="font-bold text-on-surface w-40 flex-shrink-0">Списки</span><span>Мин. <b>3 блока &lt;ul&gt;&lt;li&gt;</b> по 3–6 элементов (критично — проверяется WF2)</span></div>
+              <div class="flex gap-4 px-4 py-3"><span class="font-bold text-on-surface w-40 flex-shrink-0">Выделения</span><span>Мин. <b>10×&lt;strong&gt;</b> для ключевых терминов</span></div>
+              <div class="flex gap-4 px-4 py-3 bg-surface-container/50"><span class="font-bold text-on-surface w-40 flex-shrink-0">Бренд</span><span>Упоминание Oki-Toki <b>5–6 раз</b> естественно в тексте</span></div>
+              <div class="flex gap-4 px-4 py-3"><span class="font-bold text-on-surface w-40 flex-shrink-0">Ключевое слово</span><span>Главный keyword — мин. <b>6 раз</b> по всему тексту</span></div>
+              <div class="flex gap-4 px-4 py-3 bg-surface-container/50"><span class="font-bold text-on-surface w-40 flex-shrink-0">Слова-связки</span><span>Однако, поэтому, более того, следовательно и т.п. — мин. <b>15 раз</b></span></div>
+              <div class="flex gap-4 px-4 py-3"><span class="font-bold text-on-surface w-40 flex-shrink-0">Ссылки</span><span><b>2–3 внешние ссылки</b> на авторитетные источники (Wikipedia, отраслевые сайты)</span></div>
+              <div class="flex gap-4 px-4 py-3 bg-surface-container/50"><span class="font-bold text-on-surface w-40 flex-shrink-0">Теги HTML</span><span>Только: &lt;h1&gt; &lt;h2&gt; &lt;h3&gt; &lt;p&gt; &lt;ul&gt; &lt;li&gt; &lt;strong&gt; &lt;a&gt; — без &lt;div&gt; &lt;span&gt; &lt;br&gt;</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Regen instructions -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Инструкции при регенерации (WF3)</h4>
+          <p class="text-xs text-on-surface-variant mb-3">К основному промпту добавляется блок с причиной провала. Пример для русского языка:</p>
+          <div class="rounded-xl bg-slate-900 text-slate-200 text-xs font-mono p-5 leading-relaxed">
+            <div class="text-slate-400 mb-2"># Добавляется в конец промпта при регенерации</div>
+            <div>ВАЖНО — ИНСТРУКЦИИ ДЛЯ РЕГЕНЕРАЦИИ:</div>
+            <div>Предыдущая версия статьи НЕ прошла проверку качества.</div>
+            <div>Причины: <span class="text-amber-400">{reason}</span>  <span class="text-slate-500"># напр: "AI:97%;missing ul:1&lt;2"</span></div>
+            <div class="mt-2">- Если 'water' высокий → меньше стоп-слов, пиши конкретнее</div>
+            <div>- Если 'nausea' высокий → больше разнообразия слов</div>
+            <div>- Если 'AI' высокий → разная длина предложений, уникальные примеры,</div>
+            <div>  избегай клише "В современном мире" / "Стоит отметить"</div>
+            <div>- Если 'self-plagiarism' высокий → полностью оригинальный контент</div>
+            <div class="mt-2">Напиши СОВЕРШЕННО ДРУГУЮ статью — другая структура, другие примеры.</div>
+          </div>
+        </div>
+
+        <!-- LLM client -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">LLM клиент</h4>
+          <div class="p-4 rounded-xl bg-surface-container border border-outline-variant/10 text-xs text-on-surface-variant space-y-1.5">
+            <div>· Основной клиент: <b>anthropic.AsyncAnthropic</b> с проксированием через локальный прокси</div>
+            <div>· Fallback: если задан <code class="bg-surface-container-high px-1 rounded">OLLAMA_BASE_URL</code> в .env — используется Ollama-совместимый клиент</div>
+            <div>· Таймаут: <b>300 сек</b> для Claude, <b>600 сек</b> для Ollama</div>
+            <div>· Прокси работает с concurrency limit: <b>1</b> (один запрос одновременно)</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- VERIFICATION -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <div id="doc-verification" class="doc-section hidden space-y-8 py-2">
+        <div>
+          <h3 class="text-2xl font-extrabold mb-1">Верификация статей</h3>
+          <p class="text-on-surface-variant">Файл: <code class="bg-surface-container px-1.5 py-0.5 rounded font-mono">pipeline/verifier.py</code>. Каждый языковой вариант проходит 5 проверок параллельно.</p>
+        </div>
+
+        <!-- Thresholds diagram -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Пороговые значения</h4>
+          <div class="rounded-2xl bg-slate-900 p-5 text-xs font-mono text-slate-300 overflow-x-auto">
+<pre class="text-slate-300">
+Критерий             Провал (FAIL)        Предупреждение    Норма
+─────────────────────────────────────────────────────────────────
+AI-детекция          ≥ 95%                > 80%             < 80%
+Водность             < 10% или > 50%      —                 10–50%
+Акад. тошнота        < 0.3% или > 5%      —                 0.3–5%
+Самоплагиат          > 25%               —                 ≤ 25%
+Google уникальность  < 60%               —                 ≥ 60%
+HTML &lt;ul&gt; списки   < 2 штуки           —                 ≥ 2</pre>
+          </div>
+        </div>
+
+        <!-- Each check -->
+        <div class="space-y-3">
+          <div class="rounded-xl border border-outline-variant/10 overflow-hidden">
+            <div class="flex items-center justify-between px-5 py-3 bg-surface-container">
+              <div class="flex items-center gap-3"><span class="material-symbols-outlined text-[#0ea5a0] text-lg">psychology</span><div><div class="font-bold text-sm">1. AI-детекция</div><div class="text-xs text-on-surface-variant font-mono">services/verification/ai_detector.py</div></div></div>
+              <div class="text-right text-xs"><div class="text-red-500 font-bold">FAIL ≥ 95%</div><div class="text-amber-500">WARN > 80%</div></div>
+            </div>
+            <div class="px-5 py-3 text-xs text-on-surface-variant bg-surface-container-lowest space-y-1">
+              <div>Анализирует plain text (HTML удаляется). Запрос к Claude через локальный прокси.</div>
+              <div>При провале — передаётся в WF3 с инструкцией: <i>"разная длина предложений, уникальные примеры, избегай клише"</i></div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-outline-variant/10 overflow-hidden">
+            <div class="flex items-center justify-between px-5 py-3 bg-surface-container">
+              <div class="flex items-center gap-3"><span class="material-symbols-outlined text-[#0ea5a0] text-lg">water_drop</span><div><div class="font-bold text-sm">2. Водность текста</div><div class="text-xs text-on-surface-variant font-mono">services/verification/text_stats.py</div></div></div>
+              <div class="text-right text-xs"><div class="text-red-500 font-bold">FAIL &lt;10% или &gt;50%</div><div class="text-emerald-600">OK 10–50%</div></div>
+            </div>
+            <div class="px-5 py-3 text-xs text-on-surface-variant bg-surface-container-lowest space-y-1">
+              <div>Алгоритм: <code class="bg-surface-container px-1 rounded">stop_words_count / total_words</code>. Полностью локально, без внешних запросов.</div>
+              <div>Типичный результат хорошего текста: 15–40%. Стоп-слова — предлоги, союзы, частицы.</div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-outline-variant/10 overflow-hidden">
+            <div class="flex items-center justify-between px-5 py-3 bg-surface-container">
+              <div class="flex items-center gap-3"><span class="material-symbols-outlined text-[#0ea5a0] text-lg">science</span><div><div class="font-bold text-sm">3. Академическая тошнота</div><div class="text-xs text-on-surface-variant font-mono">services/verification/text_stats.py</div></div></div>
+              <div class="text-right text-xs"><div class="text-red-500 font-bold">FAIL &lt;0.3% или &gt;5%</div><div class="text-emerald-600">OK 0.3–5%</div></div>
+            </div>
+            <div class="px-5 py-3 text-xs text-on-surface-variant bg-surface-container-lowest space-y-1">
+              <div>Алгоритм: <code class="bg-surface-container px-1 rounded">самое_частое_слово / все_смысловые_слова</code>. Полностью локально.</div>
+              <div>Типичный диапазон: 0.5–3%. Высокая тошнота = слишком часто повторяется одно слово.</div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-outline-variant/10 overflow-hidden">
+            <div class="flex items-center justify-between px-5 py-3 bg-surface-container">
+              <div class="flex items-center gap-3"><span class="material-symbols-outlined text-[#0ea5a0] text-lg">fingerprint</span><div><div class="font-bold text-sm">4. Самоплагиат</div><div class="text-xs text-on-surface-variant font-mono">services/verification/self_plagiarism.py</div></div></div>
+              <div class="text-right text-xs"><div class="text-red-500 font-bold">FAIL > 25%</div><div class="text-emerald-600">OK ≤ 25%</div></div>
+            </div>
+            <div class="px-5 py-3 text-xs text-on-surface-variant bg-surface-container-lowest space-y-1">
+              <div>Shingle-сравнение: разбивает текст на N-граммы, сравнивает с уже существующими статьями того же языка в БД.</div>
+              <div>Предотвращает дублирование контента между разными статьями Oki-Toki.</div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-outline-variant/10 overflow-hidden">
+            <div class="flex items-center justify-between px-5 py-3 bg-surface-container">
+              <div class="flex items-center gap-3"><span class="material-symbols-outlined text-[#0ea5a0] text-lg">travel_explore</span><div><div class="font-bold text-sm">5. Google уникальность</div><div class="text-xs text-on-surface-variant font-mono">services/verification/google_checker.py</div></div></div>
+              <div class="text-right text-xs"><div class="text-red-500 font-bold">FAIL &lt; 60%</div><div class="text-emerald-600">OK ≥ 60%</div></div>
+            </div>
+            <div class="px-5 py-3 text-xs text-on-surface-variant bg-surface-container-lowest space-y-1">
+              <div>Внешний сервис: <b>Google Custom Search API</b>. Проверяет насколько фрагменты статьи встречаются в индексе Google.</div>
+              <div>Требует: <code class="bg-surface-container px-1 rounded">GOOGLE_CSE_KEY</code> и <code class="bg-surface-container px-1 rounded">GOOGLE_CSE_ID</code> в .env файле пайплайна.</div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-outline-variant/10 overflow-hidden">
+            <div class="flex items-center justify-between px-5 py-3 bg-surface-container">
+              <div class="flex items-center gap-3"><span class="material-symbols-outlined text-[#0ea5a0] text-lg">format_list_bulleted</span><div><div class="font-bold text-sm">6. HTML структура</div><div class="text-xs text-on-surface-variant font-mono">verifier.py → _evaluate_thresholds()</div></div></div>
+              <div class="text-right text-xs"><div class="text-red-500 font-bold">FAIL &lt; 2 тегов &lt;ul&gt;</div><div class="text-emerald-600">OK ≥ 2</div></div>
+            </div>
+            <div class="px-5 py-3 text-xs text-on-surface-variant bg-surface-container-lowest space-y-1">
+              <div>Regex: <code class="bg-surface-container px-1 rounded">re.findall(r"&lt;ul[\s&gt;]", html)</code>. Полностью локально.</div>
+              <div>Требование явно указано во всех промптах как критическое. При провале — инструкция для Claude добавить списки.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verdict -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Итоговый вердикт языка</h4>
+          <div class="space-y-2 text-xs">
+            <div class="flex items-center gap-3 p-3 rounded-lg bg-red-50 border border-red-100"><span class="w-2 h-2 rounded-full bg-red-400 flex-shrink-0"></span><div><b>fail</b> — хотя бы 1 критерий провалился → язык идёт в WF3 на перегенерацию</div></div>
+            <div class="flex items-center gap-3 p-3 rounded-lg bg-amber-50 border border-amber-100"><span class="w-2 h-2 rounded-full bg-amber-400 flex-shrink-0"></span><div><b>warning</b> — все прошли, но AI-детекция > 80% (предупреждение в UI)</div></div>
+            <div class="flex items-center gap-3 p-3 rounded-lg bg-emerald-50 border border-emerald-100"><span class="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0"></span><div><b>pass</b> — все 6 критериев в норме</div></div>
+            <div class="flex items-center gap-3 p-3 rounded-lg bg-slate-50 border border-slate-100"><span class="w-2 h-2 rounded-full bg-slate-300 flex-shrink-0"></span><div><b>skipped</b> — язык не генерировался (нет контента)</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- API -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <div id="doc-api" class="doc-section hidden space-y-8 py-2">
+
+        <div>
+          <h3 class="text-2xl font-extrabold mb-1">API Reference</h3>
+          <p class="text-on-surface-variant">Все запросы (кроме /auth/login и /auth/verify) требуют заголовок <code class="bg-surface-container px-1.5 py-0.5 rounded font-mono">x-auth-token: &lt;token&gt;</code>. При 401 — автоматический logout.</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="rounded-xl border border-outline-variant/10 overflow-hidden">
+            <div class="px-5 py-3 bg-surface-container font-bold text-sm text-[#0ea5a0]">Авторизация <span class="font-normal text-on-surface-variant text-xs">— публичные (без токена)</span></div>
+            <div class="divide-y divide-outline-variant/10 text-xs">
+              <div class="px-5 py-3"><div class="flex gap-3 font-mono mb-1.5"><span class="text-emerald-600 font-bold w-14">POST</span>/auth/login</div><div class="text-on-surface-variant">Body: <code class="bg-surface-container px-1 rounded">{{"login":"email или логин","password":"..."}}</code></div><div class="text-on-surface-variant mt-1">Response: <code class="bg-surface-container px-1 rounded">{{"success":true,"token":"...","role":"admin|writer","name":"..."}}</code></div></div>
+              <div class="px-5 py-3 bg-surface-container/30"><div class="flex gap-3 font-mono mb-1.5"><span class="text-blue-600 font-bold w-14">GET</span>/auth/verify</div><div class="text-on-surface-variant">Header: x-auth-token · Response: <code class="bg-surface-container px-1 rounded">{{"valid":true,"role":"...","login":"..."}}</code></div></div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-outline-variant/10 overflow-hidden">
+            <div class="px-5 py-3 bg-surface-container font-bold text-sm text-[#0ea5a0]">Статьи <span class="font-normal text-on-surface-variant text-xs">/api/articles</span></div>
+            <div class="divide-y divide-outline-variant/10 text-xs">
+              <div class="px-5 py-3"><div class="flex gap-3 font-mono mb-1"><span class="text-blue-600 font-bold w-14">GET</span>/api/articles</div><div class="text-on-surface-variant">Query: <code class="bg-surface-container px-1 rounded">?status=not_checked|checking|approved|published&offset=0&limit=12</code>. Возвращает массив с полем <code class="bg-surface-container px-1 rounded">translations:{uk,en,ru,pl,es,tr}</code></div></div>
+              <div class="px-5 py-3 bg-surface-container/30"><div class="flex gap-3 font-mono mb-1"><span class="text-blue-600 font-bold w-14">GET</span>/api/articles/:id</div><div class="text-on-surface-variant">Полные данные + верификация: <code class="bg-surface-container px-1 rounded">zerogpt_*, uniqueness_*, verification_report, keywords, wordpress_url</code></div></div>
+              <div class="px-5 py-3"><div class="flex gap-3 font-mono mb-1"><span class="text-amber-600 font-bold w-14">PUT</span>/api/articles/:id</div><div class="text-on-surface-variant">Body: <code class="bg-surface-container px-1 rounded">{{"status":"...","translations":{{"uk":{{"title":"","content":""}}}}}}</code></div></div>
+              <div class="px-5 py-3 bg-surface-container/30"><div class="flex gap-3 font-mono mb-1"><span class="text-red-500 font-bold w-14">DELETE</span>/api/articles/:id<span class="text-on-surface-variant ml-3 font-sans">— только Admin</span></div></div>
+              <div class="px-5 py-3"><div class="flex gap-3 font-mono mb-1"><span class="text-emerald-600 font-bold w-14">POST</span>/api/articles/:id/publish</div><div class="text-on-surface-variant">Публикация как черновик в WordPress. Требует WP_BASE_URL, WP_USERNAME, WP_APP_PASSWORD в .env</div></div>
+              <div class="px-5 py-3 bg-surface-container/30"><div class="flex gap-3 font-mono mb-1"><span class="text-emerald-600 font-bold w-14">POST</span>/api/articles/:id/generate-image</div><div class="text-on-surface-variant">Генерация обложки через Gemini. Response: <code class="bg-surface-container px-1 rounded">{{"image":"data:image/..."}}</code></div></div>
+              <div class="px-5 py-3"><div class="flex gap-3 font-mono mb-1"><span class="text-emerald-600 font-bold w-14">POST</span>/api/articles/:id/regenerate</div><div class="text-on-surface-variant">Ручной запуск регенерации конкретной статьи</div></div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-outline-variant/10 overflow-hidden">
+            <div class="px-5 py-3 bg-surface-container font-bold text-sm text-[#0ea5a0]">Идеи <span class="font-normal text-on-surface-variant text-xs">/api/ideas</span></div>
+            <div class="divide-y divide-outline-variant/10 text-xs">
+              <div class="px-5 py-3"><div class="flex gap-3 font-mono mb-1"><span class="text-blue-600 font-bold w-14">GET</span>/api/ideas</div><div class="text-on-surface-variant">Query: <code class="bg-surface-container px-1 rounded">?status=pending|approved|rejected</code>. Поля: id, title, keywords[], status, priority_score</div></div>
+              <div class="px-5 py-3 bg-surface-container/30"><div class="flex gap-3 font-mono mb-1"><span class="text-emerald-600 font-bold w-14">POST</span>/api/ideas/generate<span class="text-on-surface-variant ml-3 font-sans">— только Admin</span></div><div class="text-on-surface-variant">Body: <code class="bg-surface-container px-1 rounded">{{"count":10}}</code>. Генерирует идеи из предустановленного списка тем и сохраняет в Supabase.</div></div>
+              <div class="px-5 py-3"><div class="flex gap-3 font-mono mb-1"><span class="text-emerald-600 font-bold w-14">POST</span>/api/ideas/:id/approve<span class="text-on-surface-variant ml-3 font-sans">— только Admin</span></div><div class="text-on-surface-variant">Одобряет идею → status=approved → запускает WF1 в пайплайне</div></div>
+              <div class="px-5 py-3 bg-surface-container/30"><div class="flex gap-3 font-mono mb-1"><span class="text-emerald-600 font-bold w-14">POST</span>/api/ideas/:id/reject</div><div class="text-on-surface-variant">status → rejected</div></div>
+              <div class="px-5 py-3"><div class="flex gap-3 font-mono mb-1"><span class="text-red-500 font-bold w-14">DELETE</span>/api/ideas/:id<span class="text-on-surface-variant ml-3 font-sans">— только Admin</span></div></div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-outline-variant/10 overflow-hidden">
+            <div class="px-5 py-3 bg-surface-container font-bold text-sm text-[#0ea5a0]">Пользователи <span class="font-normal text-on-surface-variant text-xs">/auth/users — только Admin</span></div>
+            <div class="divide-y divide-outline-variant/10 text-xs">
+              <div class="px-5 py-3"><div class="flex gap-3 font-mono mb-1"><span class="text-blue-600 font-bold w-14">GET</span>/auth/users</div><div class="text-on-surface-variant">Список пользователей без password_hash. Поля: id, login, email, name, role, active, created_at</div></div>
+              <div class="px-5 py-3 bg-surface-container/30"><div class="flex gap-3 font-mono mb-1"><span class="text-emerald-600 font-bold w-14">POST</span>/auth/users</div><div class="text-on-surface-variant">Body: <code class="bg-surface-container px-1 rounded">{{"login","email","name","password","role":"admin|writer"}}</code></div></div>
+              <div class="px-5 py-3"><div class="flex gap-3 font-mono mb-1"><span class="text-amber-600 font-bold w-14">PUT</span>/auth/users/:id</div><div class="text-on-surface-variant">Обновление: name, email, role, password, active. Пустой password — не меняется.</div></div>
+              <div class="px-5 py-3 bg-surface-container/30"><div class="flex gap-3 font-mono mb-1"><span class="text-red-500 font-bold w-14">DELETE</span>/auth/users/:id</div><div class="text-on-surface-variant">Нельзя удалить последнего admin — защита на уровне route.</div></div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-outline-variant/10 overflow-hidden">
+            <div class="px-5 py-3 bg-surface-container font-bold text-sm text-[#0ea5a0]">Прочие</div>
+            <div class="divide-y divide-outline-variant/10 text-xs">
+              <div class="px-5 py-3"><div class="flex gap-3 font-mono"><span class="text-blue-600 font-bold w-14">GET</span>/api/dashboard/stats<span class="text-on-surface-variant ml-3 font-sans">Статистика: кол-во статей по статусам, идей</span></div></div>
+              <div class="px-5 py-3 bg-surface-container/30"><div class="flex gap-3 font-mono"><span class="text-blue-600 font-bold w-14">GET</span>/api/changelog<span class="text-on-surface-variant ml-3 font-sans">Git log последних 50 коммитов</span></div></div>
+              <div class="px-5 py-3"><div class="flex gap-3 font-mono"><span class="text-blue-600 font-bold w-14">GET</span>/sse/articles<span class="text-on-surface-variant ml-3 font-sans">SSE stream. Events: progress-update, new-article, image-ready</span></div></div>
+              <div class="px-5 py-3 bg-surface-container/30"><div class="flex gap-3 font-mono"><span class="text-blue-600 font-bold w-14">GET</span>/health<span class="text-on-surface-variant ml-3 font-sans">Health check — без авторизации</span></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- ROLES -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <div id="doc-roles" class="doc-section hidden space-y-8 py-2">
+
+        <div>
+          <h3 class="text-2xl font-extrabold mb-1">Роли и аутентификация</h3>
+          <p class="text-on-surface-variant">Файлы: <code class="bg-surface-container px-1.5 py-0.5 rounded font-mono">api/routes/auth.js</code>, <code class="bg-surface-container px-1.5 py-0.5 rounded font-mono">api/users.json</code></p>
+        </div>
+
+        <!-- Roles comparison -->
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="p-5 rounded-xl bg-surface-container border border-outline-variant/10">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-full bg-[#006a66] flex items-center justify-center text-white font-bold">A</div>
+              <div><div class="font-bold text-base">Admin</div><div class="text-xs text-on-surface-variant">Полный доступ ко всей системе</div></div>
+            </div>
+            <ul class="space-y-1.5 text-xs text-on-surface-variant">
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>Все разделы интерфейса</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>Управление пользователями (/auth/users)</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>DELETE статей, идей, изображений</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>POST /api/ideas/generate</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>PUT /api/config (настройки)</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>Одобрение и отклонение идей</li>
+            </ul>
+          </div>
+          <div class="p-5 rounded-xl bg-surface-container border border-outline-variant/10">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-full bg-slate-500 flex items-center justify-center text-white font-bold">W</div>
+              <div><div class="font-bold text-base">Writer</div><div class="text-xs text-on-surface-variant">Редактирование и публикация контента</div></div>
+            </div>
+            <ul class="space-y-1.5 text-xs text-on-surface-variant">
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>Просмотр и редактирование статей (GET/PUT)</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>Просмотр идей</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>Публикация в WordPress (/publish)</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>Генерация изображений</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-red-400 text-sm">cancel</span>DELETE чего-либо → 403 Forbidden</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-red-400 text-sm">cancel</span>/auth/users → 403 Forbidden</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-red-400 text-sm">cancel</span>/api/ideas/generate → 403 Forbidden</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Token system -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Система токенов</h4>
+          <div class="rounded-2xl bg-slate-900 p-5 text-xs font-mono text-slate-300 overflow-x-auto">
+<pre class="text-slate-300">
+Структура токена:
+  &lt;HMAC-SHA256-hex&gt;.&lt;BASE64(JSON_payload)&gt;
+
+Payload содержит:
+  { id, login, role, ts(timestamp) }
+
+Пример декодирования в браузере:
+  JSON.parse(atob(token.split('.')[1]))
+
+Хранение:
+  localStorage  — при "Запомнить меня" (постоянно)
+  sessionStorage — без "Запомнить" (до закрытия вкладки)
+
+При 401 от API:
+  → localStorage и sessionStorage очищаются
+  → редирект на /login.html
+
+Пользователи хранятся в:
+  /var/www/seo-articles/api/users.json
+  Пароли — bcrypt hash (salt rounds: 10)
+  Вход по email ИЛИ по логину (оба варианта)</pre>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =================== VIEW: CHANGELOG =================== -->
+  <div id="view-changelog" class="view p-8 max-w-[960px] mx-auto w-full">
+    <div class="mb-8">
+      <h2 class="text-4xl font-extrabold text-on-surface tracking-tight mb-2">Обновления</h2>
+      <p class="text-on-surface-variant font-medium">История изменений системы STATI.</p>
+    </div>
+    <div id="changelog-list" class="space-y-4">
+      <div class="text-center py-16 text-on-surface-variant text-sm">Загрузка...</div>
+    </div>
+  </div>
+
+</main>
+
+<!-- Add/Edit User Modal -->
+<div id="modal-user" class="modal-backdrop hidden">
+  <div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-md mx-4">
+    <h3 id="modal-user-title" class="text-xl font-bold text-on-surface mb-6">Новый пользователь</h3>
+    <input type="hidden" id="modal-user-id"/>
+    <div class="space-y-4">
+      <label class="block">
+        <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1 block">Имя</span>
+        <input id="modal-user-name" type="text" class="w-full px-4 py-3 bg-surface-container-low border-none rounded-lg text-on-surface font-medium focus:ring-2 focus:ring-[#0ea5a0] transition-all text-sm" placeholder="Иван Иванов"/>
+      </label>
+      <label class="block">
+        <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1 block">Email</span>
+        <input id="modal-user-email" type="email" class="w-full px-4 py-3 bg-surface-container-low border-none rounded-lg text-on-surface font-medium focus:ring-2 focus:ring-[#0ea5a0] transition-all text-sm" placeholder="user@example.com"/>
+      </label>
+      <label class="block">
+        <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1 block">Логин</span>
+        <input id="modal-user-login" type="text" class="w-full px-4 py-3 bg-surface-container-low border-none rounded-lg text-on-surface font-medium focus:ring-2 focus:ring-[#0ea5a0] transition-all text-sm" placeholder="ivan"/>
+      </label>
+      <label class="block">
+        <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1 block">Пароль <span id="modal-user-pwd-hint" class="normal-case text-on-surface-variant font-normal">(оставьте пустым, чтобы не менять)</span></span>
+        <div class="flex gap-2">
+          <div class="relative flex-1">
+            <input id="modal-user-password" type="text" autocomplete="new-password" class="w-full px-4 py-3 bg-surface-container-low border-none rounded-lg text-on-surface font-medium focus:ring-2 focus:ring-[#0ea5a0] transition-all text-sm" placeholder="••••••••"/>
+          </div>
+          <button type="button" onclick="generatePassword()" title="Сгенерировать пароль" class="flex items-center gap-1 px-4 py-3 bg-surface-container-low rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all text-sm font-medium whitespace-nowrap">
+            <span class="material-symbols-outlined text-lg">casino</span>
+          </button>
+        </div>
+      </label>
+      <label class="block">
+        <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1 block">Роль</span>
+        <select id="modal-user-role" class="w-full px-4 py-3 bg-surface-container-low border-none rounded-lg text-on-surface font-medium focus:ring-2 focus:ring-[#0ea5a0] transition-all text-sm">
+          <option value="writer">Writer — редактирование статей</option>
+          <option value="admin">Admin — полный доступ</option>
+        </select>
+      </label>
+    </div>
+    <div class="flex gap-3 mt-6">
+      <button onclick="saveUserModal()" class="flex-1 py-3 teal-gradient text-white rounded-full font-bold text-sm hover:opacity-90 transition-all">Сохранить</button>
+      <button onclick="closeModal('modal-user')" class="px-6 py-3 border border-outline-variant rounded-full text-on-surface-variant font-medium text-sm hover:bg-surface-container-low transition-all">Отмена</button>
+    </div>
+  </div>
+</div>
+
+<!-- =================== MODALS =================== -->
+<!-- Approve Idea Modal -->
+<div id="modal-approve" class="modal-backdrop">
+  <div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-md mx-4">
+    <h3 class="text-xl font-bold text-on-surface mb-3">Одобрить идею?</h3>
+    <p class="text-sm text-on-surface-variant mb-2">Идея: <span id="modal-approve-title" class="font-semibold text-on-surface"></span></p>
+    <p class="text-sm text-on-surface-variant mb-6">После одобрения будет запущена генерация статей на всех языках.</p>
+    <div class="flex gap-3 justify-end">
+      <button onclick="closeModal('modal-approve')" class="px-5 py-2.5 border-2 border-outline-variant rounded-full font-semibold text-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">Отмена</button>
+      <button id="modal-approve-confirm" onclick="approveIdea()" class="px-5 py-2.5 teal-gradient text-white rounded-full font-bold text-sm hover:opacity-90 transition-all">Одобрить</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Idea Modal -->
+<div id="modal-edit-idea" class="modal-backdrop">
+  <div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-2xl mx-4 max-h-[90vh] overflow-y-auto">
+    <div class="flex items-start justify-between mb-4">
+      <div>
+        <h3 class="text-xl font-bold text-on-surface">Редагування ідеї</h3>
+        <p class="text-xs text-on-surface-variant mt-1">AI перепише ідею на основі твоїх правок і коментарів</p>
+      </div>
+      <button onclick="closeEditIdeaModal()" class="p-1 hover:bg-surface-container-low rounded-full transition-colors">
+        <span class="material-symbols-outlined text-on-surface-variant">close</span>
+      </button>
+    </div>
+
+    <div class="space-y-4">
+      <div>
+        <label class="text-xs font-black uppercase tracking-widest text-slate-500 block mb-1.5">Назва</label>
+        <input id="edit-idea-title" type="text"
+          class="w-full px-3 py-2.5 bg-surface-container-lowest border border-outline-variant/30 rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"/>
+      </div>
+
+      <div>
+        <label class="text-xs font-black uppercase tracking-widest text-slate-500 block mb-1.5">Опис</label>
+        <textarea id="edit-idea-description" rows="2"
+          class="w-full px-3 py-2.5 bg-surface-container-lowest border border-outline-variant/30 rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm resize-none leading-relaxed"></textarea>
+      </div>
+
+      <div>
+        <label class="text-xs font-black uppercase tracking-widest text-slate-500 block mb-1.5">План статті</label>
+        <textarea id="edit-idea-outline" rows="4"
+          class="w-full px-3 py-2.5 bg-surface-container-lowest border border-outline-variant/30 rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm resize-none leading-relaxed"
+          placeholder="Про що стаття, навіщо, які пункти будуть..."></textarea>
+      </div>
+
+      <div>
+        <label class="text-xs font-black uppercase tracking-widest text-slate-500 block mb-1.5">Ключові слова</label>
+        <input id="edit-idea-keywords" type="text"
+          class="w-full px-3 py-2.5 bg-surface-container-lowest border border-outline-variant/30 rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm"
+          placeholder="через кому: crm для колл-центру, ip-телефонія..."/>
+      </div>
+
+      <div>
+        <label class="text-xs font-black uppercase tracking-widest text-primary block mb-1.5">Коментарі для AI</label>
+        <textarea id="edit-idea-comments" rows="3"
+          class="w-full px-3 py-2.5 bg-primary/5 border border-primary/20 rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm resize-none leading-relaxed"
+          placeholder="Зроби акцент на X, не пиши про Y, додай приклади Z..."></textarea>
+        <p class="text-[10px] text-on-surface-variant mt-1">AI використає це як прямі вказівки при переписуванні</p>
+      </div>
+    </div>
+
+    <div class="flex gap-3 justify-end mt-6">
+      <button onclick="closeEditIdeaModal()"
+        class="px-5 py-2.5 bg-rose-500 hover:bg-rose-600 text-white rounded-full font-bold text-sm transition-colors">
+        Скасувати
+      </button>
+      <button id="edit-idea-submit" onclick="submitEditIdea()"
+        class="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full font-bold text-sm transition-colors flex items-center gap-2">
+        <span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+        <span>Надіслати</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Publish Article Modal -->
+<div id="modal-publish" class="modal-backdrop">
+  <div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-md mx-4">
+    <h3 class="text-xl font-bold text-on-surface mb-3">Опубликовать статью?</h3>
+    <p class="text-sm text-on-surface-variant mb-2">Статья: <span id="modal-publish-title" class="font-semibold text-on-surface"></span></p>
+    <p class="text-sm text-on-surface-variant mb-6">Статья будет опубликована в WordPress и отмечена как опубликованная в системе.</p>
+    <div class="flex gap-3 justify-end">
+      <button onclick="closeModal('modal-publish')" class="px-5 py-2.5 border-2 border-outline-variant rounded-full font-semibold text-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">Отмена</button>
+      <button onclick="publishArticle()" class="px-5 py-2.5 teal-gradient text-white rounded-full font-bold text-sm hover:opacity-90 transition-all">Опубликовать</button>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Article Modal -->
+<div id="modal-delete-article" class="modal-backdrop">
+  <div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-md mx-4">
+    <h3 class="text-xl font-bold text-on-surface mb-3">Удалить статью?</h3>
+    <p class="text-sm text-on-surface-variant mb-6">Это действие необратимо. Статья будет удалена навсегда.</p>
+    <div class="flex gap-3 justify-end">
+      <button onclick="closeModal('modal-delete-article')" class="px-5 py-2.5 border-2 border-outline-variant rounded-full font-semibold text-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">Отмена</button>
+      <button onclick="deleteArticle()" class="px-5 py-2.5 bg-error text-white rounded-full font-bold text-sm hover:opacity-90 transition-all">Удалить</button>
+    </div>
+  </div>
+</div>
+
+<!-- =================== TOAST CONTAINER =================== -->
+<div id="toast-container" class="fixed bottom-6 right-6 z-[300] flex flex-col gap-3 items-end pointer-events-none"></div>
+
+<!-- =================== GENERATION PROGRESS TOAST =================== -->
+<div id="gen-toast" class="fixed bottom-24 right-6 w-80 bg-[#2a303d] text-white rounded-xl shadow-2xl p-5 z-[200] hidden">
+  <div class="flex items-center justify-between mb-3">
+    <h5 class="text-xs font-bold uppercase tracking-widest text-slate-400">Генерация статьи</h5>
+    <button onclick="hideGenToast()" class="text-slate-400 hover:text-white transition-colors"><span class="material-symbols-outlined text-sm">close</span></button>
+  </div>
+  <p id="gen-toast-title" class="text-xs text-slate-300 mb-3 truncate">...</p>
+  <div id="gen-toast-langs" class="text-[10px] font-bold flex gap-2 mb-3 flex-wrap">
+    <span class="text-slate-500">EN ⏳</span><span class="text-slate-500">RU ⏳</span><span class="text-slate-500">PL ⏳</span><span class="text-slate-500">ES ⏳</span><span class="text-slate-500">TR ⏳</span><span class="text-slate-500">UA ⏳</span>
+  </div>
+  <div class="relative h-1 w-full bg-white/10 rounded-full overflow-hidden">
+    <div id="gen-toast-bar" class="absolute inset-y-0 left-0 bg-[#0ea5a0] rounded-full progress-bar-inner" style="width:0%"></div>
+  </div>
+</div>
+
+<!-- =================== JAVASCRIPT =================== -->
+<script>
+// ===========================================================
+// 0. AUTH CHECK
+// ===========================================================
+(function() {
+  const token = localStorage.getItem('stati_token') || sessionStorage.getItem('stati_token');
+  if (!token && window.location.pathname !== '/login.html') {
+    window.location.href = '/login.html';
+  }
+})();
+
+// ===========================================================
+// 1. CONFIG & STATE
+// ===========================================================
+const API_BASE = window.location.port === '3000'
+  ? `${window.location.protocol}//${window.location.hostname}:3000`
+  : 'http://157.180.42.152';
+
+const state = {
+  currentView: 'dashboard',
+  currentArticleId: null,
+  currentLang: 'ua',
+  articles: [],
+  ideas: [],
+  publishedOffset: 0,
+  publishedTotal: 0,
+  pendingApproveId: null,
+  pendingApproveTitle: null,
+  autosaveTimer: null,
+  config: {},
+};
+
+const LANGS = ['ua', 'en', 'es', 'pl', 'ru', 'tr'];
+// API returns translations.uk, translations.en, translations.es, translations.pl, translations.ru, translations.tr
+// Each contains {title, content}
+const LANG_API_KEY = { ua: 'uk', en: 'en', es: 'es', pl: 'pl', ru: 'ru', tr: 'tr' };
+const LANG_FIELD = { ua: 'translation_ua', en: 'translation_en', es: 'translation_es', pl: 'translation_pl', ru: 'translation_ru', tr: 'translation_tr' };
+
+// Helper: get translation content for a lang from article object
+function getLangContent(article, lang) {
+  if (!article) return '';
+  const key = LANG_API_KEY[lang];
+  // Try nested translations object first (API format)
+  if (article.translations && article.translations[key]) {
+    return article.translations[key].content || '';
+  }
+  // Fallback: flat fields (translation_ua, etc.)
+  return article[LANG_FIELD[lang]] || '';
+}
+
+// Helper: get translation title for a lang
+function getLangTitle(article, lang) {
+  if (!article) return '';
+  const key = LANG_API_KEY[lang];
+  if (article.translations && article.translations[key]) {
+    return article.translations[key].title || article.theme || '';
+  }
+  return article.theme || '';
+}
+
+// Helper: check if lang has content
+function langHasContent(article, lang) {
+  return !!getLangContent(article, lang).trim();
+}
+const STATUS_LABELS = {
+  'generating': 'Генерируется...',
+  'pending': 'Генерируется...',
+  'checking': 'На проверке',
+  'not_checked': 'Не проверено',
+  'approved': 'Одобрено',
+  'published': 'Опубликовано',
+};
+
+// ===========================================================
+// 2. NAVIGATION
+// ===========================================================
+function navigateTo(view, articleId) {
+  const allViews = document.querySelectorAll('.view, .view-flex');
+  allViews.forEach(v => { v.classList.remove('active'); v.style.display = 'none'; });
+
+  const target = document.getElementById('view-' + view);
+  if (!target) return;
+
+  if (view === 'editor') {
+    target.style.display = 'flex';
+    target.classList.add('active');
+    // Show editor nav link
+    document.querySelector('[data-view="editor"]').style.display = 'flex';
+  } else {
+    target.style.display = 'block';
+    target.classList.add('active');
+  }
+
+  // Update sidebar active state
+  document.querySelectorAll('.nav-link').forEach(link => {
+    const lv = link.getAttribute('data-view');
+    if (lv === view) {
+      link.classList.add('bg-[#006a66]', 'text-white');
+      link.classList.remove('text-slate-400', 'hover:text-white', 'hover:bg-white/5');
+    } else {
+      link.classList.remove('bg-[#006a66]', 'text-white');
+      link.classList.add('text-slate-400', 'hover:text-white', 'hover:bg-white/5');
+    }
+  });
+
+  state.currentView = view;
+
+  // Load view data
+  if (view === 'dashboard') loadDashboard();
+  else if (view === 'ideas') loadIdeas();
+  else if (view === 'review') loadReview();
+  else if (view === 'editor') loadEditor(articleId);
+  else if (view === 'published') loadPublished(0);
+  else if (view === 'settings') loadSettings();
+  else if (view === 'changelog') loadChangelog();
+}
+
+// ===========================================================
+// 3. API HELPERS
+// ===========================================================
+async function apiFetch(path, options = {}) {
+  const url = API_BASE + path;
+  const token = localStorage.getItem('stati_token') || sessionStorage.getItem('stati_token') || '';
+  try {
+    const resp = await fetch(url, {
+      headers: { 'Content-Type': 'application/json', 'x-auth-token': token, ...(options.headers || {}) },
+      ...options,
+    });
+    if (resp.status === 401) {
+      localStorage.removeItem('stati_token');
+      sessionStorage.removeItem('stati_token');
+      window.location.replace('/login.html');
+      return;
+    }
+    if (!resp.ok) {
+      const text = await resp.text();
+      throw new Error(`HTTP ${resp.status}: ${text}`);
+    }
+    const ct = resp.headers.get('content-type') || '';
+    if (ct.includes('application/json')) return resp.json();
+    return resp.text();
+  } catch (err) {
+    console.error('API error:', path, err);
+    throw err;
+  }
+}
+
+// ===========================================================
+// 4. SSE HANDLER
+// ===========================================================
+let evtSource = null;
+
+function initSSE() {
+  try {
+    evtSource = new EventSource(API_BASE + '/sse/articles');
+    evtSource.onmessage = (e) => {
+      try {
+        const d = JSON.parse(e.data);
+        handleSSE(d);
+      } catch {}
+    };
+    evtSource.onerror = () => {
+      setTimeout(initSSE, 5000);
+    };
+  } catch {}
+}
+
+function handleSSE(d) {
+  if (!d || !d.type) return;
+  if (d.type === 'progress-update') {
+    // Structure: {type, article_id, progress_stage, progress_percent, progress_message, ...}
+    updateProgressCard(d);
+    if (state.currentArticleId && d.article_id === state.currentArticleId) {
+      showGenToast(d);
+    }
+  } else if (d.type === 'new-article' && d.article) {
+    // Structure: {type, article: {...}}
+    if (state.currentView === 'review') {
+      prependReviewCard(d.article);
+    }
+  } else if (d.type === 'image-ready') {
+    // Structure: {type, article_id, article_image}
+    if (state.currentArticleId && d.article_id === state.currentArticleId) {
+      if (d.article_image) updatePreviewImage(d.article_image);
+    }
+  }
+}
+
+function updateProgressCard(data) {
+  const card = document.getElementById('review-card-' + data.article_id);
+  if (!card) return;
+  const bar = card.querySelector('.progress-bar-inner');
+  const pct = data.progress_percent ?? data.progress;
+  if (bar && pct !== undefined) {
+    bar.style.width = pct + '%';
+  }
+  const statusEl = card.querySelector('.status-badge');
+  if (statusEl && data.status) {
+    statusEl.textContent = STATUS_LABELS[data.status] || data.status;
+  }
+  // Update lang dots
+  if (data.progress_langs) {
+    const langsEl = card.querySelector('.lang-progress');
+    if (langsEl) {
+      langsEl.innerHTML = renderLangProgress(data.progress_langs);
+    }
+  }
+}
+
+function prependReviewCard(article) {
+  const grid = document.getElementById('review-grid');
+  if (!grid) return;
+  const el = document.createElement('div');
+  el.innerHTML = buildReviewCard(article);
+  grid.insertBefore(el.firstElementChild, grid.firstChild);
+}
+
+// ===========================================================
+// 5. DASHBOARD FUNCTIONS
+// ===========================================================
+async function loadDashboard() {
+  try {
+    const [articles, ideas] = await Promise.all([
+      apiFetch('/api/articles'),
+      apiFetch('/api/ideas'),
+    ]);
+    state.articles = articles || [];
+
+    // Count by status
+    const counts = {};
+    (articles || []).forEach(a => { counts[a.status] = (counts[a.status] || 0) + 1; });
+
+    const reviewCount = (counts['not_checked'] || 0) + (counts['approved'] || 0) + (counts['checking'] || 0);
+    const publishedCount = counts['published'] || 0;
+    const failedCount = 0;
+    const ideasCount = (ideas || []).filter(i => i.status === 'pending').length;
+
+    document.getElementById('stat-review').textContent = reviewCount;
+    document.getElementById('stat-published').textContent = publishedCount;
+    document.getElementById('stat-failed').textContent = failedCount;
+    document.getElementById('stat-ideas').textContent = ideasCount;
+    document.getElementById('stat-badge-review').textContent = reviewCount;
+
+    // Language stats
+    const langCounts = { ua: 0, en: 0, ru: 0, pl: 0, es: 0, tr: 0 };
+    (articles || []).forEach(a => {
+      LANGS.forEach(l => { if (langHasContent(a, l)) langCounts[l]++; });
+    });
+    const maxLang = Math.max(1, ...Object.values(langCounts));
+    const langNames = { ua: 'Украинский', en: 'English', ru: 'Русский', pl: 'Polski', es: 'Español', tr: 'Türkçe' };
+    document.getElementById('lang-stats').innerHTML = Object.entries(langCounts).map(([lang, cnt]) => `
+      <div class="space-y-1">
+        <div class="flex justify-between text-xs font-bold text-on-surface">
+          <span>${lang.toUpperCase()} (${langNames[lang]})</span>
+          <span>${cnt} ст.</span>
+        </div>
+        <div class="w-full h-2 bg-surface-container-low rounded-full overflow-hidden">
+          <div class="h-full bg-primary rounded-full transition-all duration-1000" style="width:${Math.round((cnt/maxLang)*100)}%"></div>
+        </div>
+      </div>
+    `).join('');
+
+    // Recent drafts (last 5)
+    const recent = [...(articles || [])].sort((a, b) => new Date(b.updated_at || b.created_at) - new Date(a.updated_at || a.created_at)).slice(0, 5);
+    const tbody = document.getElementById('dashboard-table-body');
+    if (recent.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" class="px-8 py-8 text-center text-sm text-on-surface-variant">Нет статей</td></tr>';
+      return;
+    }
+    tbody.innerHTML = recent.map(a => {
+      const langsHtml = LANGS.filter(l => langHasContent(a, l))
+        .map(l => `<span class="px-2 py-0.5 bg-surface-container-high rounded text-[10px] font-bold">${l.toUpperCase()}</span>`).join('');
+      const statusDot = getStatusDot(a.status);
+      return `
+        <tr class="hover:bg-surface-container-low/30 transition-colors cursor-pointer" onclick="navigateTo('editor', '${a.id}')">
+          <td class="px-8 py-4">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-secondary-container/30 flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-secondary text-sm">article</span>
+              </div>
+              <p class="text-sm font-bold text-on-surface line-clamp-1">${escHtml(a.theme || 'Без названия')}</p>
+            </div>
+          </td>
+          <td class="px-6 py-4"><div class="flex gap-1">${langsHtml}</div></td>
+          <td class="px-6 py-4"><div class="flex items-center gap-2">${statusDot}</div></td>
+          <td class="px-6 py-4"><p class="text-xs text-on-surface font-medium">${timeAgo(a.updated_at || a.created_at)}</p></td>
+          <td class="px-8 py-4 text-right"><button class="p-1.5 hover:bg-surface-container-high rounded-full transition-colors text-on-surface-variant" onclick="event.stopPropagation(); navigateTo('editor', '${a.id}')"><span class="material-symbols-outlined text-sm">open_in_new</span></button></td>
+        </tr>
+      `;
+    }).join('');
+  } catch (err) {
+    showToast('Ошибка загрузки дашборда: ' + err.message, 'error');
+  }
+}
+
+function getStatusDot(status) {
+  const map = {
+    'generating': `<span class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span><span class="text-xs font-medium text-orange-500">Генерируется...</span>`,
+    'pending': `<span class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span><span class="text-xs font-medium text-orange-500">Генерируется...</span>`,
+    'checking': `<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="text-xs font-medium text-secondary">На проверке</span>`,
+    'not_checked': `<span class="w-2 h-2 rounded-full bg-[#0ea5a0]"></span><span class="text-xs font-medium text-[#0ea5a0]">Не проверено</span>`,
+    'approved': `<span class="w-2 h-2 rounded-full bg-primary"></span><span class="text-xs font-medium text-primary">Одобрено</span>`,
+    'published': `<span class="w-2 h-2 rounded-full bg-primary"></span><span class="text-xs font-medium text-primary">Опубликовано</span>`,
+  };
+  return map[status] || `<span class="w-2 h-2 rounded-full bg-outline-variant"></span><span class="text-xs text-on-surface-variant">${status || '—'}</span>`;
+}
+
+// ===========================================================
+// 6. IDEAS FUNCTIONS
+// ===========================================================
+async function loadIdeas() {
+  try {
+    const [active, rejected] = await Promise.all([
+      apiFetch('/api/ideas?status=pending'),
+      apiFetch('/api/ideas?status=rejected'),
+    ]);
+    state.ideas = [...(active || []), ...(rejected || [])];
+    renderIdeasList('active-ideas-list', active || [], 'active');
+    renderIdeasList('rejected-ideas-list', rejected || [], 'rejected');
+    document.getElementById('active-ideas-count').textContent = (active || []).length;
+    document.getElementById('rejected-ideas-count').textContent = (rejected || []).length;
+  } catch (err) {
+    showToast('Ошибка загрузки идей: ' + err.message, 'error');
+  }
+}
+
+function renderIdeasList(containerId, ideas, type) {
+  const container = document.getElementById(containerId);
+  if (!ideas.length) {
+    container.innerHTML = `<p class="text-sm text-on-surface-variant p-4 text-center">${type === 'active' ? 'Нет активных идей' : 'Нет отклонённых идей'}</p>`;
+    return;
+  }
+  container.innerHTML = ideas.map(idea => buildIdeaCard(idea, type)).join('');
+}
+
+function buildIdeaCard(idea, type) {
+  const kws = (idea.keywords || []).slice(0, 3).map(k => `<span class="px-2 py-1 bg-tertiary-fixed text-tertiary text-[10px] font-medium rounded-full">#${escHtml(k)}</span>`).join('');
+  const idShort = String(idea.id).slice(-4);
+
+  if (type === 'active') {
+    const hasOutline = !!(idea.outline && idea.outline.trim());
+    return `
+      <div id="idea-card-${idea.id}" class="p-5 bg-surface-container-lowest rounded-lg shadow-sm border border-transparent hover:border-[#0ea5a0]/20 transition-all group">
+        <div class="flex justify-between items-start mb-2">
+          <span class="text-xs font-bold text-primary tracking-widest uppercase">Idea #${idShort}</span>
+          ${hasOutline ? `
+            <button onclick="toggleIdeaOutline('${idea.id}'); event.stopPropagation();"
+              id="idea-outline-btn-${idea.id}"
+              class="flex items-center gap-1 text-[11px] font-semibold text-primary hover:bg-primary/10 px-2 py-1 rounded-full transition-colors"
+              title="План статті">
+              <span class="material-symbols-outlined text-[16px]">expand_more</span>
+              <span>План</span>
+            </button>
+          ` : ''}
+        </div>
+        <h4 class="text-base font-bold text-on-surface mb-2 group-hover:text-primary transition-colors leading-snug">${escHtml(idea.title || 'Без названия')}</h4>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-3 line-clamp-2">${escHtml(idea.description || '')}</p>
+        ${hasOutline ? `
+          <div id="idea-outline-${idea.id}" class="hidden mb-4 p-3 bg-primary/5 border-l-2 border-primary/30 rounded-r-md">
+            <p class="text-[10px] font-black uppercase tracking-widest text-primary mb-1.5">План статті</p>
+            <p class="text-sm text-on-surface-variant leading-relaxed whitespace-pre-line">${escHtml(idea.outline)}</p>
+          </div>
+        ` : ''}
+        <div class="flex flex-wrap gap-1.5 mb-4">${kws}</div>
+        <div class="flex items-center justify-between gap-3 pt-3 border-t border-outline-variant/10">
+          <div class="flex flex-col flex-shrink-0">
+            <span class="text-xs text-on-surface-variant">${timeAgo(idea.created_at)}</span>
+            <span class="text-[10px] text-on-surface-variant/70 font-mono">${formatDateTime(idea.created_at)}</span>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="openEditIdeaModal('${idea.id}'); event.stopPropagation();"
+              class="px-4 py-1.5 bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-xs font-bold rounded-full transition-colors flex items-center gap-1">
+              <span class="material-symbols-outlined text-[14px]">edit</span>Відредагувати
+            </button>
+            <button onclick="deleteIdea('${idea.id}'); event.stopPropagation();"
+              class="px-4 py-1.5 bg-rose-500 hover:bg-rose-600 text-white text-xs font-bold rounded-full transition-colors">
+              Не одобрить
+            </button>
+            <button onclick="confirmApproveIdea('${idea.id}', '${escHtml(idea.title || '').replace(/'/g, "\\'")}');"
+              class="px-4 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold rounded-full transition-colors">
+              Одобрить
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+  } else {
+    return `
+      <div id="idea-card-${idea.id}" class="p-5 bg-surface-container-lowest rounded-lg shadow-sm opacity-70 hover:opacity-100 transition-all border border-outline-variant/10">
+        <div class="flex justify-between items-start mb-2">
+          <span class="text-xs font-bold text-on-surface-variant tracking-widest uppercase">Idea #${idShort}</span>
+          <span class="text-xs text-error px-2 py-0.5 bg-error-container rounded-full font-bold">Отклонено</span>
+        </div>
+        <h4 class="text-base font-bold text-on-surface mb-2 leading-snug">${escHtml(idea.title || 'Без названия')}</h4>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-3 line-clamp-2">${escHtml(idea.description || '')}</p>
+        <div class="flex flex-wrap gap-1.5 mb-4">${kws}</div>
+        <div class="flex items-center justify-between pt-3 border-t border-outline-variant/10">
+          <div class="flex flex-col">
+            <span class="text-xs text-on-surface-variant">${timeAgo(idea.created_at)}</span>
+            <span class="text-[10px] text-on-surface-variant/70 font-mono">${formatDateTime(idea.created_at)}</span>
+          </div>
+          <button onclick="restoreIdea('${idea.id}')"
+            class="text-[#0ea5a0] font-bold text-xs hover:underline flex items-center gap-1">
+            <span class="material-symbols-outlined text-sm">restore</span>Восстановить
+          </button>
+        </div>
+      </div>
+    `;
+  }
+}
+
+function confirmApproveIdea(id, title) {
+  state.pendingApproveId = id;
+  state.pendingApproveTitle = title;
+  document.getElementById('modal-approve-title').textContent = title;
+  openModal('modal-approve');
+}
+
+async function approveIdea() {
+  if (!state.pendingApproveId) return;
+  closeModal('modal-approve');
+  try {
+    await apiFetch(`/api/ideas/${state.pendingApproveId}/approve`, { method: 'POST' });
+    showToast('Идея одобрена. Генерация запущена!', 'success');
+    // Remove from active list
+    const card = document.getElementById(`idea-card-${state.pendingApproveId}`);
+    if (card) card.remove();
+    // Update count
+    const countEl = document.getElementById('active-ideas-count');
+    countEl.textContent = Math.max(0, parseInt(countEl.textContent) - 1);
+  } catch (err) {
+    showToast('Ошибка одобрения: ' + err.message, 'error');
+  }
+  state.pendingApproveId = null;
+}
+
+function toggleIdeaOutline(id) {
+  const panel = document.getElementById(`idea-outline-${id}`);
+  const btn = document.getElementById(`idea-outline-btn-${id}`);
+  if (!panel || !btn) return;
+  const icon = btn.querySelector('.material-symbols-outlined');
+  const label = btn.querySelector('span:last-child');
+  if (panel.classList.contains('hidden')) {
+    panel.classList.remove('hidden');
+    if (icon) icon.textContent = 'expand_less';
+    if (label) label.textContent = 'Скрыть';
+  } else {
+    panel.classList.add('hidden');
+    if (icon) icon.textContent = 'expand_more';
+    if (label) label.textContent = 'План';
+  }
+}
+
+// ── Edit Idea via AI rewrite ───────────────────────────────────
+async function openEditIdeaModal(ideaId) {
+  state.editIdeaId = ideaId;
+  let idea = null;
+  try {
+    idea = await apiFetch(`/api/ideas/${ideaId}`);
+  } catch (e) {
+    showToast('Не вдалося завантажити ідею: ' + e.message, 'error');
+    return;
+  }
+
+  document.getElementById('edit-idea-title').value = idea.title || '';
+  document.getElementById('edit-idea-description').value = idea.description || '';
+  document.getElementById('edit-idea-outline').value = idea.outline || '';
+  const kws = Array.isArray(idea.keywords) ? idea.keywords.join(', ') : (idea.keywords || '');
+  document.getElementById('edit-idea-keywords').value = kws;
+  document.getElementById('edit-idea-comments').value = '';
+
+  document.getElementById('modal-edit-idea').classList.add('open');
+}
+
+function closeEditIdeaModal() {
+  document.getElementById('modal-edit-idea').classList.remove('open');
+  state.editIdeaId = null;
+}
+
+async function submitEditIdea() {
+  if (!state.editIdeaId) return;
+  const btn = document.getElementById('edit-idea-submit');
+  const originalBtnHTML = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">progress_activity</span><span>AI думає...</span>';
+
+  const payload = {
+    title: document.getElementById('edit-idea-title').value.trim(),
+    description: document.getElementById('edit-idea-description').value.trim(),
+    outline: document.getElementById('edit-idea-outline').value.trim(),
+    keywords: document.getElementById('edit-idea-keywords').value
+      .split(',').map(s => s.trim()).filter(Boolean),
+    comments: document.getElementById('edit-idea-comments').value.trim(),
+  };
+
+  try {
+    const res = await apiFetch(`/api/ideas/${state.editIdeaId}/rewrite`, {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+    if (!res.success) throw new Error(res.error || 'AI rewrite failed');
+    showToast('Ідею переписано AI', 'success');
+    closeEditIdeaModal();
+    // Reload ideas list to show refined version
+    if (typeof loadIdeas === 'function') loadIdeas();
+  } catch (e) {
+    showToast('Помилка: ' + e.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = originalBtnHTML;
+  }
+}
+
+async function deleteIdea(id) {
+  try {
+    await apiFetch(`/api/ideas/${id}`, { method: 'DELETE' });
+    const card = document.getElementById(`idea-card-${id}`);
+    if (card) card.remove();
+    const countEl = document.getElementById('active-ideas-count');
+    countEl.textContent = Math.max(0, parseInt(countEl.textContent) - 1);
+    showToast('Идея удалена', 'info');
+  } catch (err) {
+    showToast('Ошибка удаления: ' + err.message, 'error');
+  }
+}
+
+async function restoreIdea(id) {
+  try {
+    await apiFetch(`/api/ideas/${id}/approve`, { method: 'POST' });
+    showToast('Идея восстановлена', 'success');
+    loadIdeas();
+  } catch (err) {
+    showToast('Ошибка восстановления: ' + err.message, 'error');
+  }
+}
+
+async function generateIdeas() {
+  const btn = document.getElementById('btn-generate-ideas');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span>Генерируется...';
+  showToast('Генерация идей запущена...', 'info');
+  try {
+    await apiFetch('/api/ideas/generate', { method: 'POST', body: JSON.stringify({ count: 10 }) });
+    showToast('Новые идеи сгенерированы!', 'success');
+    await loadIdeas();
+  } catch (err) {
+    showToast('Ошибка генерации: ' + err.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">refresh</span>Ещё идеи';
+  }
+}
+
+// ===========================================================
+// 7. REVIEW FUNCTIONS
+// ===========================================================
+async function loadReview() {
+  const grid = document.getElementById('review-grid');
+  grid.innerHTML = '<div class="col-span-3 py-16 text-center text-sm text-on-surface-variant">Загрузка...</div>';
+  try {
+    const articles = await apiFetch('/api/articles');
+    state.articles = articles || [];
+    renderReviewGrid(articles || []);
+    document.getElementById('review-subtitle').textContent = `${(articles||[]).length} статей в системе`;
+  } catch (err) {
+    grid.innerHTML = '<div class="col-span-3 py-8 text-center text-sm text-error">Ошибка загрузки</div>';
+    showToast('Ошибка: ' + err.message, 'error');
+  }
+}
+
+function renderReviewGrid(articles) {
+  const grid = document.getElementById('review-grid');
+  if (!articles.length) {
+    grid.innerHTML = '<div class="col-span-3 py-16 text-center text-sm text-on-surface-variant">Статей ещё нет. Одобрите идею для генерации.</div>';
+    return;
+  }
+  grid.innerHTML = articles.map(a => buildReviewCard(a)).join('');
+}
+
+function buildReviewCard(a) {
+  const langs = LANGS.filter(l => langHasContent(a, l));
+  const langsHtml = langs.map(l => `<span class="text-[10px] px-2 py-0.5 bg-surface-container-high rounded-full font-bold">${l.toUpperCase()}</span>`).join('');
+  const isGenerating = a.status === 'generating' || a.status === 'pending';
+  const isReady = a.status === 'not_checked' || a.status === 'checking' || a.status === 'approved';
+  const borderClass = isReady ? 'border-l-4 border-primary' : '';
+
+  let progressHtml = '';
+  if (isGenerating) {
+    const pct = calculateProgress(a);
+    // Build progress from actual content presence + progress_message
+    const langProgressHtml = a.progress_message
+      ? `<span class="text-[10px] text-on-surface-variant italic">${escHtml(a.progress_message)}</span>`
+      : renderLangProgress(a.progress_langs || {});
+    progressHtml = `
+      <div class="w-full bg-surface-container-high h-1 rounded-full mb-3 overflow-hidden">
+        <div class="bg-[#0ea5a0] h-full progress-bar-inner" style="width:${pct}%"></div>
+      </div>
+      <div class="lang-progress text-[10px] text-on-surface-variant mb-3 flex flex-wrap gap-1">${langProgressHtml}</div>
+    `;
+  }
+
+  const actionHtml = isReady
+    ? `<button onclick="navigateTo('editor', '${a.id}')" class="text-primary font-bold text-sm hover:underline">Проверить</button>`
+    : isGenerating
+      ? `<span class="text-xs text-on-surface-variant italic">${a.status === 'checking' ? 'На проверке...' : 'Обработка...'}</span>`
+      : `<button onclick="navigateTo('editor', '${a.id}')" class="text-on-surface-variant font-bold text-sm hover:text-primary transition-colors">Открыть</button>`;
+
+  return `
+    <div id="review-card-${a.id}" class="group bg-surface-container-lowest p-6 rounded-lg ${borderClass} hover:shadow-md transition-all duration-300">
+      <div class="flex justify-between items-start mb-3">
+        <span class="status-badge px-3 py-1 text-[11px] font-bold uppercase tracking-wider rounded-full ${getStatusBadgeClasses(a.status)}">${STATUS_LABELS[a.status] || a.status}</span>
+        <button onclick="navigateTo('editor', '${a.id}')" class="p-1 text-outline hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-lg">open_in_new</span>
+        </button>
+      </div>
+      <h3 class="font-bold text-base leading-snug mb-3 text-on-surface group-hover:text-primary transition-colors line-clamp-2">${escHtml(a.theme || 'Без названия')}</h3>
+      ${progressHtml}
+      <div class="flex gap-1.5 mb-4">${langsHtml}</div>
+      <div class="flex items-center justify-between pt-3 border-t border-outline-variant/10">
+        <span class="text-xs text-on-surface-variant">${timeAgo(a.created_at)}</span>
+        ${actionHtml}
+      </div>
+    </div>
+  `;
+}
+
+function getStatusBadgeClasses(status) {
+  const map = {
+    'generating': 'bg-orange-100 text-orange-600',
+    'pending': 'bg-orange-100 text-orange-600',
+    'checking': 'bg-secondary-container text-secondary',
+    'not_checked': 'bg-primary-container/20 text-primary',
+    'approved': 'bg-emerald-100 text-emerald-700',
+    'published': 'bg-primary/10 text-primary',
+  };
+  return map[status] || 'bg-surface-container-high text-on-surface-variant';
+}
+
+function calculateProgress(a) {
+  // Use progress_percent from API if available
+  if (a.progress_percent != null) return Math.max(5, a.progress_percent);
+  // Fallback: count languages with content
+  const done = LANGS.filter(l => langHasContent(a, l)).length;
+  if (done > 0) return Math.round((done / LANGS.length) * 100);
+  return 10;
+}
+
+function renderLangProgress(pl) {
+  // pl may be progress_langs object or null — show which langs have content
+  return LANGS.map(l => {
+    const done = pl && pl[l];
+    return `<span class="${done ? 'text-primary font-bold' : 'text-slate-400'}">${l.toUpperCase()}${done ? '✓' : ''}</span>`;
+  }).join(' ');
+}
+
+function filterReviewCards() {
+  const q = (document.getElementById('review-search').value || '').toLowerCase();
+  document.querySelectorAll('#review-grid > div[id^="review-card-"]').forEach(card => {
+    const title = (card.querySelector('h3') || {}).textContent || '';
+    card.style.display = q && !title.toLowerCase().includes(q) ? 'none' : '';
+  });
+}
+
+// ===========================================================
+// 8. EDITOR FUNCTIONS
+// ===========================================================
+async function loadEditor(articleId) {
+  // Load articles list into state (no longer rendered as sidebar)
+  try {
+    const articles = await apiFetch('/api/articles');
+    state.articles = articles || [];
+  } catch (e) {}
+
+  if (articleId) {
+    await loadArticleIntoEditor(articleId);
+  } else if (state.articles.length > 0) {
+    await loadArticleIntoEditor(state.articles[0].id);
+  }
+}
+
+function getStatusColor(status) {
+  const map = {
+    'generating': 'bg-orange-400 animate-pulse',
+    'pending': 'bg-orange-400 animate-pulse',
+    'checking': 'bg-secondary animate-pulse',
+    'not_checked': 'bg-[#0ea5a0]',
+    'approved': 'bg-emerald-500',
+    'published': 'bg-primary',
+  };
+  return map[status] || 'bg-outline-variant';
+}
+
+async function loadArticleIntoEditor(id) {
+  state.currentArticleId = id;
+  state.currentLang = state.currentLang || 'ua';
+
+  try {
+    const article = await apiFetch(`/api/articles/${id}`);
+    renderArticleInEditor(article);
+  } catch (err) {
+    showToast('Ошибка загрузки статьи: ' + err.message, 'error');
+  }
+}
+
+// Map UI lang code to DB column suffix
+const LANG_DB_SUFFIX = { ua: 'ua', en: 'en', ru: 'ru', pl: 'pl', es: 'es', tr: 'tr' };
+
+// Verification thresholds (mirror config.py / verifier.py)
+const VRF_THRESHOLDS = {
+  ai:     { good: 80,  warn: 95  },   // %: < good=green, good-warn=yellow, >=warn=red
+  plag:   { good: 15,  warn: 25  },   // % self-similarity
+  water:  { min: 10,   max: 50,  softMin: 5, softMax: 60 },
+  nausea: { min: 0.3,  max: 5,   softMin: 0.1, softMax: 8 },
+  ul:     { good: 2,   warn: 1   },
+};
+
+// Pick color class: returns {bar, pill, label}
+function vrfColor(level) {
+  const map = {
+    green:  { bar: 'bg-emerald-500', pill: 'bg-emerald-50 text-emerald-700', label: 'text-emerald-600' },
+    yellow: { bar: 'bg-amber-500',   pill: 'bg-amber-50 text-amber-700',     label: 'text-amber-600' },
+    red:    { bar: 'bg-rose-500',    pill: 'bg-rose-50 text-rose-700',       label: 'text-rose-600' },
+    gray:   { bar: 'bg-slate-300',   pill: 'bg-slate-100 text-slate-500',    label: 'text-slate-400' },
+  };
+  return map[level] || map.gray;
+}
+
+function levelFromHighBad(value, t) {
+  // smaller is better (AI, plagiarism)
+  if (value == null) return 'gray';
+  if (value < t.good) return 'green';
+  if (value < t.warn) return 'yellow';
+  return 'red';
+}
+
+function levelFromRange(value, t) {
+  // value in [min,max] = green, in soft range = yellow, else red
+  if (value == null) return 'gray';
+  if (value >= t.min && value <= t.max) return 'green';
+  if (value >= t.softMin && value <= t.softMax) return 'yellow';
+  return 'red';
+}
+
+function levelFromLowBad(value, t) {
+  // bigger is better (ul count)
+  if (value == null) return 'gray';
+  if (value >= t.good) return 'green';
+  if (value >= t.warn) return 'yellow';
+  return 'red';
+}
+
+function applyBar(labelId, barId, value, unit, level, displayValue) {
+  const label = document.getElementById(labelId);
+  const bar = document.getElementById(barId);
+  const c = vrfColor(level);
+  if (value == null) {
+    label.textContent = '—';
+    label.className = `text-xs font-black ${c.label}`;
+    bar.className = `h-full ${c.bar} progress-bar-inner`;
+    bar.style.width = '0%';
+    return;
+  }
+  label.textContent = displayValue != null ? displayValue : `${Math.round(value)}${unit || ''}`;
+  label.className = `text-xs font-black ${c.label}`;
+  bar.className = `h-full ${c.bar} progress-bar-inner`;
+  bar.style.width = `${Math.min(Math.max(value, 2), 100)}%`;
+}
+
+function applyPill(id, value, unit, level) {
+  const el = document.getElementById(id);
+  const c = vrfColor(level);
+  el.textContent = value != null ? `${value}${unit || ''}` : '—';
+  el.className = `px-2 py-0.5 ${c.pill} text-[10px] font-black rounded-full`;
+}
+
+function countUlInHtml(html) {
+  if (!html) return 0;
+  const m = html.match(/<ul[\s>]/gi);
+  return m ? m.length : 0;
+}
+
+function renderVerification(article, lang) {
+  const sfx = LANG_DB_SUFFIX[lang] || 'ua';
+  const vr = article.verification_report;
+  const langReport = vr && (vr[lang] || vr[sfx]) || {};
+
+  // --- AI detection ---
+  const aiScore = langReport.ai_probability
+    ?? article[`ai_${sfx}`]
+    ?? article[`zerogpt_${sfx}`];
+  applyBar('vrf-ai-label', 'vrf-ai-bar', aiScore, '%', levelFromHighBad(aiScore, VRF_THRESHOLDS.ai));
+
+  // --- Plagiarism (self_similarity %) ---
+  let plagScore = langReport.self_similarity;
+  if (plagScore == null) {
+    const uniq = article[`uniqueness_${sfx}`];
+    plagScore = uniq != null ? Math.max(0, 100 - uniq) : null;
+  }
+  applyBar('vrf-plag-label', 'vrf-plag-bar', plagScore, '%', levelFromHighBad(plagScore, VRF_THRESHOLDS.plag));
+
+  // --- Water ---
+  const waterScore = langReport.water ?? langReport.water_score;
+  applyPill('vrf-water', waterScore != null ? Math.round(waterScore * 10) / 10 : null, '%',
+            levelFromRange(waterScore, VRF_THRESHOLDS.water));
+
+  // --- Nausea (academic) ---
+  const nauseaScore = langReport.academic_nausea ?? langReport.nausea ?? langReport.nausea_score;
+  applyPill('vrf-nausea', nauseaScore != null ? Math.round(nauseaScore * 100) / 100 : null, '%',
+            levelFromRange(nauseaScore, VRF_THRESHOLDS.nausea));
+
+  // --- HTML structure: count <ul> in current lang content ---
+  let ulCount = langReport.ul_count;
+  if (ulCount == null) {
+    const translations = article.translations || {};
+    const langKey = lang === 'ua' ? 'uk' : lang;
+    const content = translations[langKey]?.content || translations[lang]?.content || '';
+    ulCount = countUlInHtml(content);
+  }
+  const htmlEl = document.getElementById('vrf-html');
+  const htmlLevel = levelFromLowBad(ulCount, VRF_THRESHOLDS.ul);
+  const htmlColor = vrfColor(htmlLevel);
+  htmlEl.className = `px-2 py-0.5 ${htmlColor.pill} text-[10px] font-black rounded-full`;
+  htmlEl.textContent = ulCount != null ? `${ulCount} ul` : '—';
+  htmlEl.style.fontVariationSettings = '';
+}
+
+function renderKeywords(article, lang) {
+  const sfx = LANG_DB_SUFFIX[lang] || 'ua';
+  const vr = article.verification_report;
+  const langReport = vr && (vr[lang] || vr[sfx]);
+  const kws = langReport?.keywords || article.keywords || [];
+  document.getElementById('editor-keywords').innerHTML = kws.length
+    ? kws.map(k => `<span class="px-3 py-1 bg-surface-container-highest text-slate-600 text-[11px] font-bold rounded-full">${escHtml(String(k))}</span>`).join('')
+    : '<span class="text-xs text-on-surface-variant">—</span>';
+}
+
+function renderMetaDescription(article, lang) {
+  const sfx = LANG_DB_SUFFIX[lang] || 'ua';
+  const meta = (article.meta_description && typeof article.meta_description === 'object') ? article.meta_description : {};
+  const input = document.getElementById('meta-desc-input');
+  if (!input) return;
+  input.value = meta[sfx] || meta[lang] || '';
+  updateMetaCounter();
+}
+
+function updateMetaCounter() {
+  const input = document.getElementById('meta-desc-input');
+  const counter = document.getElementById('meta-desc-counter');
+  if (!input || !counter) return;
+  const len = input.value.length;
+  counter.textContent = `${len} / 160`;
+  if (len === 0) counter.className = 'text-[10px] font-mono text-slate-400';
+  else if (len < 120 || len > 180) counter.className = 'text-[10px] font-mono text-rose-500';
+  else if (len < 150 || len > 160) counter.className = 'text-[10px] font-mono text-amber-500';
+  else counter.className = 'text-[10px] font-mono text-emerald-500';
+}
+
+async function saveMetaDescription() {
+  if (!state.currentArticleId) return;
+  const input = document.getElementById('meta-desc-input');
+  if (!input) return;
+  const sfx = LANG_DB_SUFFIX[state.currentLang] || 'ua';
+  // Load current article from state to preserve other langs
+  const article = state._currentArticleFull || {};
+  const meta = Object.assign({}, article.meta_description || {});
+  meta[sfx] = input.value.trim();
+  try {
+    await apiFetch(`/api/articles/${state.currentArticleId}`, {
+      method: 'PUT',
+      body: JSON.stringify({ meta_description: meta }),
+    });
+    if (state._currentArticleFull) state._currentArticleFull.meta_description = meta;
+  } catch (e) {
+    showToast('Не удалось сохранить meta description: ' + e.message, 'error');
+  }
+}
+
+function renderArticleInEditor(article) {
+  // Cache full article for later partial updates (e.g. meta description per lang)
+  state._currentArticleFull = article;
+
+  const titleEl = document.getElementById('editor-title');
+  const contentEl = document.getElementById('editor-content');
+
+  titleEl.textContent = getLangTitle(article, state.currentLang);
+  const content = getLangContent(article, state.currentLang);
+  contentEl.innerHTML = content;
+
+  // Status
+  const statusSel = document.getElementById('editor-status-select');
+  statusSel.value = article.status || 'not_checked';
+
+  // Preview
+  document.getElementById('preview-title').textContent = article.theme || '';
+  document.getElementById('preview-date').textContent = article.created_at ? new Date(article.created_at).toLocaleDateString('ru-RU') : '—';
+  const slug = (article.theme || '').toLowerCase().replace(/[^a-zа-я0-9\s]/gi, '').replace(/\s+/g, '-').slice(0, 40);
+  document.getElementById('preview-slug').textContent = `stati.io/${slug}`;
+
+  // Image
+  if (article.article_image) {
+    updatePreviewImage(article.article_image);
+  } else {
+    document.getElementById('preview-image').classList.add('hidden');
+  }
+
+  // Verification — per-language fields (suffix matches UI lang)
+  renderVerification(article, state.currentLang);
+
+  // Keywords from verification_report or article.keywords
+  renderKeywords(article, state.currentLang);
+
+  // Meta description per lang
+  renderMetaDescription(article, state.currentLang);
+
+  // Setup autosave
+  setupAutosave(article.id);
+}
+
+function updatePreviewImage(src) {
+  const img = document.getElementById('preview-image');
+  img.src = src;
+  img.classList.remove('hidden');
+}
+
+function switchLang(lang) {
+  // Save current content+title before switching
+  if (state.currentArticleId) {
+    const article = state.articles.find(a => a.id === state.currentArticleId);
+    if (article) {
+      if (!article.translations) article.translations = {};
+      const apiKey = LANG_API_KEY[state.currentLang];
+      if (!article.translations[apiKey]) article.translations[apiKey] = {};
+      article.translations[apiKey].content = document.getElementById('editor-content').innerHTML;
+      article.translations[apiKey].title = document.getElementById('editor-title').textContent;
+    }
+  }
+
+  state.currentLang = lang;
+  document.querySelectorAll('.lang-tab-btn').forEach(btn => {
+    if (btn.getAttribute('data-lang') === lang) {
+      btn.classList.add('active', 'bg-[#0ea5a0]', 'text-white');
+      btn.classList.remove('bg-surface-container-high', 'text-slate-600');
+    } else {
+      btn.classList.remove('active', 'bg-[#0ea5a0]', 'text-white');
+      btn.classList.add('bg-surface-container-high', 'text-slate-600');
+    }
+  });
+
+  // Load content + title + verification for the new lang
+  const article = state._currentArticleFull || state.articles.find(a => a.id === state.currentArticleId);
+  if (article) {
+    document.getElementById('editor-title').textContent = getLangTitle(article, lang);
+    document.getElementById('editor-content').innerHTML = getLangContent(article, lang);
+    renderVerification(article, lang);
+    renderKeywords(article, lang);
+    renderMetaDescription(article, lang);
+  }
+}
+
+function setupAutosave(articleId) {
+  const contentEl = document.getElementById('editor-content');
+  const titleEl = document.getElementById('editor-title');
+
+  // Remove previous listeners to avoid accumulation
+  if (state._autosaveHandler) {
+    contentEl.removeEventListener('input', state._autosaveHandler);
+    titleEl.removeEventListener('input', state._autosaveHandler);
+  }
+
+  const handler = debounce(async () => {
+    const content = contentEl.innerHTML;
+    const theme = titleEl.textContent;
+    try {
+      // Build payload: API accepts translations.{lang_key}.content
+      const apiKey = LANG_API_KEY[state.currentLang];
+      const payload = { theme, translations: { [apiKey]: { title: theme, content } } };
+      await apiFetch(`/api/articles/${articleId}`, { method: 'PUT', body: JSON.stringify(payload) });
+      const now = new Date();
+      const saveInd = document.getElementById('save-indicator');
+      saveInd.textContent = `✅ Сохранено ${now.getHours().toString().padStart(2,'0')}:${now.getMinutes().toString().padStart(2,'0')}`;
+      saveInd.classList.remove('hidden');
+      // Update local state
+      const idx = state.articles.findIndex(a => a.id === articleId);
+      if (idx >= 0) {
+        if (!state.articles[idx].translations) state.articles[idx].translations = {};
+        if (!state.articles[idx].translations[apiKey]) state.articles[idx].translations[apiKey] = {};
+        state.articles[idx].translations[apiKey].content = content;
+        state.articles[idx].theme = theme;
+      }
+    } catch (e) { console.warn('Autosave error:', e); }
+  }, 3000);
+
+  state._autosaveHandler = handler;
+  contentEl.addEventListener('input', handler);
+  titleEl.addEventListener('input', handler);
+}
+
+function execCmd(cmd) {
+  document.getElementById('editor-content').focus();
+  document.execCommand(cmd, false, null);
+}
+
+function insertLink() {
+  const url = prompt('URL посилання:');
+  if (url) {
+    document.getElementById('editor-content').focus();
+    document.execCommand('createLink', false, url);
+  }
+}
+
+function autoFormat() {
+  const el = document.getElementById('editor-content');
+  let html = el.innerHTML;
+  // Strip extra whitespace between tags
+  html = html.replace(/>\s{2,}</g, '> <').replace(/\s{2,}/g, ' ').trim();
+  el.innerHTML = html;
+  showToast('Автоформат застосовано', 'info');
+}
+
+async function updateArticleStatus() {
+  if (!state.currentArticleId) return;
+  const status = document.getElementById('editor-status-select').value;
+  try {
+    await apiFetch(`/api/articles/${state.currentArticleId}`, { method: 'PUT', body: JSON.stringify({ status }) });
+    showToast('Статус обновлён', 'success');
+  } catch (err) {
+    showToast('Ошибка обновления статуса', 'error');
+  }
+}
+
+function confirmPublish() {
+  if (!state.currentArticleId) return;
+  const article = state.articles.find(a => a.id === state.currentArticleId);
+  document.getElementById('modal-publish-title').textContent = article ? (article.theme || 'Без названия') : '';
+  openModal('modal-publish');
+}
+
+async function publishArticle() {
+  if (!state.currentArticleId) return;
+  closeModal('modal-publish');
+  try {
+    const result = await apiFetch(`/api/articles/${state.currentArticleId}/publish`, { method: 'POST' });
+    const wpUrl = result && result.wordpress_url;
+    showToast(wpUrl ? `Опубликовано в WordPress (черновик)` : 'Статья опубликована!', 'success');
+    if (wpUrl) {
+      setTimeout(() => {
+        if (confirm(`Открыть черновик в WordPress?\n${wpUrl}`)) window.open(wpUrl, '_blank');
+      }, 500);
+    }
+    const idx = state.articles.findIndex(a => a.id === state.currentArticleId);
+    if (idx >= 0) state.articles[idx].status = 'published';
+    document.getElementById('editor-status-select').value = 'published';
+  } catch (err) {
+    showToast('Ошибка публикации: ' + err.message, 'error');
+  }
+}
+
+function confirmDeleteArticle() {
+  if (!state.currentArticleId) return;
+  openModal('modal-delete-article');
+}
+
+async function deleteArticle() {
+  if (!state.currentArticleId) return;
+  closeModal('modal-delete-article');
+  const id = state.currentArticleId;
+  try {
+    await apiFetch(`/api/articles/${id}`, { method: 'DELETE' });
+    showToast('Статья удалена', 'success');
+    state.currentArticleId = null;
+    state.articles = state.articles.filter(a => a.id !== id);
+    navigateTo('review');
+  } catch (err) {
+    showToast('Ошибка удаления: ' + err.message, 'error');
+  }
+}
+
+async function regenerateImage() {
+  if (!state.currentArticleId) return;
+  showToast('Генерация изображения...', 'info');
+  try {
+    const result = await apiFetch(`/api/articles/${state.currentArticleId}/generate-image`, { method: 'POST' });
+    if (result && result.image) updatePreviewImage(result.image);
+    showToast('Изображение обновлено!', 'success');
+  } catch (err) {
+    showToast('Ошибка генерации изображения: ' + err.message, 'error');
+  }
+}
+
+async function uploadImage(input) {
+  if (!state.currentArticleId || !input.files[0]) return;
+  const file = input.files[0];
+  const reader = new FileReader();
+  reader.onload = async (e) => {
+    const imageBase64 = e.target.result;
+    try {
+      await apiFetch(`/api/articles/${state.currentArticleId}/upload-image`, {
+        method: 'POST',
+        body: JSON.stringify({ imageBase64 })
+      });
+      updatePreviewImage(imageBase64);
+      showToast('Изображение загружено!', 'success');
+    } catch (err) {
+      showToast('Ошибка загрузки: ' + err.message, 'error');
+    }
+  };
+  reader.readAsDataURL(file);
+  input.value = '';
+}
+
+async function deleteImage() {
+  if (!state.currentArticleId) return;
+  try {
+    await apiFetch(`/api/articles/${state.currentArticleId}/delete-image`, { method: 'DELETE' });
+    document.getElementById('preview-image').classList.add('hidden');
+    showToast('Изображение удалено', 'info');
+  } catch (err) {
+    showToast('Ошибка удаления изображения: ' + err.message, 'error');
+  }
+}
+
+// Generation toast for editor
+function showGenToast(data) {
+  const toast = document.getElementById('gen-toast');
+  toast.classList.remove('hidden');
+  document.getElementById('gen-toast-title').textContent = data.progress_message || data.theme || 'Генерация...';
+  document.getElementById('gen-toast-bar').style.width = (data.progress_percent ?? data.progress ?? 0) + '%';
+
+  const pl = data.progress_langs || {};
+  document.getElementById('gen-toast-langs').innerHTML = LANGS.map(l => {
+    const done = pl[l];
+    return `<span class="${done ? 'text-[#0ea5a0]' : 'text-slate-500'}">${l.toUpperCase()} ${done ? '✓' : '⏳'}</span>`;
+  }).join(' ');
+}
+
+function hideGenToast() {
+  document.getElementById('gen-toast').classList.add('hidden');
+}
+
+// ===========================================================
+// 9. PUBLISHED FUNCTIONS
+// ===========================================================
+async function loadPublished(offset = 0) {
+  if (offset === 0) {
+    const grid = document.getElementById('published-grid');
+    grid.innerHTML = '<div class="col-span-3 py-16 text-center text-sm text-on-surface-variant">Загрузка...</div>';
+  }
+  try {
+    const articles = await apiFetch(`/api/articles?status=published&offset=${offset}&limit=12`);
+    const arr = Array.isArray(articles) ? articles : (articles.data || articles.articles || []);
+    state.publishedOffset = offset;
+    state.publishedTotal = articles.total || (arr.length + offset);
+
+    if (offset === 0) {
+      document.getElementById('published-grid').innerHTML = '';
+    }
+
+    document.getElementById('published-count-badge').textContent = state.publishedTotal;
+
+    if (!arr.length && offset === 0) {
+      document.getElementById('published-grid').innerHTML = '<div class="col-span-3 py-16 text-center text-sm text-on-surface-variant">Нет опубликованных статей</div>';
+      return;
+    }
+
+    const grid = document.getElementById('published-grid');
+    arr.forEach(a => {
+      const el = document.createElement('div');
+      el.innerHTML = buildPublishedCard(a);
+      grid.appendChild(el.firstElementChild);
+    });
+
+    const loadMoreBtn = document.getElementById('published-load-more');
+    loadMoreBtn.classList.toggle('hidden', arr.length < 12);
+  } catch (err) {
+    document.getElementById('published-grid').innerHTML = '<div class="col-span-3 py-8 text-center text-sm text-error">Ошибка загрузки</div>';
+    showToast('Ошибка: ' + err.message, 'error');
+  }
+}
+
+function loadMorePublished() {
+  loadPublished(state.publishedOffset + 12);
+}
+
+function buildPublishedCard(a) {
+  const langs = LANGS.filter(l => langHasContent(a, l));
+  const langsHtml = langs.map((l, i) =>
+    `<span class="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase ${i === 0 ? 'bg-[#0ea5a0] text-white' : 'bg-[#0ea5a0]/20 text-[#0ea5a0]'}">${l.toUpperCase()}</span>`
+  ).join('');
+
+  const imgHtml = a.article_image
+    ? `<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="${escHtml(a.article_image)}" alt="${escHtml(a.theme || '')}"/>`
+    : a.has_image
+      ? `<div class="w-full h-full flex items-center justify-center bg-surface-container"><span class="material-symbols-outlined text-4xl text-[#0ea5a0]">image</span></div>`
+      : `<div class="w-full h-full flex items-center justify-center bg-surface-container"><span class="material-symbols-outlined text-4xl text-outline-variant">image</span></div>`;
+
+  const wpBtn = a.wp_url
+    ? `<a href="${escHtml(a.wp_url)}" target="_blank" class="absolute top-4 right-4 bg-white/90 backdrop-blur p-2 rounded-full shadow-md text-[#21759b] hover:scale-110 transition-transform">
+        <span class="material-symbols-outlined text-[18px]">webhook</span>
+       </a>`
+    : '';
+
+  return `
+    <div class="group bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
+      <div class="relative aspect-video overflow-hidden">
+        ${imgHtml}
+        <div class="absolute top-4 left-4 flex gap-1">${langsHtml}</div>
+        ${wpBtn}
+      </div>
+      <div class="p-5 flex flex-col flex-1">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-2 h-2 rounded-full bg-[#0ea5a0]"></span>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-primary">Опубликовано</span>
+          <span class="text-outline-variant ml-auto text-[11px] font-medium">${a.created_at ? new Date(a.created_at).toLocaleDateString('uk-UA') : '—'}</span>
+        </div>
+        <h3 class="text-base font-bold text-on-surface leading-snug mb-3 group-hover:text-primary transition-colors line-clamp-2">${escHtml(a.theme || 'Без названия')}</h3>
+        <div class="mt-auto pt-4 flex items-center justify-between">
+          <div class="flex gap-2">
+            <button class="p-2 rounded-full bg-surface-container-low text-outline hover:text-primary transition-colors" title="Аналитика">
+              <span class="material-symbols-outlined text-[18px]">analytics</span>
+            </button>
+            <button onclick="navigateTo('editor', '${a.id}')" class="p-2 rounded-full bg-surface-container-low text-outline hover:text-primary transition-colors" title="Редактировать">
+              <span class="material-symbols-outlined text-[18px]">edit</span>
+            </button>
+          </div>
+          <button onclick="navigateTo('editor', '${a.id}')" class="text-sm font-bold text-primary flex items-center gap-1 hover:underline">
+            Подробнее<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ===========================================================
+// 10. SETTINGS FUNCTIONS
+// ===========================================================
+async function loadSettings() {
+  try {
+    const cfg = await apiFetch('/api/config');
+    // config table may not exist — treat error response as empty config
+    state.config = (cfg && !cfg.error) ? cfg : {};
+    populateSettingsForm(state.config);
+  } catch (err) {
+    // Silent — settings form stays empty, user can fill manually
+    state.config = {};
+  }
+  renderLangToggles();
+}
+
+function populateSettingsForm(cfg) {
+  if (cfg.supabase_url) document.getElementById('cfg-supabase-url').value = cfg.supabase_url;
+  if (cfg.supabase_key) document.getElementById('cfg-supabase-key').value = cfg.supabase_key;
+  if (cfg.anthropic_key) document.getElementById('cfg-anthropic-key').value = cfg.anthropic_key;
+  if (cfg.cw_key) document.getElementById('cfg-cw-key').value = cfg.cw_key;
+  if (cfg.wp_url) document.getElementById('cfg-wp-url').value = cfg.wp_url;
+  if (cfg.wp_password) document.getElementById('cfg-wp-pass').value = cfg.wp_password;
+  if (cfg.wp_webhook) document.getElementById('cfg-wp-webhook').value = cfg.wp_webhook;
+
+  const badge = document.getElementById('db-status-badge');
+  badge.innerHTML = `<span class="w-2 h-2 bg-emerald-500 rounded-full"></span><span class="text-xs font-bold text-emerald-700 uppercase tracking-widest">Подключено</span>`;
+  badge.className = 'flex items-center gap-2 px-4 py-2 bg-green-50 rounded-full';
+}
+
+function renderLangToggles() {
+  const langDefs = [
+    { code: 'ua', name: 'Украинский' },
+    { code: 'en', name: 'English' },
+    { code: 'es', name: 'Español' },
+    { code: 'pl', name: 'Polski' },
+    { code: 'ru', name: 'Русский' },
+    { code: 'tr', name: 'Türkçe' },
+  ];
+  const enabled = state.config.enabled_languages || ['ua', 'en', 'es', 'pl', 'ru', 'tr'];
+  document.getElementById('lang-toggles').innerHTML = langDefs.map(l => `
+    <div class="p-4 rounded-lg bg-surface-container-low flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="font-bold text-primary text-sm">${l.code.toUpperCase()}</span>
+        <span class="text-sm font-medium">${l.name}</span>
+      </div>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input ${enabled.includes(l.code) ? 'checked' : ''} data-lang="${l.code}" type="checkbox" class="sr-only peer lang-toggle"/>
+        <div class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#0ea5a0]"></div>
+      </label>
+    </div>
+  `).join('');
+}
+
+function switchSettingsTab(tab) {
+  // Update tab buttons
+  document.querySelectorAll('.settings-tab').forEach(btn => {
+    const isActive = btn.getAttribute('data-tab') === tab;
+    if (isActive) {
+      btn.classList.add('active');
+      btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+    } else {
+      btn.classList.remove('active');
+      btn.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+    }
+  });
+  // Update content
+  document.querySelectorAll('.settings-tab-content').forEach(c => c.classList.add('hidden'));
+  const activeContent = document.getElementById('settings-tab-' + tab);
+  if (activeContent) activeContent.classList.remove('hidden');
+  if (tab === 'users') loadUsers();
+}
+
+async function saveSettings() {
+  const cfg = {
+    supabase_url: document.getElementById('cfg-supabase-url').value,
+    supabase_key: document.getElementById('cfg-supabase-key').value,
+    anthropic_key: document.getElementById('cfg-anthropic-key').value,
+    cw_key: document.getElementById('cfg-cw-key').value,
+    wp_url: document.getElementById('cfg-wp-url').value,
+    wp_password: document.getElementById('cfg-wp-pass').value,
+    wp_webhook: document.getElementById('cfg-wp-webhook').value,
+    enabled_languages: [...document.querySelectorAll('.lang-toggle:checked')].map(el => el.getAttribute('data-lang')),
+  };
+  try {
+    await apiFetch('/api/config', { method: 'PUT', body: JSON.stringify(cfg) });
+    showToast('Настройки сохранены!', 'success');
+    state.config = cfg;
+  } catch (err) {
+    showToast('Ошибка сохранения: ' + err.message, 'error');
+  }
+}
+
+async function testConnection() {
+  showToast('Проверка соединения...', 'info');
+  try {
+    await apiFetch('/api/dashboard/stats');
+    const badge = document.getElementById('db-status-badge');
+    badge.innerHTML = `<span class="w-2 h-2 bg-emerald-500 rounded-full"></span><span class="text-xs font-bold text-emerald-700 uppercase tracking-widest">Подключено</span>`;
+    badge.className = 'flex items-center gap-2 px-4 py-2 bg-green-50 rounded-full';
+    showToast('Соединение успешно!', 'success');
+  } catch {
+    const badge = document.getElementById('db-status-badge');
+    badge.innerHTML = `<span class="w-2 h-2 bg-error rounded-full"></span><span class="text-xs font-bold text-error uppercase tracking-widest">Ошибка</span>`;
+    badge.className = 'flex items-center gap-2 px-4 py-2 bg-error-container rounded-full';
+    showToast('Соединение не удалось', 'error');
+  }
+}
+
+function togglePasswordVisibility(inputId) {
+  const el = document.getElementById(inputId);
+  if (!el) return;
+  el.type = el.type === 'password' ? 'text' : 'password';
+}
+
+// ===========================================================
+// 11. MODAL / TOAST HELPERS
+// ===========================================================
+function openModal(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.add('open');
+}
+
+function closeModal(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.remove('open');
+}
+
+// Close modal on backdrop click
+document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+  backdrop.addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
+});
+
+function showToast(message, type = 'info') {
+  const container = document.getElementById('toast-container');
+  const id = 'toast-' + Date.now();
+  const colors = {
+    success: 'bg-primary text-white',
+    error: 'bg-error text-white',
+    info: 'bg-[#2a303d] text-white',
+  };
+  const icons = { success: 'check_circle', error: 'error', info: 'info' };
+  const el = document.createElement('div');
+  el.id = id;
+  el.className = `pointer-events-auto ${colors[type] || colors.info} px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 max-w-sm toast-enter`;
+  el.innerHTML = `
+    <span class="material-symbols-outlined text-xl flex-shrink-0">${icons[type] || 'info'}</span>
+    <span class="text-sm font-medium flex-1">${escHtml(message)}</span>
+    <button onclick="removeToast('${id}')" class="text-white/70 hover:text-white transition-colors flex-shrink-0"><span class="material-symbols-outlined text-sm">close</span></button>
+  `;
+  container.appendChild(el);
+  setTimeout(() => removeToast(id), 5000);
+}
+
+function removeToast(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.add('toast-exit');
+  setTimeout(() => el.remove(), 300);
+}
+
+// ===========================================================
+// 12. UTILITY FUNCTIONS
+// ===========================================================
+function timeAgo(dateStr) {
+  if (!dateStr) return '—';
+  const now = new Date();
+  const then = new Date(dateStr);
+  const diff = Math.floor((now - then) / 1000);
+  if (diff < 60) return 'Щойно';
+  if (diff < 3600) return `${Math.floor(diff/60)} хв тому`;
+  if (diff < 86400) return `${Math.floor(diff/3600)} год тому`;
+  if (diff < 172800) return 'Вчора';
+  const days = Math.floor(diff/86400);
+  if (days < 30) return `${days} дн тому`;
+  return then.toLocaleDateString('uk-UA');
+}
+
+function formatDateTime(dateStr) {
+  if (!dateStr) return '—';
+  const d = new Date(dateStr);
+  const dd = String(d.getDate()).padStart(2, '0');
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  const yyyy = d.getFullYear();
+  const hh = String(d.getHours()).padStart(2, '0');
+  const mi = String(d.getMinutes()).padStart(2, '0');
+  return `${dd}.${mm}.${yyyy} ${hh}:${mi}`;
+}
+
+function stripHtml(html) {
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || '';
+}
+
+function escHtml(str) {
+  if (str == null) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+function debounce(fn, ms) {
+  let timer;
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), ms);
+  };
+}
+
+function formatBytes(bytes, decimals = 2) {
+  if (!bytes) return '0 Bytes';
+  const k = 1024;
+  const dm = decimals < 0 ? 0 : decimals;
+  const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+}
+
+// ===========================================================
+// 13. INIT
+// ===========================================================
+function init() {
+  // Navigate to dashboard on load
+  navigateTo('dashboard');
+  // Initialize SSE
+  initSSE();
+  // Set initial settings tab active style
+  document.querySelectorAll('.settings-tab[data-tab="database"]').forEach(btn => {
+    btn.style.background = '#0ea5a0';
+  });
+  // Apply role-based UI
+  applyRoleUI();
+}
+
+// Start the app
+document.addEventListener('DOMContentLoaded', init);
+
+// ===========================================================
+// 14. AUTH / ROLES / USER MANAGEMENT
+// ===========================================================
+
+function getTokenPayload() {
+  const token = localStorage.getItem('stati_token') || sessionStorage.getItem('stati_token') || '';
+  if (!token) return null;
+  try {
+    const dot = token.indexOf('.');
+    if (dot === -1) return null;
+    return JSON.parse(atob(token.slice(dot + 1)));
+  } catch { return null; }
+}
+
+function applyRoleUI() {
+  const payload = getTokenPayload();
+  if (!payload) return;
+
+  // Show user info in sidebar
+  const info = document.getElementById('sidebar-user-info');
+  if (info) {
+    const roleLabel = payload.role === 'admin' ? 'Администратор' : 'Автор';
+    info.textContent = `${payload.login} · ${roleLabel}`;
+  }
+
+  // Show users tab only for admin
+  if (payload.role === 'admin') {
+    const btn = document.getElementById('users-tab-btn');
+    if (btn) btn.classList.remove('hidden');
+  }
+
+  // Hide writer-forbidden elements
+  if (payload.role === 'writer') {
+    document.querySelectorAll('[data-admin-only]').forEach(el => el.classList.add('hidden'));
+  }
+}
+
+// ===========================================================
+// 15. DOCS & CHANGELOG
+// ===========================================================
+
+function showDocSection(name) {
+  document.querySelectorAll('.doc-section').forEach(s => s.classList.add('hidden'));
+  document.querySelectorAll('.doc-pill').forEach(b => {
+    const active = b.getAttribute('data-doc') === name;
+    b.classList.toggle('bg-[#0ea5a0]', active);
+    b.classList.toggle('text-white', active);
+    b.classList.toggle('bg-surface-container-low', !active);
+    b.classList.toggle('text-on-surface-variant', !active);
+  });
+  const sec = document.getElementById('doc-' + name);
+  if (sec) sec.classList.remove('hidden');
+}
+
+async function loadChangelog() {
+  const container = document.getElementById('changelog-list');
+  try {
+    const data = await apiFetch('/api/changelog');
+    if (!data || !data.length) {
+      container.innerHTML = '<div class="text-center py-16 text-on-surface-variant text-sm">История обновлений пуста. Начните делать коммиты!</div>';
+      return;
+    }
+    container.innerHTML = data.map((entry, i) => {
+      const hasBody = entry.body && entry.body.trim();
+      const bodyId = 'cl-body-' + i;
+      return `
+      <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/10 shadow-sm overflow-hidden">
+        <div class="flex items-center justify-between px-6 py-4 bg-surface-container ${hasBody ? 'cursor-pointer hover:bg-surface-container-high transition-colors' : ''}" ${hasBody ? `onclick="const el=document.getElementById('${bodyId}');el.classList.toggle('hidden');this.querySelector('.cl-arrow').textContent=el.classList.contains('hidden')?'expand_more':'expand_less';"` : ''}>
+          <div class="flex items-center gap-4">
+            <div class="w-9 h-9 rounded-full bg-[#0ea5a0]/10 flex items-center justify-center text-[#0ea5a0] flex-shrink-0">
+              <span class="material-symbols-outlined text-lg">commit</span>
+            </div>
+            <div>
+              <div class="font-semibold text-on-surface text-sm leading-snug">${escHtml(entry.message)}</div>
+              <div class="text-xs text-on-surface-variant mt-0.5">${escHtml(entry.date)} · <code class="font-mono">${escHtml(entry.hash)}</code></div>
+            </div>
+          </div>
+          ${hasBody ? `<span class="material-symbols-outlined text-on-surface-variant text-lg cl-arrow flex-shrink-0">expand_more</span>` : ''}
+        </div>
+        ${hasBody ? `<div id="${bodyId}" class="px-6 py-4 text-xs text-on-surface-variant border-t border-outline-variant/10 hidden font-mono whitespace-pre-wrap leading-relaxed">${escHtml(entry.body.trim())}</div>` : ''}
+      </div>
+      `;
+    }).join('');
+  } catch {
+    container.innerHTML = '<div class="text-center py-16 text-on-surface-variant text-sm">Не удалось загрузить историю обновлений.</div>';
+  }
+}
+
+function generatePassword() {
+  const chars = 'abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789!@#$%';
+  let pwd = '';
+  for (let i = 0; i < 12; i++) pwd += chars[Math.floor(Math.random() * chars.length)];
+  const input = document.getElementById('modal-user-password');
+  input.value = pwd;
+  input.type = 'text';
+  // Select all so user can copy
+  input.select();
+}
+
+function doLogout() {
+  localStorage.removeItem('stati_token');
+  sessionStorage.removeItem('stati_token');
+  window.location.href = '/login.html?logout=1';
+}
+
+// ── Settings tab: users ────────────────────────────────────
+
+async function loadUsers() {
+  try {
+    const users = await apiFetch('/auth/users');
+    renderUsersList(users);
+  } catch (err) {
+    document.getElementById('users-list').innerHTML =
+      '<div class="text-center py-8 text-red-500 text-sm">Ошибка загрузки пользователей</div>';
+  }
+}
+
+function renderUsersList(users) {
+  const container = document.getElementById('users-list');
+  const payload = getTokenPayload();
+  if (!users || !users.length) {
+    container.innerHTML = '<div class="text-center py-8 text-on-surface-variant text-sm">Нет пользователей</div>';
+    return;
+  }
+  container.innerHTML = users.map(u => `
+    <div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-lg">
+      <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-white text-sm ${u.role === 'admin' ? 'bg-[#006a66]' : 'bg-slate-500'}">
+        ${escHtml((u.name || u.login).charAt(0).toUpperCase())}
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="font-semibold text-on-surface text-sm">${escHtml(u.name || u.login)}</div>
+        <div class="text-xs text-on-surface-variant truncate">${escHtml(u.email || u.login)}</div>
+      </div>
+      <span class="px-3 py-1 rounded-full text-xs font-bold ${u.role === 'admin' ? 'bg-[#006a66]/10 text-[#006a66]' : 'bg-slate-100 text-slate-600'}">
+        ${u.role === 'admin' ? 'Admin' : 'Writer'}
+      </span>
+      <span class="px-2 py-1 rounded-full text-xs font-medium ${u.active !== false ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-red-600'}">
+        ${u.active !== false ? 'Активен' : 'Заблокирован'}
+      </span>
+      <div class="flex gap-2">
+        <button onclick="openEditUserModal('${escHtml(u.id)}')" class="p-2 text-on-surface-variant hover:text-primary transition-colors" title="Редактировать">
+          <span class="material-symbols-outlined text-lg">edit</span>
+        </button>
+        ${u.id !== payload?.id ? `<button onclick="deleteUser('${escHtml(u.id)}')" class="p-2 text-on-surface-variant hover:text-red-500 transition-colors" title="Удалить">
+          <span class="material-symbols-outlined text-lg">delete</span>
+        </button>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+function openAddUserModal() {
+  document.getElementById('modal-user-id').value = '';
+  document.getElementById('modal-user-title').textContent = 'Новый пользователь';
+  document.getElementById('modal-user-name').value = '';
+  document.getElementById('modal-user-email').value = '';
+  document.getElementById('modal-user-login').value = '';
+  document.getElementById('modal-user-role').value = 'writer';
+  document.getElementById('modal-user-login').disabled = false;
+  document.getElementById('modal-user-pwd-hint').textContent = '';
+  openModal('modal-user');
+  generatePassword();
+}
+
+async function openEditUserModal(id) {
+  try {
+    const users = await apiFetch('/auth/users');
+    const u = users.find(x => x.id === id);
+    if (!u) return;
+    document.getElementById('modal-user-id').value = u.id;
+    document.getElementById('modal-user-title').textContent = 'Редактировать пользователя';
+    document.getElementById('modal-user-name').value = u.name || '';
+    document.getElementById('modal-user-email').value = u.email || '';
+    document.getElementById('modal-user-login').value = u.login || '';
+    document.getElementById('modal-user-login').disabled = true;
+    document.getElementById('modal-user-password').value = '';
+    document.getElementById('modal-user-role').value = u.role;
+    document.getElementById('modal-user-pwd-hint').textContent = '(оставьте пустым, чтобы не менять)';
+    openModal('modal-user');
+  } catch (err) { showToast('Ошибка загрузки', 'error'); }
+}
+
+async function saveUserModal() {
+  const id = document.getElementById('modal-user-id').value;
+  const name = document.getElementById('modal-user-name').value.trim();
+  const email = document.getElementById('modal-user-email').value.trim();
+  const login = document.getElementById('modal-user-login').value.trim();
+  const password = document.getElementById('modal-user-password').value;
+  const role = document.getElementById('modal-user-role').value;
+
+  if (!login) { showToast('Введите логин', 'error'); return; }
+  if (!id && !password) { showToast('Введите пароль', 'error'); return; }
+
+  try {
+    if (id) {
+      const body = { name, email, role };
+      if (password) body.password = password;
+      await apiFetch(`/auth/users/${id}`, { method: 'PUT', body: JSON.stringify(body) });
+    } else {
+      await apiFetch('/auth/users', { method: 'POST', body: JSON.stringify({ login, email, name, password, role }) });
+    }
+    closeModal('modal-user');
+    showToast('Сохранено!', 'success');
+    loadUsers();
+  } catch (err) {
+    showToast(err.message || 'Ошибка сохранения', 'error');
+  }
+}
+
+async function deleteUser(id) {
+  if (!confirm('Удалить пользователя?')) return;
+  try {
+    await apiFetch(`/auth/users/${id}`, { method: 'DELETE' });
+    showToast('Пользователь удалён', 'info');
+    loadUsers();
+  } catch (err) {
+    showToast(err.message || 'Ошибка удаления', 'error');
+  }
+}
+</script>
+</body>
+</html>
+

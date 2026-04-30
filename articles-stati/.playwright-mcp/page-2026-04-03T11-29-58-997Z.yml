@@ -1,0 +1,263 @@
+- generic [ref=e2]:
+  - navigation [ref=e3]:
+    - button "📊 Dashboard" [ref=e4] [cursor=pointer]:
+      - generic [ref=e5]: 📊
+      - text: Dashboard
+    - button "💡 Идеи Статей" [ref=e6] [cursor=pointer]:
+      - generic [ref=e7]: 💡
+      - text: Идеи Статей
+    - button "📝 Проверка Статей" [active] [ref=e8] [cursor=pointer]:
+      - generic [ref=e9]: 📝
+      - text: Проверка Статей
+    - button "🚀 Опубликованные" [ref=e10] [cursor=pointer]:
+      - generic [ref=e11]: 🚀
+      - text: Опубликованные
+  - main [ref=e12]:
+    - generic [ref=e517]:
+      - generic [ref=e518]:
+        - heading "Проверка Статей" [level=2] [ref=e519]
+        - generic [ref=e521]:
+          - text: "На проверке:"
+          - strong [ref=e522]: "16"
+      - generic [ref=e523]:
+        - generic [ref=e524] [cursor=pointer]:
+          - generic [ref=e525]: 📄
+          - generic [ref=e526]:
+            - 'heading "Making Outgoing Calls Over the Internet: A Complete Step-by-Step Guide" [level=3] [ref=e527]'
+            - text: "Создано: 11.03.2026, 14:58:47"
+          - generic [ref=e528]: Не проверено
+          - generic [ref=e530]:
+            - generic [ref=e531]: ✓ Стаття успішно загружена
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"
+        - generic [ref=e532] [cursor=pointer]:
+          - generic [ref=e533]: 📄
+          - generic [ref=e534]:
+            - 'heading "Активне слухання в контакт-центрі: техніки, скрипти та голосове меню для ефективного спілкування з клієнтами" [level=3] [ref=e535]'
+            - text: "Создано: 11.03.2026, 10:51:05"
+          - generic [ref=e536]: Проверяется
+          - generic [ref=e538]:
+            - generic [ref=e539]: ✓ Стаття успішно загружена
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"
+        - generic [ref=e540] [cursor=pointer]:
+          - generic [ref=e541]: 📄
+          - generic [ref=e542]:
+            - 'heading "Омніканальні платформи: як обрати краще рішення для бізнесу | Oki-Toki" [level=3] [ref=e543]'
+            - text: "Создано: 11.03.2026, 08:47:44"
+          - generic [ref=e544]: Не проверено
+          - generic [ref=e546]:
+            - generic [ref=e547]: ✓ Стаття успішно загружена
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"
+        - generic [ref=e548] [cursor=pointer]:
+          - generic [ref=e549]: 📄
+          - generic [ref=e550]:
+            - 'heading "Живий чат чи голосовий робот: повний гід з вибору найкращого рішення для підтримки клієнтів у 2026 році" [level=3] [ref=e551]'
+            - text: "Создано: 10.03.2026, 20:13:08"
+          - generic [ref=e552]: Не проверено
+          - generic [ref=e554]:
+            - generic [ref=e555]: ✓ Стаття успішно загружена
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"
+        - generic [ref=e556] [cursor=pointer]:
+          - generic [ref=e557]: 📄
+          - generic [ref=e558]:
+            - 'heading "Як подзвонити з інтернету на мобільний: повний гід по інтернет-телефонії та VoIP-сервісам" [level=3] [ref=e559]'
+            - text: "Создано: 10.03.2026, 08:23:51"
+          - generic [ref=e560]: Не проверено
+          - generic [ref=e562]:
+            - generic [ref=e563]: ✓ Стаття успішно загружена
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"
+        - generic [ref=e564] [cursor=pointer]:
+          - generic [ref=e565]: 📄
+          - generic [ref=e566]:
+            - 'heading "Омніканальні платформи: новий підхід до роботи кол центру" [level=3] [ref=e567]'
+            - text: "Создано: 09.03.2026, 19:50:07"
+          - generic [ref=e568]: Не проверено
+          - button "✕" [ref=e569]
+          - generic [ref=e571]:
+            - generic [ref=e572]: 🔍 Перевірка статті...
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"
+        - generic [ref=e573] [cursor=pointer]:
+          - generic [ref=e574]: 📄
+          - generic [ref=e575]:
+            - 'heading "Холодні дзвінки у телефонних продажах: скрипти та стратегії" [level=3] [ref=e576]'
+            - text: "Создано: 09.03.2026, 19:22:29"
+          - generic [ref=e577]: Не проверено
+          - button "✕" [ref=e578]
+          - generic [ref=e580]:
+            - generic [ref=e581]: 🔍 Перевірка статті...
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"
+        - generic [ref=e582] [cursor=pointer]:
+          - generic [ref=e583]: 📄
+          - generic [ref=e584]:
+            - 'heading "Переваги онлайн дзвінків для бізнесу: як оки токі може допомогти" [level=3] [ref=e585]'
+            - text: "Создано: 09.03.2026, 19:20:23"
+          - generic [ref=e586]: Не проверено
+          - button "✕" [ref=e587]
+          - generic [ref=e589]:
+            - generic [ref=e590]: 📝 Стаття генерується...
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"
+        - generic [ref=e591] [cursor=pointer]:
+          - generic [ref=e592]: 📄
+          - generic [ref=e593]:
+            - 'heading "Як подзвонити через інтернет на телефон: повний гід по онлайн-дзвінкам" [level=3] [ref=e594]'
+            - text: "Создано: 13.02.2026, 12:25:27"
+          - generic [ref=e595]: Не проверено
+          - generic [ref=e597]:
+            - generic [ref=e598]: ✓ Стаття успішно загружена
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"
+        - generic [ref=e599] [cursor=pointer]:
+          - generic [ref=e600]: 📄
+          - generic [ref=e601]:
+            - 'heading "Як побудувати ефективний кол центр: повний гід з побудови відділу продажів та вибору омніканальної платформи" [level=3] [ref=e602]'
+            - text: "Создано: 11.02.2026, 11:26:31"
+          - generic [ref=e603]: Не проверено
+          - generic [ref=e605]:
+            - generic [ref=e606]: ✓ Готово до перевірки
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"
+        - generic [ref=e607] [cursor=pointer]:
+          - generic [ref=e608]: 📄
+          - generic [ref=e609]:
+            - 'heading "Онлайн дзвінки: як подзвонити на телефон через інтернет - повний гід 2026" [level=3] [ref=e610]'
+            - text: "Создано: 10.02.2026, 13:06:01"
+          - generic [ref=e611]: Не проверено
+          - generic [ref=e613]:
+            - generic [ref=e614]: ✓ Готово до перевірки
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"
+        - generic [ref=e615] [cursor=pointer]:
+          - generic [ref=e616]: 📄
+          - generic [ref=e617]:
+            - 'heading "Омніканальні платформи: як вибрати ідеальний кол центр для бізнесу | Oki-Toki" [level=3] [ref=e618]'
+            - text: "Создано: 10.02.2026, 11:38:37"
+          - generic [ref=e619]: Не проверено
+          - generic [ref=e621]:
+            - generic [ref=e622]: ✓ Готово до перевірки
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"
+        - generic [ref=e623] [cursor=pointer]:
+          - generic [ref=e624]: 📄
+          - generic [ref=e625]:
+            - heading "Як Oki-Toki допомагає покращити холодні продажі через онлайн дзвінки" [level=3] [ref=e626]
+            - text: "Создано: 09.02.2026, 12:26:06"
+          - generic [ref=e627]: Не проверено
+          - generic [ref=e629]:
+            - generic [ref=e630]: ✓ Стаття успішно загружена
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"
+        - generic [ref=e631] [cursor=pointer]:
+          - generic [ref=e632]: 📄
+          - generic [ref=e633]:
+            - 'heading "Як ефективно мотивувати операторів call-центру: повний посібник 2024" [level=3] [ref=e634]'
+            - text: "Создано: 02.12.2025, 11:40:48"
+          - generic [ref=e635]: Не проверено
+          - generic [ref=e637]:
+            - generic [ref=e638]: ✓ Статья успешно загружена
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"
+        - generic [ref=e639] [cursor=pointer]:
+          - generic [ref=e640]: 📄
+          - generic [ref=e641]:
+            - 'heading "Інтеграція CRM з телефонією: Як налаштувати для максимальної ефективності" [level=3] [ref=e642]'
+            - text: "Создано: 02.12.2025, 11:08:18"
+          - generic [ref=e643]: Не проверено
+          - generic [ref=e645]:
+            - generic [ref=e646]: ✓ Статья успешно загружена
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"
+        - generic [ref=e647] [cursor=pointer]:
+          - generic [ref=e648]: 📄
+          - generic [ref=e649]:
+            - 'heading "Налаштування черги дзвінків Oki-Toki: покроковий гайд для бізнесу" [level=3] [ref=e650]'
+            - text: "Создано: 02.12.2025, 09:57:36"
+          - generic [ref=e651]: Не проверено
+          - generic [ref=e653]:
+            - generic [ref=e654]: ✓ Статья успешно загружена
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"
+        - generic [ref=e655] [cursor=pointer]:
+          - generic [ref=e656]: 📄
+          - generic [ref=e657]:
+            - 'heading "Автоматичний розподіл дзвінків: підвищення ефективності кол-центру" [level=3] [ref=e658]'
+            - text: "Создано: 28.11.2025, 08:59:49"
+          - generic [ref=e659]: Не проверено
+          - generic [ref=e661]:
+            - generic [ref=e662]: ✓ Статья успешно загружена
+            - generic:
+              - generic "Идея одобрена"
+              - generic "Статья генерируется"
+              - generic "Статья проверяется"
+              - generic "Статья успешно загружена"
+              - generic "Опубликовано"

@@ -1,0 +1,3 @@
+[     101ms] [ERROR] ❌ SSE connection error: Event @ http://157.180.42.152:3000/script.js?v=301:3455
+[     102ms] [ERROR] ❌ SSE connection error: Event @ http://157.180.42.152:3000/script.js?v=301:3455
+[     216ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://157.180.42.152:3000/autosave.js?v=6:0

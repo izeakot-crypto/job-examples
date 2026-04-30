@@ -1,0 +1,325 @@
+Downloading model definition files...
+headers-order.json            OK!
+browser-helper-file.json      OK!
+header-network.zip            OK!
+input-network.zip             OK!
+fingerprint-network.zip       OK!
+Downloading model definition files...
+headers-order.json            OK!
+input-network.zip             OK!
+browser-helper-file.json      OK!
+header-network.zip            OK!
+2026-01-27 15:00:13,532 - INFO - ================================================================================
+2026-01-27 15:00:13,532 - INFO - Лог файл создан: results_2026-01-27_15-00-13\parser_log_2026-01-27_15-00-13.txt
+2026-01-27 15:00:13,532 - INFO - ================================================================================
+2026-01-27 15:00:13,533 - INFO - 
+================================================================================
+2026-01-27 15:00:13,533 - INFO - Indeed Parser v5.0 - WITH SMART PROXY ROTATION
+2026-01-27 15:00:13,533 - INFO - Results: results_2026-01-27_15-00-13
+2026-01-27 15:00:13,533 - INFO - ================================================================================
+
+2026-01-27 15:00:13,533 - INFO - Parser v5.0 started with smart proxy rotation
+2026-01-27 15:00:13,537 - DEBUG - Starting new HTTPS connection (1): n8n.oki-toki.net:443
+2026-01-27 15:00:14,327 - DEBUG - https://n8n.oki-toki.net:443 "POST /webhook/c87a2179-5d8b-418e-a68d-271b3eacbcd1 HTTP/1.1" 200 34
+2026-01-27 15:00:14,328 - INFO - ✅ Данные успешно отправлены на webhook
+2026-01-27 15:00:14,329 - INFO - 
+================================================================================
+2026-01-27 15:00:14,330 - INFO - PAGE 1/1
+2026-01-27 15:00:14,330 - INFO - ================================================================================
+
+2026-01-27 15:00:14,330 - DEBUG - Using proactor: IocpProactor
+2026-01-27 15:00:26,971 - INFO - [STEALTH] Enhanced fingerprint injections enabled: hardwareConcurrency=6, timezone=Madrid, WebGL=NVIDIA, Chrome APIs, Battery API
+2026-01-27 15:00:26,971 - INFO - [WEBRTC] WebRTC leak protection enabled - IP address will not leak through WebRTC
+2026-01-27 15:00:26,971 - INFO -   [Прогрев] google.es...
+2026-01-27 15:00:37,014 - INFO -   [Прогрев] wikipedia.org...
+2026-01-27 15:00:47,391 - INFO -   [Прогрев] Готово!
+
+2026-01-27 15:00:47,391 - INFO - Browser warmup completed
+2026-01-27 15:00:47,392 - INFO - 
+🔍 Starting detailed network logging...
+2026-01-27 15:00:55,923 - INFO - 
+2026-01-27 15:00:55,923 - INFO - ╔══════════════════════════════════════════════════════════════════════════════╗
+2026-01-27 15:00:55,923 - INFO - ║                    NETWORK STATE DETAILED LOG                                ║
+2026-01-27 15:00:55,923 - INFO - ║ Session ID: 20260127_150047                                                  ║
+2026-01-27 15:00:55,923 - INFO - ╚══════════════════════════════════════════════════════════════════════════════╝
+2026-01-27 15:00:55,923 - INFO - 
+2026-01-27 15:00:55,923 - INFO - ================================================================================
+2026-01-27 15:00:55,923 - INFO - 🌍 IP INFORMATION
+2026-01-27 15:00:55,924 - INFO - ================================================================================
+2026-01-27 15:00:55,924 - INFO - Proxy Configured: ❌ NO (Direct connection)
+2026-01-27 15:00:55,925 - DEBUG - Starting new HTTPS connection (1): api.ipify.org:443
+2026-01-27 15:00:56,690 - DEBUG - https://api.ipify.org:443 "GET /?format=json HTTP/1.1" 200 None
+2026-01-27 15:00:56,691 - INFO - External IP (ipify.org): 176.97.63.142
+2026-01-27 15:00:56,692 - DEBUG - Starting new HTTPS connection (1): ipinfo.io:443
+2026-01-27 15:00:57,481 - DEBUG - https://ipinfo.io:443 "GET /176.97.63.142/json HTTP/1.1" 200 None
+2026-01-27 15:00:57,483 - INFO - IP: 176.97.63.142
+2026-01-27 15:00:57,483 - INFO - City: Odesa
+2026-01-27 15:00:57,483 - INFO - Region: Odessa
+2026-01-27 15:00:57,484 - INFO - Country: UA
+2026-01-27 15:00:57,484 - INFO - Location: 46.4857,30.7438
+2026-01-27 15:00:57,484 - INFO - Organization: AS197738 PP "Zastava Plus"
+2026-01-27 15:00:57,484 - INFO - Postal: 65000
+2026-01-27 15:00:57,484 - INFO - Timezone: Europe/Kyiv
+2026-01-27 15:00:57,484 - INFO - ❓ IP Type: UNKNOWN
+2026-01-27 15:00:57,484 - INFO - ================================================================================
+2026-01-27 15:00:57,525 - INFO - ================================================================================
+2026-01-27 15:00:57,525 - INFO - 🌐 WEBRTC STATUS
+2026-01-27 15:00:57,525 - INFO - ================================================================================
+2026-01-27 15:00:57,525 - INFO - RTCPeerConnection API: ✅ Available
+2026-01-27 15:00:57,525 - INFO - WebRTC Block Active: ❌ NO
+2026-01-27 15:00:57,525 - INFO - ✅ Local IP: Not leaked
+2026-01-27 15:00:57,525 - INFO - ✅ Public IP: Not leaked
+2026-01-27 15:00:57,526 - INFO - ================================================================================
+2026-01-27 15:00:57,942 - INFO - ================================================================================
+2026-01-27 15:00:57,942 - INFO - 🔍 BROWSER FINGERPRINT
+2026-01-27 15:00:57,942 - INFO - ================================================================================
+2026-01-27 15:00:57,942 - INFO - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0
+2026-01-27 15:00:57,942 - INFO - Platform: Win32
+2026-01-27 15:00:57,942 - INFO - Hardware Concurrency: 16 CPU cores
+2026-01-27 15:00:57,942 - INFO - Device Memory: undefined GB
+2026-01-27 15:00:57,943 - INFO - Language: es-ES
+2026-01-27 15:00:57,943 - INFO - Languages: ['es-ES', 'es']
+2026-01-27 15:00:57,943 - INFO - Screen: 1920x1080 (24bit)
+2026-01-27 15:00:57,943 - INFO - Timezone: Europe/Kyiv (offset: -120)
+2026-01-27 15:00:57,943 - INFO - WebGL Vendor: Google Inc. (Intel)
+2026-01-27 15:00:57,943 - INFO - WebGL Renderer: ANGLE (Intel, Intel(R) HD Graphics 400 Direct3D11 vs_5_0 ps_5_0), or similar
+2026-01-27 15:00:57,943 - INFO - Webdriver: False
+2026-01-27 15:00:57,943 - INFO - Plugins: 5 installed
+2026-01-27 15:00:57,943 - INFO - Cookie Enabled: True
+2026-01-27 15:00:57,943 - INFO - Do Not Track: 1
+2026-01-27 15:00:57,943 - INFO - ================================================================================
+2026-01-27 15:00:57,950 - INFO - ================================================================================
+2026-01-27 15:00:57,950 - INFO - 📤 HTTP HEADERS (Sent by Browser)
+2026-01-27 15:00:57,950 - INFO - ================================================================================
+2026-01-27 15:00:57,950 - INFO - Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+2026-01-27 15:00:57,950 - INFO - Accept-Language: es-ES,en-US;q=0.9,en;q=0.8
+2026-01-27 15:00:57,951 - INFO - Accept-Encoding: gzip, deflate, br
+2026-01-27 15:00:57,951 - INFO - DNT: 1
+2026-01-27 15:00:57,951 - INFO - Connection: keep-alive
+2026-01-27 15:00:57,951 - INFO - Upgrade-Insecure-Requests: 1
+2026-01-27 15:00:57,951 - INFO - Sec-Fetch-Dest: document
+2026-01-27 15:00:57,951 - INFO - Sec-Fetch-Mode: navigate
+2026-01-27 15:00:57,951 - INFO - Sec-Fetch-Site: none
+2026-01-27 15:00:57,951 - INFO - Sec-Fetch-User: ?1
+2026-01-27 15:00:57,951 - INFO - Cache-Control: max-age=0
+2026-01-27 15:00:57,952 - INFO - ================================================================================
+2026-01-27 15:00:57,959 - INFO - ================================================================================
+2026-01-27 15:00:57,959 - INFO - 🔐 TLS/SSL INFORMATION
+2026-01-27 15:00:57,960 - INFO - ================================================================================
+2026-01-27 15:00:57,960 - INFO - Protocol: https:
+2026-01-27 15:00:57,960 - INFO - Secure Context: True
+2026-01-27 15:00:57,960 - INFO - Web Crypto API: ✅ Available
+2026-01-27 15:00:57,960 - INFO - SubtleCrypto: ✅ Available
+2026-01-27 15:00:57,960 - INFO - Browser Version: Chrome/unknown
+2026-01-27 15:00:57,960 - INFO - Note: Full JA3 fingerprint is generated at TLS handshake level
+2026-01-27 15:00:57,960 - INFO -       Playwright/Camoufox uses genuine Chrome TLS stack
+2026-01-27 15:00:57,960 - INFO - ================================================================================
+2026-01-27 15:00:57,960 - INFO - 
+2026-01-27 15:00:57,960 - INFO - ╔══════════════════════════════════════════════════════════════════════════════╗
+2026-01-27 15:00:57,960 - INFO - ║                         END OF NETWORK LOG                                   ║
+2026-01-27 15:00:57,960 - INFO - ╚══════════════════════════════════════════════════════════════════════════════╝
+2026-01-27 15:00:57,960 - INFO - 
+2026-01-27 15:00:57,991 - INFO - ✅ Detailed network logging completed
+
+2026-01-27 15:01:01,460 - INFO - Loading: https://ar.indeed.com/jobs?q=Call+Center&l=
+2026-01-27 15:01:01,460 - INFO - Loading search page 1: https://ar.indeed.com/jobs?q=Call+Center&l=
+2026-01-27 15:01:06,059 - INFO - [DEBUG] Page loaded, current URL: https://ar.indeed.com/jobs?q=Call+Center&l=
+2026-01-27 15:01:06,406 - INFO - [DEBUG] Page title: Encuentra nuevas ofertas de Call center. ¡Postúlate Ahora! - Indeed
+2026-01-27 15:01:06,518 - INFO - [DEBUG] Found 16 job title elements on page
+2026-01-27 15:01:06,605 - INFO - [DEBUG] Saved HTML to results_2026-01-27_15-00-13\debug_page1_1769518866.html
+2026-01-27 15:01:06,815 - INFO - [DEBUG] Saved screenshot to results_2026-01-27_15-00-13\debug_page1_1769518866.png
+2026-01-27 15:01:07,085 - INFO - [WAITING] Ожидание появления вакансий (таймаут 60с)...
+2026-01-27 15:01:07,458 - INFO - 
+Found 16 vacancies
+
+2026-01-27 15:01:07,458 - INFO - Page 1: found 16 vacancies
+2026-01-27 15:01:07,458 - INFO - 
+[1/16] ------------------------------------------------------------
+2026-01-27 15:01:07,458 - INFO -   Вакансия: Call Center Representative...
+2026-01-27 15:01:07,458 - INFO -   URL: https://es.indeed.com/rc/clk?jk=6be9a92babaa1156&bb=inhM-vmI_671OCp07mqHP0pqySU3...
+2026-01-27 15:01:07,458 - INFO - Processing vacancy 1/16: Call Center Representative
+2026-01-27 15:01:13,037 - INFO -   [Turnstile] Попытка обхода (vacancy)...
+2026-01-27 15:01:13,037 - INFO - Turnstile bypass: vacancy
+2026-01-27 15:01:14,038 - INFO -   [Turnstile] Найден iframe после 1с
+2026-01-27 15:01:14,050 - INFO -   [Turnstile] Bbox: x=610, y=207, w=300, h=65
+2026-01-27 15:01:14,050 - INFO -   [Turnstile] Целевая точка: (643, 240)
+2026-01-27 15:01:14,051 - INFO - Turnstile click: x=643.2, y=240.4, context=vacancy
+2026-01-27 15:01:14,051 - INFO -   [Turnstile] Движения мыши...
+2026-01-27 15:01:17,893 - INFO -   [Turnstile] Клик!
+2026-01-27 15:01:18,769 - INFO -   [Turnstile] Ожидание решения...
+2026-01-27 15:01:21,809 - INFO -   [Turnstile] ✓ Решен за 1с!
+2026-01-27 15:01:21,809 - INFO - Turnstile solved: vacancy, time=1s
+2026-01-27 15:01:21,810 - INFO -   [Turnstile] Ожидание полной загрузки страницы...
+2026-01-27 15:01:41,814 - INFO -   [Turnstile] Финальный URL: https://es.indeed.com/rc/clk?jk=6be9a92babaa1156&fccid=3ebce027dd462a86&vjs=3&__...
+2026-01-27 15:01:41,814 - INFO - Final URL after Turnstile: https://es.indeed.com/rc/clk?jk=6be9a92babaa1156&fccid=3ebce027dd462a86&vjs=3&__cf_chl_tk=kbE.2ZY6yD72SE5lgtag3tenWRIHXjSLqsn3YGqTgA0-1769518868-1.0.1.1-NM1XV5bT4M26F489MnU3Vk28EDqOJ4_RiAeKDOqtA94
+2026-01-27 15:01:41,854 - INFO -   Компания: Unknown
+2026-01-27 15:01:41,854 - INFO - Company: Unknown
+2026-01-27 15:01:41,869 - INFO -   [!] Ссылка на компанию Indeed не найдена
+2026-01-27 15:01:41,869 - INFO - Parsed Unknown: website=False, emails=0, phones=0
+2026-01-27 15:01:43,870 - INFO - 
+[2/16] ------------------------------------------------------------
+2026-01-27 15:01:43,870 - INFO -   Вакансия: Asesor/a Atención al Público - Part Time...
+2026-01-27 15:01:43,870 - INFO -   URL: https://es.indeed.com/rc/clk?jk=58732564877a393d&bb=inhM-vmI_671OCp07mqHP0PeprO1...
+2026-01-27 15:01:43,870 - INFO - Processing vacancy 2/16: Asesor/a Atención al Público - Part Time
+2026-01-27 15:01:46,128 - INFO -   Компания: Unknown
+2026-01-27 15:01:46,129 - INFO - Company: Unknown
+2026-01-27 15:01:46,129 - INFO -   [SKIP] Компания уже обработана!
+2026-01-27 15:01:46,129 - INFO - Skipping duplicate company: Unknown
+2026-01-27 15:01:46,129 - INFO - 
+[3/16] ------------------------------------------------------------
+2026-01-27 15:01:46,129 - INFO -   Вакансия: Asesor/a Atención al Público - Part Time...
+2026-01-27 15:01:46,129 - INFO -   URL: https://es.indeed.com/viewjob?jk=456789abcdef0123...
+2026-01-27 15:01:46,129 - INFO - Processing vacancy 3/16: Asesor/a Atención al Público - Part Time
+2026-01-27 15:01:49,238 - INFO -   Компания: Unknown
+2026-01-27 15:01:49,238 - INFO - Company: Unknown
+2026-01-27 15:01:49,238 - INFO -   [SKIP] Компания уже обработана!
+2026-01-27 15:01:49,238 - INFO - Skipping duplicate company: Unknown
+2026-01-27 15:01:49,238 - INFO - 
+[4/16] ------------------------------------------------------------
+2026-01-27 15:01:49,238 - INFO -   Вакансия: operador/a de call center de atención al cliente...
+2026-01-27 15:01:49,238 - INFO -   URL: https://es.indeed.com/rc/clk?jk=26ac89e6ae0ce0af&bb=inhM-vmI_671OCp07mqHPzXuH29B...
+2026-01-27 15:01:49,238 - INFO - Processing vacancy 4/16: operador/a de call center de atención al cliente
+2026-01-27 15:01:51,480 - INFO -   Компания: Unknown
+2026-01-27 15:01:51,480 - INFO - Company: Unknown
+2026-01-27 15:01:51,480 - INFO -   [SKIP] Компания уже обработана!
+2026-01-27 15:01:51,481 - INFO - Skipping duplicate company: Unknown
+2026-01-27 15:01:51,481 - INFO - 
+[5/16] ------------------------------------------------------------
+2026-01-27 15:01:51,481 - INFO -   Вакансия: Atención al cliente...
+2026-01-27 15:01:51,481 - INFO -   URL: https://es.indeed.com/rc/clk?jk=3837df0251b1c0e3&bb=inhM-vmI_671OCp07mqHP-LbSE9B...
+2026-01-27 15:01:51,481 - INFO - Processing vacancy 5/16: Atención al cliente
+2026-01-27 15:01:53,719 - INFO -   Компания: Unknown
+2026-01-27 15:01:53,719 - INFO - Company: Unknown
+2026-01-27 15:01:53,719 - INFO -   [SKIP] Компания уже обработана!
+2026-01-27 15:01:53,719 - INFO - Skipping duplicate company: Unknown
+2026-01-27 15:01:53,719 - INFO - 
+[6/16] ------------------------------------------------------------
+2026-01-27 15:01:53,719 - INFO -   Вакансия: vendedor/a telefónico (telemarketing)...
+2026-01-27 15:01:53,719 - INFO -   URL: https://es.indeed.com/rc/clk?jk=3d082334f90fe2e2&bb=inhM-vmI_671OCp07mqHPx-PNY4D...
+2026-01-27 15:01:53,719 - INFO - Processing vacancy 6/16: vendedor/a telefónico (telemarketing)
+2026-01-27 15:01:55,988 - INFO -   Компания: Unknown
+2026-01-27 15:01:55,988 - INFO - Company: Unknown
+2026-01-27 15:01:55,988 - INFO -   [SKIP] Компания уже обработана!
+2026-01-27 15:01:55,988 - INFO - Skipping duplicate company: Unknown
+2026-01-27 15:01:55,989 - INFO - 
+[7/16] ------------------------------------------------------------
+2026-01-27 15:01:55,989 - INFO -   Вакансия: Asesor Comercial Call Center Freelance...
+2026-01-27 15:01:55,989 - INFO -   URL: https://es.indeed.com/rc/clk?jk=0679142f1379a2dc&bb=inhM-vmI_671OCp07mqHPxcPdYaX...
+2026-01-27 15:01:55,989 - INFO - Processing vacancy 7/16: Asesor Comercial Call Center Freelance
+2026-01-27 15:01:58,230 - INFO -   Компания: Unknown
+2026-01-27 15:01:58,231 - INFO - Company: Unknown
+2026-01-27 15:01:58,231 - INFO -   [SKIP] Компания уже обработана!
+2026-01-27 15:01:58,231 - INFO - Skipping duplicate company: Unknown
+2026-01-27 15:01:58,231 - INFO - 
+[8/16] ------------------------------------------------------------
+2026-01-27 15:01:58,231 - INFO -   Вакансия: call center...
+2026-01-27 15:01:58,231 - INFO -   URL: https://es.indeed.com/rc/clk?jk=f8f911439c0f56c4&bb=inhM-vmI_671OCp07mqHP_tBhfhX...
+2026-01-27 15:01:58,231 - INFO - Processing vacancy 8/16: call center
+2026-01-27 15:02:00,467 - INFO -   Компания: Unknown
+2026-01-27 15:02:00,467 - INFO - Company: Unknown
+2026-01-27 15:02:00,467 - INFO -   [SKIP] Компания уже обработана!
+2026-01-27 15:02:00,467 - INFO - Skipping duplicate company: Unknown
+2026-01-27 15:02:00,467 - INFO - 
+[9/16] ------------------------------------------------------------
+2026-01-27 15:02:00,467 - INFO -   Вакансия: Customer Service Representative...
+2026-01-27 15:02:00,467 - INFO -   URL: https://es.indeed.com/rc/clk?jk=f4db46f5ee23fb38&bb=inhM-vmI_671OCp07mqHPwXyd-sP...
+2026-01-27 15:02:00,467 - INFO - Processing vacancy 9/16: Customer Service Representative
+2026-01-27 15:02:02,714 - INFO -   Компания: Unknown
+2026-01-27 15:02:02,714 - INFO - Company: Unknown
+2026-01-27 15:02:02,714 - INFO -   [SKIP] Компания уже обработана!
+2026-01-27 15:02:02,714 - INFO - Skipping duplicate company: Unknown
+2026-01-27 15:02:02,714 - INFO - 
+[10/16] ------------------------------------------------------------
+2026-01-27 15:02:02,714 - INFO -   Вакансия: Call Center Part Time...
+2026-01-27 15:02:02,714 - INFO -   URL: https://es.indeed.com/rc/clk?jk=de52621930b04277&bb=inhM-vmI_671OCp07mqHP2PUAptm...
+2026-01-27 15:02:02,714 - INFO - Processing vacancy 10/16: Call Center Part Time
+2026-01-27 15:02:04,960 - INFO -   Компания: Unknown
+2026-01-27 15:02:04,960 - INFO - Company: Unknown
+2026-01-27 15:02:04,960 - INFO -   [SKIP] Компания уже обработана!
+2026-01-27 15:02:04,960 - INFO - Skipping duplicate company: Unknown
+2026-01-27 15:02:04,960 - INFO - 
+[11/16] ------------------------------------------------------------
+2026-01-27 15:02:04,960 - INFO -   Вакансия: Receptionist...
+2026-01-27 15:02:04,960 - INFO -   URL: https://es.indeed.com/rc/clk?jk=47f41d005caf8617&bb=inhM-vmI_671OCp07mqHP-LbSE9B...
+2026-01-27 15:02:04,960 - INFO - Processing vacancy 11/16: Receptionist
+2026-01-27 15:02:07,196 - INFO -   Компания: Unknown
+2026-01-27 15:02:07,196 - INFO - Company: Unknown
+2026-01-27 15:02:07,196 - INFO -   [SKIP] Компания уже обработана!
+2026-01-27 15:02:07,196 - INFO - Skipping duplicate company: Unknown
+2026-01-27 15:02:07,196 - INFO - 
+[12/16] ------------------------------------------------------------
+2026-01-27 15:02:07,196 - INFO -   Вакансия: Soporte Técnico - Call center...
+2026-01-27 15:02:07,196 - INFO -   URL: https://es.indeed.com/rc/clk?jk=ac10ebb0937451be&bb=inhM-vmI_671OCp07mqHP0sACT2Z...
+2026-01-27 15:02:07,196 - INFO - Processing vacancy 12/16: Soporte Técnico - Call center
+2026-01-27 15:02:09,476 - INFO -   Компания: Unknown
+2026-01-27 15:02:09,476 - INFO - Company: Unknown
+2026-01-27 15:02:09,476 - INFO -   [SKIP] Компания уже обработана!
+2026-01-27 15:02:09,476 - INFO - Skipping duplicate company: Unknown
+2026-01-27 15:02:09,476 - INFO - 
+[13/16] ------------------------------------------------------------
+2026-01-27 15:02:09,476 - INFO -   Вакансия: Talent Agent (Remote)...
+2026-01-27 15:02:09,476 - INFO -   URL: https://es.indeed.com/rc/clk?jk=f3cebb5e3426552b&bb=inhM-vmI_671OCp07mqHP6j8pQPO...
+2026-01-27 15:02:09,476 - INFO - Processing vacancy 13/16: Talent Agent (Remote)
+2026-01-27 15:02:11,858 - INFO -   Компания: Unknown
+2026-01-27 15:02:11,858 - INFO - Company: Unknown
+2026-01-27 15:02:11,858 - INFO -   [SKIP] Компания уже обработана!
+2026-01-27 15:02:11,858 - INFO - Skipping duplicate company: Unknown
+2026-01-27 15:02:11,858 - INFO - 
+[14/16] ------------------------------------------------------------
+2026-01-27 15:02:11,859 - INFO -   Вакансия: operador/a de call center de atención al cliente...
+2026-01-27 15:02:11,859 - INFO -   URL: https://es.indeed.com/rc/clk?jk=fbe41f68a20735f6&bb=inhM-vmI_671OCp07mqHPyYV3sUb...
+2026-01-27 15:02:11,859 - INFO - Processing vacancy 14/16: operador/a de call center de atención al cliente
+2026-01-27 15:02:14,288 - INFO -   Компания: Unknown
+2026-01-27 15:02:14,288 - INFO - Company: Unknown
+2026-01-27 15:02:14,288 - INFO -   [SKIP] Компания уже обработана!
+2026-01-27 15:02:14,288 - INFO - Skipping duplicate company: Unknown
+2026-01-27 15:02:14,288 - INFO - 
+[15/16] ------------------------------------------------------------
+2026-01-27 15:02:14,288 - INFO -   Вакансия: Customer Service Agent...
+2026-01-27 15:02:14,289 - INFO -   URL: https://es.indeed.com/rc/clk?jk=2f41a4f2efd2e88e&bb=inhM-vmI_671OCp07mqHP0sACT2Z...
+2026-01-27 15:02:14,289 - INFO - Processing vacancy 15/16: Customer Service Agent
+2026-01-27 15:02:16,523 - INFO -   Компания: Unknown
+2026-01-27 15:02:16,524 - INFO - Company: Unknown
+2026-01-27 15:02:16,524 - INFO -   [SKIP] Компания уже обработана!
+2026-01-27 15:02:16,524 - INFO - Skipping duplicate company: Unknown
+2026-01-27 15:02:16,524 - INFO - 
+[16/16] ------------------------------------------------------------
+2026-01-27 15:02:16,524 - INFO -   Вакансия: Sales executive - Unicenter...
+2026-01-27 15:02:16,524 - INFO -   URL: https://es.indeed.com/rc/clk?jk=6625ab37c20c1be3&bb=inhM-vmI_671OCp07mqHP0MJ_-DY...
+2026-01-27 15:02:16,525 - INFO - Processing vacancy 16/16: Sales executive - Unicenter
+2026-01-27 15:02:20,728 - INFO -   Компания: Unknown
+2026-01-27 15:02:20,728 - INFO - Company: Unknown
+2026-01-27 15:02:20,728 - INFO -   [SKIP] Компания уже обработана!
+2026-01-27 15:02:20,728 - INFO - Skipping duplicate company: Unknown
+2026-01-27 15:02:21,605 - INFO - 
+================================================================================
+2026-01-27 15:02:21,606 - INFO - SAVING RESULTS
+2026-01-27 15:02:21,606 - INFO - ================================================================================
+
+2026-01-27 15:02:21,606 - INFO - Starting final data processing and saving
+2026-01-27 15:02:21,638 - INFO - Saved Excel: indeed_results_2026-01-27_15-00-13.xlsx
+2026-01-27 15:02:21,680 - INFO - Total vacancies:   1
+2026-01-27 15:02:21,680 - INFO - With websites:     0 (0.0%)
+2026-01-27 15:02:21,680 - INFO - With emails:       0 (0.0%)
+2026-01-27 15:02:21,680 - INFO - With phones:       0 (0.0%)
+2026-01-27 15:02:21,680 - INFO - Total emails:      0
+2026-01-27 15:02:21,680 - INFO - Total phones:      0
+2026-01-27 15:02:21,680 - INFO - 
+Saved: indeed_results_2026-01-27_15-00-13.xlsx
+2026-01-27 15:02:21,680 - INFO - === FINAL STATISTICS ===
+2026-01-27 15:02:21,680 - INFO - Total: 1, Websites: 0, Emails: 0, Phones: 0
+2026-01-27 15:02:21,680 - INFO - Results saved to: indeed_results_2026-01-27_15-00-13.xlsx
+2026-01-27 15:02:21,680 - INFO - 
+================================================================================
+2026-01-27 15:02:21,680 - INFO - ОТПРАВКА НА WEBHOOK
+2026-01-27 15:02:21,680 - INFO - ================================================================================
+
+2026-01-27 15:02:21,682 - DEBUG - Starting new HTTPS connection (1): n8n.oki-toki.net:443
+2026-01-27 15:02:22,472 - DEBUG - https://n8n.oki-toki.net:443 "POST /webhook/31af2e3f-942b-4c06-b985-487cb7140e7b HTTP/1.1" 200 34
+2026-01-27 15:02:22,479 - INFO - ✅ Данные успешно отправлены на webhook
+2026-01-27 15:02:22,480 - INFO - ✅ Всего компаний отправлено: 1
+2026-01-27 15:02:22,480 - INFO - 
+================================================================================
+
+2026-01-27 15:02:22,480 - INFO - Done: 1 vacancies, 0 websites, 0 emails, 0 phones
+

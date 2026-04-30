@@ -1,0 +1,412 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e3]:
+    - link "logo" [ref=e4] [cursor=pointer]:
+      - /url: https://plagiarismdetector.net
+      - img "logo" [ref=e5]
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - checkbox "input"
+      - generic [ref=e9]:
+        - list [ref=e10]:
+          - listitem [ref=e11]:
+            - link "Plagiarism Checker" [ref=e12] [cursor=pointer]:
+              - /url: https://plagiarismdetector.net
+          - listitem [ref=e13]:
+            - link "Paraphrasing Tool" [ref=e14] [cursor=pointer]:
+              - /url: https://plagiarismdetector.net/paraphrasing-tool
+          - listitem [ref=e15]:
+            - link "AI Detector" [ref=e16] [cursor=pointer]:
+              - /url: https://plagiarismdetector.net/ai-content-detector
+        - button "LMS Integration" [ref=e18] [cursor=pointer]
+        - button "Tools" [ref=e20] [cursor=pointer]
+        - list [ref=e21]:
+          - listitem [ref=e22]:
+            - link "Login" [ref=e23] [cursor=pointer]:
+              - /url: https://plagiarismdetector.net/login
+      - generic [ref=e24]:
+        - button "English - EN" [ref=e26] [cursor=pointer]
+        - link "premium-icon Pricing" [ref=e28] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/pricing
+          - img "premium-icon" [ref=e29]
+          - text: Pricing
+  - generic [ref=e31]:
+    - heading "Plagiarism Checker" [level=1] [ref=e32]
+    - paragraph [ref=e33]:
+      - text: A completely free and accurate online plagiarism detector.
+      - text: Simply copy and paste to detect copied content.
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - generic [ref=e37]: Your Content
+          - generic [ref=e39]: 4.8/5
+        - generic [ref=e45]:
+          - textbox "Check your content’s uniqueness — type or paste it here" [ref=e46]
+          - generic [ref=e48]:
+            - generic [ref=e49]: 0 / 1000 Words
+            - generic [ref=e51]: 0 Characters
+        - generic [ref=e54]:
+          - generic [ref=e57] [cursor=pointer]: Upload
+          - img "logo" [ref=e59] [cursor=pointer]
+          - generic [ref=e60]:
+            - img "links" [ref=e62]
+            - textbox "Check By URL" [ref=e63]
+          - generic [ref=e64]:
+            - img "links" [ref=e66]
+            - textbox "Exclude URL" [ref=e67]
+      - generic [ref=e68]:
+        - button "Check Plagiarism" [disabled] [ref=e69] [cursor=pointer]
+        - link "Detect AI Content" [ref=e70] [cursor=pointer]:
+          - /url: javascript:void(0)
+        - link "Check Grammar" [ref=e71] [cursor=pointer]:
+          - /url: /deep_pockets
+  - generic [ref=e73]:
+    - generic [ref=e74]:
+      - heading "Plagiarism Checker “PRO” the most trustworthy plagiarism detection tool" [level=2] [ref=e75]:
+        - text: Plagiarism Checker “PRO”
+        - text: the most trustworthy plagiarism detection tool
+      - paragraph [ref=e76]: Our mission is to fulfill everyone's NEEDS in plagiarism detection. Most user-friendly interface with plenty of exclusive FEATURES to execute efficiency & reliability mission.
+      - button "black-diamond Go Pro" [ref=e77] [cursor=pointer]:
+        - img "black-diamond" [ref=e78]
+        - text: Go Pro
+    - generic [ref=e80]:
+      - generic [ref=e82]:
+        - img "icon" [ref=e84]
+        - paragraph [ref=e85]: No Ads
+      - generic [ref=e87]:
+        - img "icon" [ref=e89]
+        - paragraph [ref=e90]: Deep Search
+      - generic [ref=e92]:
+        - img "icon" [ref=e94]
+        - paragraph [ref=e95]: accurate reports
+      - generic [ref=e97]:
+        - img "icon" [ref=e99]
+        - paragraph [ref=e100]: support
+      - generic [ref=e102]:
+        - img "icon" [ref=e104]
+        - paragraph [ref=e105]: Multiple Files Supportive
+      - generic [ref=e107]:
+        - img "icon" [ref=e109]
+        - paragraph [ref=e110]: Easy to use!
+      - generic [ref=e112]:
+        - img "icon" [ref=e114]
+        - paragraph [ref=e115]: Check up to 25k Words
+      - generic [ref=e117]:
+        - img "icon" [ref=e119]
+        - paragraph [ref=e120]: Data Safety
+      - generic [ref=e122]:
+        - img "icon" [ref=e124]
+        - paragraph [ref=e125]: Latest Technology
+  - generic [ref=e127]:
+    - heading "Plagiarism Checker Online for Multiple Languages" [level=2] [ref=e128]
+    - paragraph [ref=e129]: "Our plagiarism checker online can detect plagiarism in multiple languages for users in other regions. You are free to check plagiarism in different languages, including:"
+    - generic [ref=e130]:
+      - link "eng flag English - Plagiarism Checker" [ref=e131] [cursor=pointer]:
+        - /url: https://plagiarismdetector.net/
+        - img "eng flag" [ref=e132]
+        - generic [ref=e133]: English - Plagiarism Checker
+      - link "german flag Deutsche - Plagiatsprüfung kostenlos" [ref=e134] [cursor=pointer]:
+        - /url: https://plagiarismdetector.net/de
+        - img "german flag" [ref=e135]
+        - generic [ref=e136]: Deutsche - Plagiatsprüfung kostenlos
+      - link "arabic flag Arabic - المدقق الامتحال" [ref=e137] [cursor=pointer]:
+        - /url: https://plagiarismdetector.net/ar
+        - img "arabic flag" [ref=e138]
+        - generic [ref=e139]: Arabic - المدقق الامتحال
+      - link "spanish flag Español - Comprobador de plagio" [ref=e140] [cursor=pointer]:
+        - /url: https://plagiarismdetector.net/es
+        - img "spanish flag" [ref=e141]
+        - generic [ref=e142]: Español - Comprobador de plagio
+      - link "portugues flag Português - Detector de plagio" [ref=e143] [cursor=pointer]:
+        - /url: https://plagiarismdetector.net/pt
+        - img "portugues flag" [ref=e144]
+        - generic [ref=e145]: Português - Detector de plagio
+      - link "france flag Français - Vérificateur de plagiat" [ref=e146] [cursor=pointer]:
+        - /url: https://plagiarismdetector.net/fr
+        - img "france flag" [ref=e147]
+        - generic [ref=e148]: Français - Vérificateur de plagiat
+      - link "italy flag Italiano - Checker di plagio" [ref=e149] [cursor=pointer]:
+        - /url: https://plagiarismdetector.net/it
+        - img "italy flag" [ref=e150]
+        - generic [ref=e151]: Italiano - Checker di plagio
+      - link "filipino flag Filipino - Checker Ng Plagiarism" [ref=e152] [cursor=pointer]:
+        - /url: https://plagiarismdetector.net/tl
+        - img "filipino flag" [ref=e153]
+        - generic [ref=e154]: Filipino - Checker Ng Plagiarism
+      - link "indonesia flag Indonesia - Cek plagiarisme" [ref=e155] [cursor=pointer]:
+        - /url: https://plagiarismdetector.net/id
+        - img "indonesia flag" [ref=e156]
+        - generic [ref=e157]: Indonesia - Cek plagiarisme
+      - link "russia flag русский - проверка на плагиат" [ref=e158] [cursor=pointer]:
+        - /url: https://plagiarismdetector.net/ru
+        - img "russia flag" [ref=e159]
+        - generic [ref=e160]: русский - проверка на плагиат
+      - link "indian flag हिन्दी - साहित्यिक चोरी चेकर" [ref=e161] [cursor=pointer]:
+        - /url: https://plagiarismdetector.net/hi
+        - img "indian flag" [ref=e162]
+        - generic [ref=e163]: हिन्दी - साहित्यिक चोरी चेकर
+      - link "malay flag Malay - Pemeriksa Plagiarisme" [ref=e164] [cursor=pointer]:
+        - /url: https://plagiarismdetector.net/ms
+        - img "malay flag" [ref=e165]
+        - generic [ref=e166]: Malay - Pemeriksa Plagiarisme
+  - generic [ref=e168]:
+    - heading "Why Choose Our Plagiarism Checker" [level=2] [ref=e169]
+    - paragraph [ref=e170]: Our plagiarism checker provides many features. Some comparative functions that make our plagiarism detector unique from others are discussed below.
+    - generic [ref=e171]:
+      - generic [ref=e172]:
+        - generic [ref=e173]:
+          - img "logo"
+        - heading "Free Quick Search" [level=3] [ref=e174]
+        - paragraph [ref=e175]: Our best free plagiarism checker is totally free. It doesn’t charge you anything which means you can conduct as many searches as you like. All you need to do is just copy and paste your content.
+      - generic [ref=e176]:
+        - generic [ref=e177]:
+          - img "logo"
+        - heading "Deep Search" [level=3] [ref=e178]
+        - paragraph [ref=e179]: This plagiarism checker software offers you a deep and thorough check. With deep search, you get extra levels of plagiarism search and additional result details.
+      - generic [ref=e180]:
+        - generic [ref=e181]:
+          - img "logo"
+        - heading "URL Or File Uploading" [level=3] [ref=e182]
+        - paragraph [ref=e183]: If you don’t want to copy and paste your text, you can alternatively upload the page URL or the file for a quick and free plagiarism check.
+  - generic [ref=e184]:
+    - heading "Consequences of Plagiarism" [level=2] [ref=e185]
+    - paragraph [ref=e186]: "Without any delay, let's go through all the possible affects you would have to face if you copy:"
+    - generic [ref=e187]:
+      - generic [ref=e188]:
+        - generic [ref=e189]:
+          - img "logo"
+        - heading "Legal" [level=3] [ref=e190]
+        - paragraph [ref=e191]: Apart from all the professional and personal difficulties that may arise in certain cases, there are also legal consequences. Copying copyrighted material for profit may result in the plagiarist having to pay some financial losses. In some cases, copying data can subject the plagiarist to criminal prosecution. And the punishment can range from charges to imprisonment.
+        - paragraph [ref=e192]: So, before submitting any content, do a plagiarism check once to see if you have copied it or not. It can protect you from all kinds of harm. You won't have to wait long for results using a duplicate content checker. You can take advantage of this plagiarism checker free and save yourself from embarrassment.
+      - generic [ref=e193]:
+        - generic [ref=e194]:
+          - img "logo"
+        - heading "Academic" [level=3] [ref=e195]
+        - paragraph [ref=e196]: Today, copyrighted content has become a constant problem in educational institutions. Students create many assignments using a lot of research in a short period. Many schools/institutions, such as Duke University, have judicial affairs offices. They will review each case of plagiarism and fix penalties.
+      - generic [ref=e197]:
+        - generic [ref=e198]:
+          - img "logo"
+        - heading "Personal" [level=3] [ref=e199]
+        - paragraph [ref=e200]:
+          - text: Most of the outcomes of
+          - link "plagiarism occur" [ref=e201] [cursor=pointer]:
+            - /url: https://plagiarismdetector.net/blog/occurrence-of-plagiarism
+          - text: once the replication is caught. Institutions have noted that students who duplicate data often fail to learn research and writing skills. Once they leave the institution, all those students lose the ability to create original content because they have only cheated before.
+      - generic [ref=e202]:
+        - generic [ref=e203]:
+          - img "logo"
+        - heading "Professional" [level=3] [ref=e204]
+        - paragraph [ref=e205]: Countless journalists, academics, writers, and creators have had their reputations damaged by plagiarism accusations. Not only do plagiarists disrupt their ongoing work by getting fired or terminated. They also find it difficult to get work in the future. A particularly egregious instance of plagiarism, or worse, can destroy a person's professional image. It also forces them to change careers to avoid the stigma of plagiarism.
+  - generic [ref=e207]:
+    - generic [ref=e208]:
+      - heading "How it detects?" [level=2] [ref=e209]
+      - paragraph [ref=e210]: Details are below on how detector detects the plagiarism.
+      - paragraph [ref=e211]:
+        - text: Plagiarism Detector is the free and an intelligent and
+        - link "grammar checker" [ref=e212] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/grammar-check
+        - text: software. It doesn't matter if you are a student or a professional, everyone can have benefit from this likewise.
+      - paragraph [ref=e213]: Now, with the help of our plagiarism detector, you can check if your content that you are just seconds away from publishing and considering its uniqueness. If you are web owner, then it is very important to have a plagiarism-free content on your website if you wish to attract maximum traffic. This is the best Free Plagiarism Checker that you will find online as it works the same way as Google.
+      - paragraph [ref=e214]: Built with thorough research on the needs of our customers, all the essential strategies and techniques have been implemented to make results 100% accurate and authentic for everyone.
+      - paragraph [ref=e215]:
+        - text: We analyzed that any anti-plagiarism software is mostly used by students or teacher to check the essays, papers, and reports that they submit or that have been submitted to them. Because
+        - link "plagiarism is unacceptable no matter what type it is" [ref=e216] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/blog/plagiarism-unacceptable-no-matter-type
+        - text: . That is why we have particularly designed a system that offers free plagiarism detection which helps students and teachers to check their duplicate content.
+      - paragraph [ref=e217]:
+        - link "Teachers, as well as students, should discourage plagiarism" [ref=e218] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/blog/teachers-well-students-can-discourage-plagiarism
+        - text: .
+      - paragraph [ref=e219]: You can try our plagiarism detector now, and you will know that it is rightfully the free online plagiarism checker with percentage!
+      - button "black-diamond Upgrade to Improve Writing" [ref=e220] [cursor=pointer]:
+        - img "black-diamond" [ref=e221]
+        - text: Upgrade to Improve Writing
+    - generic [ref=e223]:
+      - img "Animation"
+  - generic [ref=e225]:
+    - generic [ref=e226]:
+      - generic [ref=e227]:
+        - img "logo"
+        - heading "Importance of plagiarism Detector" [level=2] [ref=e228]
+        - paragraph [ref=e229]: If you aim at a higher Authority on SERP (Search Engine Results Page) then never take the risk of publishing a heavily duplicated content.
+        - paragraph [ref=e230]:
+          - text: Plagiarized or duplicated content can lead to lower page rank. If you are caught up in a situation where your article,
+          - link "blog or web page content" [ref=e231] [cursor=pointer]:
+            - /url: https://plagiarismdetector.net/blog/plagiarism-and-world-wide-web
+          - text: is not entirely unique, then there is a comparatively higher risk of getting blacklisted by search engines especially Google. You can utilize the free plagiarism detection service offered by our similarity checker to check the content from your own website to make sure that no one has stolen the content from your website. Apart from SEO (Search Engine Optimization), our free plagiarism finder can also be utilized by students and teachers for academic uses.
+        - paragraph [ref=e232]:
+          - text: Beware!
+          - link "It is a double-edged sword" [ref=e233] [cursor=pointer]:
+            - /url: https://plagiarismdetector.net/blog/plagiarism-is-a-sin
+          - text: .
+      - generic [ref=e234]:
+        - img "logo"
+        - heading "Online Plagiarism Checker" [level=2] [ref=e235]:
+          - text: Online
+          - link "Plagiarism Checker" [ref=e236] [cursor=pointer]:
+            - /url: https://plagiarismdetector.net
+        - heading "Understanding the Results" [level=3] [ref=e237]
+        - paragraph [ref=e238]: Beside the text box, you are shown the percentage for Checked, Unique, and Plagiarized.
+        - paragraph [ref=e239]: "Phrases or sentences shown in the results below are the ones that our plagiarism detector has identified as plagiarized and already exist online, along with the matched percentage. These are the links and by clicking on the “Match Text” you will be redirected to the original source where you can see yourself the plagiarized text. When the plagiarism test is finished, you’ll also be given an exact percentage of uniqueness and plagiarism of your text. However, if your content is completely unique then you will get a congratulations message:"
+    - generic [ref=e240]:
+      - generic [ref=e241]:
+        - generic [ref=e242]:
+          - generic [ref=e243]: How it Works?
+          - heading "How the plagiarism scanner Works?" [level=2] [ref=e244]
+          - paragraph [ref=e245]: It is very simple!
+          - paragraph [ref=e246]: Plagiarism scanner is an intelligent free and most accurate software.
+          - paragraph [ref=e247]: The content you enter is analyzed on the basis of its
+          - paragraph [ref=e248]: lexical frequencies,,
+          - paragraph [ref=e249]: word-choice,,
+          - paragraph [ref=e250]: matching phrases,,
+        - table [ref=e253]:
+          - rowgroup [ref=e254]:
+            - row "🌐 Multilingual 150+ Languages" [ref=e255]:
+              - cell "🌐 Multilingual" [ref=e256]
+              - cell "150+ Languages" [ref=e257]
+            - row "✔️ Working Lexical frequencies Contextual Analysis Fuzzy Matching" [ref=e258]:
+              - cell "✔️ Working" [ref=e259]
+              - cell "Lexical frequencies Contextual Analysis Fuzzy Matching" [ref=e260]
+            - row "💯 Accuracy 100%" [ref=e261]:
+              - cell "💯 Accuracy" [ref=e262]
+              - cell "100%" [ref=e263]
+            - row "✈️ Speed Immediate checking" [ref=e264]:
+              - cell "✈️ Speed" [ref=e265]
+              - cell "Immediate checking" [ref=e266]
+            - row "🔁 Check Counts Unlimited" [ref=e267]:
+              - cell "🔁 Check Counts" [ref=e268]
+              - cell "Unlimited" [ref=e269]
+      - paragraph [ref=e270]: and many other important factors. Your given text is mapped into our internal network, and then it is compared against different databases and the entire internet. We have designed our algorithm to especially ignore statistically common phrases to provide a better and more valuable search for potential plagiarism in the text. Once the plagiarism test completes, the results will appear below along with the match percentage that our best plagiarism tool has found.
+      - paragraph [ref=e271]:
+        - text: The article you have entered is carefully scanned, and so is the entire internet. If complete plagiarized sentences are found, the plagiarism detector will identify the original source of that content and show to you. All you have to do is copy and paste the content in the text box and then click on
+        - link "“Check Plagiarism”" [ref=e272] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net
+        - text: button.
+      - paragraph [ref=e273]: It is as simple as it sounds. (How to check plagiarism)
+      - paragraph [ref=e274]:
+        - strong [ref=e275]: This plagiarism checker free online for teachers, students, and writers
+        - text: will run your text through its database of millions of sites to show you the best plagiarism free report with the detailed results. Alternatively, you can either enter the URL of the website for which you want to conduct a plagiarism check or you can upload the files. Whether it is an article, essay or blog, a thorough sentence check will be conducted for your text in order to give you the most reliable and accurate results.
+    - generic [ref=e276]:
+      - img "logo"
+      - heading "Plagiarism Checker API" [level=2] [ref=e277]
+      - paragraph [ref=e278]:
+        - text: The
+        - link "plagiarism checker API" [ref=e279] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/api
+        - text: allows everyone to add plagiarism detection functionality to their software or applications. Our flexible system allows you to customize your settings to fit your needs. It can grow with your business or personal needs. Most importantly, our reliable services give you peace of mind knowing your data is safe and protected.
+    - generic [ref=e280]:
+      - img "logo"
+      - heading "Identify Copied Material with Anti Plagiarism Software" [level=2] [ref=e281]
+      - paragraph [ref=e282]: "Plagiarism can appear in different forms, but the end outcome is always the same: the plagiarist stole something from another person. Plagiarism refers to using some other person’s ideas and information without acknowledging that specific person as the source. Similar to all other forms of theft, plagiarism also has many disadvantages associated with it."
+      - paragraph [ref=e283]: It can take place in both intentional, when you try to pass someone’s content as your own, or unintentional when you forget to mention the source for your work correctly. In spite of the kind, piracy always has consequences when it is discovered. Mostly, the punishment of accidental copying is temporary. Because ascertaining unintentional plagiarism requires knowledge of intent, the overall prestige of the plagiarist becomes the deciding factor.
+      - paragraph [ref=e284]:
+        - text: Plagiarism can occur in any shape either textual or pictorial. So we not only scan the document for the copyrights but also check the duplication for images. You can also perform
+        - link "Reverse Image Search" [ref=e285] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/image-search
+        - text: to look for the best matching photos. By using advance image recognition algorithms, it will bring out the matching results from all over the internet and search engines.
+      - paragraph [ref=e286]: Before jumping to direct consequences, here’s a brief detail of how can you make sure your work is not matching with any source. Loads of information, millions of text documents, is attainable on the internet now. So, if you think you can check manually, then you are wrong. No matter, how many articles you read or how many hours you spend, you can never be sure. Hence, the alternative best way you can take help from is a free plagiarism detector. There are many such tools readily available on the internet, providing best services to users. Majority of them, search your material against billions of contents and underlines each sentence which resembles with another posted article.
+  - contentinfo [ref=e287]:
+    - generic [ref=e289]:
+      - generic [ref=e290]:
+        - link "f logo" [ref=e291] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net
+          - img "f logo" [ref=e292]
+        - generic [ref=e293]: We are the global plagiarism detection service providers, with users from all across the globe. Our plagiarism checker tool is primarily focused on providing text-related services specifically related to plagiarism check and similarity detection. It is free online plagiarism checker benefiting people from all walks of life.
+        - button "English" [ref=e295] [cursor=pointer]
+        - generic [ref=e296]:
+          - link "social link" [ref=e297] [cursor=pointer]:
+            - /url: https://www.facebook.com/Plagiarismdetector.netTRUE
+            - img "social link" [ref=e298]
+          - link "social link" [ref=e299] [cursor=pointer]:
+            - /url: https://www.pinterest.co.uk/Plagiarismdetector/
+            - img "social link" [ref=e300]
+          - link "social link" [ref=e301] [cursor=pointer]:
+            - /url: ""
+            - img "social link" [ref=e302]
+          - link "social link" [ref=e303] [cursor=pointer]:
+            - /url: https://www.reddit.com/user/PDdotNET
+            - img "social link" [ref=e304]
+          - link "social link" [ref=e305] [cursor=pointer]:
+            - /url: https://www.instagram.com/plagiarismdetectornet/
+            - img "social link" [ref=e306]
+          - link "social link" [ref=e307] [cursor=pointer]:
+            - /url: https://www.youtube.com/@plagiarismdetector6213
+            - img "social link" [ref=e308]
+      - generic [ref=e309]:
+        - generic [ref=e310]: Quick Links
+        - link "Pricing" [ref=e311] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/pricing
+        - link "Blog" [ref=e312] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/blog/
+        - link "FAQs" [ref=e313] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/faqs
+        - link "Testimonials" [ref=e314] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/testimonials
+        - link "About Us" [ref=e315] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/about-us
+        - link "Contact Us" [ref=e316] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/contact-us
+        - link "Sitemap" [ref=e317] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/sitemap
+        - link "Privacy" [ref=e318] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/privacy
+        - link "Refund Policy" [ref=e319] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/refund-policy
+        - link "API" [ref=e320] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/api
+      - generic [ref=e321]:
+        - generic [ref=e322]: Tools
+        - link "Plagiarism Checker" [ref=e323] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net
+        - link "Reverse Image Search" [ref=e324] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/image-search
+        - link "Paraphrasing Tool" [ref=e325] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/paraphrasing-tool
+        - link "AI Text Summarizer" [ref=e326] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/text-summarizer
+        - link "AI Humanizer" [ref=e327] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/ai-humanizer
+        - link "AI Detector" [ref=e328] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net/ai-content-detector
+      - generic [ref=e329]:
+        - generic [ref=e330]: Latest Blog
+        - 'link "blog Teachers & Students Can Discourage Plagiarism By: Admin" [ref=e331] [cursor=pointer]':
+          - /url: https://plagiarismdetector.net/blog/teachers-well-students-can-discourage-plagiarism/
+          - img "blog" [ref=e332]
+          - generic [ref=e333]:
+            - generic [ref=e334]: Teachers & Students Can Discourage Plagiarism
+            - generic [ref=e336]: "By: Admin"
+        - 'link "blog Mistakes Can Destroy Your Content Strategy By: Admin" [ref=e337] [cursor=pointer]':
+          - /url: https://plagiarismdetector.net/blog/mistakes-can-destroy-your-content-strategy/
+          - img "blog" [ref=e338]
+          - generic [ref=e339]:
+            - generic [ref=e340]: Mistakes Can Destroy Your Content Strategy
+            - generic [ref=e342]: "By: Admin"
+        - 'link "blog Occurrence of Plagiarism By: Admin" [ref=e343] [cursor=pointer]':
+          - /url: https://plagiarismdetector.net/blog/occurrence-of-plagiarism/
+          - img "blog" [ref=e344]
+          - generic [ref=e345]:
+            - generic [ref=e346]: Occurrence of Plagiarism
+            - generic [ref=e348]: "By: Admin"
+    - generic [ref=e350]:
+      - generic [ref=e351]:
+        - text: Copyright © 2026
+        - link "Plagiarism Detector" [ref=e352] [cursor=pointer]:
+          - /url: https://plagiarismdetector.net
+        - text: . All Rights Reserved
+      - generic [ref=e353]:
+        - link "apple app store" [ref=e354] [cursor=pointer]:
+          - /url: https://apps.apple.com/us/app/plagiarism-checker/id1231934420
+          - img "apple app store" [ref=e355]
+        - link "mac store" [ref=e356] [cursor=pointer]:
+          - /url: https://apps.apple.com/us/app/plagiarism-checker/id1326081964
+          - img "mac store" [ref=e357]
+        - link "google play store" [ref=e358] [cursor=pointer]:
+          - /url: https://play.google.com/store/apps/details?id=org.contentarcadeapps.plagiarismchecker&hl=en_US
+          - img "google play store" [ref=e359]
+  - generic:
+    - link "Close Popup":
+      - /url: ""
+  - iframe [ref=e361]:
+    - main [ref=f45e2]:
+      - button "Open LiveChat chat widget" [ref=f45e6] [cursor=pointer]:
+        - img [ref=f45e8]

@@ -1,0 +1,33 @@
+[     225ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://bitbucket.org/dintsin010/py-services/src/main/:0
+[     284ms] [WARNING] {msg: An error has occurred checking the feature gate. Only the first occurrence of this error is logged., gateName: platform_increased-contrast-themes, error: Error: Client must be initialized before using this method
+    at e.value (https://bbc-object-stora…} @ https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/theme-init.js:1
+[     312ms] Uncaught TypeError: e.Integrations.RewriteFrames is not a constructor
+    at <anonymous> (https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/sentry.js:1:132571)
+    at <anonymous> (https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/sentry.js:1:132772)
+    at <anonymous> (https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/sentry.js:1:132776)
+[     631ms] [WARNING] Multiple versions of FeatureGateClients found on the current page.
+      The currently bound version is 5.5.4 when module version 5.5.5 was loading. @ https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/vendor.js:1
+[     677ms] [WARNING] Multiple versions of FeatureGateClients found on the current page.
+      The currently bound version is 5.5.4 when module version 4.23.4 was loading. @ https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/vendor.js:1
+[     679ms] [ERROR] [ACJS] Feature flag service is not initialised. Default flag 'acjs_iframe_click_analytics' to false @ https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/vendor.js:1
+[     715ms] [WARNING] JQMIGRATE: jQuery.isArray is deprecated; use Array.isArray @ https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/aui-8.js:1
+[     722ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://api.atlassian.com/flags/api/v2/frontend/experimentValues:0
+[     766ms] [ERROR] Error occurred when trying to fetch the Feature Gates client values, error: Non 2xx response status received, status: 400, body: "Must provide at least one Statsig-supported identifier" @ https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/theme-init.js:1
+[     767ms] [WARNING] Initialising Statsig client without values @ https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/theme-init.js:1
+[     768ms] [ERROR]  ERROR  [Statsig] Failed to parse EvaluationResponse @ https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/theme-init.js:1
+[     769ms] [ERROR]  ERROR  [Statsig] Failed to parse EvaluationResponse @ https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/theme-init.js:1
+[     779ms] [WARNING] DEPRECATED JS- PopulateParameters has been deprecated since 9.0.0 and will be removed in 11.0.0.  
+     at HTMLDocument.<anonymous> (https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/aui-8.js:2:284760) @ https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/aui-8.js:1
+[     789ms] Uncaught (in promise) Error: Non 2xx response status received, status: 400, body: "Must provide at least one Statsig-supported identifier"
+    at <anonymous> (https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/theme-init.js:1:54147)
+    at <anonymous> (https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/theme-init.js:1:339398)
+    at <anonymous> (https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/theme-init.js:1:336106)
+    at <anonymous> (https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/theme-init.js:1:338096)
+    at t (https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/theme-init.js:1:330034)
+    at d (https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/theme-init.js:1:330245)
+[    1047ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://xp.atlassian.com/v1/rgstr?k=client-default-key&st=javascript-client&sv=3.24.4&t=1772655201967&sid=51244e59-65f4-4868-9af0-178ec9149976&ec=10&gz=1:0
+[    1048ms] [ERROR]  ERROR  [Statsig] A networking error occurred during POST request to https://xp.atlassian.com/v1/rgstr?k=client-default-key&st=javascript-client&sv=3.24.4&t=1772655201967&sid=51244e59-65f4-4868-9af0-178ec9149976&ec=10&gz=1. NetworkError: NetworkError: https://xp.atlassian.com/v1/rgstr?k=client-default-key&st=javascript-client&sv=3.24.4&t=1772655201967&sid=51244e59-65f4-4868-9af0-178ec9149976&ec=10&gz=1 {"code":401,"reason":"Unauthorized"} NetworkError: NetworkError: https://xp.atlassian.com/v1/rgstr?k=client-default-key&st=javascript-client&sv=3.24.4&t=1772655201967&sid=51244e59-65f4-4868-9af0-178ec9149976&ec=10&gz=1 {"code":401,"reason":"Unauthorized"}
+    at o.<anonymous> (https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/theme-init.js:2:366645)
+    at Generator.next (<anonymous>)
+    at o (https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/theme-init.js:2:363719) @ https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/theme-init.js:1
+[    1049ms] [WARNING]   WARN  [Statsig] Failed to flush events. @ https://bbc-object-storage--frontbucket.us-east-1.prod.public.atl-paas.net/ce70f3ccbb3c/dist/webpack/theme-init.js:1

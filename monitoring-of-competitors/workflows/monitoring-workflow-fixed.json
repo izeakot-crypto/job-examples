@@ -1,0 +1,454 @@
+{
+  "name": "Monitoring of Competitors",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "content": "## Monitoring of Competitors Workflow\n\nЦей workflow автоматично збирає дані з сайтів конкурентів:\n- Новини та статті з блогів\n- Контент з соцмереж\n- SEO метрики\n- Коментарі та відгуки\n\nДані аналізуються за допомогою AI та зберігаються для порівняння."
+      },
+      "id": "sticky-note",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [250, 140]
+    },
+    {
+      "parameters": {
+        "mode": "jsonToBinary",
+        "options": {}
+      },
+      "id": "read-companies-json",
+      "name": "Read Companies JSON",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "company-data",
+              "name": "companies",
+              "value": "={{ JSON.parse($json.data) }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "parse-companies",
+      "name": "Parse Companies",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "loop-companies",
+      "name": "Loop Over Companies",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "options": {
+          "redirect": {
+            "redirect": {
+              "followRedirects": true,
+              "maxRedirects": 5
+            }
+          },
+          "timeout": 30000
+        }
+      },
+      "id": "fetch-website",
+      "name": "Fetch Company Website",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1050, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract meta tags and content\nconst html = $input.item.json.body;\nconst companyName = $input.item.json.name;\n\n// Simple regex patterns for meta tags\nconst titleMatch = html.match(/<title[^>]*>([^<]+)<\\/title>/i);\nconst descMatch = html.match(/<meta[^>]*name=[\"']description[\"'][^>]*content=[\"']([^\"']+)[\"']/i);\nconst h1Matches = html.match(/<h1[^>]*>([^<]+)<\\/h1>/gi) || [];\n\nconst result = {\n  company: companyName,\n  url: $input.item.json.url,\n  timestamp: new Date().toISOString(),\n  seo: {\n    title: titleMatch ? titleMatch[1].trim() : null,\n    description: descMatch ? descMatch[1].trim() : null,\n    h1Tags: h1Matches.map(h => h.replace(/<[^>]+>/g, '').trim())\n  },\n  content: {\n    textLength: html.length,\n    hasNews: html.toLowerCase().includes('news') || html.toLowerCase().includes('blog'),\n    hasPricing: html.toLowerCase().includes('pricing') || html.toLowerCase().includes('price')\n  }\n};\n\nreturn result;"
+      },
+      "id": "parse-website-content",
+      "name": "Parse Website Content",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 200]
+    },
+    {
+      "parameters": {
+        "content": "## Website Scraping\n\nЗбір даних з головних сторінок сайтів:\n- Meta tags (title, description)\n- Структура заголовків\n- Наявність розділів (news, pricing)\n- Загальний обсяг контенту"
+      },
+      "id": "sticky-website",
+      "name": "Sticky Note - Website",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [1050, 80]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.monitoring.blog }}",
+              "value2": "true"
+            }
+          ]
+        }
+      },
+      "id": "check-blog-monitoring",
+      "name": "Check Blog Monitoring",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1050, 400]
+    },
+    {
+      "parameters": {
+        "content": "## Blog & News Monitoring\n\nМоніторинг блогів компаній:\n- Пошук нових статей\n- Дати публікацій\n- Заголовки та описи\n- Зміни в контенті"
+      },
+      "id": "sticky-blog",
+      "name": "Sticky Note - Blog",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [1250, 340]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}/blog",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "fetch-blog",
+      "name": "Fetch Blog",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1250, 480]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract blog posts\nconst html = $input.item.json.body || '';\nconst companyName = $input.item.json.name;\n\n// Simple extraction of article titles and links\nconst articleMatches = html.match(/<article[^>]*>([\\s\\S]*?)<\\/article>/gi) || [];\n\nconst posts = articleMatches.slice(0, 10).map((article, index) => {\n  const titleMatch = article.match(/<h[1-3][^>]*>([^<]+)<\\/h[1-3]>/i);\n  const linkMatch = article.match(/href=[\"']([^\"']+)[\"']/i);\n  \n  return {\n    title: titleMatch ? titleMatch[1].trim() : `Post ${index + 1}`,\n    link: linkMatch ? linkMatch[1] : null,\n    excerpt: article.substring(0, 200).replace(/<[^>]+>/g, '').trim()\n  };\n});\n\nreturn {\n  company: companyName,\n  url: $input.item.json.url,\n  timestamp: new Date().toISOString(),\n  blogPosts: posts,\n  totalFound: posts.length\n};"
+      },
+      "id": "parse-blog-content",
+      "name": "Parse Blog Content",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1450, 480]
+    },
+    {
+      "parameters": {
+        "content": "## Social Media Monitoring\n\nІнтеграція з соцмережами:\n- YouTube (відео, коментарі)\n- Facebook (пости)\n- LinkedIn (публікації)\n\nДля роботи потрібні API ключі"
+      },
+      "id": "sticky-social",
+      "name": "Sticky Note - Social",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [1050, 580]
+    },
+    {
+      "parameters": {
+        "content": "## AI Summarization\n\nОбробка контенту за допомогою AI:\n- Суммаризація новин\n- Виявлення нових фіч\n- Аналіз коментарів\n- Виявлення проблем та інсайтів"
+      },
+      "id": "sticky-ai",
+      "name": "Sticky Note - AI",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [1650, 80]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Проаналізуй наступні дані про конкурента {{ $json.company }}:\\n\\nСайт:\\n- Title: {{ $json.seo?.title }}\\n- Description: {{ $json.seo?.description }}\\n- Основні заголовки: {{ $json.seo?.h1Tags?.join(', ') }}\\n\\nБлог:\\n{{ $json.blogPosts?.map(p => `- ${p.title}`).join('\\\\n') }}\\n\\nВидай короткий саммарі:\\n1. Які основні напрямки/фічі акцентує компанія\\n2. Чи є нові публікації/оновлення\\n3. Які ключові повідомлення для клієнтів\\n4. Що може бути цікавим для нашої компанії\"\n    }\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": 500\n}",
+        "options": {}
+      },
+      "id": "ai-summarize-http",
+      "name": "AI Summarize Content",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1650, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract AI response\nconst response = $input.item.json;\nconst aiSummary = response.choices?.[0]?.message?.content || 'No summary available';\n\n// Merge with existing data\nconst previousData = $input.item.json;\n\nreturn {\n  ...previousData,\n  aiSummary: aiSummary,\n  timestamp: new Date().toISOString()\n};"
+      },
+      "id": "parse-ai-response",
+      "name": "Parse AI Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1850, 300]
+    },
+    {
+      "parameters": {
+        "content": "## Data Storage\n\nЗбереження результатів:\n- Google Sheets / БД\n- Історія змін\n- Порівняння з попередніми даними\n- Виявлення різниці"
+      },
+      "id": "sticky-storage",
+      "name": "Sticky Note - Storage",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [2050, 80]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "list",
+          "cachedResultName": "Monitoring Results"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Sheet1",
+          "mode": "list",
+          "cachedResultName": "Sheet1"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Date": "={{ $now.toISO() }}",
+            "Company": "={{ $json.company }}",
+            "URL": "={{ $json.url }}",
+            "Title": "={{ $json.seo?.title }}",
+            "Description": "={{ $json.seo?.description }}",
+            "Blog Posts": "={{ $json.totalFound }}",
+            "AI Summary": "={{ $json.aiSummary }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "save-to-sheets",
+      "name": "Save to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [2050, 300]
+    },
+    {
+      "parameters": {
+        "content": "## Notifications\n\nСповіщення про зміни:\n- Email для критичних змін\n- Telegram для регулярних звітів\n- Slack інтеграція (опційно)"
+      },
+      "id": "sticky-notifications",
+      "name": "Sticky Note - Notifications",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [2250, 80]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.hasChanges }}",
+              "value2": "true"
+            }
+          ]
+        }
+      },
+      "id": "check-changes",
+      "name": "Check for Changes",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [2250, 300]
+    },
+    {
+      "parameters": {
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
+        "text": "=🔔 Нові зміни у конкурента {{ $json.company }}:\n\n📊 {{ $json.aiSummary }}\n\n🔗 {{ $json.url }}",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "send-telegram",
+      "name": "Send Telegram Notification",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [2450, 200]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Read Companies JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Companies JSON": {
+      "main": [
+        [
+          {
+            "node": "Parse Companies",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Companies": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Companies",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Companies": {
+      "main": [
+        [
+          {
+            "node": "Fetch Company Website",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Check Blog Monitoring",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Company Website": {
+      "main": [
+        [
+          {
+            "node": "Parse Website Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Website Content": {
+      "main": [
+        [
+          {
+            "node": "AI Summarize Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Blog Monitoring": {
+      "main": [
+        [
+          {
+            "node": "Fetch Blog",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Blog": {
+      "main": [
+        [
+          {
+            "node": "Parse Blog Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Blog Content": {
+      "main": [
+        [
+          {
+            "node": "AI Summarize Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Summarize Content": {
+      "main": [
+        [
+          {
+            "node": "Parse AI Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse AI Response": {
+      "main": [
+        [
+          {
+            "node": "Save to Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Check for Changes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check for Changes": {
+      "main": [
+        [
+          {
+            "node": "Send Telegram Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-19T00:00:00.000Z",
+  "versionId": "2"
+}

@@ -1,0 +1,11 @@
+{
+  "parameters": {
+    "jsCode": "// Prepare prompt for AI Agent\nconst data = $input.item.json;\n\nconst blogArticles = data.currentData.blog.recentArticles || [];\nconst blogText = blogArticles.map(a => `- ${a.title} (${a.date}): ${a.preview}`).join('\\n');\n\nconst reviewsText = data.currentData.reviews.samples.join('\\n- ') || 'Немає відгуків';\n\nconst aiPrompt = `Ти - expert аналітик VoIP/Contact Center індустрії. Проаналізуй компанію ${data.company} на основі зібраних даних.\n\nКОМПАНІЯ: ${data.company}\nURL: ${data.url}\n\nДАНІ З БЛОГУ:\nЗнайдено статей: ${data.currentData.blog.articlesFound}\n${blogText || 'Немає статей'}\n\nВІДГУКИ ТА КОМЕНТАРІ:\n- ${reviewsText}\n\nЗАВДАННЯ:\nПроаналізуй дані та поверни ВИКЛЮЧНО valid JSON (без жодного додаткового тексту!) з такими полями:\n\n{\n  \"newFeatures\": [\"масив рядків - нові функції або продукти згадані в блозі\"],\n  \"problems\": [\"масив рядків - проблеми або виклики згадані в матеріалах\"],\n  \"reviewInsights\": \"рядок - загальні інсайти з відгуків та коментарів\",\n  \"news\": [\"масив рядків - новини компанії з останньої перевірки\"],\n  \"blogArticles\": [\n    {\n      \"title\": \"назва статті\",\n      \"date\": \"YYYY-MM-DD\",\n      \"summary\": \"короткий саммарі статті 1-2 речення\"\n    }\n  ],\n  \"customerPains\": [\"масив рядків - болі клієнтів витягнуті з відгуків\"],\n  \"customerWants\": [\"масив рядків - хотілки та побажання клієнтів\"],\n  \"summary\": \"загальний саммарі аналізу компанії 2-3 речення\"\n}\n\nВАЖЛИВО:\n- Якщо немає даних для певного поля - повертай пустий масив [] або пустий рядок \"\"\n- Для blogArticles використовуй дані з розділу \"ДАНІ З БЛОГУ\"\n- Для customerPains та customerWants аналізуй розділ \"ВІДГУКИ ТА КОМЕНТАРІ\"\n- Повертай ТІЛЬКИ JSON, без додаткового тексту!`;\n\nreturn {\n  prompt: aiPrompt,\n  company: data.company,\n  url: data.url\n};"
+  },
+  "id": "NEW_PREPARE_PROMPT",
+  "name": "Prepare AI Prompt",
+  "type": "n8n-nodes-base.code",
+  "typeVersion": 2,
+  "position": [1840, -656],
+  "notes": "Готує промпт для AI Agent"
+}

@@ -1,0 +1,103 @@
+- generic [active] [ref=e1]:
+  - complementary [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: S
+      - generic [ref=e6]:
+        - heading "Stati" [level=1] [ref=e7]
+        - paragraph [ref=e8]: Editorial Intelligence
+    - navigation [ref=e9]:
+      - generic [ref=e10] [cursor=pointer]:
+        - generic [ref=e11]: dashboard
+        - generic [ref=e12]: Dashboard
+      - generic [ref=e13] [cursor=pointer]:
+        - generic [ref=e14]: lightbulb
+        - generic [ref=e15]: Ideas
+      - generic [ref=e16] [cursor=pointer]:
+        - generic [ref=e17]: rate_review
+        - generic [ref=e18]: Review
+      - generic [ref=e19] [cursor=pointer]:
+        - generic [ref=e20]: task_alt
+        - generic [ref=e21]: Published
+      - generic [ref=e22] [cursor=pointer]:
+        - generic [ref=e23]: person
+        - generic [ref=e24]: Account
+      - generic [ref=e25] [cursor=pointer]:
+        - generic [ref=e26]: settings
+        - generic [ref=e27]: Settings
+    - generic [ref=e29] [cursor=pointer]:
+      - generic [ref=e30]: logout
+      - generic [ref=e31]: Log Out
+  - main [ref=e32]:
+    - generic [ref=e33]:
+      - generic [ref=e35]:
+        - generic [ref=e36]: search
+        - textbox "Пошук статей або тем..." [ref=e37]
+      - generic [ref=e38]:
+        - button "notifications" [ref=e39] [cursor=pointer]:
+          - generic [ref=e40]: notifications
+        - generic [ref=e42] [cursor=pointer]: АС
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - heading "Dashboard" [level=2] [ref=e45]
+        - paragraph [ref=e46]: Статистика за останні 30 днів
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - generic [ref=e49]:
+            - generic [ref=e51]: pending_actions
+            - generic [ref=e52]: ...
+          - heading "На перевірці" [level=3] [ref=e53]
+          - paragraph [ref=e54]: —
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - generic [ref=e58]: check_circle
+            - generic [ref=e59]: Опубліковано
+          - heading "Опубліковано" [level=3] [ref=e60]
+          - paragraph [ref=e61]: —
+        - generic [ref=e62]:
+          - generic [ref=e63]:
+            - generic [ref=e65]: lightbulb
+            - generic [ref=e66]: У черзі
+          - heading "Ідей у черзі" [level=3] [ref=e67]
+          - paragraph [ref=e68]: —
+        - generic [ref=e69]:
+          - generic [ref=e70]:
+            - generic [ref=e72]: cancel
+            - generic [ref=e73]: Відхилено
+          - heading "Відхилено" [level=3] [ref=e74]
+          - paragraph [ref=e75]: —
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - heading "Статті за останні 30 днів" [level=3] [ref=e79]
+            - generic [ref=e82]: Кількість публікацій
+          - generic [ref=e83]:
+            - img [ref=e84]
+            - generic [ref=e87]:
+              - generic [ref=e88]: "01"
+              - generic [ref=e89]: "07"
+              - generic [ref=e90]: "14"
+              - generic [ref=e91]: "21"
+              - generic [ref=e92]: "28"
+              - generic [ref=e93]: "30"
+        - generic [ref=e94]:
+          - heading "Мовна статистика" [level=3] [ref=e95]
+          - paragraph [ref=e97]: Завантаження...
+      - generic [ref=e98]:
+        - generic [ref=e99]:
+          - generic [ref=e100]:
+            - heading "Останні чорновики" [level=3] [ref=e101]
+            - paragraph [ref=e102]: Ви працювали над ними нещодавно
+          - button "add Нова стаття" [ref=e103] [cursor=pointer]:
+            - generic [ref=e104]: add
+            - text: Нова стаття
+        - table [ref=e106]:
+          - rowgroup [ref=e107]:
+            - row "Назва статті Мови Статус Дата зміни Дії" [ref=e108]:
+              - columnheader "Назва статті" [ref=e109]
+              - columnheader "Мови" [ref=e110]
+              - columnheader "Статус" [ref=e111]
+              - columnheader "Дата зміни" [ref=e112]
+              - columnheader "Дії" [ref=e113]
+          - rowgroup [ref=e114]:
+            - row "Завантаження..." [ref=e115]:
+              - cell "Завантаження..." [ref=e116]

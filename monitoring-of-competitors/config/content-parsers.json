@@ -1,0 +1,392 @@
+{
+  "parsers": {
+    "blog": {
+      "selectors": [
+        {
+          "name": "WordPress Standard",
+          "article": "article.post, .blog-post, .entry-content",
+          "title": "h1.entry-title, h2.post-title, .post-title",
+          "date": "time.entry-date, .post-date, .published",
+          "content": ".entry-content, .post-content, article .content",
+          "excerpt": ".excerpt, .post-excerpt, p:first-of-type"
+        },
+        {
+          "name": "Medium Style",
+          "article": "article",
+          "title": "h1",
+          "date": "time",
+          "content": "article section",
+          "excerpt": "article h2, article p:first-of-type"
+        },
+        {
+          "name": "Ghost CMS",
+          "article": "article.post",
+          "title": "h1.post-title",
+          "date": "time.post-date",
+          "content": ".post-content",
+          "excerpt": ".post-excerpt"
+        },
+        {
+          "name": "Generic Fallback",
+          "article": "article, .article, .blog-post",
+          "title": "h1, h2",
+          "date": "time, .date, .published",
+          "content": ".content, .post-content, main",
+          "excerpt": "p"
+        }
+      ],
+      "dateFormats": [
+        "YYYY-MM-DD",
+        "DD/MM/YYYY",
+        "MM/DD/YYYY",
+        "MMMM DD, YYYY",
+        "DD MMMM YYYY"
+      ]
+    },
+    "news": {
+      "selectors": [
+        {
+          "name": "News Standard",
+          "article": ".news-item, article.news, .press-release",
+          "title": "h2, h3",
+          "date": ".news-date, time",
+          "content": ".news-content, .release-content"
+        }
+      ]
+    },
+    "pricing": {
+      "selectors": [
+        {
+          "name": "Pricing Page",
+          "container": ".pricing-table, .pricing-plans, #pricing",
+          "plan": ".pricing-plan, .price-box, .plan",
+          "planName": ".plan-name, .plan-title, h3",
+          "price": ".price, .plan-price, .amount",
+          "features": ".features li, .plan-features li, ul li",
+          "cta": ".cta, .button, .sign-up"
+        }
+      ]
+    },
+    "features": {
+      "selectors": [
+        {
+          "name": "Features Page",
+          "container": ".features, #features, .product-features",
+          "feature": ".feature, .feature-item, .feature-box",
+          "title": "h3, h4, .feature-title",
+          "description": "p, .feature-description",
+          "icon": "img, .icon, svg"
+        }
+      ]
+    },
+    "seo": {
+      "metaTags": [
+        "title",
+        "meta[name='description']",
+        "meta[property='og:title']",
+        "meta[property='og:description']",
+        "meta[property='og:image']",
+        "meta[name='keywords']",
+        "meta[name='author']",
+        "link[rel='canonical']"
+      ],
+      "headers": ["h1", "h2", "h3", "h4", "h5", "h6"],
+      "schema": [
+        "script[type='application/ld+json']"
+      ]
+    }
+  },
+  "socialMedia": {
+    "youtube": {
+      "apiEndpoints": {
+        "search": "https://www.googleapis.com/youtube/v3/search",
+        "videos": "https://www.googleapis.com/youtube/v3/videos",
+        "comments": "https://www.googleapis.com/youtube/v3/commentThreads",
+        "channels": "https://www.googleapis.com/youtube/v3/channels"
+      },
+      "defaultParams": {
+        "part": "snippet",
+        "maxResults": 10,
+        "order": "date"
+      },
+      "rateLimit": {
+        "quotaPerDay": 10000,
+        "costPerSearch": 100,
+        "costPerVideo": 1,
+        "costPerComment": 1
+      }
+    },
+    "facebook": {
+      "apiEndpoints": {
+        "posts": "https://graph.facebook.com/v18.0/{page-id}/posts",
+        "comments": "https://graph.facebook.com/v18.0/{post-id}/comments",
+        "page": "https://graph.facebook.com/v18.0/{page-id}"
+      },
+      "defaultFields": {
+        "posts": "id,message,created_time,likes.summary(true),comments.summary(true),shares",
+        "comments": "message,created_time,from,like_count",
+        "page": "name,about,followers_count,rating_count"
+      },
+      "rateLimit": {
+        "callsPerHour": 200
+      }
+    },
+    "linkedin": {
+      "apiEndpoints": {
+        "organizationPosts": "https://api.linkedin.com/v2/shares",
+        "organization": "https://api.linkedin.com/v2/organizations/{id}"
+      },
+      "defaultParams": {
+        "count": 10
+      },
+      "rateLimit": {
+        "callsPerDay": 100
+      }
+    },
+    "twitter": {
+      "apiEndpoints": {
+        "search": "https://api.twitter.com/2/tweets/search/recent",
+        "user": "https://api.twitter.com/2/users/by/username/{username}",
+        "userTweets": "https://api.twitter.com/2/users/{id}/tweets"
+      },
+      "defaultParams": {
+        "max_results": 10,
+        "tweet.fields": "created_at,public_metrics,author_id"
+      },
+      "rateLimit": {
+        "freeTier": {
+          "tweetsPerMonth": 1500
+        },
+        "basicTier": {
+          "tweetsPerMonth": 10000,
+          "costPerMonth": 100
+        }
+      }
+    }
+  },
+  "keywords": {
+    "voip": [
+      "voip",
+      "voice over ip",
+      "cloud phone",
+      "virtual phone",
+      "business phone system",
+      "pbx",
+      "ip telephony",
+      "sip",
+      "unified communications"
+    ],
+    "contactCenter": [
+      "contact center",
+      "call center",
+      "customer support",
+      "helpdesk",
+      "omnichannel",
+      "ivr",
+      "acd",
+      "call routing",
+      "queue management"
+    ],
+    "features": [
+      "call recording",
+      "call transfer",
+      "conference call",
+      "voicemail",
+      "auto attendant",
+      "crm integration",
+      "analytics",
+      "reporting",
+      "mobile app",
+      "desktop app",
+      "web phone",
+      "video call",
+      "screen sharing",
+      "click to call",
+      "call whisper",
+      "call barging",
+      "warm transfer",
+      "cold transfer"
+    ],
+    "industries": [
+      "healthcare",
+      "education",
+      "retail",
+      "real estate",
+      "finance",
+      "insurance",
+      "hospitality",
+      "e-commerce",
+      "saas",
+      "enterprise"
+    ],
+    "painPoints": [
+      "expensive",
+      "difficult to use",
+      "poor quality",
+      "bad support",
+      "technical issues",
+      "bugs",
+      "downtime",
+      "slow performance",
+      "missing features",
+      "complicated setup",
+      "poor integration"
+    ],
+    "positives": [
+      "easy to use",
+      "affordable",
+      "great quality",
+      "excellent support",
+      "reliable",
+      "feature-rich",
+      "intuitive interface",
+      "fast performance",
+      "good integration",
+      "scalable"
+    ]
+  },
+  "changeDetection": {
+    "triggers": [
+      {
+        "type": "title_change",
+        "priority": "medium",
+        "notify": true
+      },
+      {
+        "type": "description_change",
+        "priority": "medium",
+        "notify": true
+      },
+      {
+        "type": "new_blog_post",
+        "priority": "high",
+        "notify": true
+      },
+      {
+        "type": "pricing_change",
+        "priority": "critical",
+        "notify": true
+      },
+      {
+        "type": "new_feature",
+        "priority": "high",
+        "notify": true
+      },
+      {
+        "type": "new_social_post",
+        "priority": "low",
+        "notify": false
+      },
+      {
+        "type": "negative_sentiment_spike",
+        "priority": "high",
+        "notify": true
+      },
+      {
+        "type": "competitor_launch",
+        "priority": "critical",
+        "notify": true
+      }
+    ],
+    "thresholds": {
+      "sentimentChange": 15,
+      "engagementDrop": 30,
+      "priceChangePercent": 10,
+      "newPostsThreshold": 5
+    }
+  },
+  "notifications": {
+    "telegram": {
+      "templates": {
+        "newBlogPost": "🆕 *Нова стаття у {{ company }}*\n\n📝 {{ title }}\n🔗 {{ link }}\n\n{{ summary }}",
+        "pricingChange": "💰 *Зміна цін у {{ company }}*\n\n{{ changes }}\n\n⚠️ Пріоритет: ВИСОКИЙ",
+        "newFeature": "✨ *Нова функція у {{ company }}*\n\n{{ feature }}\n\n{{ description }}",
+        "negativeSpike": "⚠️ *Різке погіршення відгуків {{ company }}*\n\nSentiment: {{ oldSentiment }}% → {{ newSentiment }}%\n\n{{ details }}"
+      }
+    },
+    "email": {
+      "recipients": [
+        "product@company.com",
+        "marketing@company.com"
+      ],
+      "templates": {
+        "weeklyReport": {
+          "subject": "Weekly Competitor Monitoring Report - {{ date }}",
+          "template": "weekly-report.html"
+        },
+        "criticalAlert": {
+          "subject": "CRITICAL: Competitor Alert - {{ company }}",
+          "template": "critical-alert.html"
+        }
+      }
+    }
+  },
+  "storage": {
+    "googleSheets": {
+      "sheets": {
+        "main": {
+          "name": "Monitoring Data",
+          "columns": [
+            "Date",
+            "Company",
+            "URL",
+            "Title",
+            "Description",
+            "Blog Posts Count",
+            "Social Posts Count",
+            "Sentiment",
+            "AI Summary",
+            "Priority",
+            "Action Required"
+          ]
+        },
+        "blogPosts": {
+          "name": "Blog Posts",
+          "columns": [
+            "Date Found",
+            "Company",
+            "Title",
+            "URL",
+            "Published Date",
+            "Summary",
+            "Keywords",
+            "Sentiment"
+          ]
+        },
+        "socialMedia": {
+          "name": "Social Media",
+          "columns": [
+            "Date",
+            "Company",
+            "Platform",
+            "Content",
+            "Engagement",
+            "Sentiment",
+            "Link"
+          ]
+        },
+        "changes": {
+          "name": "Changes Log",
+          "columns": [
+            "Date Detected",
+            "Company",
+            "Change Type",
+            "Old Value",
+            "New Value",
+            "Priority",
+            "Status"
+          ]
+        }
+      }
+    },
+    "database": {
+      "tables": {
+        "companies": ["id", "name", "url", "region", "priority", "last_checked"],
+        "monitoring_data": ["id", "company_id", "date", "data_json", "ai_summary"],
+        "blog_posts": ["id", "company_id", "title", "url", "content", "published_date", "found_date"],
+        "social_posts": ["id", "company_id", "platform", "content", "engagement", "posted_date"],
+        "changes": ["id", "company_id", "change_type", "old_value", "new_value", "detected_date", "priority"]
+      }
+    }
+  }
+}

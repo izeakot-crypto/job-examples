@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip:*)",
+      "Bash(curl:*)",
+      "mcp__playwright__browser_navigate",
+      "Bash(python:*)",
+      "mcp__playwright__browser_take_screenshot",
+      "Bash(pkill:*)",
+      "Bash(taskkill:*)",
+      "WebFetch(domain:bitbucket.org)",
+      "WebFetch(domain:api.bitbucket.org)",
+      "Bash(start:*)",
+      "Bash(cp:*)",
+      "Bash(PYTHONPATH=. LA_API_KEY=test_key_123 LA_PORT=8590 LOG_DIR=/tmp/py-services-test-logs python:*)",
+      "Bash(PYTHONPATH=. TGC_API_KEY=test_key_123 TGC_PORT=8589 LOG_DIR=/tmp/py-services-test-logs TGC_CACHE_DIR=/tmp/py-services-test-tts-cache python:*)",
+      "WebFetch(domain:py-services.oki-toki.net)",
+      "Bash(__NEW_LINE_e2f6669458379554__ echo:*)",
+      "Bash(__NEW_LINE_927301b7318983bd__ echo:*)",
+      "Bash(__NEW_LINE_e49c9d9f1661d866__ echo:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "n8n-mcp"
+  ]
+}
