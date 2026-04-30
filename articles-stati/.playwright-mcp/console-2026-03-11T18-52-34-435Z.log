@@ -1,6 +1,0 @@
-[      65ms] [ERROR] ❌ SSE connection error: Event @ http://157.180.42.152:3000/script.js?v=301:3481
-[     115ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://157.180.42.152:3000/autosave.js?v=6:0
-[ 3731855ms] [ERROR] Failed to load resource: net::ERR_INSUFFICIENT_RESOURCES @ http://157.180.42.152:3000/api/dashboard/stats:0
-[ 3731855ms] [ERROR] Error loading dashboard stats: TypeError: Failed to fetch
-    at updateStats (http://157.180.42.152:3000/script.js?v=301:1880:32)
-    at loadExistingIdeas (http://157.180.42.152:3000/script.js?v=301:3298:9) @ http://157.180.42.152:3000/script.js?v=301:1926
