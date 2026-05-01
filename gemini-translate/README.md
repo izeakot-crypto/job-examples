@@ -1,17 +1,17 @@
-# Перекладач JSON
+# JSON Translator
 
-Інструмент для автоматизованого перекладу великих JSON-файлів із збереженням структури даних.
+A tool for automated translation of large JSON files while preserving the data structure.
 
-## Що зробив
-- Реалізував переклад JSON-значень без ламання структури ключів.
-- Додав можливість продовжувати переклад після зупинки.
-- Підготував синхронізацію перекладених файлів з оригіналом.
+## What I built
+- Implemented JSON value translation without breaking key structure.
+- Added the ability to resume translation after interruption.
+- Prepared synchronization of translated files with the original source.
 
-## Стек
+## Stack
 - Python, Google Generative AI SDK (Gemini).
 - Shell scripting.
 
-## Результат
-- Підходить для великих локалізаційних файлів без ручної правки кожного ключа.
-- Можна безпечно продовжувати довгі переклади після паузи.
-- Інструмент зручний для регулярної роботи з JSON-локалізацією.
+## Result
+- Useful for large localization files without manual key-by-key editing.
+- Long translation jobs can be safely resumed after a pause.
+- A practical tool for routine JSON localization work.

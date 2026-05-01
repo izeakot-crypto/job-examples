@@ -1,18 +1,18 @@
-# Шлюз голосових асистентів
+# Voice Assistants Gateway
 
-Універсальний шлюз для підключення асистентів до телефонної платформи LIRA.
+A gateway for connecting voice assistants to the LIRA telephony platform.
 
-## Що зробив
-- Побудував шар абстракції над кількома провайдерами асистентів.
-- Додав керування сесіями діалогу під час телефонної розмови.
-- Налаштував інтеграцію з телефонною платформою через FastAPI.
+## What I built
+- Built an abstraction layer over multiple assistant providers.
+- Added session management for conversations during phone calls.
+- Integrated the gateway with the telephony platform through FastAPI.
 
-## Стек
+## Stack
 - Python, FastAPI, Pydantic.
 - OpenAI API, Anthropic API, n8n Webhooks.
 - Provider Factory pattern.
 
-## Результат
-- Отримано єдиний шлюз для різних сценаріїв голосових асистентів.
-- Система підтримує продовження діалогу в межах однієї сесії.
-- Архітектура спрощує підключення нових провайдерів.
+## Result
+- A single gateway for multiple voice assistant scenarios.
+- Conversation continuity across a single session.
+- Easier onboarding of new providers.

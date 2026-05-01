@@ -1,18 +1,18 @@
-# Сервіс синтезу мовлення
+# Text-to-Speech Service
 
-Проєкт для дослідження, порівняння та впровадження Text-to-Speech рішень у робочі процеси.
+A project for researching, comparing, and applying Text-to-Speech solutions in working processes.
 
-## Що зробив
-- Порівняв кілька TTS-провайдерів і сценарії їх використання.
-- Додав підтримку SSML для керування інтонацією, паузами та наголосами.
-- Підготував інструменти для вимірювання latency та оцінки якості.
+## What I built
+- Compared several TTS providers and usage scenarios.
+- Added SSML support for controlling intonation, pauses, and emphasis.
+- Prepared tools for measuring latency and quality.
 
-## Стек
+## Stack
 - Python.
 - OpenAI API, Azure SDK, ElevenLabs API.
 - SSML, streaming audio.
 
-## Результат
-- Є база для вибору оптимального TTS-провайдера під бізнес-сценарій.
-- Зменшено затримку старту відтворення через потокову обробку.
-- Є практичні приклади для демонстрації TTS-інженерії.
+## Result
+- A foundation for choosing the best TTS provider for a business scenario.
+- Lower startup playback latency through streaming processing.
+- Practical examples for demonstrating TTS engineering.

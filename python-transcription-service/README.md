@@ -1,18 +1,18 @@
-# Сервіс транскрибації
+# Transcription Service
 
-Мікросервіс для перетворення аудіо в текст, орієнтований на записи телефонних розмов.
+A microservice for converting audio into text, designed for phone call recordings.
 
-## Що зробив
-- Побудував сервіс для транскрибації аудіо у текст.
-- Додав механізм відправлення результатів у зовнішні системи.
-- Підготував основу для чергової обробки великої кількості файлів.
+## What I built
+- Built a service for transcription from audio to text.
+- Added a mechanism for sending results to external systems.
+- Prepared the base for queued processing of large numbers of files.
 
-## Стек
+## Stack
 - Python.
-- ASR/LLM-інтеграції.
-- Webhook-інтеграції.
+- ASR/LLM integrations.
+- Webhook integrations.
 
-## Результат
-- Сервіс можна підключати до телефонних або внутрішніх процесів.
-- Автоматизовано передачу результатів без ручного копіювання.
-- Рішення можна масштабувати під більші обсяги обробки.
+## Result
+- The service can be connected to telephony or internal workflows.
+- Result delivery is automated instead of copied manually.
+- The solution can scale to larger processing volumes.

@@ -1,18 +1,18 @@
-# Парсер вакансій Indeed
+# Indeed Vacancy Parser
 
-Сервіс для збору та структурованої обробки вакансій з Indeed в умовах антибот-захисту.
+A service for collecting and structuring Indeed vacancies under anti-bot constraints.
 
-## Що зробив
-- Реалізував browser automation для збору вакансій за ключовими запитами з пагінацією.
-- Додав витяг детальної інформації про вакансію та компанію.
-- Побудував експорт у Google Sheets та локальні Excel-файли.
+## What I built
+- Implemented browser automation for scraping vacancies by keyword with pagination.
+- Added detailed extraction for vacancy and company information.
+- Built exports to Google Sheets and local Excel files.
 
-## Стек
+## Stack
 - Python, Camoufox, Playwright.
 - Pandas, Openpyxl, Requests.
 - Webshare API, FlareProx, NetworkLogger.
 
-## Результат
-- Отримано стабільний pipeline збору вакансій у складних умовах.
-- Дані зберігаються у структурованому вигляді для подальшого аналізу.
-- Гарний приклад роботи з browser automation та data extraction.
+## Result
+- A stable vacancy collection pipeline under difficult conditions.
+- Data is stored in a structured format for further analysis.
+- A good example of browser automation and data extraction.
