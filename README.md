@@ -1,6 +1,6 @@
 # Portfolio
 
-This repository contains selected examples of production-oriented work: automation, scraping, AI-assisted workflows, and voice/text processing services.
+This repository contains selected examples of practical work: automation, scraping, AI-driven workflows, and voice/text processing services.
 
 ## Included Projects
 

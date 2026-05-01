@@ -1,18 +1,18 @@
-# Система автоматизації контенту
+# SEO Article Generation System
 
-Проєкт про повний цикл роботи з контентом: від генерації тем до публікації статей на WordPress.
+This project is a content generation pipeline for producing SEO-focused articles in English. It covers topic generation, article drafting, quality checks, and publication to WordPress.
 
-## Що зробив
-- Побудував пайплайн для генерації, перевірки та доопрацювання контенту.
-- Додав збереження прогресу, проміжних даних і фінальних результатів у базі.
-- Налаштував автоматичну публікацію готових матеріалів у WordPress.
+## What I built
+- Built a pipeline for generating article ideas, drafting content, and refining the final text.
+- Added persistence for progress, intermediate data, and final outputs.
+- Set up automatic publication of completed articles to WordPress.
 
-## Стек
+## Stack
 - Python, FastAPI, Uvicorn.
 - Anthropic API, Google Gemini API.
 - Supabase, Pydantic, asyncio.
 
-## Результат
-- Отримано керований контент-процес без ручного збирання кожного етапу.
-- Менше ручної роботи під час підготовки статей.
-- Структура підходить для масштабування на багатомовні сценарії.
+## Result
+- A controlled article generation flow without manual handling of every stage.
+- Less manual work during article preparation and publication.
+- A structure that can scale to multilingual SEO content workflows.
