@@ -1,4 +1,4 @@
-# SEO Article Generation System
+# Generating Articles for SEO
 
 This project is a content generation pipeline for producing SEO-focused articles in English. It covers topic generation, article drafting, quality checks, and publication to WordPress.
 

@@ -4,7 +4,7 @@ This repository contains selected examples of practical work: automation, scrapi
 
 ## Included Projects
 
-- `articles-stati` - Content automation pipeline: article generation, verification, image generation, and WordPress publishing.
+- `generating-articles-for-seo` - SEO article generation pipeline: topic generation, drafting, verification, and WordPress publishing.
 - `parser-indeed` - Indeed vacancy scraping pipeline with proxy handling, browser automation, and structured extraction.
 - `monitoring-of-competitors` - Competitor monitoring system for tracking content and pricing changes across SaaS websites.
 - `python-transcription-service` - Audio transcription service with multiple ASR backends and operational tooling.
